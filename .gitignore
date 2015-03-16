@@ -1,3 +1,4 @@
+# Unity .gitignore
 [Ll]ibrary/
 [Tt]emp/
 [Oo]bj/
@@ -8,6 +9,7 @@
 /*.unityproj
 /*.sln
 /*.suo
+/*.tmp
 /*.user
 /*.userprefs
 /*.pidb
@@ -15,3 +17,14 @@
 
 #Unity3D Generated File On Crash Reports
 sysinfo.txt
+*.pidb.meta
+[Ee]xported[Oo]bj/
+ 
+# OS generated
+.DS_Store*
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+[Tt]humbs.db
