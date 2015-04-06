@@ -11,9 +11,6 @@ namespace BoogieDownGames {
 		[SerializeField]
 		private GameObject m_topMenu;
 
-		[SerializeField]
-		private iTweenEvent m_itweenEvent;
-
 
 		public override void Awake()
 		{
@@ -65,7 +62,6 @@ namespace BoogieDownGames {
 			if(level == 1) {
 				m_topMenu.SetActive(false);
 				gameObject.GetComponent<MouseLook>().enabled = false;
-				m_itweenEvent.Play();
 			} else {
 				GameObject startPoint =  GameObject.Find("StartPoint") as GameObject;
 				if(startPoint != null) {
@@ -74,8 +70,6 @@ namespace BoogieDownGames {
 				}
 				gameObject.GetComponent<MouseLook>().enabled = true;
 				m_topMenu.SetActive(true);
-				m_itweenEvent.Stop();
-
 			}
 		}
 	}

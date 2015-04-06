@@ -7,7 +7,7 @@ namespace BoogieDownGames{
 
 		void Start()
 		{
-			NotificationCenter.DefaultCenter.AddObserver(this,"spawnPrefab");
+			NotificationCenter.DefaultCenter.AddObserver(this, "spawnPrefab");
 		}
 
 		[SerializeField]
@@ -15,7 +15,7 @@ namespace BoogieDownGames{
 
 		public void spawnPrefab()
 		{
-			GameObject obj = MemoryPool.Instance.findAndGetObjs(m_prefab.name,false);
+			GameObject obj = MemoryPool.Instance.findAndGetObjs(m_prefab.name, false);
 			obj.transform.position = transform.position;
 			DanceGameController.Instance.TotalNotes ++;
 		}

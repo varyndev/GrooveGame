@@ -5,7 +5,9 @@ namespace BoogieDownGames{
 
 	public class TouchInput : UnitySingleton<TouchInput> {
 
-		// Use this for initialization
+		private Ray ray;
+		private RaycastHit hit;
+
 		void Start () 
 		{
 			NotificationCenter.DefaultCenter.AddObserver(this, "OnStateRunUpdate");
@@ -18,28 +20,20 @@ namespace BoogieDownGames{
 
 		public void run()
 		{
-
-			if(Input.GetMouseButtonDown(0)) {
-				Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-				int layerMask = 1 << 7;
-				RaycastHit hit;
+			if (Input.GetMouseButtonDown(0) && Input.mousePosition != null) {
+				ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
 				if (Physics.Raycast(ray, out hit, 100)) {
-
 					Debug.DrawLine(ray.origin, hit.point);
-					if(hit.collider.gameObject.tag == "Note") {
+					if (hit.collider.gameObject.tag == "Note") {
 						//Send message to who needs it
 						hit.collider.gameObject.GetComponent<NotesControl>().death();
 					}
 				}
-				
 			}
-
 			foreach (Touch touch in Input.touches) {
 				if (touch.phase != TouchPhase.Ended && touch.phase != TouchPhase.Canceled) {
-					int layerMask = 1 << 9;
-					Ray ray = Camera.main.ScreenPointToRay(touch.position);
-					RaycastHit hit;
+					ray = Camera.main.ScreenPointToRay(touch.position);
 
 					if (Physics.Raycast(ray, out hit, 100)) {
 						Debug.DrawLine(ray.origin, hit.point);
@@ -50,7 +44,6 @@ namespace BoogieDownGames{
 					}
 				}
 			}
-
 		}
 	}
 }

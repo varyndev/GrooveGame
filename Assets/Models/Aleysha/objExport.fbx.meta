@@ -1,0 +1,184 @@
+fileFormatVersion: 2
+guid: 48fe60ccc3af942faa25a93796fccce6
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: basemesh
+    100002: bikini
+    100004: export:tongue1_teeth
+    100006: eye_corners
+    100008: eyelashes1
+    100010: eyelashes1_MeshPart0
+    100012: eyelashes1_MeshPart1
+    100014: eyelashes1_MeshPart2
+    100016: finger_nails
+    100018: heels
+    100020: //RootNode
+    100022: teeth_export:lowerteeth1
+    100024: teeth_export:upperteeth1
+    400000: basemesh
+    400002: bikini
+    400004: export:tongue1_teeth
+    400006: eye_corners
+    400008: eyelashes1
+    400010: eyelashes1_MeshPart0
+    400012: eyelashes1_MeshPart1
+    400014: eyelashes1_MeshPart2
+    400016: finger_nails
+    400018: heels
+    400020: //RootNode
+    400022: teeth_export:lowerteeth1
+    400024: teeth_export:upperteeth1
+    2300000: basemesh
+    2300002: bikini
+    2300004: export:tongue1_teeth
+    2300006: eye_corners
+    2300008: eyelashes1_MeshPart0
+    2300010: eyelashes1_MeshPart1
+    2300012: eyelashes1_MeshPart2
+    2300014: finger_nails
+    2300016: heels
+    2300018: teeth_export:lowerteeth1
+    2300020: teeth_export:upperteeth1
+    3300000: basemesh
+    3300002: bikini
+    3300004: export:tongue1_teeth
+    3300006: eye_corners
+    3300008: eyelashes1_MeshPart0
+    3300010: eyelashes1_MeshPart1
+    3300012: eyelashes1_MeshPart2
+    3300014: finger_nails
+    3300016: heels
+    3300018: teeth_export:lowerteeth1
+    3300020: teeth_export:upperteeth1
+    4300000: basemesh
+    4300002: bikini
+    4300004: export:tongue1_teeth
+    4300006: eye_corners
+    4300008: eyelashes1_MeshPart0
+    4300010: eyelashes1_MeshPart1
+    4300012: eyelashes1_MeshPart2
+    4300014: finger_nails
+    4300016: heels
+    4300018: teeth_export:lowerteeth1
+    4300020: teeth_export:upperteeth1
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 3
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton:
+    - name: objExport(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: basemesh
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: bikini
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: export:tongue1_teeth
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: eye_corners
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: eyelashes1
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: eyelashes1_MeshPart0
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: eyelashes1_MeshPart1
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: eyelashes1_MeshPart2
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: finger_nails
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: heels
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: teeth_export:lowerteeth1
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: teeth_export:upperteeth1
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 3
+  additionalBone: 0
+  userData: 
