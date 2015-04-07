@@ -28,7 +28,6 @@ public class NotificationCenter : MonoBehaviour
  
 				defaultCenter = notificationObject.AddComponent<NotificationCenter> ();
 			}
- 
             return defaultCenter; 
 		}
     }
@@ -81,7 +80,7 @@ public class NotificationCenter : MonoBehaviour
 		// Obtain the notification list, and make sure that it is valid as well
 		List<Component> notifyList = (List<Component>) notifications [aNotification.name];
 		if (notifyList == null) {
-			Debug.Log ("Notify list not found in PostNotification: " + aNotification.name);
+			Debug.Log ("PostNotification: notification posted but no one is listening for " + aNotification.name);
 			return;
 		}
  
@@ -97,7 +96,7 @@ public class NotificationCenter : MonoBehaviour
 				// If the observer is valid, then send it the notification. The message that's sent is the name of the notification.
 				observer.SendMessage(aNotification.name, aNotification, SendMessageOptions.DontRequireReceiver);
 			}
-	}
+		}
  
 		// Remove all the invalid observers
 		foreach (Component observer in observersToRemove) {
@@ -107,14 +106,9 @@ public class NotificationCenter : MonoBehaviour
  
 	// The Notification class is the object that is send to receiving objects of a notification type.
 	// This class contains the sending GameObject, the name of the notification, and optionally a hashtable containing data.
-	public class Notification {
- 
-		//public Notification (GameObject aSender, string aName, Hashtable aData)
-		//{
-		//	throw new System.NotImplementedException ();
-		//}
- 
-    	public Component sender;
+	public class Notification
+	{
+     	public Component sender;
    	 	public string name;
     	public Hashtable data;
     	public Notification (Component aSender, string aName) { sender = aSender; name = aName; data = null; }

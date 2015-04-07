@@ -25,7 +25,6 @@ namespace BoogieDownGames {
 
 		public override void Init ()
 		{
-			Debug.LogError("i init");
 			AudioController.Instance.playAtIndex(m_songToPlay);
 			StartCoroutine(ChangeState(m_timeToNextScene));
 			StartCoroutine(CanControl(m_timeToControllable));
@@ -43,17 +42,14 @@ namespace BoogieDownGames {
 
 		IEnumerator CanControl(float p_sec)
 		{
-			Debug.LogError("Started the coroutine Can Control");
 			yield return new WaitForSeconds(p_sec);
 			m_isControllable = true;
 		}
 
 		IEnumerator ChangeState(float p_sec)
 		{
-			Debug.LogWarning("Started the coroutine Can Change State");
 			yield return new WaitForSeconds(p_sec);
 			GameMaster.Instance.SceneFsm.ChangeState(CtrlStateMenu.Instance);
 		}
-
 	}
 }
