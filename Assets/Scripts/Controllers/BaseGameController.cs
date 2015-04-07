@@ -105,6 +105,12 @@ namespace BoogieDownGames {
 			Application.Quit();
 		}
 
+		public virtual void ShowMenu ()
+		{
+			// this is called when teh Menu button is tapped
+			Application.LoadLevel(1);
+		}
+		
 		public virtual void Pause()
 		{
 			GameFsm.ChangeState(GameStatePause.Instance);
