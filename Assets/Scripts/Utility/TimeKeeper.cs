@@ -24,7 +24,7 @@ namespace BoogieDownGames {
 		[SerializeField]
 		private bool m_isLoop;
 		
-		enum LOOPMODE { ONCE, LOOP }; 
+		enum LOOPMODE { ONCE, LOOP };
 		[SerializeField]
 		private LOOPMODE m_loopMode = LOOPMODE.ONCE;
 		
@@ -115,6 +115,5 @@ namespace BoogieDownGames {
 				break;
 			}
 		}
-		
 	}
 }

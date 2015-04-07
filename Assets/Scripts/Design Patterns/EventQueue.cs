@@ -22,9 +22,7 @@ namespace BoogieDownGames {
 			//Add the array to the dictionary
 			foreach(Event e in m_que) {
 				m_eventBank.Add(e.EventName,e);
-
 			}
-
 			NotificationCenter.DefaultCenter.AddObserver(this,"PlayEvent");
 		}
 

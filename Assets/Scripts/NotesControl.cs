@@ -20,9 +20,6 @@ namespace BoogieDownGames {
 		private TimeKeeper m_timer;
 
 		[SerializeField]
-		private bool m_canDie = false;
-
-		[SerializeField]
 		private SkinnedMeshRenderer m_mat;
 
 		[SerializeField]
@@ -39,12 +36,6 @@ namespace BoogieDownGames {
 
 		[SerializeField]
 		private float m_dieBounds;
-
-		[SerializeField]
-		private int m_score;
-
-		[SerializeField]
-		private int m_scoreMod;
 
 		[SerializeField]
 		private Color m_unReadyColor;
@@ -64,25 +55,10 @@ namespace BoogieDownGames {
 		private float m_zLimit;
 		private float zDistanceFromCamera;
 
-		#region PROPERTIES
-
-		public int Score
-		{
-			get { return m_score *  m_scoreMod; }
-			set { m_score = value; }
-		}
-
-		public int ScoreMod
-		{
-			get { return m_scoreMod; }
-			set { m_scoreMod = value; }
-		}
-
-		#endregion
-
 		void Start () 
 		{
 			m_myState = NoteStates.UnReady;
+			// Note must move from transform.position to camera position
 			m_mainCamera = GameObject.FindGameObjectWithTag ("MainCamera");
 			m_zLimit = m_mainCamera.transform.position.z;
 			NotificationCenter.DefaultCenter.AddObserver(this,"OnStateRunFixedUpdate");
@@ -114,13 +90,11 @@ namespace BoogieDownGames {
 
 		public void death()
 		{
-			Debug.LogFormat ("Note tapped at z={0}", transform.position.z);
-			if (m_myState != NoteStates.UnReady) {
-				PostMessage("PlayEvent", m_myState.ToString());
-				NotificationCenter.DefaultCenter.PostNotification(this, "PlayAnime");
-				DanceGameController.Instance.HitNotes ++;
-				PostMessage("ReadEvent", "event", "Notes");
-				gameObject.SetActive(false);
+			if (m_myState != NoteStates.UnReady && m_myState != NoteStates.Die) {
+				DanceGameController.Instance.NoteWasHit (m_myState);
+				gameObject.SetActive (false);
+			} else {
+				DanceGameController.Instance.NoteWasMissed ();
 			}
 			PostMessage("PlayEvent", m_myState.ToString());
 		}
@@ -156,7 +130,7 @@ namespace BoogieDownGames {
 			} else {
 				// if passes the camera this is a missed note
 				gameObject.SetActive(false);
-				DanceGameController.Instance.MissNotes ++;
+				DanceGameController.Instance.NoteWasMissed ();
 			}
 		}
 

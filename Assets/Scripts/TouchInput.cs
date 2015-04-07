@@ -20,7 +20,7 @@ namespace BoogieDownGames{
 
 		public void run()
 		{
-			if (Input.GetMouseButtonDown(0) && Input.mousePosition != null) {
+			if (Input.GetMouseButtonDown(0)) {
 				ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
 				if (Physics.Raycast(ray, out hit, 100)) {

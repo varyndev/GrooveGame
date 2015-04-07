@@ -14,35 +14,26 @@ namespace BoogieDownGames {
 		private GameObject m_cut;
 
 		[SerializeField]
+		private GameObject m_otherDancersParent; // other dancers in the scene must have a common parent
+		
+		[SerializeField]
 		private int m_totalNotes;
 
 		[SerializeField]
-		private int m_missNotes; //The total number of notes missed
+		private int m_missNotes; // The total number of notes missed
 
 		[SerializeField]
-		private int m_hitNotes; //The total number of notes hit
+		private int m_hitNotes; // The total number of notes hit
 
 		[SerializeField]
-		private int m_originalSong;
+		private int m_score; // Current game score
+		
+		[SerializeField]
+		private Slider m_bonusNoteSlider;
 
 		[SerializeField]
-		private float m_rightPowerUp;
-
-		[SerializeField]
-		private float m_leftPowerUp;
-
-		[SerializeField]
-		private Slider m_1NoteSlider;
-
-		[SerializeField]
-		private Slider m_2NoteSlider;
-
-		[SerializeField]
-		private Slider m_3NoteSlider;
-
-		[SerializeField]
-		private Slider m_leftSlider;
-
+		private Text m_scoreText;
+		
 		private float noteSpawnTime;
 		private float nextNoteSpawnTime;
 
@@ -68,7 +59,6 @@ namespace BoogieDownGames {
 		public  void Init()
 		{
 			m_timer.startClock();
-			noteSpawnTime = 0.0f;
 		}
 
 		public  void RunStart()
@@ -83,7 +73,12 @@ namespace BoogieDownGames {
 
 		void Start()
 		{
-			NotificationCenter.DefaultCenter.AddObserver(this, "BoogieDownMessage");
+			noteSpawnTime = 0.0f;
+			m_totalNotes = 0;
+			m_hitNotes = 0;
+			m_missNotes = 0;
+			m_score = 0;
+
 			NotificationCenter.DefaultCenter.AddObserver(this, "OnStateInitEnter");
 			NotificationCenter.DefaultCenter.AddObserver(this, "OnStateInitUpdate");
 			NotificationCenter.DefaultCenter.AddObserver(this, "OnStateInitFixedUpdate");
@@ -92,7 +87,6 @@ namespace BoogieDownGames {
 			NotificationCenter.DefaultCenter.AddObserver(this, "OnStateRunUpdate");
 			NotificationCenter.DefaultCenter.AddObserver(this, "OnStateRunFixedUpdate");
 			NotificationCenter.DefaultCenter.AddObserver(this, "OnStateRunExit");
-			NotificationCenter.DefaultCenter.AddObserver(this, "NoteWasHit");
 			NotificationCenter.DefaultCenter.AddObserver(this, "OnStateCutSceneEnter");
 			NotificationCenter.DefaultCenter.AddObserver(this, "OnStateCutSceneUpdate");
 			NotificationCenter.DefaultCenter.AddObserver(this, "OnStateCutSceneFixedUpdate");
@@ -127,25 +121,30 @@ namespace BoogieDownGames {
 		
 		public void OnStateInitUpdate()
 		{
-
 			this.RunStart();
 		}
 		
 		public void OnStateInitFixedUpdate()
 		{
-
 		}
 		
 		public void OnStateInitExit()
 		{
-
 		}
 
 		public void OnStateRunEnter()
 		{
-			Time.timeScale = 1f;
+			Time.timeScale = 1.0f;
 			noteSpawnTime = 0.0f;
 			AudioController.Instance.playAtIndex(GameMaster.Instance.CurrentSong);
+			if (m_otherDancersParent != null) {
+				foreach (Transform dancer in m_otherDancersParent.transform) {
+					Animator dancerAC = dancer.gameObject.GetComponentInChildren<Animator>();
+					if (dancerAC != null) {
+						dancerAC.SetTrigger("SatNightFever");
+					}
+				}
+			}
 		}
 
 		public void OnStateRunUpdate()
@@ -155,7 +154,6 @@ namespace BoogieDownGames {
 
 		public void OnStateFixedUpdate()
 		{
-
 		}
 
 		public void OnStateRunExit()
@@ -166,10 +164,8 @@ namespace BoogieDownGames {
 
 		public void RunGame()
 		{
-
 			//Check to see if the song is finished
 			if (AudioController.Instance.DetectEndOfSong () && ! AudioController.Instance.IsPaused) {
-
 				//Check for the number of number of notes
 				var missedPercantage = (m_hitNotes / m_totalNotes) * 100;
 				Debug.LogError ("Missed percentage ==> " + missedPercantage.ToString ());
@@ -181,37 +177,12 @@ namespace BoogieDownGames {
 					GameMaster.Instance.GameFsm.ChangeState (GameStateWonSong.Instance);
 				}
 			} else {
-				if (m_1NoteSlider != null && m_1NoteSlider.value >= 1.0f) {
-					//run the event needed for this
-					m_leftSlider.value += 0.05f;
-					//The event is done reset the gauge
-					m_1NoteSlider.value = 0f;
-					SoundController.Instance.playAtIndex (6);
-				}
-				if (m_2NoteSlider != null && m_2NoteSlider.value >= 1.0f) {
-					//run the event needed for this
-					m_leftSlider.value += 0.08f;
-					//The event is done reset the gauge
-					m_2NoteSlider.value = 0f;
-					SoundController.Instance.playAtIndex (6);
-				}
-				if (m_3NoteSlider != null && m_3NoteSlider.value >= 1.0f) {
-					//run the event needed for this
-					m_leftSlider.value += 0.1f;
-					//The event is done reset the gauge
-					m_3NoteSlider.value = 0f;
-					SoundController.Instance.playAtIndex (6);
+				// Check energy feedback slider
+				if (m_bonusNoteSlider != null && m_bonusNoteSlider.value >= 1.0f) {
+					EnergyMeterFilled();
 				}
 				if (Input.GetKeyDown (KeyCode.P)) {
 					//AudioController.Instance.PauseSong();
-					GameMaster.Instance.GameFsm.ChangeState (GameStateCutScene.Instance);
-				}
-				if (m_leftSlider != null && m_leftSlider.value >= 1.0f) {
-					m_leftSlider.value = 0f;
-					//Create prefab bonus object
-					NotificationCenter.DefaultCenter.PostNotification (this, "spawnPrefab");
-					SoundController.Instance.playAtIndex (6);
-					GameMaster.Instance.GameFsm.ChangeState (GameStateCutScene.Instance);
 				}
 				nextNoteSpawnTime += Time.deltaTime;
 				if (nextNoteSpawnTime >= noteSpawnTime) {
@@ -224,7 +195,6 @@ namespace BoogieDownGames {
 
 		public void OnStateCutSceneUpdate()
 		{
-
 		}
 
 		public void OnStateCutSceneEnter()
@@ -243,7 +213,6 @@ namespace BoogieDownGames {
 
 		public void OnStateCutSceneFixedUpdate()
 		{
-
 		}
 
 		IEnumerator CutSceneDelay(float p_sec)
@@ -253,22 +222,83 @@ namespace BoogieDownGames {
 			GameMaster.Instance.GameFsm.ChangeState(GameStateRun.Instance);
 		}
 
-		public void NoteWasHit(NotificationCenter.Notification p_note)
+		public void EnergyMeterFilled ()
 		{
-			string msg = (string)p_note.data["msg"];
-			Debug.Log(msg);
-			if(msg ==  "LowScore") {
-				m_1NoteSlider.value += 0.05f;
+			// do fun stuff when the energy meter is filled: fireworks, lights, dance moves, then reset the meter
+			if (m_bonusNoteSlider != null) {
+				m_bonusNoteSlider.value = 0.0f;
+			}
+			NotificationCenter.DefaultCenter.PostNotification (this, "spawnPrefab");
+			GameMaster.Instance.GameFsm.ChangeState (GameStateCutScene.Instance);
+		}
+		
+		public void NoteWasSpawned ()
+		{
+			m_totalNotes ++;
+		}
 
-				//send message to increase score
-			} else if(msg ==  "MidScore") {
-				m_2NoteSlider.value += 0.05f;
-				//Send message to increase score
-			} else if(msg ==  "HighScore") {
-				m_3NoteSlider.value += 0.05f;
+		public void NoteWasHit (NoteStates noteState)
+		{
+			float bonusEarned = 0.0f;
+			int scoreEarned = 0;
+
+			m_hitNotes ++;
+			switch (noteState) {
+			case NoteStates.LowScore:
+				scoreEarned = 10;
+				bonusEarned = 0.01f;
+				break;
+			case NoteStates.MidScore:
+				scoreEarned = 25;
+				bonusEarned = 0.03f;
+				break;
+			case NoteStates.HighScore:
+				scoreEarned = 50;
+				bonusEarned = 0.06f;
+				break;
+			default:
+				break;
+			}
+			UpdatePlayerScore (scoreEarned);
+			UpdateBonusMeter (bonusEarned);
+			// TODO: Add logic to change animation trigger based on how well the player is scoring
+			NotificationCenter.DefaultCenter.PostNotification (this, "PlayAnime");
+			PostMessage ("ReadEvent", "event", "Notes");
+		}
+
+		public void NoteWasMissed ()
+		{
+			m_missNotes ++;
+			// TODO: Add logic to change animation trigger based on how bad the player is scoring
+			NotificationCenter.DefaultCenter.PostNotification (this, "PlayAnime");
+			float bonusEarned = -0.02f;
+			UpdateBonusMeter (bonusEarned);
+		}
+
+		public void UpdatePlayerScore (int amount)
+		{
+			m_score += amount;
+			if (m_score < 0) {
+				m_score = 0;
+			}
+			if (m_scoreText != null) {
+				m_scoreText.text = m_score.ToString();
 			}
 		}
 
+		public void UpdateBonusMeter (float amount)
+		{
+			if (m_bonusNoteSlider != null && m_bonusNoteSlider.value < 1.0f) {
+				float newValue = m_bonusNoteSlider.value + amount;
+				if (newValue < 0.0f) {
+					newValue = 0.0f;
+				} else if (newValue > 1.0f) {
+					newValue = 1.0f;
+				}
+				m_bonusNoteSlider.value = newValue;
+			}
+		}
+		
 		public void InitLostSongSequence()
 		{
 			Debug.Log("entering Game state lost song");
@@ -282,32 +312,26 @@ namespace BoogieDownGames {
 
 		public void InitLostSequence()
 		{
-
 		}
 
 		public void RunLostSequence()
 		{
-
 		}
 
 		public void InitWonSequence()
 		{
-
 		}
 
 		public void RunWonSequence()
 		{
-
 		}
 
 		public void InitWonSongSequence()
 		{
-
 		}
 
 		public void RunWonSongSequence()
 		{
-
 		}
 
 		public void Pause()
@@ -320,23 +344,6 @@ namespace BoogieDownGames {
 			GameMaster.Instance.UnPause();
 		}
 
-		//Waits on a message then works on it
-		public void BoogieDownMessage(NotificationCenter.Notification p_notes)
-		{
-			//Get the message
-			string msg = (string)p_notes.data["msg"];
-			if(!string.IsNullOrEmpty(msg)) {
-
-				if(msg == "Missed Note") {
-					m_missNotes++;
-				} else if(msg == "Hit Note") {
-					m_hitNotes++;
-				} else {
-					m_totalNotes++;
-				}
-			}
-		}
-
 		public void RestartLevel()
 		{
 			GameMaster.Instance.GoToScene(2);
@@ -346,6 +353,20 @@ namespace BoogieDownGames {
 		{
 			GameMaster.Instance.GameFsm.ChangeState(GameStateIdle.Instance);
 			GameMaster.Instance.SceneFsm.ChangeState(CtrlStateMenu.Instance);
+		}
+		
+		public void PostMessage(string p_func, string p_message)
+		{
+			Hashtable dat = new Hashtable();
+			dat.Add("eventName", p_message);
+			NotificationCenter.DefaultCenter.PostNotification(this, p_func, dat);
+		}
+		
+		public void PostMessage(string p_func, string p_key, string p_message)
+		{
+			Hashtable dat = new Hashtable();
+			dat.Add(p_key,p_message);
+			NotificationCenter.DefaultCenter.PostNotification(this, p_func, dat);
 		}
 	}
 }

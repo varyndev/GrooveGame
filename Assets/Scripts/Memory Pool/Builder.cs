@@ -36,9 +36,6 @@ namespace BoogieDownGames
 		private bool m_initialState = true;	//The initial state of the object
 		
 		[SerializeField]
-		private bool m_findOrInstatiate = true;
-		
-		[SerializeField]
 		private List<GameObject> m_objBank;
 		
 		enum BuildState { Instantiate, Find, DropIn };

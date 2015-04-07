@@ -17,9 +17,6 @@ namespace BoogieDownGames {
 		private List<string> m_sceneNames; // these strings match the scene id's to represent the scene in the menu display
 		
 		[SerializeField]
-		private int m_initialScene; //Index of the initial sound
-		
-		[SerializeField]
 		private int m_currentIndex;
 
 		public Image sceneIcon;
@@ -36,7 +33,6 @@ namespace BoogieDownGames {
 		
 		void Awake()
 		{
-			m_initialScene = 0;
 			m_currentIndex = 0;
 			SetCurrentScene ();
 		}
