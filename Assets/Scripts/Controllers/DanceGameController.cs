@@ -246,32 +246,37 @@ namespace BoogieDownGames {
 			switch (noteState) {
 			case NoteStates.LowScore:
 				scoreEarned = 10;
-				bonusEarned = 0.01f;
+				bonusEarned = 0.025f;
 				break;
 			case NoteStates.MidScore:
 				scoreEarned = 25;
-				bonusEarned = 0.03f;
+				bonusEarned = 0.05f;
 				break;
 			case NoteStates.HighScore:
 				scoreEarned = 50;
-				bonusEarned = 0.06f;
+				bonusEarned = 0.075f;
 				break;
 			default:
 				break;
 			}
 			UpdatePlayerScore (scoreEarned);
 			UpdateBonusMeter (bonusEarned);
-			// TODO: Add logic to change animation trigger based on how well the player is scoring
-			NotificationCenter.DefaultCenter.PostNotification (this, "PlayAnime");
+			UpdateDanceMove ();
 			PostMessage ("ReadEvent", "event", "Notes");
 		}
 
 		public void NoteWasMissed ()
 		{
+			string animationLevel;
 			m_missNotes ++;
 			// TODO: Add logic to change animation trigger based on how bad the player is scoring
-			NotificationCenter.DefaultCenter.PostNotification (this, "PlayAnime");
-			float bonusEarned = -0.02f;
+			if (m_missNotes > 5) {
+				animationLevel = "PlayLame";
+			} else {
+				animationLevel = "PlayGood";
+			}
+			NotificationCenter.DefaultCenter.PostNotification (this, animationLevel);
+			float bonusEarned = -0.01f;
 			UpdateBonusMeter (bonusEarned);
 		}
 
@@ -297,6 +302,27 @@ namespace BoogieDownGames {
 				}
 				m_bonusNoteSlider.value = newValue;
 			}
+		}
+
+		public void UpdateDanceMove ()
+		{
+			// TODO: Add logic to change animation trigger based on how well the player is scoring
+			string animationLevel = "";
+			float energyLevel = m_bonusNoteSlider.value;
+			if (energyLevel < 0.1f) {
+				if (m_missNotes < 5) {
+					animationLevel = "PlayGood";
+				} else {
+					animationLevel = "PlayLame";
+				}
+			} else if (energyLevel > 0.25f) {
+				animationLevel = "PlayBetter";
+			} else if (energyLevel > 0.5f) {
+				animationLevel = "PlayBest";
+			} else {
+				animationLevel = "PlayGood";
+			}
+			NotificationCenter.DefaultCenter.PostNotification (this, animationLevel);
 		}
 		
 		public void InitLostSongSequence()

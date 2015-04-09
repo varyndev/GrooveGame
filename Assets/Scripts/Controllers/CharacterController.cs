@@ -15,15 +15,20 @@ namespace BoogieDownGames {
 		private int m_currentIndex;
 
 		private bool m_triggerFired;
+		private string m_lastMove;
 
 		void Start()
 		{
 			SetCurrentModel(GameMaster.Instance.CurrentModel);
-			NotificationCenter.DefaultCenter.AddObserver(this,"PlayAnime");
+			NotificationCenter.DefaultCenter.AddObserver(this, "PlayStart");
+			NotificationCenter.DefaultCenter.AddObserver(this, "PlayGood");
+			NotificationCenter.DefaultCenter.AddObserver(this, "PlayBetter");
+			NotificationCenter.DefaultCenter.AddObserver(this, "PlayBest");
+			NotificationCenter.DefaultCenter.AddObserver(this, "PlayLame");
 			NotificationCenter.DefaultCenter.AddObserver(this, "OnStateRunExit");
 			NotificationCenter.DefaultCenter.AddObserver(this, "OnStateRunEnter");
 			m_triggerFired = false;
-			m_anime.SetTrigger("StandIdle");
+			SetAnimationTrigger ("StandIdle");
 		}
 
 		public void OnStateRunExit()
@@ -75,11 +80,74 @@ namespace BoogieDownGames {
 			GameMaster.Instance.CurrentModel = m_currentIndex;
 		}
 
-		public void PlayAnime()
+		public void PlayGood()
 		{
-			if (m_anime != null && ! m_triggerFired) {
-				m_anime.SetTrigger ("SatNightFever");
-				m_triggerFired = true;
+			int move = Random.Range (1, 4);
+			switch (move) {
+			case 1:
+				SetAnimationTrigger ("Russian");
+				break;
+			case 2:
+				SetAnimationTrigger ("SatNightFever");
+				break;
+			case 3:
+			default:
+				SetAnimationTrigger ("Running");
+				break;
+			}
+		}
+		
+		public void PlayBetter()
+		{
+			int move = Random.Range (1, 4);
+			switch (move) {
+			case 1:
+				SetAnimationTrigger ("Running");
+				break;
+			case 2:
+				SetAnimationTrigger ("2000");
+				break;
+			case 3:
+			default:
+				SetAnimationTrigger ("SixStep");
+				break;
+			}
+		}
+		
+		public void PlayBest()
+		{
+			int move = Random.Range (1, 4);
+			switch (move) {
+			case 1:
+				SetAnimationTrigger ("Windmill");
+				break;
+			case 2:
+				SetAnimationTrigger ("2000");
+				break;
+			case 3:
+			default:
+				SetAnimationTrigger ("SixStep");
+				break;
+			}
+		}
+		
+		public void PlayLame()
+		{
+			SetAnimationTrigger ("CheerJump");
+		}
+
+		private void SetAnimationTrigger (string animationTrigger)
+		{
+			if (m_anime != null) {
+				if (animationTrigger == "") {
+					animationTrigger = "StandIdle";
+				}
+				if (animationTrigger != m_lastMove) {
+					Debug.Log ("Setting animation to " + animationTrigger);
+					m_lastMove = animationTrigger;
+					m_anime.SetTrigger (animationTrigger);
+					m_triggerFired = true;
+				}
 			}
 		}
 	}
