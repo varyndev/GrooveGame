@@ -5,6 +5,10 @@ namespace BoogieDownGames {
 
 	public class CharacterController : MonoBehaviour {
 
+		public string[] basicAnimations;
+		public string[] goodAnimations;
+		public string[] bestAnimations;
+
 		[SerializeField]
 		private Animator m_anime;
 
@@ -80,55 +84,34 @@ namespace BoogieDownGames {
 			GameMaster.Instance.CurrentModel = m_currentIndex;
 		}
 
+		private string GetRandomArrayElement (string [] animationArray, string defaultValue) {
+			string result;
+			if (animationArray != null && animationArray.Length > 0) {
+				if (animationArray.Length > 1) {
+					int index = Random.Range (0, animationArray.Length);
+					result = animationArray [index];
+				} else {
+					result = animationArray[0];
+				}
+			} else {
+				result = defaultValue;
+			}
+			return defaultValue;
+		}
+
 		public void PlayGood()
 		{
-			int move = Random.Range (1, 4);
-			switch (move) {
-			case 1:
-				SetAnimationTrigger ("Russian");
-				break;
-			case 2:
-				SetAnimationTrigger ("SatNightFever");
-				break;
-			case 3:
-			default:
-				SetAnimationTrigger ("Running");
-				break;
-			}
+			SetAnimationTrigger (GetRandomArrayElement(basicAnimations, "Demo"));
 		}
 		
 		public void PlayBetter()
 		{
-			int move = Random.Range (1, 4);
-			switch (move) {
-			case 1:
-				SetAnimationTrigger ("Running");
-				break;
-			case 2:
-				SetAnimationTrigger ("2000");
-				break;
-			case 3:
-			default:
-				SetAnimationTrigger ("SixStep");
-				break;
-			}
+			SetAnimationTrigger (GetRandomArrayElement(goodAnimations, "Demo"));
 		}
 		
 		public void PlayBest()
 		{
-			int move = Random.Range (1, 4);
-			switch (move) {
-			case 1:
-				SetAnimationTrigger ("Windmill");
-				break;
-			case 2:
-				SetAnimationTrigger ("2000");
-				break;
-			case 3:
-			default:
-				SetAnimationTrigger ("SixStep");
-				break;
-			}
+			SetAnimationTrigger (GetRandomArrayElement(bestAnimations, "Demo"));
 		}
 		
 		public void PlayLame()
