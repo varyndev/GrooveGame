@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 namespace BoogieDownGames {
 
 	public class CharacterController : MonoBehaviour {
 
+		public string demoAnimation;
 		public string[] basicAnimations;
 		public string[] goodAnimations;
 		public string[] bestAnimations;
@@ -20,9 +22,11 @@ namespace BoogieDownGames {
 
 		private bool m_triggerFired;
 		private string m_lastMove;
+		private Stack<string> m_animationQueue;
 
 		void Start()
 		{
+			m_animationQueue = new Stack<string> ();
 			SetCurrentModel(GameMaster.Instance.CurrentModel);
 			NotificationCenter.DefaultCenter.AddObserver(this, "PlayStart");
 			NotificationCenter.DefaultCenter.AddObserver(this, "PlayGood");
@@ -86,32 +90,36 @@ namespace BoogieDownGames {
 
 		private string GetRandomArrayElement (string [] animationArray, string defaultValue) {
 			string result;
-			if (animationArray != null && animationArray.Length > 0) {
-				if (animationArray.Length > 1) {
-					int index = Random.Range (0, animationArray.Length);
-					result = animationArray [index];
-				} else {
-					result = animationArray[0];
-				}
+			if (demoAnimation != null && demoAnimation.Length > 0) {
+				result = demoAnimation;
 			} else {
-				result = defaultValue;
+				if (animationArray != null && animationArray.Length > 0) {
+					if (animationArray.Length > 1) {
+						int index = Random.Range (0, animationArray.Length);
+						result = animationArray [index];
+					} else {
+						result = animationArray [0];
+					}
+				} else {
+					result = defaultValue;
+				}
 			}
-			return defaultValue;
+			return result;
 		}
 
 		public void PlayGood()
 		{
-			SetAnimationTrigger (GetRandomArrayElement(basicAnimations, "Demo"));
+			SetAnimationTrigger (GetRandomArrayElement(basicAnimations, demoAnimation));
 		}
 		
 		public void PlayBetter()
 		{
-			SetAnimationTrigger (GetRandomArrayElement(goodAnimations, "Demo"));
+			SetAnimationTrigger (GetRandomArrayElement(goodAnimations, demoAnimation));
 		}
 		
 		public void PlayBest()
 		{
-			SetAnimationTrigger (GetRandomArrayElement(bestAnimations, "Demo"));
+			SetAnimationTrigger (GetRandomArrayElement(bestAnimations, demoAnimation));
 		}
 		
 		public void PlayLame()
@@ -127,11 +135,18 @@ namespace BoogieDownGames {
 				}
 				if (animationTrigger != m_lastMove) {
 					Debug.Log ("Setting animation to " + animationTrigger);
+					m_animationQueue.Push (animationTrigger);
 					m_lastMove = animationTrigger;
-					m_anime.SetTrigger (animationTrigger);
-					m_triggerFired = true;
+					TriggerNextAnimation();
 				}
 			}
+		}
+
+		public void TriggerNextAnimation ()
+		{
+			string animationTrigger = m_animationQueue.Pop ();
+			m_anime.SetTrigger (animationTrigger);
+			m_triggerFired = true;
 		}
 	}
 }

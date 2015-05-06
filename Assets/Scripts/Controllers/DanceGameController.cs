@@ -135,7 +135,7 @@ namespace BoogieDownGames {
 		public void OnStateRunEnter()
 		{
 			Time.timeScale = 1.0f;
-			noteSpawnTime = 0.0f;
+			noteSpawnTime = 1.0f;
 			AudioController.Instance.playAtIndex(GameMaster.Instance.CurrentSong);
 			if (m_otherDancersParent != null) {
 				foreach (Transform dancer in m_otherDancersParent.transform) {
@@ -186,9 +186,7 @@ namespace BoogieDownGames {
 				}
 				nextNoteSpawnTime += Time.deltaTime;
 				if (nextNoteSpawnTime >= noteSpawnTime) {
-					nextNoteSpawnTime = 0.0f;
-					noteSpawnTime = 1.0f;
-					NotificationCenter.DefaultCenter.PostNotification (this, "spawnPrefab");
+					SpawnNote ();
 				}
 			}
 		}
@@ -200,7 +198,7 @@ namespace BoogieDownGames {
 		public void OnStateCutSceneEnter()
 		{
 			m_cut.SetActive(true);
-			SoundController.Instance.playAtIndex(7);
+			AudioController.Instance.playAtIndex(7); // What is this???
 			//AudioController.Instance.PauseSong();
 			StartCoroutine(CutSceneDelay(2.05f));
 		}
@@ -232,9 +230,12 @@ namespace BoogieDownGames {
 			GameMaster.Instance.GameFsm.ChangeState (GameStateCutScene.Instance);
 		}
 		
-		public void NoteWasSpawned ()
+		public void SpawnNote ()
 		{
+			nextNoteSpawnTime = 0.0f;
+			NotificationCenter.DefaultCenter.PostNotification (this, "spawnPrefab");
 			m_totalNotes ++;
+			Debug.Log ("Spawning note " + m_totalNotes.ToString ());
 		}
 
 		public void NoteWasHit (NoteStates noteState)
