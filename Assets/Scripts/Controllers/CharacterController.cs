@@ -21,11 +21,22 @@ namespace BoogieDownGames {
 		private string m_lastMove;
 
 		// These are private for now as every dancer Animator Controller must support the exact smae number, this is not configurable
-		private int basicAnimations = 4;
-		private int goodAnimations = 4;
-		private int bestAnimations = 4;
-		private int lameAnimations = 2;
-		private int cheerAnimations = 2;
+		private const int basicAnimations = 4;
+		private const int goodAnimations = 4;
+		private const int bestAnimations = 4;
+		private const int lameAnimations = 2;
+		private const int cheerAnimations = 2;
+		public string[] m_szBasicAnims = new string[basicAnimations];
+		public string[] m_szGoodAnims = new string[goodAnimations];
+		public string[] m_szBestAnims = new string[bestAnimations];
+		public string[] m_szLameAnims = new string[lameAnimations];
+		public string[] m_szCheerAnims = new string[cheerAnimations];
+
+
+		//testing timers
+		float m_fCurrentAnimLength = 0.0f;
+		float m_fCurrentAnimTimer = 0.0f;
+		int m_nState = 0; //0 - Basic, 1- Good, 2- Best, 3- Lame
 
 		void Start()
 		{
@@ -44,6 +55,59 @@ namespace BoogieDownGames {
 			NotificationCenter.DefaultCenter.AddObserver(this, "OnStateRunEnter");
 			m_triggerFired = false;
 			PlayIdle ();
+
+
+		}
+
+		void Update()
+		{
+			if(m_fCurrentAnimLength > 0)
+			{
+				m_fCurrentAnimTimer += Time.deltaTime;
+				if(m_fCurrentAnimTimer >= m_fCurrentAnimLength)
+				{
+					m_fCurrentAnimTimer = 0.0f;
+					switch(m_nState)
+					{
+					case 0:
+					{
+						//Basic
+						int basicTrigger = Random.Range (0, basicAnimations);
+						Debug.Log(basicTrigger);
+						string triggerId = m_szBasicAnims[basicTrigger];
+						SetAnimationTrigger (triggerId);
+					}
+						break;
+					case 1:
+					{
+						//Good
+						int goodTrigger = Random.Range (0, goodAnimations);
+						Debug.Log(goodTrigger);
+						string triggerId = m_szGoodAnims[goodTrigger];
+						SetAnimationTrigger (triggerId);
+					}
+						break;
+					case 2:
+					{
+						//Best
+						int bestTrigger = Random.Range (0, bestAnimations);
+						Debug.Log(bestTrigger);
+						string triggerId = m_szBestAnims[bestTrigger];
+						SetAnimationTrigger (triggerId);
+					}
+						break;
+					case 3:
+					{
+						//Lame
+						int lameTrigger = Random.Range (0, lameAnimations);
+						Debug.Log(lameTrigger);
+						string triggerId = m_szLameAnims[lameTrigger];
+						SetAnimationTrigger (triggerId);
+					}
+						break;
+					}
+				}
+			}
 		}
 
 		public void OnStateRunExit()
@@ -127,36 +191,54 @@ namespace BoogieDownGames {
 
 		public void PlayGood()
 		{
-			int basicTrigger = Random.Range (1, basicAnimations);
-			string triggerId = "Basic" + basicTrigger.ToString ();
-			SetAnimationTrigger (triggerId);
+			if( m_nState != 0)
+			{
+				int basicTrigger = Random.Range (1, basicAnimations);
+				string triggerId = m_szBasicAnims[basicTrigger];
+				//string triggerId = "Basic" + basicTrigger.ToString ();
+				SetAnimationTrigger (triggerId);
+				m_nState = 0;
+			}
 		}
 		
 		public void PlayBetter()
 		{
-			int goodTrigger = Random.Range (1, goodAnimations);
-			string triggerId = "Good" + goodTrigger.ToString ();
-			SetAnimationTrigger (triggerId);
+			if(m_nState != 1)
+			{
+				int goodTrigger = Random.Range (1, goodAnimations);
+				string triggerId = m_szGoodAnims[goodTrigger];
+				//string triggerId = "Good" + goodTrigger.ToString ();
+				SetAnimationTrigger (triggerId);
+				m_nState = 1;
+			}
 		}
 		
 		public void PlayBest()
 		{
-			int bestTrigger = Random.Range (1, bestAnimations);
-			string triggerId = "Best" + bestTrigger.ToString ();
-			SetAnimationTrigger (triggerId);
+			if(m_nState != 2)
+			{
+				int bestTrigger = Random.Range (1, bestAnimations);
+				string triggerId = m_szBestAnims[bestTrigger];
+				//string triggerId = "Best" + bestTrigger.ToString ();
+				SetAnimationTrigger (triggerId);
+				m_nState = 2;
+			}
 		}
 		
 		public void PlayLame()
 		{
 			int lameTrigger = Random.Range (1, lameAnimations);
-			string triggerId = "Lame" + lameTrigger.ToString ();
+			string triggerId = m_szLameAnims[lameTrigger];
+			//string triggerId = "Lame" + lameTrigger.ToString ();
 			SetAnimationTrigger (triggerId);
+			m_nState = 3;
 		}
 
 		public void PlayCheer()
 		{
 			int cheerTrigger = Random.Range (1, cheerAnimations);
-			string triggerId = "Cheer" + cheerTrigger.ToString ();
+			string triggerId = m_szCheerAnims[cheerTrigger];
+			//string triggerId = "Cheer" + cheerTrigger.ToString ();
 			SetAnimationTrigger (triggerId);
 		}
 		
@@ -172,7 +254,7 @@ namespace BoogieDownGames {
 		
 		public void PlayIdle()
 		{
-			SetAnimationTrigger ("Idle");
+			SetAnimationTrigger ("StandIdle");
 		}
 
 		public bool TriggerFired ()
@@ -184,15 +266,24 @@ namespace BoogieDownGames {
 		{
 			if (m_anime != null) {
 				if (animationTrigger == "") {
-					animationTrigger = "Idle";
+					animationTrigger = "StandIdle";
 				}
 				if (animationTrigger != m_lastMove) {
 					Debug.Log ("Setting animation to " + animationTrigger);
 					m_lastMove = animationTrigger;
 					m_anime.SetTrigger (animationTrigger);
 					m_triggerFired = true;
+					SetAnimationLength();
+					m_models[m_currentIndex].transform.position = transform.position;
 				}
 			}
+
+		}
+
+		private void SetAnimationLength()
+		{
+			m_fCurrentAnimLength = m_models[m_currentIndex].GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length;
+			m_fCurrentAnimTimer = 0.0f;
 		}
 	}
 }
