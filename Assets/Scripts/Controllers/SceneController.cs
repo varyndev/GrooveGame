@@ -49,7 +49,7 @@ namespace BoogieDownGames {
 		public void PrevScene ()
 		{
 			m_currentIndex --;
-			if (m_currentIndex <= 0) {
+			if (m_currentIndex < 0) {
 				m_currentIndex = m_scenes.Count -1;
 			}
 			SetCurrentScene ();

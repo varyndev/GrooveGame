@@ -52,6 +52,7 @@ namespace BoogieDownGames {
 			NotificationCenter.DefaultCenter.AddObserver(this, "PlayCurrentSong");
 			NotificationCenter.DefaultCenter.AddObserver(this, "PauseSong");
 			PostSongChange(m_soundClips[m_currentIndex].name, m_soundClips[m_currentIndex].length);
+			PlayCurrentSong();
 		}
 		
 		public bool DetectEndOfSong()
@@ -112,7 +113,7 @@ namespace BoogieDownGames {
 		public void PrevSong()
 		{
 			m_currentIndex --;
-			if (m_currentIndex <= 0) {
+			if (m_currentIndex < 0) {
 				m_currentIndex = m_soundClips.Count - 1;
 			}
 			GetComponent<AudioSource>().clip = m_soundClips[m_currentIndex];
