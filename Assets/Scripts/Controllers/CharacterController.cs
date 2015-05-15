@@ -6,10 +6,7 @@ namespace BoogieDownGames {
 
 	public class CharacterController : MonoBehaviour {
 
-		public string demoAnimation;
-		public string[] basicAnimations;
-		public string[] goodAnimations;
-		public string[] bestAnimations;
+		public bool demoAnimation;
 
 		[SerializeField]
 		private Animator m_anime;
@@ -22,21 +19,31 @@ namespace BoogieDownGames {
 
 		private bool m_triggerFired;
 		private string m_lastMove;
-		private Stack<string> m_animationQueue;
+
+		// These are private for now as every dancer Animator Controller must support the exact smae number, this is not configurable
+		private int basicAnimations = 4;
+		private int goodAnimations = 4;
+		private int bestAnimations = 4;
+		private int lameAnimations = 2;
+		private int cheerAnimations = 2;
 
 		void Start()
 		{
-			m_animationQueue = new Stack<string> ();
 			SetCurrentModel(GameMaster.Instance.CurrentModel);
 			NotificationCenter.DefaultCenter.AddObserver(this, "PlayStart");
 			NotificationCenter.DefaultCenter.AddObserver(this, "PlayGood");
 			NotificationCenter.DefaultCenter.AddObserver(this, "PlayBetter");
 			NotificationCenter.DefaultCenter.AddObserver(this, "PlayBest");
 			NotificationCenter.DefaultCenter.AddObserver(this, "PlayLame");
+			NotificationCenter.DefaultCenter.AddObserver(this, "PlayCheer");
+			NotificationCenter.DefaultCenter.AddObserver(this, "PlayWin");
+			NotificationCenter.DefaultCenter.AddObserver(this, "PlayLose");
+			NotificationCenter.DefaultCenter.AddObserver(this, "PlayIdle");
+			NotificationCenter.DefaultCenter.AddObserver(this, "PlayRandom");
 			NotificationCenter.DefaultCenter.AddObserver(this, "OnStateRunExit");
 			NotificationCenter.DefaultCenter.AddObserver(this, "OnStateRunEnter");
 			m_triggerFired = false;
-			SetAnimationTrigger ("StandIdle");
+			PlayIdle ();
 		}
 
 		public void OnStateRunExit()
@@ -88,43 +95,84 @@ namespace BoogieDownGames {
 			GameMaster.Instance.CurrentModel = m_currentIndex;
 		}
 
-		private string GetRandomArrayElement (string [] animationArray, string defaultValue) {
-			string result;
-			if (demoAnimation != null && demoAnimation.Length > 0) {
-				result = demoAnimation;
-			} else {
-				if (animationArray != null && animationArray.Length > 0) {
-					if (animationArray.Length > 1) {
-						int index = Random.Range (0, animationArray.Length);
-						result = animationArray [index];
-					} else {
-						result = animationArray [0];
-					}
-				} else {
-					result = defaultValue;
-				}
+		public void PlayRandom () {
+
+			// Play one animation at random
+
+			int randomAnimation = Random.Range (1, 7);
+			switch (randomAnimation) {
+			case 1:
+				PlayLame ();
+				break;
+			case 2:
+				PlayGood ();
+				break;
+			case 3:
+				PlayBetter ();
+				break;
+			case 4:
+				PlayBest ();
+				break;
+			case 5:
+				PlayWin ();
+				break;
+			case 6:
+				PlayLose ();
+				break;
+			case 7:
+				PlayCheer ();
+				break;
 			}
-			return result;
 		}
 
 		public void PlayGood()
 		{
-			SetAnimationTrigger (GetRandomArrayElement(basicAnimations, demoAnimation));
+			int basicTrigger = Random.Range (1, basicAnimations);
+			string triggerId = "Basic" + basicTrigger.ToString ();
+			SetAnimationTrigger (triggerId);
 		}
 		
 		public void PlayBetter()
 		{
-			SetAnimationTrigger (GetRandomArrayElement(goodAnimations, demoAnimation));
+			int goodTrigger = Random.Range (1, goodAnimations);
+			string triggerId = "Good" + goodTrigger.ToString ();
+			SetAnimationTrigger (triggerId);
 		}
 		
 		public void PlayBest()
 		{
-			SetAnimationTrigger (GetRandomArrayElement(bestAnimations, demoAnimation));
+			int bestTrigger = Random.Range (1, bestAnimations);
+			string triggerId = "Best" + bestTrigger.ToString ();
+			SetAnimationTrigger (triggerId);
 		}
 		
 		public void PlayLame()
 		{
-			SetAnimationTrigger ("CheerJump");
+			int lameTrigger = Random.Range (1, lameAnimations);
+			string triggerId = "Lame" + lameTrigger.ToString ();
+			SetAnimationTrigger (triggerId);
+		}
+
+		public void PlayCheer()
+		{
+			int cheerTrigger = Random.Range (1, cheerAnimations);
+			string triggerId = "Cheer" + cheerTrigger.ToString ();
+			SetAnimationTrigger (triggerId);
+		}
+		
+		public void PlayWin()
+		{
+			SetAnimationTrigger ("Win");
+		}
+		
+		public void PlayLose()
+		{
+			SetAnimationTrigger ("Lose");
+		}
+		
+		public void PlayIdle()
+		{
+			SetAnimationTrigger ("Idle");
 		}
 
 		public bool TriggerFired ()
@@ -136,22 +184,15 @@ namespace BoogieDownGames {
 		{
 			if (m_anime != null) {
 				if (animationTrigger == "") {
-					animationTrigger = "StandIdle";
+					animationTrigger = "Idle";
 				}
 				if (animationTrigger != m_lastMove) {
 					Debug.Log ("Setting animation to " + animationTrigger);
-					m_animationQueue.Push (animationTrigger);
 					m_lastMove = animationTrigger;
-					TriggerNextAnimation();
+					m_anime.SetTrigger (animationTrigger);
+					m_triggerFired = true;
 				}
 			}
-		}
-
-		public void TriggerNextAnimation ()
-		{
-			string animationTrigger = m_animationQueue.Pop ();
-			m_anime.SetTrigger (animationTrigger);
-			m_triggerFired = true;
 		}
 	}
 }

@@ -137,6 +137,8 @@ namespace BoogieDownGames {
 			Time.timeScale = 1.0f;
 			noteSpawnTime = 1.0f;
 			AudioController.Instance.playAtIndex(GameMaster.Instance.CurrentSong);
+
+			// Begin animating all the other dancer models in the scene
 			if (m_otherDancersParent != null) {
 				foreach (Transform dancer in m_otherDancersParent.transform) {
 					Animator dancerAC = dancer.gameObject.GetComponentInChildren<Animator>();
