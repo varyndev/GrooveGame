@@ -44,7 +44,11 @@ namespace BoogieDownGames {
 		
 		public bool DetectEndOfSong()
 		{
-			return ! GetComponent<AudioSource> ().isPlaying;
+			if(!GetComponent<AudioSource>().isPlaying) {
+				return true;
+			} else {
+				return false;
+			}
 		}
 		
 		void Start()
@@ -112,14 +116,14 @@ namespace BoogieDownGames {
 			}
 			GetComponent<AudioSource>().clip = m_soundClips[m_currentIndex];
 			GetComponent<AudioSource>().Play();
-			PostMessage("SetText", m_soundClips[m_currentIndex].name);
+			PostMessage("SetText",m_soundClips[m_currentIndex].name);
 			GameMaster.Instance.CurrentSong = m_currentIndex;
 		}
 		
 		public void StopSong()
 		{
 			GetComponent<AudioSource>().Stop();
-			// PostMessage("SetText", m_soundClips[m_currentIndex].name + " Stopped");
+			PostMessage("SetText",m_soundClips[m_currentIndex].name + " Stopped");
 		}
 		
 		public void PauseSong()
@@ -134,12 +138,6 @@ namespace BoogieDownGames {
 			m_isPaused = false;
 		}
 		
-		public void PlayCurrent ()
-		{
-			GetComponent<AudioSource>().PlayOneShot(m_soundClips[m_currentIndex]);
-			//PostMessage("SetText",m_soundClips[m_currentIndex].name);
-		}
-
 		public void PostMessage(string p_func, string p_message)
 		{
 			Hashtable dat = new Hashtable();
