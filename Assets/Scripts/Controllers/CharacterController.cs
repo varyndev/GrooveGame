@@ -12,7 +12,7 @@ namespace BoogieDownGames {
 		private Animator m_anime;
 
 		[SerializeField]
-		private GameObject [] m_models;
+		private GameObject [] m_models = null;
 
 		[SerializeField]
 		private int m_currentIndex;
@@ -26,11 +26,6 @@ namespace BoogieDownGames {
 		private const int bestAnimations = 4;
 		private const int lameAnimations = 2;
 		private const int cheerAnimations = 2;
-		public string[] m_szBasicAnims = new string[basicAnimations];
-		public string[] m_szGoodAnims = new string[goodAnimations];
-		public string[] m_szBestAnims = new string[bestAnimations];
-		public string[] m_szLameAnims = new string[lameAnimations];
-		public string[] m_szCheerAnims = new string[cheerAnimations];
 
 
 		//testing timers
@@ -73,8 +68,7 @@ namespace BoogieDownGames {
 					{
 						//Basic
 						int basicTrigger = Random.Range (0, basicAnimations);
-						Debug.Log(basicTrigger);
-						string triggerId = m_szBasicAnims[basicTrigger];
+						string triggerId = "Basic" + basicTrigger.ToString ();
 						SetAnimationTrigger (triggerId);
 					}
 						break;
@@ -82,8 +76,7 @@ namespace BoogieDownGames {
 					{
 						//Good
 						int goodTrigger = Random.Range (0, goodAnimations);
-						Debug.Log(goodTrigger);
-						string triggerId = m_szGoodAnims[goodTrigger];
+						string triggerId = "Good" + goodTrigger.ToString ();
 						SetAnimationTrigger (triggerId);
 					}
 						break;
@@ -91,8 +84,7 @@ namespace BoogieDownGames {
 					{
 						//Best
 						int bestTrigger = Random.Range (0, bestAnimations);
-						Debug.Log(bestTrigger);
-						string triggerId = m_szBestAnims[bestTrigger];
+						string triggerId = "Best" + bestTrigger.ToString ();
 						SetAnimationTrigger (triggerId);
 					}
 						break;
@@ -100,8 +92,7 @@ namespace BoogieDownGames {
 					{
 						//Lame
 						int lameTrigger = Random.Range (0, lameAnimations);
-						Debug.Log(lameTrigger);
-						string triggerId = m_szLameAnims[lameTrigger];
+						string triggerId = "Lame" + lameTrigger.ToString ();
 						SetAnimationTrigger (triggerId);
 					}
 						break;
@@ -194,8 +185,7 @@ namespace BoogieDownGames {
 			if( m_nState != 0)
 			{
 				int basicTrigger = Random.Range (1, basicAnimations);
-				string triggerId = m_szBasicAnims[basicTrigger];
-				//string triggerId = "Basic" + basicTrigger.ToString ();
+				string triggerId = "Basic" + basicTrigger.ToString ();
 				SetAnimationTrigger (triggerId);
 				m_nState = 0;
 			}
@@ -206,8 +196,7 @@ namespace BoogieDownGames {
 			if(m_nState != 1)
 			{
 				int goodTrigger = Random.Range (1, goodAnimations);
-				string triggerId = m_szGoodAnims[goodTrigger];
-				//string triggerId = "Good" + goodTrigger.ToString ();
+				string triggerId = "Good" + goodTrigger.ToString ();
 				SetAnimationTrigger (triggerId);
 				m_nState = 1;
 			}
@@ -218,8 +207,7 @@ namespace BoogieDownGames {
 			if(m_nState != 2)
 			{
 				int bestTrigger = Random.Range (1, bestAnimations);
-				string triggerId = m_szBestAnims[bestTrigger];
-				//string triggerId = "Best" + bestTrigger.ToString ();
+				string triggerId = "Best" + bestTrigger.ToString ();
 				SetAnimationTrigger (triggerId);
 				m_nState = 2;
 			}
@@ -228,8 +216,8 @@ namespace BoogieDownGames {
 		public void PlayLame()
 		{
 			int lameTrigger = Random.Range (1, lameAnimations);
-			string triggerId = m_szLameAnims[lameTrigger];
-			//string triggerId = "Lame" + lameTrigger.ToString ();
+			//string triggerId = m_szLameAnims[lameTrigger];
+			string triggerId = "Lame" + lameTrigger.ToString ();
 			SetAnimationTrigger (triggerId);
 			m_nState = 3;
 		}
@@ -237,8 +225,7 @@ namespace BoogieDownGames {
 		public void PlayCheer()
 		{
 			int cheerTrigger = Random.Range (1, cheerAnimations);
-			string triggerId = m_szCheerAnims[cheerTrigger];
-			//string triggerId = "Cheer" + cheerTrigger.ToString ();
+			string triggerId = "Cheer" + cheerTrigger.ToString ();
 			SetAnimationTrigger (triggerId);
 		}
 		
