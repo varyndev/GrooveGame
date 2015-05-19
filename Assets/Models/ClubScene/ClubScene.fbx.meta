@@ -1,0 +1,464 @@
+fileFormatVersion: 2
+guid: 7117ccd8d195f5e45965a5e5e846302d
+timeCreated: 1432069993
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Back_Curtians
+    100002: BarBack
+    100004: BarBottom
+    100006: BarRopes
+    100008: BarRopes1
+    100010: BarStool
+    100012: BarStool1
+    100014: BarStool15
+    100016: BarStool15 1
+    100018: BarStool15 2
+    100020: BarStool15 3
+    100022: BarStool15 4
+    100024: BarStool15 5
+    100026: BarStool16
+    100028: BarStool16 1
+    100030: BarStool16 2
+    100032: BarStool16 3
+    100034: BarStool16 4
+    100036: BarStool16 5
+    100038: BarStool2
+    100040: BarStool3
+    100042: BarStool4
+    100044: BarStool5
+    100046: BarStool6
+    100048: BarStool7
+    100050: BarStool8
+    100052: BarTable
+    100054: BarTable1
+    100056: BarTable2
+    100058: BarTable2 1
+    100060: BarTable2 2
+    100062: BarTable2 3
+    100064: BarTop
+    100066: CeilingTrim
+    100068: //RootNode
+    100070: DanceCeiling
+    100072: DanceClubDoors
+    100074: DanceClubDoors 1
+    100076: DanceClubDoors1
+    100078: DanceClubDoors1 1
+    100080: DanceFloor
+    100082: DanceFloorTrim
+    100084: DoorLights
+    100086: DoorLights1
+    100088: FloorStepDown
+    100090: FloorStepUp
+    100092: Front_Curtians
+    100094: group1
+    100096: group10
+    100098: group11
+    100100: group12
+    100102: group13
+    100104: group14
+    100106: group15
+    100108: group2
+    100110: group3
+    100112: group4
+    100114: group5
+    100116: group6
+    100118: Lamp
+    100120: Lamp1
+    100122: Lamp2
+    100124: Lamp3
+    100126: Lamp4
+    100128: Lamp5
+    100130: Lamp6
+    100132: Lamp7
+    100134: Lamp8
+    100136: LowerCeiling
+    100138: polySurface28
+    100140: Scaffolding
+    100142: ScaffoldingSpeakers
+    100144: Speakers
+    100146: Speakers1
+    100148: Speakers3
+    100150: Speakers4
+    100152: Stage
+    100154: Stage_Frame
+    100156: Stand_Speakers
+    100158: SupportPillar
+    100160: SupportPillar1
+    100162: SupportPillar2
+    100164: SupportPillar3
+    100166: SupportPillar4
+    100168: SupportPillar6
+    100170: TableLamps
+    100172: UpperCeilingTrim
+    100174: Walls
+    400000: Back_Curtians
+    400002: BarBack
+    400004: BarBottom
+    400006: BarRopes
+    400008: BarRopes1
+    400010: BarStool
+    400012: BarStool1
+    400014: BarStool15
+    400016: BarStool15 1
+    400018: BarStool15 2
+    400020: BarStool15 3
+    400022: BarStool15 4
+    400024: BarStool15 5
+    400026: BarStool16
+    400028: BarStool16 1
+    400030: BarStool16 2
+    400032: BarStool16 3
+    400034: BarStool16 4
+    400036: BarStool16 5
+    400038: BarStool2
+    400040: BarStool3
+    400042: BarStool4
+    400044: BarStool5
+    400046: BarStool6
+    400048: BarStool7
+    400050: BarStool8
+    400052: BarTable
+    400054: BarTable1
+    400056: BarTable2
+    400058: BarTable2 1
+    400060: BarTable2 2
+    400062: BarTable2 3
+    400064: BarTop
+    400066: CeilingTrim
+    400068: //RootNode
+    400070: DanceCeiling
+    400072: DanceClubDoors
+    400074: DanceClubDoors 1
+    400076: DanceClubDoors1
+    400078: DanceClubDoors1 1
+    400080: DanceFloor
+    400082: DanceFloorTrim
+    400084: DoorLights
+    400086: DoorLights1
+    400088: FloorStepDown
+    400090: FloorStepUp
+    400092: Front_Curtians
+    400094: group1
+    400096: group10
+    400098: group11
+    400100: group12
+    400102: group13
+    400104: group14
+    400106: group15
+    400108: group2
+    400110: group3
+    400112: group4
+    400114: group5
+    400116: group6
+    400118: Lamp
+    400120: Lamp1
+    400122: Lamp2
+    400124: Lamp3
+    400126: Lamp4
+    400128: Lamp5
+    400130: Lamp6
+    400132: Lamp7
+    400134: Lamp8
+    400136: LowerCeiling
+    400138: polySurface28
+    400140: Scaffolding
+    400142: ScaffoldingSpeakers
+    400144: Speakers
+    400146: Speakers1
+    400148: Speakers3
+    400150: Speakers4
+    400152: Stage
+    400154: Stage_Frame
+    400156: Stand_Speakers
+    400158: SupportPillar
+    400160: SupportPillar1
+    400162: SupportPillar2
+    400164: SupportPillar3
+    400166: SupportPillar4
+    400168: SupportPillar6
+    400170: TableLamps
+    400172: UpperCeilingTrim
+    400174: Walls
+    2300000: Back_Curtians
+    2300002: BarBack
+    2300004: BarBottom
+    2300006: BarRopes
+    2300008: BarRopes1
+    2300010: BarStool
+    2300012: BarStool1
+    2300014: BarStool15
+    2300016: BarStool15 1
+    2300018: BarStool15 2
+    2300020: BarStool15 3
+    2300022: BarStool15 4
+    2300024: BarStool15 5
+    2300026: BarStool16
+    2300028: BarStool16 1
+    2300030: BarStool16 2
+    2300032: BarStool16 3
+    2300034: BarStool16 4
+    2300036: BarStool16 5
+    2300038: BarStool2
+    2300040: BarStool3
+    2300042: BarStool4
+    2300044: BarStool5
+    2300046: BarStool6
+    2300048: BarStool7
+    2300050: BarStool8
+    2300052: BarTable
+    2300054: BarTable1
+    2300056: BarTable2
+    2300058: BarTable2 1
+    2300060: BarTable2 2
+    2300062: BarTable2 3
+    2300064: BarTop
+    2300066: CeilingTrim
+    2300068: DanceCeiling
+    2300070: DanceClubDoors
+    2300072: DanceClubDoors 1
+    2300074: DanceClubDoors1
+    2300076: DanceClubDoors1 1
+    2300078: DanceFloor
+    2300080: DanceFloorTrim
+    2300082: DoorLights
+    2300084: DoorLights1
+    2300086: FloorStepDown
+    2300088: FloorStepUp
+    2300090: Front_Curtians
+    2300092: Lamp
+    2300094: Lamp1
+    2300096: Lamp2
+    2300098: Lamp3
+    2300100: Lamp4
+    2300102: Lamp5
+    2300104: Lamp6
+    2300106: Lamp7
+    2300108: Lamp8
+    2300110: LowerCeiling
+    2300112: Scaffolding
+    2300114: ScaffoldingSpeakers
+    2300116: Speakers
+    2300118: Speakers1
+    2300120: Speakers3
+    2300122: Speakers4
+    2300124: Stage
+    2300126: Stage_Frame
+    2300128: Stand_Speakers
+    2300130: SupportPillar
+    2300132: SupportPillar1
+    2300134: SupportPillar2
+    2300136: SupportPillar3
+    2300138: SupportPillar4
+    2300140: SupportPillar6
+    2300142: TableLamps
+    2300144: UpperCeilingTrim
+    2300146: Walls
+    3300000: Back_Curtians
+    3300002: BarBack
+    3300004: BarBottom
+    3300006: BarRopes
+    3300008: BarRopes1
+    3300010: BarStool
+    3300012: BarStool1
+    3300014: BarStool15
+    3300016: BarStool15 1
+    3300018: BarStool15 2
+    3300020: BarStool15 3
+    3300022: BarStool15 4
+    3300024: BarStool15 5
+    3300026: BarStool16
+    3300028: BarStool16 1
+    3300030: BarStool16 2
+    3300032: BarStool16 3
+    3300034: BarStool16 4
+    3300036: BarStool16 5
+    3300038: BarStool2
+    3300040: BarStool3
+    3300042: BarStool4
+    3300044: BarStool5
+    3300046: BarStool6
+    3300048: BarStool7
+    3300050: BarStool8
+    3300052: BarTable
+    3300054: BarTable1
+    3300056: BarTable2
+    3300058: BarTable2 1
+    3300060: BarTable2 2
+    3300062: BarTable2 3
+    3300064: BarTop
+    3300066: CeilingTrim
+    3300068: DanceCeiling
+    3300070: DanceClubDoors
+    3300072: DanceClubDoors 1
+    3300074: DanceClubDoors1
+    3300076: DanceClubDoors1 1
+    3300078: DanceFloor
+    3300080: DanceFloorTrim
+    3300082: DoorLights
+    3300084: DoorLights1
+    3300086: FloorStepDown
+    3300088: FloorStepUp
+    3300090: Front_Curtians
+    3300092: Lamp
+    3300094: Lamp1
+    3300096: Lamp2
+    3300098: Lamp3
+    3300100: Lamp4
+    3300102: Lamp5
+    3300104: Lamp6
+    3300106: Lamp7
+    3300108: Lamp8
+    3300110: LowerCeiling
+    3300112: Scaffolding
+    3300114: ScaffoldingSpeakers
+    3300116: Speakers
+    3300118: Speakers1
+    3300120: Speakers3
+    3300122: Speakers4
+    3300124: Stage
+    3300126: Stage_Frame
+    3300128: Stand_Speakers
+    3300130: SupportPillar
+    3300132: SupportPillar1
+    3300134: SupportPillar2
+    3300136: SupportPillar3
+    3300138: SupportPillar4
+    3300140: SupportPillar6
+    3300142: TableLamps
+    3300144: UpperCeilingTrim
+    3300146: Walls
+    4300000: DanceFloor
+    4300002: Walls
+    4300004: DanceCeiling
+    4300006: FloorStepUp
+    4300008: CeilingTrim
+    4300010: UpperCeilingTrim
+    4300012: LowerCeiling
+    4300014: SupportPillar
+    4300016: SupportPillar1
+    4300018: SupportPillar2
+    4300020: SupportPillar3
+    4300022: SupportPillar4
+    4300024: SupportPillar6
+    4300026: FloorStepDown
+    4300028: DanceFloorTrim
+    4300030: Lamp
+    4300032: BarStool
+    4300034: BarTable
+    4300036: BarStool1
+    4300038: BarStool2
+    4300040: BarStool3
+    4300042: BarStool4
+    4300044: BarStool5
+    4300046: BarStool6
+    4300048: BarStool7
+    4300050: BarStool8
+    4300052: Front_Curtians
+    4300054: Back_Curtians
+    4300056: Stand_Speakers
+    4300058: Speakers1
+    4300060: Speakers
+    4300062: Speakers3
+    4300064: Speakers4
+    4300066: ScaffoldingSpeakers
+    4300068: Stage_Frame
+    4300070: BarRopes
+    4300072: BarRopes1
+    4300074: Lamp1
+    4300076: Lamp2
+    4300078: Lamp3
+    4300080: Lamp4
+    4300082: Lamp5
+    4300084: Lamp6
+    4300086: Lamp7
+    4300088: Lamp8
+    4300090: BarTable1
+    4300092: BarTable2
+    4300094: BarTable2
+    4300096: BarTable2
+    4300098: BarTable2
+    4300100: DoorLights1
+    4300102: DoorLights
+    4300104: BarBack
+    4300106: BarBottom
+    4300108: BarTop
+    4300110: Stage
+    4300112: Scaffolding
+    4300114: DanceClubDoors1
+    4300116: DanceClubDoors
+    4300118: DanceClubDoors1
+    4300120: DanceClubDoors
+    4300122: TableLamps
+    4300124: BarStool16
+    4300126: BarStool15
+    4300128: BarStool16
+    4300130: BarStool15
+    4300132: BarStool16
+    4300134: BarStool15
+    4300136: BarStool16
+    4300138: BarStool15
+    4300140: BarStool16
+    4300142: BarStool15
+    4300144: BarStool16
+    4300146: BarStool15
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
