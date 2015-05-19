@@ -17,7 +17,13 @@ namespace BoogieDownGames {
 		[SerializeField]
 		private int m_currentScene;
 
+		[SerializeField]
+		private RuntimeAnimatorController m_defaultAnimatorController; // Use this if no other AC is set for the selected song
+
+		[SerializeField]
+		private RuntimeAnimatorController[] m_songAnimatorControllers; // This MUST MATCH the song or the default should be used.
 		
+
 		#region PROPERTIES
 		
 		public int CurrentSong
@@ -70,7 +76,6 @@ namespace BoogieDownGames {
 			NotificationCenter.DefaultCenter.AddObserver(this, "ChangeStateToRun");
 		}
 		
-		// Update is called once per frame
 		public virtual void Update () 
 		{
 			m_sceneFSM.runOnUpdate();
@@ -107,7 +112,7 @@ namespace BoogieDownGames {
 
 		public virtual void ShowMenu ()
 		{
-			// this is called when teh Menu button is tapped
+			// this is called when the Menu button is tapped
 			Application.LoadLevel(1);
 		}
 		
@@ -133,6 +138,11 @@ namespace BoogieDownGames {
 		public void PostMessage(string p_message)
 		{
 			NotificationCenter.DefaultCenter.PostNotification(this,p_message);
+		}
+
+		public RuntimeAnimatorController GetAnimatorControllerForCurrentSong () {
+			// TODO: Lookup song id in m_songAnimatorControllers return default if not found.
+			return m_defaultAnimatorController;
 		}
 	}
 }
