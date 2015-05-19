@@ -25,8 +25,6 @@ namespace Vuforia
         private ScreenOrientation mJavaScreenOrientation = ScreenOrientation.Unknown;
         private int mFramesSinceLastOrientationReset;
         private int mFramesSinceLastJavaOrientationCheck;
-        private int mScreenWidth = 0;
-        private int mScreenHeight = 0;
 
     // AndroidJava resources need to be #if'd in order to allow AoT compilation on iOS
     #if UNITY_ANDROID
@@ -82,13 +80,6 @@ namespace Vuforia
                     ResetUnityScreenOrientation();
 
                 CheckOrientation();
-
-                if (mScreenWidth != Screen.width || mScreenHeight != Screen.height)
-                {
-                    mScreenWidth = Screen.width;
-                    mScreenHeight = Screen.height;
-                    SurfaceUtilities.OnSurfaceChanged(mScreenWidth, mScreenHeight);
-                }
             }
 
             mFramesSinceLastOrientationReset++;
@@ -187,10 +178,6 @@ namespace Vuforia
 
             ResetUnityScreenOrientation();
             CheckOrientation();
-
-            mScreenWidth = Screen.width;
-            mScreenHeight = Screen.height;
-            SurfaceUtilities.OnSurfaceChanged(mScreenWidth, mScreenHeight);
         }
 
         private void ResetUnityScreenOrientation()

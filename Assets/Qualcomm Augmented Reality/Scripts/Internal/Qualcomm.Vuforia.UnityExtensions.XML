@@ -4,6 +4,19 @@
         <name>Qualcomm.Vuforia.UnityExtensions</name>
     </assembly>
     <members>
+        <member name="T:Vuforia.EyewearComponentFactory">
+            <summary>
+            Singleton implementation for a factory class used to generate MonoBehaviours whole implementation type is unknown.
+            If no external IEyewearComponentFactory implementation is registered, an internal null implementation is used
+            </summary>
+        </member>
+        <member name="T:Vuforia.IEyewearComponentFactory">
+            <summary>
+            This interface is used to allow the generation of MonoBehaviours that implement the
+            abstract base behaviour classes from scripts that do not know about them.
+            The interface is implemented in a not precompiled class and registers itself at EyewearComponentFactory.Instance
+            </summary>
+        </member>
         <member name="T:Vuforia.FactorySetter">
             <summary>
             Attribute used to mark up a function that initialized a factory.
@@ -126,6 +139,12 @@
             This property is used for configuring the size of video background mesh.
             </summary>
         </member>
+        <member name="P:Vuforia.BackgroundPlaneAbstractBehaviour.DefaultRotationTowardsCamera">
+            <summary>
+            The default rotation that is applied to the Background Plane to align it towards the camera, before applying any
+            orientation or mirroring rotations on top of that.
+            </summary>
+        </member>
         <member name="T:Vuforia.IEditorTrackableBehaviour">
             <summary>
             The editor interface for TrackableBehaviours
@@ -152,6 +171,14 @@
         <member name="M:Vuforia.IOSCamRecoveringHelper.SetSuccessfullyRecovered">
             <summary>
             Called once a new QCAR frame was processed to reset the logic.
+            </summary>
+        </member>
+        <member name="T:Vuforia.UnityCameraExtensions">
+            <summary>
+            Extension methods for the Unity Camera class.
+            This works around an API change in Unity 5 where Camera.pixelHeight returns an int instead of a float.
+            Because the Unity extension is shipped as a precompiled library, we can only link against either the float version or 
+            the int version. To work with both Unity 4.6 and 5.0, we use these extension methods instead.
             </summary>
         </member>
         <member name="T:Vuforia.ObjectTarget">
@@ -738,7 +765,7 @@
             This property is used to enable or disable mattes in the scene
             </summary>
         </member>
-        <member name="M:Vuforia.HideExcessAreaAbstractBehaviour.CreatePlane(UnityEngine.GameObject,System.String,UnityEngine.Vector3,UnityEngine.Quaternion,UnityEngine.Vector3,System.Int32)">
+        <member name="M:Vuforia.HideExcessAreaAbstractBehaviour.CreateQuad(UnityEngine.GameObject,System.String,UnityEngine.Vector3,UnityEngine.Quaternion,UnityEngine.Vector3,System.Int32)">
             <summary>
             This function is used to create a named plane for a given parent with specified transformation and layer id
             </summary>
@@ -1074,6 +1101,8 @@
             Class that provides functionality specific to AR on Eyewear devices.
             </summary>
             <remarks>
+            <br/><b>This API is only supported in the %Vuforia SDK for Digital %Eyewear.</b><br/><br/>
+            
             Digital Eyewear integration provides methods to detect and control an 
             Eyewear device and to retrieve calibration data needed to correctly
             register augmentations with the real world.
@@ -1107,6 +1136,17 @@
             Returns true if the Eyewear device is in stereo mode
             </summary>
         </member>
+        <member name="M:Vuforia.InternalEyewear.IsStereoGLOnly">
+            <summary>
+            Returns true if the Eyewear device stereo mode is only for OpenGL content.
+            </summary>
+            <remarks>
+            Some Eyewear devices don't support stereo for 2D (typically Android widget)
+            content. On these devices 2D content is rendered to each eye automatically
+            without the need for the app to create a split screen view. On such devices
+            this method will return true.
+            </remarks>
+        </member>
         <member name="M:Vuforia.InternalEyewear.SetStereo(System.Boolean)">
             <summary>
             Switch between 2D (mono) and 3D (stereo) modes on eyewear device.
@@ -1130,6 +1170,12 @@
             </summary>
             <remarks>Calibration profiles are only relevant to see-through Eyewear devices.</remarks>
             <returns>Returns an instance of <see cref="T:Vuforia.InternalEyewearCalibrationProfileManager"/></returns>
+        </member>
+        <member name="M:Vuforia.InternalEyewear.getCalibrator">
+            <summary>
+            Get the user calibrator.
+            </summary>
+            <returns>Returns an instance of <see cref="T:Vuforia.InternalEyewearUserCalibrator"/></returns>
         </member>
         <member name="M:Vuforia.InternalEyewear.GetProjectionMatrix(Vuforia.InternalEyewear.EyeID,UnityEngine.ScreenOrientation)">
             <summary>
@@ -1156,11 +1202,32 @@
             Defines which eye the operation is working on
             </summary>
         </member>
-        <member name="F:Vuforia.InternalEyewear.EyeID.EYEID_LEFT">
+        <member name="F:Vuforia.InternalEyewear.EyeID.EYEID_MONOCULAR">
             <summary>Identifier for a monocular (single) eye</summary>
         </member>
-        <member name="F:Vuforia.InternalEyewear.EyeID.EYEID_RIGHT">
+        <member name="F:Vuforia.InternalEyewear.EyeID.EYEID_LEFT">
             <summary>Identifier for the left eye</summary>
+        </member>
+        <member name="F:Vuforia.InternalEyewear.EyeID.EYEID_RIGHT">
+            <summary> Identifier for the right eye</summary>
+        </member>
+        <member name="T:Vuforia.InternalEyewear.EyewearCalibrationReading">
+            <summary>Structure for an eyewear calibration reading to be used with EyewearUserCalibration</summary>
+        </member>
+        <member name="F:Vuforia.InternalEyewear.EyewearCalibrationReading.pose">
+            <summary>Pose matrix from a TrackableResult</summary>
+        </member>
+        <member name="F:Vuforia.InternalEyewear.EyewearCalibrationReading.scale">
+            <summary>A scale in the range 0.0 - 1.0 that should specify the amount of rendering surface height the calibration shape fills</summary>
+        </member>
+        <member name="F:Vuforia.InternalEyewear.EyewearCalibrationReading.centerX">
+            <summary>A position in the range -1.0 to 1.0 that specifies the horizontal center of the calibration shape on the rendering surface</summary>
+        </member>
+        <member name="F:Vuforia.InternalEyewear.EyewearCalibrationReading.centerY">
+            <summary>A position in the range -1.0 to 1.0 that specifies the vertical center of the calibration shape on the rendering surface</summary>
+        </member>
+        <member name="F:Vuforia.InternalEyewear.EyewearCalibrationReading.unused">
+            <summary>Padding bytes for 64bit compatibility</summary>
         </member>
         <member name="T:Vuforia.SmartTerrainInitializationInfo">
             <summary>
@@ -2206,11 +2273,6 @@
             The frame index of the current QCAR state
             </summary>
         </member>
-        <member name="F:Vuforia.QCARManagerImpl.mIsCachedSupportsRenderCallbacks">
-            <summary>
-            Support for Native Rendering Callback (Unity version 4.5 and above)
-            </summary>
-        </member>
         <member name="M:Vuforia.QCARManagerImpl.Update(UnityEngine.ScreenOrientation)">
             <summary>
             Process the camera image and tracking data for this frame.
@@ -2255,10 +2317,13 @@
             and size).
             </summary>
         </member>
-        <member name="M:Vuforia.QCARRenderer.SetVideoBackgroundTexture(UnityEngine.Texture2D)">
+        <member name="M:Vuforia.QCARRenderer.SetVideoBackgroundTexture(UnityEngine.Texture2D,System.Int32)">
             <summary>
-            Tells QCAR where the texture id to use for updating video
-            background data
+            Tells QCAR where the texture id to use for updating video background data.
+            The native texture ID needs to be passed in as a separate parameter.
+            When using multihreaded rendering, in particular when also using the Oculus SDK
+            on the GearVR, this texture ID needs to be resolved in an Awake method
+            (texture.GetNativeTextureID())
             </summary>
         </member>
         <member name="M:Vuforia.QCARRenderer.IsVideoBackgroundInfoAvailable">
@@ -2281,6 +2346,11 @@
         <member name="P:Vuforia.QCARRenderer.Instance">
             <summary>
             Returns an instance of a QCARRenderer (thread safe)
+            </summary>
+        </member>
+        <member name="P:Vuforia.QCARRenderer.InternalInstance">
+            <summary>
+            Returns an internal instance of a QCARRendererImpl
             </summary>
         </member>
         <member name="P:Vuforia.QCARRenderer.VideoBackgroundTexture">
@@ -2317,6 +2387,12 @@
             Turns pausing on or off.
             Pausing will freeze the camera video and all trackables will remain in their current state.
             Autorotation will be disabled during video background freezing.
+            </summary>
+        </member>
+        <member name="M:Vuforia.QCARRendererImpl.UnityRenderEvent(Vuforia.QCARRendererImpl.RenderEvent)">
+            <summary>
+            invokes a native rendering event using Unity rendering callback mechanism
+            if MT rendering is enabled, this callback will be invoked from the rendering thread.
             </summary>
         </member>
         <member name="M:Vuforia.QCARUnityImpl.Deinit">
@@ -2684,7 +2760,7 @@
             <summary>
             Update currently tracked words
             </summary>
-            <param name="arCamera">Word trackables will be positioned relative to this camera</param>
+            <param name="arCameraTransform">Word trackables will be positioned relative to this transform</param>
             <param name="newWordData">words that have been newly detected in the last frame</param>
             <param name="wordResults">all words that are currently tracked</param>
         </member>
@@ -4151,6 +4227,15 @@
             Returns false if the hint is unknown or deprecated.
             </summary>
         </member>
+        <member name="M:Vuforia.QCARUnity.SetHint(System.Int32,System.Int32)">
+            <summary>
+            Sets a hint for the QCAR SDK
+            Hints help the SDK to understand the developer's needs.
+            However, depending on the device or SDK version the hints
+            might not be taken into consideration.
+            Returns false if the hint is unknown or deprecated.
+            </summary>
+        </member>
         <member name="M:Vuforia.QCARUnity.GetProjectionGL(System.Single,System.Single,UnityEngine.ScreenOrientation)">
             <summary>
             Returns the QCAR projection matrix
@@ -4164,6 +4249,12 @@
         <member name="M:Vuforia.QCARUnity.OnResume">
             <summary>
             Executes AR-specific tasks upon resuming the Unity application
+            </summary>
+        </member>
+        <member name="M:Vuforia.QCARUnity.SetRendererDirty">
+            <summary>
+            Raises a flag that the rendering functionality needs to be reconfigured
+            e.g. when the projection matrix of the camera was changed externally.
             </summary>
         </member>
         <member name="T:Vuforia.QCARUnity.InitError">
@@ -4187,6 +4278,12 @@
             <summary>
             The QCARBehaviour class handles tracking and triggers native video
             background rendering. The class updates all Trackables in the scene.
+            </summary>
+        </member>
+        <member name="M:Vuforia.QCARAbstractBehaviour.SetAutoAdjustStereoCameraSkewing(System.Boolean)">
+            <summary>
+            This method is used to toggle the automatic skewing setting for the stereo camera projections
+            to align the video background with the closest trackable in view. 
             </summary>
         </member>
         <member name="M:Vuforia.QCARAbstractBehaviour.SetSceneScaleFactor(System.Single)">
@@ -4329,6 +4426,16 @@
             deinits this tracker in the process.
             </summary>
         </member>
+        <member name="M:Vuforia.QCARAbstractBehaviour.RegisterRenderOnUpdateCallback(System.Action)">
+            <summary>
+            Register for a callback that is invoked if after QCARManager.Update has returned and it's a good time to render.
+            </summary>
+        </member>
+        <member name="M:Vuforia.QCARAbstractBehaviour.UnregisterRenderOnUpdateCallback(System.Action)">
+            <summary>
+            Unregister a previously registered callback.
+            </summary>
+        </member>
         <member name="M:Vuforia.QCARAbstractBehaviour.SetUnityPlayerImplementation(Vuforia.IUnityPlayer)">
             <summary>
             Sets the internal UnityPlayer implementation
@@ -4346,9 +4453,36 @@
             return false if the trackers or the camera can't be stopped or deinitialized
             </summary>
         </member>
+        <member name="M:Vuforia.QCARAbstractBehaviour.UpdateStereoDepth">
+            <summary>
+            sets a new stereo depth for the video background behaviours
+            </summary>
+        </member>
+        <member name="M:Vuforia.QCARAbstractBehaviour.ProjectionMatricesUpdated">
+            <summary>
+            Notifies the VideoBackgroundAbstractBehaviours that the project matrix has been 
+            updated and needs to be skewed again.
+            </summary>
+        </member>
+        <member name="M:Vuforia.QCARAbstractBehaviour.ApplyMatrix(UnityEngine.Camera,UnityEngine.Matrix4x4)">
+            <summary>
+            Applies view port corrected projection matrix to a camera.
+            </summary>
+        </member>
         <member name="M:Vuforia.QCARAbstractBehaviour.DeinitRequestedTrackers">
             <summary>
             This method deinits trackes that other classes (e.g. SmartTerrainTrackerBehaviour) have requested to be deinitialized
+            </summary>
+        </member>
+        <member name="M:Vuforia.QCARAbstractBehaviour.CheckForSurfaceChanges">
+            <summary>
+            check if the surface size changed
+            </summary>
+        </member>
+        <member name="P:Vuforia.QCARAbstractBehaviour.AutoAdjustStereoCameraSkewing">
+            <summary>
+            This property is used to read the automatic skewing setting for the stereo camera projections
+            to align the video background with the closest trackable in view.
             </summary>
         </member>
         <member name="P:Vuforia.QCARAbstractBehaviour.SceneScaleFactor">
@@ -4513,6 +4647,11 @@
             Signals native that the rendering surface has been created by Unity
             </summary>
         </member>
+        <member name="M:Vuforia.SurfaceUtilities.OnSurfaceDeinit">
+            <summary>
+            Signals native that the rendering surface should be deinitialized
+            </summary>
+        </member>
         <member name="M:Vuforia.SurfaceUtilities.HasSurfaceBeenRecreated">
             <summary>
             Checks if the GLSurface has been recreated
@@ -4647,6 +4786,25 @@
         <member name="M:Vuforia.VideoBackgroundAbstractBehaviour.ResetBackgroundPlane(System.Boolean)">
             <summary>
             This method toggles the mesh renderer of the background plane
+            </summary>
+        </member>
+        <member name="M:Vuforia.VideoBackgroundAbstractBehaviour.SetStereoDepth(System.Single)">
+            <summary>
+            Adjusts camera projection matrix and Background plane depth to correct stereoscopic rendering.
+            Is called automatically by the QCARBehaviour, but can be called from app logic to override.
+            </summary>
+        </member>
+        <member name="M:Vuforia.VideoBackgroundAbstractBehaviour.ApplyStereoDepthToMatrices">
+            <summary>
+            Let the VideoBackgroundBehaviour know that the camera matrix or stereo depth has been updated
+            and the frustum skewing needs to be re-applied.
+            Is called automatically by the QCARBehaviour, but can be called from app logic to override.
+            </summary>
+        </member>
+        <member name="M:Vuforia.VideoBackgroundAbstractBehaviour.RenderOnUpdate">
+            <summary>
+            Called from QCARBehaviour.Update after updating the QCAR state.
+            Will automatically bind the video background if the state has changed.
             </summary>
         </member>
         <member name="P:Vuforia.VideoBackgroundAbstractBehaviour.VideoBackGroundMirrored">

@@ -54,7 +54,7 @@ public class SplashScreenView : ISampleAppUIView
         }
         else 
         {
-            #if UNITY_IPHONE
+            #if (UNITY_IPHONE || UNITY_IOS)
 
 			float textureWidth = m_SplashStyle.normal.background.width;
 			float textureHeight = m_SplashStyle.normal.background.height;

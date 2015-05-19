@@ -44,7 +44,7 @@ public class SampleAppsUILayout
 				return Resources.Load("SourceSansPro-Regular") as Font;
 			}
 				
-#elif UNITY_IPHONE
+#elif (UNITY_IPHONE || UNITY_IOS)
 			 if(Screen.height > 1500 ){
 				return Resources.Load("SourceSansPro-Regular_big_iPad3") as Font;
 			} else

@@ -145,7 +145,7 @@ public class SampleInitErrorHandler : MonoBehaviour
                 mCurrentError.Text =
                       "Vuforia App key is missing. Please get a valid key, by logging into your account at developer.vuforia.com and creating a new project ";
                 break;
-#if UNITY_IPHONE
+#if (UNITY_IPHONE || UNITY_IOS)
             case QCARUnity.InitError.INIT_NO_CAMERA_ACCESS:
                  mCurrentError.Text = 
                     "Camera Access was denied to this App. \n" + 
@@ -179,6 +179,13 @@ public class SampleInitErrorHandler : MonoBehaviour
 
             case QCARUnity.InitError.INIT_ERROR:
                 mCurrentError.Text = "Failed to initialize QCAR.";
+                break;
+
+            case QCARUnity.InitError.INIT_LICENSE_ERROR_PRODUCT_TYPE_MISMATCH:
+                mCurrentError.Text =
+                    "Vuforia App key is not valid for this product. Please get a valid key, " +
+                    "by logging into your account at developer.vuforia.com and choosing the " +
+                    "right product type during project creation";
                 break;
         }
     }

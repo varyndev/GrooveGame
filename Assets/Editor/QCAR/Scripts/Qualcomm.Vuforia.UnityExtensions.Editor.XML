@@ -138,13 +138,6 @@
             draw translation or rotation handle for init target if set
             </summary>
         </member>
-        <member name="T:Vuforia.EditorClasses.MTRenderingChecker">
-            <summary>
-            Vuforia does not yet support multithreaded rendering on mobile platforms as introduced with Unity 4.3.
-            On previous Unity versions, including 4.2, PlayerSettings.MTRendering would return true even though not available on mobile platforms.
-            This editor class checks for the editor setting and logs an error if it is set.
-            </summary>
-        </member>
         <member name="T:Vuforia.EditorClasses.CloudRecoEditor">
             <summary>
             Editor for the CloudRecoBehaviour
@@ -568,13 +561,6 @@
                              by the QCAR Tracker is applied. Either the camera is
                              moved in the scene with respect to a "world center" or
                              all the targets are moved with respect to the camera.
-            </summary>
-        </member>
-        <member name="M:Vuforia.EditorClasses.TrackerEditor.CheckLayers">
-            <summary>
-            This method checks if the BackgroundPlaneLeft and BackgroundPlaneRight 
-            layers are present in the project. They are needed for background plane tagging 
-            and camera culling mask setting.
             </summary>
         </member>
         <member name="M:Vuforia.EditorClasses.TrackerEditor.SwitchCamera(System.Boolean)">

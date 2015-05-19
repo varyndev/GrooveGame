@@ -1,5 +1,5 @@
 /*==============================================================================
-Copyright (c) 2014 Qualcomm Connected Experiences, Inc.
+Copyright (c) 2015 Qualcomm Connected Experiences, Inc.
 All Rights Reserved.
 Confidential and Proprietary - Qualcomm Connected Experiences, Inc.
 ==============================================================================*/
@@ -7,24 +7,36 @@ Confidential and Proprietary - Qualcomm Connected Experiences, Inc.
 using System.IO;
 using UnityEditor;
 using UnityEngine;
-
-
-public class SampleOrientationSetter : AssetPostprocessor
+    
+[InitializeOnLoad]
+public static class SampleOrientationSetter
 {
-    // This method is called by Unity whenever assets are updated (deleted,
-    // moved or added)
-    public static void OnPostprocessAllAssets(string[] importedAssets,
-                                              string[] deletedAssets,
-                                              string[] movedAssets,
-                                              string[] movedFromAssetPaths)
+    private static readonly string VUFORIA_SAMPLE_ORIENTATION_SETTINGS = "VUFORIA_SAMPLE_ORIENTATION_SETTINGS";
+
+    static SampleOrientationSetter()
     {
-        foreach (var importedAsset in importedAssets)
-        {
-            // if this script is imported, force the build settings to potrait left
-            if (importedAsset.Equals("Assets/Editor/QCAR/SampleOrientationSetter.cs"))
-            {
-                PlayerSettings.defaultInterfaceOrientation = UIOrientation.Portrait;
-            }
-        }
+        EditorApplication.update += UpdateOrientationSettings;
     }
+
+    static void UpdateOrientationSettings()
+    {
+        // Unregister callback (executed only once)
+        EditorApplication.update -= UpdateOrientationSettings;
+
+        BuildTargetGroup androidBuildTarget = BuildTargetGroup.Android;
+        
+        string androidSymbols = PlayerSettings.GetScriptingDefineSymbolsForGroup(androidBuildTarget);
+        androidSymbols = androidSymbols ?? "";
+        if (!androidSymbols.Contains(VUFORIA_SAMPLE_ORIENTATION_SETTINGS)) 
+        {
+            // Set default orientation to portrait
+            Debug.Log ("Setting default orientation to Portrait.");
+            PlayerSettings.defaultInterfaceOrientation = UIOrientation.Portrait;
+
+            // Here we set the scripting define symbols for Android
+            // so we can remember that the settings were set once.
+            PlayerSettings.SetScriptingDefineSymbolsForGroup(androidBuildTarget,
+                                                             androidSymbols + ";" + VUFORIA_SAMPLE_ORIENTATION_SETTINGS);
+        }
+    }  
 }

@@ -18,8 +18,6 @@ namespace Vuforia
     class IOSUnityPlayer : IUnityPlayer
     {
         private ScreenOrientation mScreenOrientation = ScreenOrientation.Unknown;
-        private int mScreenWidth = 0;
-        private int mScreenHeight = 0;
 
         /// <summary>
         /// Loads native plugin libraries on platforms where this is explicitly required.
@@ -62,13 +60,6 @@ namespace Vuforia
                 // if Unity reports that the orientation has changed, set it correctly in native
                 if (Screen.orientation != mScreenOrientation)
                     SetUnityScreenOrientation();
-
-                if (mScreenWidth != Screen.width || mScreenHeight != Screen.height)
-                {
-                    mScreenWidth = Screen.width;
-                    mScreenHeight = Screen.height;
-                    SurfaceUtilities.OnSurfaceChanged(mScreenWidth, mScreenHeight);
-                }
             }
 
         }
@@ -107,10 +98,6 @@ namespace Vuforia
             SurfaceUtilities.OnSurfaceCreated();
 
             SetUnityScreenOrientation();
-
-            mScreenWidth = Screen.width;
-            mScreenHeight = Screen.height;
-            SurfaceUtilities.OnSurfaceChanged(mScreenWidth, mScreenHeight);
         }
 
         private void SetUnityScreenOrientation()

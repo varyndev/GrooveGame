@@ -91,7 +91,7 @@ public class AboutScreenView : ISampleAppUIView
             mOKButtonBgStyle.font = Resources.Load("SourceSansPro-Regular") as Font;
         }
         
-        #if UNITY_IPHONE
+        #if (UNITY_IPHONE || UNITY_IOS)
         if(Screen.height > 1500 ){
             // Loads the XHDPI sources for the iPAd 3
             mUISkin = Resources.Load("UserInterface/ButtonSkinsiPad3") as GUISkin;
