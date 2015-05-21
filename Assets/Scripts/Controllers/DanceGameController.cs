@@ -143,7 +143,7 @@ namespace BoogieDownGames {
 				foreach (Transform dancer in m_otherDancersParent.transform) {
 					Animator dancerAC = dancer.gameObject.GetComponentInChildren<Animator>();
 					if (dancerAC != null) {
-						dancerAC.SetTrigger("SatNightFever");
+						dancerAC.SetTrigger("Good0");
 					}
 				}
 			}

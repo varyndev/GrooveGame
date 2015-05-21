@@ -65,8 +65,12 @@ namespace BoogieDownGames {
 		}
 
 		private void SetCurrentScene () {
-			sceneIcon.sprite = m_sceneIcons [m_currentIndex];
-			sceneName.text = m_sceneNames [m_currentIndex];
+			if (sceneIcon != null) {
+				sceneIcon.sprite = m_sceneIcons [m_currentIndex];
+			}
+			if (sceneName != null) {
+				sceneName.text = m_sceneNames [m_currentIndex];
+			}
 			GameMaster.Instance.CurrentScene = m_currentIndex;
 		}
 
