@@ -63,7 +63,7 @@ namespace BoogieDownGames {
 
 		void OnLevelWasLoaded(int level)
 		{
-			if(level == 2) {
+			if (level == 2) {
 				NotificationCenter.DefaultCenter.AddObserver(this, "ChangeStateToRun");
 			}
 		}

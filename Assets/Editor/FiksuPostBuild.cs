@@ -1,56 +1,73 @@
 using UnityEngine;
-using System.Collections;
 using UnityEditor;
 using UnityEditor.Callbacks;
-using System.Diagnostics;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEditor.iOS.XcodeEditor;
 using System.IO;
 
-public class FiksuPostBuild : MonoBehaviour {
-	
-	[MenuItem("Fiksu/Start PostBuild Script")]
-	public static void StartManualPostBuildScript(){
-		ExecutePostBuildScripts(BuildTarget.iOS,EditorPrefs.GetString("lastPathToBuildProject"),true);
-	}
-	
-	[PostProcessBuild]
-	public static void OnPostprocessBuild(BuildTarget target, string pathToBuiltProject) {
-		if(!EditorPrefs.HasKey("FiksuManualPostBuild")){
-			EditorPrefs.SetBool("FiksuManualPostBuild",false);
-		}
-		ExecutePostBuildScripts(target,pathToBuiltProject,!EditorPrefs.GetBool("FiksuManualPostBuild"));
+public class FiksuPostBuild 
+{
+    [PostProcessBuild]
+    public static void OnPostprocessBuild(BuildTarget buildTarget, string path) 
+    {
+        #if UNITY_IPHONE
+        string projectPath = path + "/Unity-iPhone.xcodeproj/project.pbxproj";
+        
+        PBXProject project = new PBXProject();
+
+        project.ReadFromString(File.ReadAllText(projectPath));
+
+        // This is the project name that Unity generates for iOS, isn't editable until after post processing
+        string target = project.TargetGuidByName(PBXProject.GetUnityTargetName());
+        
+        #if UNITY_5_0
+        project.AddBuildProperty(target, "FRAMEWORK_SEARCH_PATHS", "$(PROJECT_DIR)/Frameworks/Plugins/iOS");
+        #else
+        CopyAndReplaceDirectory("Assets/Plugins/iOS/FiksuSDK.bundle", Path.Combine(path, "Frameworks/FiksuSDK.bundle"));
+        project.AddFileToBuild(target, project.AddFile("Frameworks/FiksuSDK.bundle", "Frameworks/FiksuSDK.bundle", PBXSourceTree.Source));
+
+        CopyAndReplaceDirectory("Assets/Plugins/iOS/FiksuSDK.framework", Path.Combine(path, "Frameworks/FiksuSDK.framework"));
+        project.AddFileToBuild(target, project.AddFile("Frameworks/FiksuSDK.framework", "Frameworks/FiksuSDK.framework", PBXSourceTree.Source));
+        
+        project.SetBuildProperty(target, "FRAMEWORK_SEARCH_PATHS", "$(inherited)");
+        project.AddBuildProperty(target, "FRAMEWORK_SEARCH_PATHS", "$(PROJECT_DIR)/Frameworks");
+        #endif
+
+        project.AddFrameworkToProject(target, "AdSupport.framework", true);
+        project.AddFrameworkToProject(target, "StoreKit.framework", true);
+        project.AddFrameworkToProject(target, "Security.framework", true);
+        project.AddFrameworkToProject(target, "SystemConfiguration.framework", false);
+        project.AddFrameworkToProject(target, "MessageUI.framework", false);
+
+        File.WriteAllText(projectPath, project.WriteToString());
+        #endif
     }
-	
-	public static void ExecutePostBuildScripts(BuildTarget buildTarget, string pathToBuiltProject, bool runScript){
-#if UNITY_IOS
-		if(runScript){
-			string iTunesConnectAppID = "";
-			string urlSchemeEnabled = "0";
-			
-			string[] text = File.ReadAllLines(FiksuIOSSettings.GetConfigurationPath(),System.Text.Encoding.UTF8);
-			int i = 0;
-			while(i < text.Length && !text[i].Contains("<key>itunes_application_id</key>")){
-				i++;
-			}
-			if(text[i].Contains("<key>itunes_application_id</key>")){
-				iTunesConnectAppID = text[i+1].Trim().Replace("<string>","").Replace("</string>","");
-			}
-			FiksuIOSSettings.LoadSettings();
-			if(FiksuIOSSettings.customURLScheme){
-				urlSchemeEnabled = "1";
-			}
-			Process proc = new Process();
-			proc.EnableRaisingEvents=false; 
-			proc.StartInfo.FileName = Application.dataPath + "/Fiksu/PostBuildScripts/PostBuildFiksuScript";
-			proc.StartInfo.Arguments = "'" + pathToBuiltProject + "' '" + iTunesConnectAppID + "' " + urlSchemeEnabled;
-			UnityEngine.Debug.Log(proc.StartInfo.FileName + " " + proc.StartInfo.Arguments);
-		
-			proc.Start();
-			proc.WaitForExit();
-			UnityEngine.Debug.Log("Fiksu: build log file: " + System.IO.Directory.GetCurrentDirectory() + "/FiksuBuildLogFile.txt");
-		}
-		EditorPrefs.SetString("lastPathToBuildProject",pathToBuiltProject);
-#endif
-	}
+
+    private static void CopyAndReplaceDirectory(string srcPath, string dstPathDir)
+    {
+        if (Directory.Exists(dstPathDir))
+            Directory.Delete(dstPathDir);
+
+        Directory.CreateDirectory(dstPathDir);
+
+        foreach (var file in Directory.GetFiles(srcPath))
+        {
+            if(!IsExcludedFileType(file))
+                File.Copy(file, Path.Combine(dstPathDir, Path.GetFileName(file)));
+        }
+
+        foreach (var dir in Directory.GetDirectories(srcPath))
+            CopyAndReplaceDirectory(dir, Path.Combine(dstPathDir, Path.GetFileName(dir)));
+    }
+
+    private static bool IsExcludedFileType(string file)
+    {
+        if(Path.GetExtension(file).Equals(".meta"))
+            return true;
+
+        return false;
+    }
 }
 
 
