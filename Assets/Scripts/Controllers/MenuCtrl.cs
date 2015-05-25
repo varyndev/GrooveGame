@@ -11,6 +11,7 @@ namespace BoogieDownGames {
 
 		public override void GoToScene (int p_scene)
 		{
+			GameEventBeaconController.GameStart ((GameMaster.Instance.CurrentScene + 1).ToString (), (GameMaster.Instance.CurrentModel + 1).ToString (), (GameMaster.Instance.CurrentSong + 1).ToString ());
 			GameMaster.Instance.SceneFsm.ChangeState(CtrlStateGame.Instance);
 		}
 
