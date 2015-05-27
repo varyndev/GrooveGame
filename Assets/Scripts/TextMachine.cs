@@ -57,8 +57,8 @@ namespace BoogieDownGames {
 			m_songList.Add (new SongItem ("ShutUpAndDance", "Shut Up & Dance", "Delsa Feat. Ai Man", "1:31", "", true));
 			m_songList.Add (new SongItem ("SheSaid", "She Said", "Dani Feat. Sky Silver", "1:53", "", false));
 			m_songList.Add (new SongItem ("InFashion", "In Fashion", "Sky Silver", "1:33", "", false));
-			m_songList.Add (new SongItem ("LayWithMe", "Lay With Me", "Sky Silver", "1:33", "", true));
-			m_songList.Add (new SongItem ("YouHaveIt", "You Have It", "Sky Silver", "1:33", "", true));
+			m_songList.Add (new SongItem ("LayWithMe", "Lay With Me", "Sky Girl Jo", "1:17", "", true));
+			m_songList.Add (new SongItem ("YouHaveIt", "You Have It", "Tori Martin", "1:29", "", true));
 
 			NotificationCenter.DefaultCenter.AddObserver(this, "SetSong");
 		}
