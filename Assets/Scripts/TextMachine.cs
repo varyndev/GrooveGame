@@ -48,17 +48,17 @@ namespace BoogieDownGames {
 
 		void Awake () {
 			m_songList = new List<SongItem>();
-			m_songList.Add (new SongItem ("song1", "I'm Sexy Now", "Sky Silver & the Sky Girls", "2:00", "", true));
-			m_songList.Add (new SongItem ("song2", "She Smiles", "Sky Silver", "2:00", "", true));
-			m_songList.Add (new SongItem ("song3", "I Got You", "Sky Girl Jo", "2:07", "", false));
-			m_songList.Add (new SongItem ("song4", "Alone Tonight", "Dani", "1:30", "", false));
-			m_songList.Add (new SongItem ("song5", "It's Filth", "Sky Silver", "1:44", "", false));
-			m_songList.Add (new SongItem ("song6", "Fry & Sizzle", "Delsa & Sky Silver", "1:46", "", false));
-			m_songList.Add (new SongItem ("song7", "Shut Up & Dance", "Delsa Feat. Ai Man", "1:31", "", true));
-			m_songList.Add (new SongItem ("song8", "She Said", "Dani Feat. Sky Silver", "1:53", "", false));
-			m_songList.Add (new SongItem ("song9", "In Fashion", "Sky Silver", "1:33", "", false));
-			m_songList.Add (new SongItem ("song10", "Lay With Me", "Sky Silver", "1:33", "", true));
-			m_songList.Add (new SongItem ("song11", "You Have It", "Sky Silver", "1:33", "", true));
+			m_songList.Add (new SongItem ("ImSexyNow", "I'm Sexy Now", "Sky Silver & the Sky Girls", "2:00", "", true));
+			m_songList.Add (new SongItem ("SheSmiles", "She Smiles", "Sky Silver", "2:00", "", true));
+			m_songList.Add (new SongItem ("IGotYou", "I Got You", "Sky Girl Jo", "2:07", "", false));
+			m_songList.Add (new SongItem ("AloneTonight", "Alone Tonight", "Dani", "1:30", "", false));
+			m_songList.Add (new SongItem ("ItsFilth", "It's Filth", "Sky Silver", "1:44", "", false));
+			m_songList.Add (new SongItem ("FryAndSizzle", "Fry & Sizzle", "Delsa & Sky Silver", "1:46", "", false));
+			m_songList.Add (new SongItem ("ShutUpAndDance", "Shut Up & Dance", "Delsa Feat. Ai Man", "1:31", "", true));
+			m_songList.Add (new SongItem ("SheSaid", "She Said", "Dani Feat. Sky Silver", "1:53", "", false));
+			m_songList.Add (new SongItem ("InFashion", "In Fashion", "Sky Silver", "1:33", "", false));
+			m_songList.Add (new SongItem ("LayWithMe", "Lay With Me", "Sky Silver", "1:33", "", true));
+			m_songList.Add (new SongItem ("YouHaveIt", "You Have It", "Sky Silver", "1:33", "", true));
 
 			NotificationCenter.DefaultCenter.AddObserver(this, "SetSong");
 		}

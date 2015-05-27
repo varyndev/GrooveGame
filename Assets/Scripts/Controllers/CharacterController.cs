@@ -7,20 +7,21 @@ namespace BoogieDownGames {
 	public class CharacterController : MonoBehaviour {
 		
 		public bool demoAnimation;
-		
-		[SerializeField]
-		private Animator m_anime;
-		
+
 		[SerializeField]
 		private GameObject [] m_models = null;
-		
+
+		[SerializeField]
+		private RuntimeAnimatorController [] m_animationControllers;
+
 		[SerializeField]
 		private int m_currentIndex;
 		
+		private Animator m_anime;
 		private bool m_triggerFired;
 		private string m_lastMove;
 		
-		// These are private for now as every dancer Animator Controller must support the exact smae number, this is not configurable
+		// These are private for now as every dancer Animator Controller must support the exact same number, this is not configurable
 		private const int basicAnimations = 4;
 		private const int goodAnimations = 4;
 		private const int bestAnimations = 4;
@@ -254,7 +255,30 @@ namespace BoogieDownGames {
 		{
 			return m_triggerFired;
 		}
+
+		public void ShowDemo (bool demoFlag)
+		{
+			// control the character demo mode. Demo mode is just a bool trigger on the animator. It is used to play a demo sequence of animations.
+			if (m_anime != null) {
+				m_lastMove = "";
+				m_anime.SetBool ("Demo", demoFlag);
+			}
+		}
 		
+		public void SetAnimatorController ()
+		{
+			// Set the animator controller based on the selected song
+			if (m_anime != null && m_animationControllers != null && m_animationControllers.Length > 0) {
+				int currentSongId = GameMaster.Instance.CurrentSong;
+				if (currentSongId < 0) {
+					currentSongId = 0;
+				} else if (currentSongId > m_animationControllers.Length) {
+					currentSongId = m_animationControllers.Length;
+				}
+				m_anime.runtimeAnimatorController = m_animationControllers[currentSongId];
+			}
+		}
+
 		private void SetAnimationTrigger (string animationTrigger)
 		{
 			if (m_anime != null) {
@@ -270,7 +294,6 @@ namespace BoogieDownGames {
 					SetAnimationLength();
 				}
 			}
-			
 		}
 		
 		private void IterateAnimation(string animationTrigger)
