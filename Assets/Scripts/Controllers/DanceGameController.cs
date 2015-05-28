@@ -36,6 +36,7 @@ namespace BoogieDownGames {
 		
 		private float noteSpawnTime;
 		private float nextNoteSpawnTime;
+		private bool runWasStartedSoDontDoItAgain = false;
 
 		public int MissNotes
 		{
@@ -56,23 +57,14 @@ namespace BoogieDownGames {
 		}
 
 		//Initiate the phase
-		public  void Init()
+		public void Init()
 		{
 			m_timer.startClock();
 		}
 
-		public  void RunStart()
-		{
-			if (m_timer.Counter > 0) {
-				m_timer.run();
-			} else {
-				NotificationCenter.DefaultCenter.PostNotification(this, "ChangeStateToRun");
-				m_timer.m_trigger = true;
-			}
-		}
-
 		void Start()
 		{
+			runWasStartedSoDontDoItAgain = false;
 			noteSpawnTime = 0.0f;
 			m_totalNotes = 0;
 			m_hitNotes = 0;
@@ -121,7 +113,11 @@ namespace BoogieDownGames {
 		
 		public void OnStateInitUpdate()
 		{
-			this.RunStart();
+			if (! runWasStartedSoDontDoItAgain) {
+				NotificationCenter.DefaultCenter.PostNotification (this, "ChangeStateToRun");
+				runWasStartedSoDontDoItAgain = true;
+				m_timer.m_trigger = true;
+			}
 		}
 		
 		public void OnStateInitFixedUpdate()
@@ -166,6 +162,7 @@ namespace BoogieDownGames {
 
 		public void RunGame()
 		{
+			m_timer.run ();
 			//Check to see if the song is finished
 			if (AudioController.Instance.DetectEndOfSong () && ! AudioController.Instance.IsPaused) {
 				//Check for the number of number of notes

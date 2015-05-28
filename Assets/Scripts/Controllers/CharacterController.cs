@@ -116,6 +116,7 @@ namespace BoogieDownGames {
 		public void OnStateRunEnter()
 		{
 			m_anime.speed = 1f;
+			SetAnimatorController ();
 		}
 		
 		public void SetCurrentModel(int p_index)
