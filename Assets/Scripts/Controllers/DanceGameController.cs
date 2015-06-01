@@ -7,6 +7,9 @@ namespace BoogieDownGames {
 
 	public class DanceGameController : UnitySingleton<DanceGameController> {
 
+		public AudioClip m_goodNote;
+		public AudioClip m_badNote;
+
 		[SerializeField]
 		private TimeKeeper m_timer;
 
@@ -37,6 +40,7 @@ namespace BoogieDownGames {
 		private float noteSpawnTime;
 		private float nextNoteSpawnTime;
 		private bool runWasStartedSoDontDoItAgain = false;
+		private AudioSource m_audioSource;
 
 		public int MissNotes
 		{
@@ -64,6 +68,7 @@ namespace BoogieDownGames {
 
 		void Start()
 		{
+			m_audioSource = GetComponent<AudioSource> ();
 			runWasStartedSoDontDoItAgain = false;
 			noteSpawnTime = 0.0f;
 			m_totalNotes = 0;
@@ -259,6 +264,9 @@ namespace BoogieDownGames {
 			default:
 				break;
 			}
+			if (m_audioSource != null && m_goodNote != null) {
+				m_audioSource.PlayOneShot (m_goodNote);
+			}
 			UpdatePlayerScore (scoreEarned);
 			UpdateBonusMeter (bonusEarned);
 			UpdateDanceMove ();
@@ -274,6 +282,9 @@ namespace BoogieDownGames {
 				animationLevel = "PlayLame";
 			} else {
 				animationLevel = "PlayGood";
+			}
+			if (m_audioSource != null && m_badNote != null) {
+				m_audioSource.PlayOneShot (m_badNote);
 			}
 			NotificationCenter.DefaultCenter.PostNotification (this, animationLevel);
 			float bonusEarned = -0.01f;
