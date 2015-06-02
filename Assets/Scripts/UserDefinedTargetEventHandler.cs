@@ -149,7 +149,13 @@ public class UserDefinedTargetEventHandler : MonoBehaviour, IUserDefinedTargetEv
         
         // generate a new target name:
         
-        mTargetBuildingBehaviour.BuildNewTarget(targetName, ImageTargetTemplate.GetSize().x);
+		try {
+        	mTargetBuildingBehaviour.BuildNewTarget(targetName, ImageTargetTemplate.GetSize().x);
+		} catch {
+			Debug.Log ("Cannot get Vuforia in this context");
+			StopExtendedTracking();
+			mObjectTracker.Stop();
+		}
     }
 
     private void OnTappedOnNewTargetButton()
