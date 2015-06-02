@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 9279dbb8eb648a14bbeed849b1dcc610
-timeCreated: 1432734271
+guid: 9c0ded2c5146c6a4c820d5fffeff4e98
+timeCreated: 1433270522
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
@@ -218,7 +218,7 @@ ModelImporter:
     400208: RightForeArm_IK_BakingLOC
     400210: RightLeg_IK_BakingLOC
     4300000: Mesh_blueMesh
-    7400000: YouHaveIt_Awesome_1
+    7400000: YouHaveIt_Best_1
     9500000: //RootNode
     13700000: Mesh_blueMesh
   materials:
@@ -238,7 +238,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: YouHaveIt_Awesome_1
+      name: YouHaveIt_Best_1
       takeName: Take 001
       firstFrame: 1
       lastFrame: 96

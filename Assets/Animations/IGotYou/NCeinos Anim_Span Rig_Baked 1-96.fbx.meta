@@ -212,7 +212,7 @@ ModelImporter:
     4300000: Mesh_SM_SpanBody
     4300002: Mesh_SM_SpanHair
     4300004: Mesh_polySurface1
-    7400000: IGotYou_Basic_1
+    7400000: IGotYou_Basic_4
     9500000: //RootNode
     13700000: Mesh_polySurface1
     13700002: Mesh_SM_SpanBody
@@ -234,7 +234,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: IGotYou_Basic_1
+      name: IGotYou_Basic_4
       takeName: Take 001
       firstFrame: 1
       lastFrame: 96
