@@ -138,6 +138,7 @@ namespace BoogieDownGames {
 			Time.timeScale = 1.0f;
 			noteSpawnTime = 1.0f;
 			AudioController.Instance.playAtIndex(GameMaster.Instance.CurrentSong);
+			NotificationCenter.DefaultCenter.PostNotification (this, "PlayStart");
 
 			// Begin animating all the other dancer models in the scene
 			if (m_otherDancersParent != null) {
@@ -239,7 +240,6 @@ namespace BoogieDownGames {
 			nextNoteSpawnTime = 0.0f;
 			NotificationCenter.DefaultCenter.PostNotification (this, "spawnPrefab");
 			m_totalNotes ++;
-			Debug.Log ("Spawning note " + m_totalNotes.ToString ());
 		}
 
 		public void NoteWasHit (NoteStates noteState)

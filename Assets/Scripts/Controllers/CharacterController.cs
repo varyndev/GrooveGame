@@ -32,7 +32,7 @@ namespace BoogieDownGames {
 		//testing timers
 		float m_fCurrentAnimLength = 0.0f;
 		float m_fCurrentAnimTimer = 0.0f;
-		int m_nState = 0; //0 - Basic, 1- Good, 2- Best, 3- Lame
+		int m_nState = 0; //0 - Basic, 1- Good, 2- Best, 3- Lame, -1= Idle
 		int m_nNextState = -1;
 		
 		void Start()
@@ -51,9 +51,8 @@ namespace BoogieDownGames {
 			NotificationCenter.DefaultCenter.AddObserver(this, "OnStateRunExit");
 			NotificationCenter.DefaultCenter.AddObserver(this, "OnStateRunEnter");
 			m_triggerFired = false;
+			m_lastMove = "";
 			PlayIdle ();
-			
-			
 		}
 		
 		void Update()
@@ -187,7 +186,13 @@ namespace BoogieDownGames {
 				break;
 			}
 		}
-		
+
+		public void PlayStart ()
+		{
+			// Enter here when the song starts
+			PlayIdle ();
+		}
+
 		public void PlayGood()
 		{
 			if( m_nState != 0 && m_nNextState != 0)
@@ -239,16 +244,19 @@ namespace BoogieDownGames {
 		
 		public void PlayWin()
 		{
+			m_nState = -1;
 			SetAnimationTrigger ("Win");
 		}
 		
 		public void PlayLose()
 		{
+			m_nState = -1;
 			SetAnimationTrigger ("Lose");
 		}
 		
 		public void PlayIdle()
 		{
+			m_nState = -1;
 			SetAnimationTrigger ("StandIdle");
 		}
 		
@@ -261,7 +269,7 @@ namespace BoogieDownGames {
 		{
 			// control the character demo mode. Demo mode is just a bool trigger on the animator. It is used to play a demo sequence of animations.
 			if (m_anime != null) {
-				m_lastMove = "";
+				m_lastMove = "Demo";
 				m_anime.SetBool ("Demo", demoFlag);
 			}
 		}
@@ -276,6 +284,7 @@ namespace BoogieDownGames {
 				} else if (currentSongId > m_animationControllers.Length) {
 					currentSongId = m_animationControllers.Length;
 				}
+				Debug.Log (">>>> Setting animation controller for song " + currentSongId.ToString () + " to " + m_animationControllers[currentSongId].ToString());
 				m_anime.runtimeAnimatorController = m_animationControllers[currentSongId];
 			}
 		}
@@ -288,11 +297,12 @@ namespace BoogieDownGames {
 				}
 				if (animationTrigger != m_lastMove) 
 				{
-					Debug.Log ("Setting animation to " + animationTrigger);
+					Debug.Log (">>>> Setting animation to " + animationTrigger);
 					m_lastMove = animationTrigger;
 					m_anime.SetTrigger (animationTrigger);
 					m_triggerFired = true;
 					SetAnimationLength();
+					m_models[m_currentIndex].transform.position = transform.position;
 				}
 			}
 		}

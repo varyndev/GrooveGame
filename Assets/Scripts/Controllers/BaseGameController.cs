@@ -112,21 +112,17 @@ namespace BoogieDownGames {
 
 		public virtual void ShowMenu ()
 		{
-			// this is called when the Menu button is tapped
-			Application.LoadLevel(1);
+			// this is called when the Menu button is tapped, change state back to the menu
+			GameFsm.ChangeState(CtrlStateMenu.Instance);
 		}
 		
 		public virtual void Pause()
 		{
 			GameFsm.ChangeState(GameStatePause.Instance);
-			//Debug.LogError("Pauses");
-			//Time.timeScale = 0.0f;
 		}
 
 		public virtual void UnPause()
 		{
-			//Debug.LogError("LOOK");
-			//Time.timeScale = 1f;
 			GameFsm.ChangeState(GameFsm.PreviousState);
 		}
 
@@ -138,11 +134,6 @@ namespace BoogieDownGames {
 		public void PostMessage(string p_message)
 		{
 			NotificationCenter.DefaultCenter.PostNotification(this,p_message);
-		}
-
-		public RuntimeAnimatorController GetAnimatorControllerForCurrentSong () {
-			// TODO: Lookup song id in m_songAnimatorControllers return default if not found.
-			return m_defaultAnimatorController;
 		}
 	}
 }

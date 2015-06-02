@@ -16,24 +16,19 @@ namespace BoogieDownGames {
 		
 		public override void Enter (BaseGameController p_game)
 		{
-			Debug.Log("I am in Menu state");
 			Application.LoadLevel(1);
 		}
 		
 		public override void ExecuteOnUpdate (BaseGameController p_game) 
 		{
-
 		}
 		
 		public override void ExecuteOnFixedUpdate (BaseGameController p_game)
 		{
-			
 		}
 		
 		public override void Exit(BaseGameController p_game) 
 		{
-			
-			
 		}
 	}
 }
