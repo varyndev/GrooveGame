@@ -37,6 +37,10 @@ namespace BoogieDownGames {
 		
 		void Start()
 		{
+			int i;
+			for (i = 0; i < m_models.Length; i ++) {
+				m_models[i].SetActive(false);
+			}
 			SetCurrentModel(GameMaster.Instance.CurrentModel);
 			NotificationCenter.DefaultCenter.AddObserver(this, "PlayStart");
 			NotificationCenter.DefaultCenter.AddObserver(this, "PlayGood");
@@ -52,7 +56,11 @@ namespace BoogieDownGames {
 			NotificationCenter.DefaultCenter.AddObserver(this, "OnStateRunEnter");
 			m_triggerFired = false;
 			m_lastMove = "";
-			PlayIdle ();
+			if (demoAnimation) {
+				ShowDemo (true);
+			} else {
+				PlayIdle ();
+			}
 		}
 		
 		void Update()
