@@ -7,13 +7,12 @@ namespace BoogieDownGames{
 	/// Spawner.
 	/// Responsible for creating and distributing notes
 	/// </summary>
-	[SerializePrivateVariables]
 	public class Spawner : MonoBehaviour {
 
 		/// <summary>
 		/// The distance between the Spawner and the Camera about the Z axis
 		/// </summary>
-		private float _spawnDistance = 5f;
+		public float spawnDistance = 5f;
 
 		void Start()
 		{
@@ -23,12 +22,13 @@ namespace BoogieDownGames{
 
 			// Set the position based on the Main Camera's Set Position
 			Transform mainCameraTransform = Camera.main.transform;
-			transform.position = mainCameraTransform.position + (mainCameraTransform.forward*_spawnDistance);
+			transform.position = mainCameraTransform.position + (mainCameraTransform.forward*spawnDistance);
 		}
 
 		/// <summary>
 		/// Prefab for the notes
 		/// </summary>
+		[SerializeField]
 		private GameObject m_prefab;
 
 		/// <summary>
