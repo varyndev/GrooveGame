@@ -246,7 +246,6 @@ namespace BoogieDownGames {
 		{
 			float bonusEarned = 0.0f;
 			int scoreEarned = 0;
-
 			m_hitNotes ++;
 			switch (noteState) {
 			case NoteStates.LowScore:
@@ -267,6 +266,8 @@ namespace BoogieDownGames {
 			if (m_audioSource != null && m_goodNote != null) {
 				m_audioSource.PlayOneShot (m_goodNote);
 			}
+			if(m_score < 50)
+				NotificationCenter.DefaultCenter.PostNotification (this, "PlayGood");
 			UpdatePlayerScore (scoreEarned);
 			UpdateBonusMeter (bonusEarned);
 			UpdateDanceMove ();
@@ -276,6 +277,8 @@ namespace BoogieDownGames {
 		public void NoteWasMissed ()
 		{
 			string animationLevel;
+			if(m_score < 30)
+				NotificationCenter.DefaultCenter.PostNotification (this, "PlayLame");
 			m_missNotes ++;
 			// TODO: Add logic to change animation trigger based on how bad the player is scoring
 			if (m_missNotes > 5) {

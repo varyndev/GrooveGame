@@ -31,6 +31,7 @@ namespace BoogieDownGames {
 		
 		//testing timers
 		float m_fCurrentAnimLength = 0.0f;
+		float m_fNextAnimLength = 0.0f;
 		float m_fCurrentAnimTimer = 0.0f;
 		int m_nState = 0; //0 - Basic, 1- Good, 2- Best, 3- Lame, -1= Idle
 		int m_nNextState = -1;
@@ -65,6 +66,8 @@ namespace BoogieDownGames {
 		
 		void Update()
 		{
+			if(Vector3.Magnitude(new Vector3(0,0,0) - m_models[m_currentIndex].transform.localPosition) > 0.22f)
+				m_models[m_currentIndex].transform.localPosition = Vector3.Lerp(m_models[m_currentIndex].transform.localPosition, new Vector3(0,0,0), 5.0f * Time.deltaTime);
 			if(m_fCurrentAnimLength > 0)
 			{
 				m_fCurrentAnimTimer += Time.deltaTime;
@@ -73,9 +76,13 @@ namespace BoogieDownGames {
 					if(m_nNextState != -1)
 					{
 						m_nState = m_nNextState;
-						m_nNextState = -1;
+						//m_nNextState = -1;
 					}
-					m_fCurrentAnimTimer = 0.0f;
+					if(m_fNextAnimLength > 0)
+					{
+						m_fCurrentAnimLength = m_fNextAnimLength;
+						m_fNextAnimLength = 0.0f;
+					}
 					switch(m_nState)
 					{
 					case 0:
@@ -303,25 +310,38 @@ namespace BoogieDownGames {
 				if (animationTrigger == "") {
 					animationTrigger = "StandIdle";
 				}
-				if (animationTrigger != m_lastMove) 
 				{
 					Debug.Log (">>>> Setting animation to " + animationTrigger);
 					m_lastMove = animationTrigger;
 					m_anime.SetTrigger (animationTrigger);
 					m_triggerFired = true;
-					SetAnimationLength();
-					m_models[m_currentIndex].transform.position = transform.position;
+					m_fCurrentAnimTimer = 0.0f;
+					m_fCurrentAnimLength = m_models[m_currentIndex].GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length;
+					m_models[m_currentIndex].transform.rotation = new Quaternion(0,0,0,0);
 				}
 			}
 		}
-		
+		private int GetTierID(string trigger)
+		{
+			//0 - Basic, 1- Good, 2- Best, 3- Lame, -1= Idle
+			if(trigger.Contains("Basic"))
+				return 0;
+			else if(trigger.Contains("Good"))
+				return 1;
+			else if(trigger.Contains("Best"))
+				return 2;
+			else if(trigger.Contains("Lame"))
+				return 3;
+			else
+				return -1;
+		}
 		private void IterateAnimation(string animationTrigger)
 		{
 			if (m_anime != null) {
 				if (animationTrigger == "") {
 					animationTrigger = "StandIdle";
 				}
-				if (animationTrigger != m_lastMove) 
+				if (GetTierID(animationTrigger) != m_nState && GetTierID(animationTrigger) != m_nNextState) 
 				{
 					m_lastMove = animationTrigger;
 					SetAnimationLength();
@@ -332,8 +352,15 @@ namespace BoogieDownGames {
 		
 		private void SetAnimationLength()
 		{
-			m_fCurrentAnimLength = m_models[m_currentIndex].GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length;
-			m_fCurrentAnimTimer = 0.0f;
+			if(m_fCurrentAnimLength < 0.1f)
+			{
+				m_fCurrentAnimTimer = 0.0f;
+				m_fCurrentAnimLength = m_models[m_currentIndex].GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length;
+			}
+			else
+			{
+				m_fNextAnimLength = m_models[m_currentIndex].GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length;
+			}
 		}
 	}
 }
