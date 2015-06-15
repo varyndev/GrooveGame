@@ -52,11 +52,21 @@ namespace BoogieDownGames {
 		private float m_rotation;
 		private Vector3 m_direction;
 		private GameObject m_mainCamera;
+
 		private float m_zLimit;
 		private float zDistanceFromCamera;
 
+		// KB: Added to prevent culling issue with player and notes
+		[SerializeField]
+		private float m_zDancerDistanceThreshold;
+
+		private GameObject m_dancer;
+		private float zDistanceFromPlayer;
+		// KB
+		
 		void Start () 
 		{
+
 			m_myState = NoteStates.UnReady;
 			// Note must move from transform.position to camera position
 			m_mainCamera = GameObject.FindGameObjectWithTag ("MainCamera");
@@ -64,6 +74,11 @@ namespace BoogieDownGames {
 			NotificationCenter.DefaultCenter.AddObserver(this,"OnStateRunFixedUpdate");
 			NotificationCenter.DefaultCenter.AddObserver(this,"OnStateRunUpdate");
 			NotificationCenter.DefaultCenter.AddObserver(this,"OnStateLostSongEnter");
+
+			// NOTE: Should have the CharacterModel container have a unique tag
+			// because it's named the same for each scene, just the name search will suffice
+			m_dancer = GameObject.Find ("CharacterModel");
+			m_zDancerDistanceThreshold = -0.25f;
 
 			// to provide some variety, flip half the notes
 			if (Random.value > 0.5) {
@@ -106,9 +121,16 @@ namespace BoogieDownGames {
 
 		public void CheckState()
 		{
+			// make sure the note is in front of the player
+			zDistanceFromPlayer = transform.position.z - m_dancer.transform.position.z;
+			Debug.Log (zDistanceFromPlayer);
 			zDistanceFromCamera = transform.position.z - m_zLimit;
-			if (zDistanceFromCamera > m_firstBounds) {
+			if(zDistanceFromPlayer > m_zDancerDistanceThreshold) {
 				m_myState = NoteStates.UnReady;
+				m_mat.enabled = false;
+			} else if (zDistanceFromCamera > m_firstBounds) {
+				m_myState = NoteStates.UnReady;
+				m_mat.enabled = true;
 				m_mat.material.SetColor("_Color", m_unReadyColor);
 				m_mat.material.SetColor("_Emission", m_unReadyColor);
 				m_mat.material.SetColor("_SpecColor", m_unReadyColor);
