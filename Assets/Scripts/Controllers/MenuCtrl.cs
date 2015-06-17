@@ -1,11 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 namespace BoogieDownGames {
 
 	public class MenuCtrl : BaseSceneController {
 
 		public float characterDemoInterval = 5.0f;
+		public Text coinsText;
 
 		private float timeToNextCharacterDemo;
 
@@ -23,6 +25,7 @@ namespace BoogieDownGames {
 		void Start ()
 		{
 			timeToNextCharacterDemo = 0.0f;
+			coinsText.text = Player.Instance.coinsTotal.ToString ();
 		}
 
 		void Update () 

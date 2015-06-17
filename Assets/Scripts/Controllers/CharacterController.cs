@@ -15,6 +15,9 @@ namespace BoogieDownGames {
 		private RuntimeAnimatorController [] m_animationControllers;
 
 		[SerializeField]
+		private List<bool> m_characterLocks; // these bools match the character id's to represent which characters should be locked
+
+		[SerializeField]
 		private int m_currentIndex;
 		
 		private Animator m_anime;

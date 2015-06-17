@@ -1,69 +1,151 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using System.IO;
 using System;
 using System.Runtime.Serialization.Formatters.Binary;
+
+// This object will act as the Player data model. It will hold all player-centric data and preferences.
 
 namespace BoogieDownGames {
 
 	public class Player : UnitySingletonPersistent<Player> {
 
-		[SerializeField]
-		public int m_currentScore;
+		public int bestScore;
+		public int coinsTotal;
+		public int missCount;
+		public int lastCharacterPlayed;
+		public int lastSongPlayed;
+		public int lastScenePlayed;
+		public List<int> unlockedCharacters;
+		public List<int> unlockedSongs;
+		public List<int> unlockedScenes;
 
-		[SerializeField]
-		public int m_misses; //Keep track of the misses 
+		private static string saveFileName = "playerInfo.dat";
+		private static string saveFilePath = Application.persistentDataPath + "/" + saveFileName;
 
-		public int m_maxMisses; 
-
-		// Use this for initialization
+		[Serializable]
+		class PlayerData
+		{
+			public int bestScore;
+			public int coinsTotal;
+			public int missCount;
+			public int lastCharacterPlayed;
+			public int lastSongPlayed;
+			public int lastScenePlayed;
+			public List<int> unlockedCharacters;
+			public List<int> unlockedSongs;
+			public List<int> unlockedScenes;
+		}
+		
 		void Start ()
 		{
-		
-		}
-		
-		// Update is called once per frame
-		void Update () 
-		{
-		
+			bestScore = 0;
+			coinsTotal = 0;
+			missCount = 0;
+			lastCharacterPlayed = 0;
+			lastSongPlayed = 0;
+			lastScenePlayed = 0;
+			unlockedCharacters = new List<int>();
+			unlockedSongs = new List<int>();
+			unlockedScenes = new List<int>();
+			Load ();
 		}
 
-		public void load()
-		{
-			if(File.Exists( Application.persistentDataPath + "/playerInfo.dat")) {
-				BinaryFormatter bf = new BinaryFormatter();
-				FileStream file = File.Open(Application.persistentDataPath + "/playerInfo.dat",FileMode.Open);
-				PlayerData data = (PlayerData)bf.Deserialize(file);
-				file.Close();
-				m_currentScore = data.m_lastScore;
+		public bool SetBestScore (int newBestScore) {
+			bool wasSet = false;
+			if (newBestScore > bestScore) {
+				bestScore = newBestScore;
+				wasSet = true;
+			}
+			return wasSet;
+		}
 
+		public void AddCoins (int coins) {
+			coinsTotal += coins;
+		}
+		
+		public bool UnlockCharacter (int characterIndex)
+		{
+			bool unlocked = false;
+			if ( ! unlockedCharacters.Contains (characterIndex)) {
+				unlockedCharacters.Add (characterIndex);
+				unlocked = true;
+			}
+			return unlocked;
+		}
+		
+		public bool IsCharacterUnlocked (int characterIndex) {
+			return unlockedCharacters.Contains (characterIndex);
+		}
+
+		public bool UnlockSong (int songIndex)
+		{
+			bool unlocked = false;
+			if ( ! unlockedSongs.Contains (songIndex)) {
+				unlockedSongs.Add (songIndex);
+				unlocked = true;
+			}
+			return unlocked;
+		}
+
+		public bool IsSongUnlocked (int songIndex) {
+			return unlockedSongs.Contains (songIndex);
+		}
+		
+		public bool UnlockScene (int sceneIndex)
+		{
+			bool unlocked = false;
+			if ( ! unlockedScenes.Contains (sceneIndex)) {
+				unlockedScenes.Add (sceneIndex);
+				unlocked = true;
+			}
+			return unlocked;
+		}
+		
+		public bool IsSceneUnlocked (int sceneIndex) {
+			return unlockedScenes.Contains (sceneIndex);
+		}
+		
+		public void Load()
+		{
+			if (File.Exists(saveFilePath)) {
+				FileStream file = File.Open(saveFilePath, FileMode.Open);
+				if (file != null) {
+					BinaryFormatter bf = new BinaryFormatter();
+					PlayerData playerData = (PlayerData)bf.Deserialize(file);
+					file.Close();
+					bestScore = playerData.bestScore;
+					coinsTotal = playerData.coinsTotal;
+					missCount = playerData.missCount;
+					lastCharacterPlayed = playerData.lastCharacterPlayed;
+					lastSongPlayed = playerData.lastSongPlayed;
+					lastScenePlayed = playerData.lastScenePlayed;
+					unlockedCharacters = playerData.unlockedCharacters;
+					unlockedSongs = playerData.unlockedSongs;
+					unlockedScenes = playerData.unlockedScenes;
+				}
 			}
 		}
 
-		public void save()
+		public void Save()
 		{
-			BinaryFormatter bf = new BinaryFormatter();
-			FileStream file = File.Open(Application.persistentDataPath + "/playerInfo.dat", FileMode.Open);
-			PlayerData data = new PlayerData();
-			//Save data here
-			data.m_highScore = 100;
-			data.m_lastScore = 10;
-			bf.Serialize(file,data);
-			file.Close();
+			FileStream file = File.Open(saveFilePath, FileMode.OpenOrCreate);
+			if (file != null) {
+				BinaryFormatter bf = new BinaryFormatter ();
+				PlayerData playerData = new PlayerData ();
+				playerData.bestScore = bestScore;
+				playerData.coinsTotal = coinsTotal;
+				playerData.missCount = missCount;
+				playerData.lastCharacterPlayed = lastCharacterPlayed;
+				playerData.lastSongPlayed = lastSongPlayed;
+				playerData.lastScenePlayed = lastScenePlayed;
+				playerData.unlockedCharacters = unlockedCharacters;
+				playerData.unlockedSongs = unlockedSongs;
+				playerData.unlockedScenes = unlockedScenes;
+				bf.Serialize (file, playerData);
+				file.Close ();
+			}
 		}
-	}
-
-	[Serializable]
- 	class PlayerData
-	{
-		public int m_lastScore;
-		public int m_highScore;
-
-	}
-
-	[Serializable]
-	class PlayerPrefs
-	{
-
 	}
 }

@@ -17,6 +17,9 @@ namespace BoogieDownGames {
 		private List<string> m_sceneNames; // these strings match the scene id's to represent the scene in the menu display
 		
 		[SerializeField]
+		private List<bool> m_sceneLocks; // these bools match the scene id's to represent which scenes should be locked
+		
+		[SerializeField]
 		private int m_currentIndex;
 
 		public Image sceneIcon;
