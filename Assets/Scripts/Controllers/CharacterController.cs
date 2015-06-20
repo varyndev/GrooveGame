@@ -1,21 +1,25 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 namespace BoogieDownGames {
 	
 	public class CharacterController : MonoBehaviour {
 		
 		public bool demoAnimation;
+		public Image characterLockedIcon;
+
+		// TODO: consider organizing this into an array of objects {characterModel, locked, characterName}
 
 		[SerializeField]
 		private GameObject [] m_models = null;
 
 		[SerializeField]
-		private RuntimeAnimatorController [] m_animationControllers;
-
-		[SerializeField]
 		private List<bool> m_characterLocks; // these bools match the character id's to represent which characters should be locked
+		
+		[SerializeField]
+		private RuntimeAnimatorController [] m_animationControllers;
 
 		[SerializeField]
 		private int m_currentIndex;
@@ -65,6 +69,7 @@ namespace BoogieDownGames {
 			} else {
 				PlayIdle ();
 			}
+			characterLockedIcon.enabled = isCharacterLocked ();
 		}
 		
 		void Update()
@@ -159,6 +164,7 @@ namespace BoogieDownGames {
 			m_anime = m_models[m_currentIndex].GetComponent<Animator>();
 			m_triggerFired = false;
 			GameMaster.Instance.CurrentModel = m_currentIndex;
+			characterLockedIcon.enabled = isCharacterLocked ();
 		}
 		
 		public void PrevModel()
@@ -173,6 +179,17 @@ namespace BoogieDownGames {
 			m_anime = m_models[m_currentIndex].GetComponent<Animator>();
 			m_triggerFired = false;
 			GameMaster.Instance.CurrentModel = m_currentIndex;
+			characterLockedIcon.enabled = isCharacterLocked ();
+		}
+
+		public bool isCharacterLocked ()
+		{
+			bool isLocked = m_characterLocks [m_currentIndex];
+			if (isLocked) {
+				// TODO: now determine if the player has purchased the unlock for this item.
+				isLocked = ! Player.Instance.IsCharacterUnlocked(m_currentIndex);
+			}
+			return isLocked;
 		}
 		
 		public void PlayRandom () {

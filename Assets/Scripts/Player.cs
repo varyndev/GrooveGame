@@ -68,6 +68,9 @@ namespace BoogieDownGames {
 		public bool UnlockCharacter (int characterIndex)
 		{
 			bool unlocked = false;
+			if (unlockedCharacters == null) {
+				unlockedCharacters = new List<int>();
+			}
 			if ( ! unlockedCharacters.Contains (characterIndex)) {
 				unlockedCharacters.Add (characterIndex);
 				unlocked = true;
@@ -76,12 +79,19 @@ namespace BoogieDownGames {
 		}
 		
 		public bool IsCharacterUnlocked (int characterIndex) {
-			return unlockedCharacters.Contains (characterIndex);
+			bool isUnlocked = false;
+			if (unlockedCharacters != null) {
+				isUnlocked = unlockedCharacters.Contains (characterIndex);
+			}
+			return isUnlocked;
 		}
 
 		public bool UnlockSong (int songIndex)
 		{
 			bool unlocked = false;
+			if (unlockedSongs == null) {
+				unlockedSongs = new List<int>();
+			}
 			if ( ! unlockedSongs.Contains (songIndex)) {
 				unlockedSongs.Add (songIndex);
 				unlocked = true;
@@ -90,12 +100,19 @@ namespace BoogieDownGames {
 		}
 
 		public bool IsSongUnlocked (int songIndex) {
-			return unlockedSongs.Contains (songIndex);
+			bool isUnlocked = false;
+			if (unlockedSongs != null) {
+				isUnlocked = unlockedSongs.Contains (songIndex);
+			}
+			return isUnlocked;
 		}
 		
 		public bool UnlockScene (int sceneIndex)
 		{
 			bool unlocked = false;
+			if (unlockedScenes == null) {
+				unlockedScenes = new List<int>();
+			}
 			if ( ! unlockedScenes.Contains (sceneIndex)) {
 				unlockedScenes.Add (sceneIndex);
 				unlocked = true;
@@ -104,7 +121,11 @@ namespace BoogieDownGames {
 		}
 		
 		public bool IsSceneUnlocked (int sceneIndex) {
-			return unlockedScenes.Contains (sceneIndex);
+			bool isUnlocked = false;
+			if (unlockedScenes != null) {
+				isUnlocked = unlockedScenes.Contains (sceneIndex);
+			}
+			return isUnlocked;
 		}
 		
 		public void Load()

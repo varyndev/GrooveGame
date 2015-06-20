@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 using System.Collections.Generic;
@@ -38,8 +38,10 @@ namespace BoogieDownGames {
 		
 		[SerializeField]
 		Image m_songIcon;
-		
 
+		[SerializeField]
+		Image m_songLockedIcon;
+		
 		[SerializeField]
 		private List<AudioClip> m_soundClips;
 
@@ -67,15 +69,29 @@ namespace BoogieDownGames {
 			SetSongInfo ((string)notification.data["songid"], (float)notification.data["length"]);
 		}
 
+		public bool isSongLocked (int songIndex)
+		{
+			bool isLocked = m_songList [songIndex].paid;
+			if (isLocked) {
+				// TODO: determine if the player has unlocked this item
+				isLocked = ! Player.Instance.IsSongUnlocked(songIndex);
+			}
+			return isLocked;
+		}
+
 		private void SetSongInfo (string songId, float duration) {
-			if (songId != null) {
+			if (songId != null && m_songTitleText != null) {
+				int i = 0;
+				bool isLocked;
 				foreach (SongItem song in m_songList) {
 					if (song.id == songId) {
 						m_songTitleText.text = song.title;
 						m_songArtistText.text = song.artist;
 						m_songDurationText.text = ConvertSecondsToMMSS(duration);
+						m_songLockedIcon.enabled = isSongLocked (i);
 						break;
 					}
+					i ++;
 				}
 			}
 		}
