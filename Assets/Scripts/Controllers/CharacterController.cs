@@ -1,16 +1,23 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 namespace BoogieDownGames {
 	
 	public class CharacterController : MonoBehaviour {
 		
 		public bool demoAnimation;
+		public Image characterLockedIcon;
+
+		// TODO: consider organizing this into an array of objects {characterModel, locked, characterName}
 
 		[SerializeField]
 		private GameObject [] m_models = null;
 
+		[SerializeField]
+		private List<bool> m_characterLocks; // these bools match the character id's to represent which characters should be locked
+		
 		[SerializeField]
 		private RuntimeAnimatorController [] m_animationControllers;
 
@@ -19,8 +26,7 @@ namespace BoogieDownGames {
 		
 		private Animator m_anime;
 		private bool m_triggerFired;
-		private string m_lastMove;
-		
+
 		// These are private for now as every dancer Animator Controller must support the exact same number, this is not configurable
 		private const int basicAnimations = 4;
 		private const int goodAnimations = 4;
@@ -56,11 +62,13 @@ namespace BoogieDownGames {
 			NotificationCenter.DefaultCenter.AddObserver(this, "OnStateRunExit");
 			NotificationCenter.DefaultCenter.AddObserver(this, "OnStateRunEnter");
 			m_triggerFired = false;
-			m_lastMove = "";
 			if (demoAnimation) {
 				ShowDemo (true);
 			} else {
 				PlayIdle ();
+			}
+			if (characterLockedIcon != null) {
+				characterLockedIcon.enabled = IsCharacterLocked ();
 			}
 		}
 		
@@ -156,6 +164,7 @@ namespace BoogieDownGames {
 			m_anime = m_models[m_currentIndex].GetComponent<Animator>();
 			m_triggerFired = false;
 			GameMaster.Instance.CurrentModel = m_currentIndex;
+			characterLockedIcon.enabled = IsCharacterLocked ();
 		}
 		
 		public void PrevModel()
@@ -170,6 +179,17 @@ namespace BoogieDownGames {
 			m_anime = m_models[m_currentIndex].GetComponent<Animator>();
 			m_triggerFired = false;
 			GameMaster.Instance.CurrentModel = m_currentIndex;
+			characterLockedIcon.enabled = IsCharacterLocked ();
+		}
+
+		public bool IsCharacterLocked ()
+		{
+			bool isLocked = m_characterLocks [m_currentIndex];
+			if (isLocked) {
+				// TODO: now determine if the player has purchased the unlock for this item.
+				isLocked = ! Player.Instance.IsCharacterUnlocked(m_currentIndex);
+			}
+			return isLocked;
 		}
 		
 		public void PlayRandom () {
@@ -284,7 +304,6 @@ namespace BoogieDownGames {
 		{
 			// control the character demo mode. Demo mode is just a bool trigger on the animator. It is used to play a demo sequence of animations.
 			if (m_anime != null) {
-				m_lastMove = "Demo";
 				m_anime.SetBool ("Demo", demoFlag);
 			}
 		}
@@ -312,7 +331,6 @@ namespace BoogieDownGames {
 				}
 				{
 					Debug.Log (">>>> Setting animation to " + animationTrigger);
-					m_lastMove = animationTrigger;
 					m_anime.SetTrigger (animationTrigger);
 					m_triggerFired = true;
 					m_fCurrentAnimTimer = 0.0f;
@@ -343,7 +361,6 @@ namespace BoogieDownGames {
 				}
 				if (GetTierID(animationTrigger) != m_nState && GetTierID(animationTrigger) != m_nNextState) 
 				{
-					m_lastMove = animationTrigger;
 					SetAnimationLength();
 					m_models[m_currentIndex].transform.position = transform.position;
 				}

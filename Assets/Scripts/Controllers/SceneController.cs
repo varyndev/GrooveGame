@@ -6,7 +6,9 @@ using UnityEngine.UI;
 namespace BoogieDownGames {
 	
 	public class SceneController : UnitySingleton<SceneController> {
-		
+
+		// TODO: This is stupid, it should be an array of scene objects {scene, icon, name, locked}
+
 		[SerializeField]
 		private List<int> m_scenes; // these map to the scene id's in Build Settings to match each scene
 		
@@ -17,10 +19,14 @@ namespace BoogieDownGames {
 		private List<string> m_sceneNames; // these strings match the scene id's to represent the scene in the menu display
 		
 		[SerializeField]
+		private List<bool> m_sceneLocks; // these bools match the scene id's to represent which scenes should be locked
+		
+		[SerializeField]
 		private int m_currentIndex;
 
 		public Image sceneIcon;
 		public Text sceneName;
+		public Image sceneLockedIcon;
 
 		#region PROPERTIES
 		
@@ -36,7 +42,7 @@ namespace BoogieDownGames {
 			m_currentIndex = 0;
 			SetCurrentScene ();
 		}
-		
+
 		public void NextScene ()
 		{
 			m_currentIndex ++;
@@ -64,6 +70,16 @@ namespace BoogieDownGames {
 			return m_scenes [sceneIndex];
 		}
 
+		public bool IsSceneLocked ()
+		{
+			bool isLocked = m_sceneLocks [m_currentIndex];
+			if (isLocked) {
+				// TODO: now determine if the player has purchased the unlock for this item.
+				isLocked = ! Player.Instance.IsSceneUnlocked(m_currentIndex);
+			}
+			return isLocked;
+		}
+
 		private void SetCurrentScene () {
 			if (sceneIcon != null) {
 				sceneIcon.sprite = m_sceneIcons [m_currentIndex];
@@ -72,6 +88,7 @@ namespace BoogieDownGames {
 				sceneName.text = m_sceneNames [m_currentIndex];
 			}
 			GameMaster.Instance.CurrentScene = m_currentIndex;
+			sceneLockedIcon.enabled = IsSceneLocked ();
 		}
 
 		public void PostMessage(string method, string message)
