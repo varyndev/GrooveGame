@@ -15,7 +15,6 @@ namespace BoogieDownGames {
 		public override void GoToScene (int p_scene)
 		{
 			// Make sure all items are unlocked
-			Player playerInfo = Player.Instance;
 			BaseGameController gameMaster = GameMaster.Instance;
 			CharacterController characterController = (CharacterController) GameObject.FindObjectOfType(typeof(CharacterController));
 			TextMachine textMachine = (TextMachine) GameObject.FindObjectOfType (typeof(TextMachine));

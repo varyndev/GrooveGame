@@ -49,7 +49,11 @@ namespace BoogieDownGames {
 		IEnumerator ChangeState(float p_sec)
 		{
 			yield return new WaitForSeconds(p_sec);
-			GameMaster.Instance.SceneFsm.ChangeState(CtrlStateMenu.Instance);
+			if (Player.Instance.IsFirstPlay ()) {
+				GameMaster.Instance.SceneFsm.ChangeState (CtrlStateIntro.Instance);
+			} else {
+				GameMaster.Instance.SceneFsm.ChangeState (CtrlStateMenu.Instance);
+			}
 		}
 	}
 }
