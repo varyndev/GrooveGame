@@ -26,8 +26,7 @@ namespace BoogieDownGames {
 		
 		private Animator m_anime;
 		private bool m_triggerFired;
-		private string m_lastMove;
-		
+
 		// These are private for now as every dancer Animator Controller must support the exact same number, this is not configurable
 		private const int basicAnimations = 4;
 		private const int goodAnimations = 4;
@@ -63,13 +62,14 @@ namespace BoogieDownGames {
 			NotificationCenter.DefaultCenter.AddObserver(this, "OnStateRunExit");
 			NotificationCenter.DefaultCenter.AddObserver(this, "OnStateRunEnter");
 			m_triggerFired = false;
-			m_lastMove = "";
 			if (demoAnimation) {
 				ShowDemo (true);
 			} else {
 				PlayIdle ();
 			}
-			characterLockedIcon.enabled = isCharacterLocked ();
+			if (characterLockedIcon != null) {
+				characterLockedIcon.enabled = IsCharacterLocked ();
+			}
 		}
 		
 		void Update()
@@ -164,7 +164,7 @@ namespace BoogieDownGames {
 			m_anime = m_models[m_currentIndex].GetComponent<Animator>();
 			m_triggerFired = false;
 			GameMaster.Instance.CurrentModel = m_currentIndex;
-			characterLockedIcon.enabled = isCharacterLocked ();
+			characterLockedIcon.enabled = IsCharacterLocked ();
 		}
 		
 		public void PrevModel()
@@ -179,10 +179,10 @@ namespace BoogieDownGames {
 			m_anime = m_models[m_currentIndex].GetComponent<Animator>();
 			m_triggerFired = false;
 			GameMaster.Instance.CurrentModel = m_currentIndex;
-			characterLockedIcon.enabled = isCharacterLocked ();
+			characterLockedIcon.enabled = IsCharacterLocked ();
 		}
 
-		public bool isCharacterLocked ()
+		public bool IsCharacterLocked ()
 		{
 			bool isLocked = m_characterLocks [m_currentIndex];
 			if (isLocked) {
@@ -304,7 +304,6 @@ namespace BoogieDownGames {
 		{
 			// control the character demo mode. Demo mode is just a bool trigger on the animator. It is used to play a demo sequence of animations.
 			if (m_anime != null) {
-				m_lastMove = "Demo";
 				m_anime.SetBool ("Demo", demoFlag);
 			}
 		}
@@ -332,7 +331,6 @@ namespace BoogieDownGames {
 				}
 				{
 					Debug.Log (">>>> Setting animation to " + animationTrigger);
-					m_lastMove = animationTrigger;
 					m_anime.SetTrigger (animationTrigger);
 					m_triggerFired = true;
 					m_fCurrentAnimTimer = 0.0f;
@@ -363,7 +361,6 @@ namespace BoogieDownGames {
 				}
 				if (GetTierID(animationTrigger) != m_nState && GetTierID(animationTrigger) != m_nNextState) 
 				{
-					m_lastMove = animationTrigger;
 					SetAnimationLength();
 					m_models[m_currentIndex].transform.position = transform.position;
 				}

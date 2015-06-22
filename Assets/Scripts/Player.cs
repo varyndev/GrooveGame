@@ -17,6 +17,7 @@ namespace BoogieDownGames {
 		public int lastCharacterPlayed;
 		public int lastSongPlayed;
 		public int lastScenePlayed;
+		public DateTime lastDatePlayed;
 		public List<int> unlockedCharacters;
 		public List<int> unlockedSongs;
 		public List<int> unlockedScenes;
@@ -33,6 +34,7 @@ namespace BoogieDownGames {
 			public int lastCharacterPlayed;
 			public int lastSongPlayed;
 			public int lastScenePlayed;
+			public string lastDatePlayed;
 			public List<int> unlockedCharacters;
 			public List<int> unlockedSongs;
 			public List<int> unlockedScenes;
@@ -46,6 +48,7 @@ namespace BoogieDownGames {
 			lastCharacterPlayed = 0;
 			lastSongPlayed = 0;
 			lastScenePlayed = 0;
+			lastDatePlayed = DateTime.MinValue;
 			unlockedCharacters = new List<int>();
 			unlockedSongs = new List<int>();
 			unlockedScenes = new List<int>();
@@ -127,6 +130,34 @@ namespace BoogieDownGames {
 			}
 			return isUnlocked;
 		}
+
+		public bool IsFirstPlay () {
+			return lastDatePlayed == DateTime.MinValue;
+		}
+
+		public void SetLastPlayed (int sceneIndex, int characterIndex, int songIndex) {
+
+			// Use this to save settings when going to play a new game so we remember the game settings (in case game craps out before it ends)
+
+			lastCharacterPlayed = characterIndex;
+			lastSongPlayed = songIndex;
+			lastScenePlayed = sceneIndex;
+			lastDatePlayed = DateTime.Now;
+			Save ();
+		}
+		
+		public void SetLastPlayCompleted (int score, int coins, int sceneIndex, int characterIndex, int songIndex) {
+
+			// use this to save a completed game
+
+			SetBestScore (score);
+			AddCoins (coins);
+			lastCharacterPlayed = characterIndex;
+			lastSongPlayed = songIndex;
+			lastScenePlayed = sceneIndex;
+			lastDatePlayed = DateTime.Now;
+			Save ();
+		}
 		
 		public void Load()
 		{
@@ -142,6 +173,7 @@ namespace BoogieDownGames {
 					lastCharacterPlayed = playerData.lastCharacterPlayed;
 					lastSongPlayed = playerData.lastSongPlayed;
 					lastScenePlayed = playerData.lastScenePlayed;
+					lastDatePlayed = Convert.ToDateTime(playerData.lastDatePlayed);
 					unlockedCharacters = playerData.unlockedCharacters;
 					unlockedSongs = playerData.unlockedSongs;
 					unlockedScenes = playerData.unlockedScenes;
@@ -161,6 +193,7 @@ namespace BoogieDownGames {
 				playerData.lastCharacterPlayed = lastCharacterPlayed;
 				playerData.lastSongPlayed = lastSongPlayed;
 				playerData.lastScenePlayed = lastScenePlayed;
+				playerData.lastDatePlayed = lastDatePlayed.ToString();
 				playerData.unlockedCharacters = unlockedCharacters;
 				playerData.unlockedSongs = unlockedSongs;
 				playerData.unlockedScenes = unlockedScenes;

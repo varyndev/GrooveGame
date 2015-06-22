@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections;
 using UnityEngine.UI;
-using System;
 
 namespace BoogieDownGames {
 
@@ -9,6 +9,11 @@ namespace BoogieDownGames {
 
 		public AudioClip m_goodNote;
 		public AudioClip m_badNote;
+		public int m_menuSceneNumber = 2;
+		public int m_energyFillBonus = 250;
+		public int m_lowScoreEarned = 10;
+		public int m_midScoreEarned = 25;
+		public int m_highScoreEarned = 50;
 
 		[SerializeField]
 		private TimeKeeper m_timer;
@@ -30,6 +35,9 @@ namespace BoogieDownGames {
 
 		[SerializeField]
 		private int m_score; // Current game score
+		
+		[SerializeField]
+		private int m_coins; // Current game coins earned
 		
 		[SerializeField]
 		private Slider m_bonusNoteSlider;
@@ -75,6 +83,7 @@ namespace BoogieDownGames {
 			m_hitNotes = 0;
 			m_missNotes = 0;
 			m_score = 0;
+			m_coins = 0;
 
 			NotificationCenter.DefaultCenter.AddObserver(this, "OnStateInitEnter");
 			NotificationCenter.DefaultCenter.AddObserver(this, "OnStateInitUpdate");
@@ -96,14 +105,9 @@ namespace BoogieDownGames {
 			GameMaster.Instance.GameFsm.ChangeState(GameStateInit.Instance);
 		}
 
-		/*
-		 * Functions used with messaging
-		 */
-
 		public void OnStateTutorialEnter()
 		{
 			Time.timeScale = 0f;
-			//AudioController.Instance.PauseSong();
 		}
 
 		public void OnStatePauseEnter()
@@ -136,19 +140,10 @@ namespace BoogieDownGames {
 		public void OnStateRunEnter()
 		{
 			Time.timeScale = 1.0f;
-			noteSpawnTime = 1.0f;
+			noteSpawnTime = 2.0f; // TODO: note spawn time should vary based on difficulty and how well the player is doing
 			AudioController.Instance.playAtIndex(GameMaster.Instance.CurrentSong);
 			NotificationCenter.DefaultCenter.PostNotification (this, "PlayStart");
-
-			// Begin animating all the other dancer models in the scene
-			if (m_otherDancersParent != null) {
-				foreach (Transform dancer in m_otherDancersParent.transform) {
-					Animator dancerAC = dancer.gameObject.GetComponentInChildren<Animator>();
-					if (dancerAC != null) {
-						dancerAC.SetTrigger("Good0");
-					}
-				}
-			}
+			BeginSceneDancers ("Good", 0);
 		}
 
 		public void OnStateRunUpdate()
@@ -169,16 +164,16 @@ namespace BoogieDownGames {
 		public void RunGame()
 		{
 			m_timer.run ();
-			//Check to see if the song is finished
+			// Check to see if the song is finished
 			if (AudioController.Instance.DetectEndOfSong () && ! AudioController.Instance.IsPaused) {
-				//Check for the number of number of notes
+				Player.Instance.SetLastPlayCompleted (m_score, m_coins, GameMaster.Instance.CurrentScene, GameMaster.Instance.CurrentModel, GameMaster.Instance.CurrentSong);
+
+				// Check for the number of number of notes to determine win or lose
 				var missedPercantage = (m_hitNotes / m_totalNotes) * 100;
 				Debug.LogError ("Missed percentage ==> " + missedPercantage.ToString ());
 				if (missedPercantage < 50) {
-					//change state to lost
 					GameMaster.Instance.GameFsm.ChangeState (GameStateLostSong.Instance);
 				} else {
-					//Change state to won song state
 					GameMaster.Instance.GameFsm.ChangeState (GameStateWonSong.Instance);
 				}
 			} else {
@@ -187,11 +182,30 @@ namespace BoogieDownGames {
 					EnergyMeterFilled();
 				}
 				if (Input.GetKeyDown (KeyCode.P)) {
-					//AudioController.Instance.PauseSong();
+					// AudioController.Instance.PauseSong();
 				}
 				nextNoteSpawnTime += Time.deltaTime;
 				if (nextNoteSpawnTime >= noteSpawnTime) {
 					SpawnNote ();
+				}
+			}
+		}
+
+		public void BeginSceneDancers (string danceLevel, int danceMove)
+		{
+			string trigger;
+			// Begin animating all the other dancer models in the scene
+			if (m_otherDancersParent != null) {
+				foreach (Transform dancer in m_otherDancersParent.transform) {
+					Animator dancerAC = dancer.gameObject.GetComponentInChildren<Animator>();
+					if (dancerAC != null) {
+						if (danceMove == -1) {
+							trigger = danceLevel + UnityEngine.Random.Range (0, 4).ToString ();
+						} else {
+							trigger = danceLevel + danceMove.ToString ();
+						}
+						dancerAC.SetTrigger(trigger);
+					}
 				}
 			}
 		}
@@ -228,11 +242,13 @@ namespace BoogieDownGames {
 		public void EnergyMeterFilled ()
 		{
 			// do fun stuff when the energy meter is filled: fireworks, lights, dance moves, then reset the meter
+			m_coins ++;
+			m_score += m_energyFillBonus;
 			if (m_bonusNoteSlider != null) {
 				m_bonusNoteSlider.value = 0.0f;
 			}
 			NotificationCenter.DefaultCenter.PostNotification (this, "spawnPrefab");
-			GameMaster.Instance.GameFsm.ChangeState (GameStateCutScene.Instance);
+			// GameMaster.Instance.GameFsm.ChangeState (GameStateCutScene.Instance);
 		}
 		
 		public void SpawnNote ()
@@ -249,15 +265,15 @@ namespace BoogieDownGames {
 			m_hitNotes ++;
 			switch (noteState) {
 			case NoteStates.LowScore:
-				scoreEarned = 10;
+				scoreEarned = m_lowScoreEarned;
 				bonusEarned = 0.025f;
 				break;
 			case NoteStates.MidScore:
-				scoreEarned = 25;
+				scoreEarned = m_midScoreEarned;
 				bonusEarned = 0.05f;
 				break;
 			case NoteStates.HighScore:
-				scoreEarned = 50;
+				scoreEarned = m_highScoreEarned;
 				bonusEarned = 0.075f;
 				break;
 			default:
@@ -266,8 +282,9 @@ namespace BoogieDownGames {
 			if (m_audioSource != null && m_goodNote != null) {
 				m_audioSource.PlayOneShot (m_goodNote);
 			}
-			if(m_score < 50)
+			if (m_score < 50) {
 				NotificationCenter.DefaultCenter.PostNotification (this, "PlayGood");
+			}
 			UpdatePlayerScore (scoreEarned);
 			UpdateBonusMeter (bonusEarned);
 			UpdateDanceMove ();
@@ -277,8 +294,9 @@ namespace BoogieDownGames {
 		public void NoteWasMissed ()
 		{
 			string animationLevel;
-			if(m_score < 30)
+			if (m_score < 30) {
 				NotificationCenter.DefaultCenter.PostNotification (this, "PlayLame");
+			}
 			m_missNotes ++;
 			// TODO: Add logic to change animation trigger based on how bad the player is scoring
 			if (m_missNotes > 5) {
@@ -386,7 +404,7 @@ namespace BoogieDownGames {
 
 		public void RestartLevel()
 		{
-			GameMaster.Instance.GoToScene(2);
+			GameMaster.Instance.GoToScene(m_menuSceneNumber);
 		}
 
 		public void QuitToMenu()

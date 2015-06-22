@@ -8,13 +8,26 @@ namespace BoogieDownGames {
 
 		public float characterDemoInterval = 5.0f;
 		public Text coinsText;
+		public AudioClip m_badNote;
 
 		private float timeToNextCharacterDemo;
 
 		public override void GoToScene (int p_scene)
 		{
-			GameEventBeaconController.GameStart ((GameMaster.Instance.CurrentScene + 1).ToString (), (GameMaster.Instance.CurrentModel + 1).ToString (), (GameMaster.Instance.CurrentSong + 1).ToString ());
-			GameMaster.Instance.SceneFsm.ChangeState(CtrlStateGame.Instance);
+			// Make sure all items are unlocked
+			Player playerInfo = Player.Instance;
+			BaseGameController gameMaster = GameMaster.Instance;
+			CharacterController characterController = (CharacterController) GameObject.FindObjectOfType(typeof(CharacterController));
+			TextMachine textMachine = (TextMachine) GameObject.FindObjectOfType (typeof(TextMachine));
+			SceneController sceneController = (SceneController) GameObject.FindObjectOfType (typeof(SceneController));
+
+			if (sceneController.IsSceneLocked () || characterController.IsCharacterLocked () || textMachine.IsSongLocked (gameMaster.CurrentSong)) {
+				GetComponent<AudioSource>().PlayOneShot (m_badNote);
+			} else {
+				GameEventBeaconController.GameStart ((gameMaster.CurrentScene + 1).ToString (), (gameMaster.CurrentModel + 1).ToString (), (gameMaster.CurrentSong + 1).ToString ());
+				Player.Instance.SetLastPlayed (gameMaster.CurrentScene, gameMaster.CurrentModel, gameMaster.CurrentSong);
+				GameMaster.Instance.SceneFsm.ChangeState (CtrlStateGame.Instance);
+			}
 		}
 
 		public void QuitGame()

@@ -70,7 +70,7 @@ namespace BoogieDownGames {
 			return m_scenes [sceneIndex];
 		}
 
-		public bool isSceneLocked ()
+		public bool IsSceneLocked ()
 		{
 			bool isLocked = m_sceneLocks [m_currentIndex];
 			if (isLocked) {
@@ -88,7 +88,7 @@ namespace BoogieDownGames {
 				sceneName.text = m_sceneNames [m_currentIndex];
 			}
 			GameMaster.Instance.CurrentScene = m_currentIndex;
-			sceneLockedIcon.enabled = isSceneLocked ();
+			sceneLockedIcon.enabled = IsSceneLocked ();
 		}
 
 		public void PostMessage(string method, string message)

@@ -69,7 +69,7 @@ namespace BoogieDownGames {
 			SetSongInfo ((string)notification.data["songid"], (float)notification.data["length"]);
 		}
 
-		public bool isSongLocked (int songIndex)
+		public bool IsSongLocked (int songIndex)
 		{
 			bool isLocked = m_songList [songIndex].paid;
 			if (isLocked) {
@@ -81,17 +81,16 @@ namespace BoogieDownGames {
 
 		private void SetSongInfo (string songId, float duration) {
 			if (songId != null && m_songTitleText != null) {
-				int i = 0;
-				bool isLocked;
+				int songIndex = 0;
 				foreach (SongItem song in m_songList) {
 					if (song.id == songId) {
 						m_songTitleText.text = song.title;
 						m_songArtistText.text = song.artist;
 						m_songDurationText.text = ConvertSecondsToMMSS(duration);
-						m_songLockedIcon.enabled = isSongLocked (i);
+						m_songLockedIcon.enabled = IsSongLocked (songIndex);
 						break;
 					}
-					i ++;
+					songIndex ++;
 				}
 			}
 		}
