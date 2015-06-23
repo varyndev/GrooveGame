@@ -75,9 +75,8 @@ namespace BoogieDownGames {
 			NotificationCenter.DefaultCenter.AddObserver(this,"OnStateRunUpdate");
 			NotificationCenter.DefaultCenter.AddObserver(this,"OnStateLostSongEnter");
 
-			// NOTE: Should have the CharacterModel container have a unique tag
-			// because it's named the same for each scene, just the name search will suffice
-			m_dancer = GameObject.Find ("CharacterModel");
+			// The CharacterModel contains the tag "CharacterController"
+			m_dancer = GameObject.FindGameObjectWithTag ("CharacterController");
 			m_zDancerDistanceThreshold = -0.25f;
 
 			// to provide some variety, flip half the notes
@@ -123,7 +122,6 @@ namespace BoogieDownGames {
 		{
 			// make sure the note is in front of the player
 			zDistanceFromPlayer = transform.position.z - m_dancer.transform.position.z;
-			Debug.Log (zDistanceFromPlayer);
 			zDistanceFromCamera = transform.position.z - m_zLimit;
 			if(zDistanceFromPlayer > m_zDancerDistanceThreshold) {
 				m_myState = NoteStates.UnReady;
