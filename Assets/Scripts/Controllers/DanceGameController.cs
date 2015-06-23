@@ -166,12 +166,13 @@ namespace BoogieDownGames {
 			m_timer.run ();
 			// Check to see if the song is finished
 			if (AudioController.Instance.DetectEndOfSong () && ! AudioController.Instance.IsPaused) {
+				NotificationCenter.DefaultCenter.PostNotification (this, "PlayIdle ");
 				Player.Instance.SetLastPlayCompleted (m_score, m_coins, GameMaster.Instance.CurrentScene, GameMaster.Instance.CurrentModel, GameMaster.Instance.CurrentSong);
 
 				// Check for the number of number of notes to determine win or lose
-				var missedPercantage = (m_hitNotes / m_totalNotes) * 100;
-				Debug.LogError ("Missed percentage ==> " + missedPercantage.ToString ());
-				if (missedPercantage < 50) {
+				float missedPercentage = (m_hitNotes / m_totalNotes) * 100.0f;
+				Debug.LogError ("Missed percentage ==> " + missedPercentage.ToString ());
+				if (missedPercentage < 50.0f) {
 					GameMaster.Instance.GameFsm.ChangeState (GameStateLostSong.Instance);
 				} else {
 					GameMaster.Instance.GameFsm.ChangeState (GameStateWonSong.Instance);
