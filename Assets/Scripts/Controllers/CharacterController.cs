@@ -79,7 +79,7 @@ namespace BoogieDownGames {
 			if(m_fCurrentAnimLength > 0)
 			{
 				m_fCurrentAnimTimer += Time.deltaTime;
-				if(m_fCurrentAnimTimer >= m_fCurrentAnimLength)
+				if(m_fCurrentAnimTimer >= m_fCurrentAnimLength || m_nState == -1)
 				{
 					if(m_nNextState != -1)
 					{
@@ -263,11 +263,14 @@ namespace BoogieDownGames {
 		
 		public void PlayLame()
 		{
-			int lameTrigger = Random.Range (1, lameAnimations);
-			//string triggerId = m_szLameAnims[lameTrigger];
-			string triggerId = "Lame" + lameTrigger.ToString ();
-			IterateAnimation (triggerId);
-			m_nNextState = 3;
+			if(m_nState != 3 && m_nNextState != 3)
+			{
+				int lameTrigger = Random.Range (1, lameAnimations);
+				//string triggerId = m_szLameAnims[lameTrigger];
+				string triggerId = "Lame" + lameTrigger.ToString ();
+				IterateAnimation (triggerId);
+				m_nNextState = 3;
+			}
 		}
 		
 		public void PlayCheer()
@@ -355,8 +358,10 @@ namespace BoogieDownGames {
 		}
 		private void IterateAnimation(string animationTrigger)
 		{
-			if (m_anime != null) {
-				if (animationTrigger == "") {
+			if (m_anime != null)
+			{
+				if (animationTrigger == "") 
+				{
 					animationTrigger = "StandIdle";
 				}
 				if (GetTierID(animationTrigger) != m_nState && GetTierID(animationTrigger) != m_nNextState) 
