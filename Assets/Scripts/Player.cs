@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-using System;
 using System.Runtime.Serialization.Formatters.Binary;
 
 // This object will act as the Player data model. It will hold all player-centric data and preferences.

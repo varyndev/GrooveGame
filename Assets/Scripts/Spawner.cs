@@ -19,6 +19,7 @@ namespace BoogieDownGames{
 			// Spawner's prefab should be invisible
 
 			NotificationCenter.DefaultCenter.AddObserver(this, "spawnPrefab");
+			NotificationCenter.DefaultCenter.AddObserver(this, "destroyAllPrefab");
 
 			// Set the position based on the Main Camera's Set Position
 			Transform mainCameraTransform = Camera.main.transform;
@@ -38,6 +39,13 @@ namespace BoogieDownGames{
 		{
 			GameObject obj = MemoryPool.Instance.findAndGetObjs(m_prefab.name, false);
 			obj.transform.position = transform.position;
+		}
+
+		/// <summary>
+		/// Destroy all active notes
+		/// </summary>
+		public void destroyAllPrefab()
+		{
 		}
 	}
 }

@@ -7,6 +7,10 @@ namespace BoogieDownGames {
 
 	public class UIManager : UnitySingleton<UIManager> {
 
+		public GameObject m_gameOverCanvas;
+		public Text gameOverScoreText;
+		public Text gameOverCoinsText;
+
 		[SerializeField]
 		private List<GameObject> m_canvas;
 
@@ -32,22 +36,13 @@ namespace BoogieDownGames {
 		public void SetDeadAllBut(int p_index)
 		{
 			for(int index = 0; index < m_canvas.Count; ++index) {
-				if(index != p_index) {
-					Debug.Log("Setting ==> " + index.ToString());
-					m_canvas[index].SetActive(false);
-				} else {
-					m_canvas[index].SetActive(true);
-				}
+				m_canvas[index].SetActive(index == p_index);
 			}
 		}
 
 		public void SetAliveAllBut(int p_index) {
 			for(int index = 0; index < m_canvas.Count; ++index) {
-				if(index != p_index) {
-					m_canvas[index].SetActive(true);
-				} else {
-					m_canvas[index].SetActive(false);
-				}
+				m_canvas[index].SetActive(index != p_index);
 			}
 		}
 
@@ -55,6 +50,24 @@ namespace BoogieDownGames {
 		{
 			foreach(GameObject obj in m_canvas) {
 				obj.SetActive(p_state);
+			}
+		}
+
+		public void ShowGameOver (bool showFlag)
+		{
+			if (showFlag) {
+				DanceGameController danceGameContoller = DanceGameController.Instance;
+				if (danceGameContoller != null) {
+					if (gameOverScoreText != null) {
+						gameOverScoreText.text = danceGameContoller.FinalScore.ToString();
+					}
+					if (gameOverCoinsText != null) {
+						gameOverCoinsText.text = danceGameContoller.CoinsEarned.ToString();
+					}
+				}
+			}
+			if (m_gameOverCanvas != null) {
+				m_gameOverCanvas.SetActive (showFlag);
 			}
 		}
 	}

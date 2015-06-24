@@ -277,17 +277,21 @@ namespace BoogieDownGames {
 		{
 			int cheerTrigger = Random.Range (1, cheerAnimations);
 			string triggerId = "Cheer" + cheerTrigger.ToString ();
+			m_nNextState = -1;
+			m_nState = -1;
 			SetAnimationTrigger (triggerId);
 		}
 		
 		public void PlayWin()
 		{
+			m_nNextState = -1;
 			m_nState = -1;
 			SetAnimationTrigger ("Win");
 		}
 		
 		public void PlayLose()
 		{
+			m_nNextState = -1;
 			m_nState = -1;
 			SetAnimationTrigger ("Lose");
 		}
@@ -332,16 +336,15 @@ namespace BoogieDownGames {
 				if (animationTrigger == "") {
 					animationTrigger = "StandIdle";
 				}
-				{
-					Debug.Log (">>>> Setting animation to " + animationTrigger);
-					m_anime.SetTrigger (animationTrigger);
-					m_triggerFired = true;
-					m_fCurrentAnimTimer = 0.0f;
-					m_fCurrentAnimLength = m_models[m_currentIndex].GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length;
-					m_models[m_currentIndex].transform.rotation = new Quaternion(0,0,0,0);
-				}
+				Debug.Log (">>>> Setting animation to " + animationTrigger);
+				m_anime.SetTrigger (animationTrigger);
+				m_triggerFired = true;
+				m_fCurrentAnimTimer = 0.0f;
+				m_fCurrentAnimLength = m_models[m_currentIndex].GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length;
+				m_models[m_currentIndex].transform.rotation = new Quaternion(0,0,0,0);
 			}
 		}
+
 		private int GetTierID(string trigger)
 		{
 			//0 - Basic, 1- Good, 2- Best, 3- Lame, -1= Idle
@@ -356,6 +359,7 @@ namespace BoogieDownGames {
 			else
 				return -1;
 		}
+
 		private void IterateAnimation(string animationTrigger)
 		{
 			if (m_anime != null)

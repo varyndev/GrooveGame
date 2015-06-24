@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections;
 
 namespace BoogieDownGames {
@@ -22,7 +23,11 @@ namespace BoogieDownGames {
 
 		[SerializeField]
 		private RuntimeAnimatorController[] m_songAnimatorControllers; // This MUST MATCH the song or the default should be used.
-		
+
+		private bool m_songComplete;
+		private bool m_songWon;
+		private DateTime m_songStartTime;
+		private DateTime m_songEndTime;
 
 		#region PROPERTIES
 		
@@ -42,6 +47,16 @@ namespace BoogieDownGames {
 		{
 			get { return m_currentScene; }
 			set { m_currentScene = value; }
+		}
+
+		public bool SongWon
+		{
+			get { return m_songWon; }
+		}
+		
+		public bool SongComplete
+		{
+			get { return m_songComplete; }
 		}
 
 		#endregion
@@ -96,6 +111,21 @@ namespace BoogieDownGames {
 		public virtual void GoToScene(string p_scene)
 		{
 			Application.LoadLevel(p_scene);
+		}
+		
+		public void SongStarted ()
+		{
+			m_songComplete = false;
+			m_songStartTime = DateTime.Now;
+			m_songEndTime = m_songStartTime;
+			m_songWon = false;
+		}
+
+		public void SongCompleted (bool won)
+		{
+			m_songComplete = true;
+			m_songEndTime = DateTime.Now;
+			m_songWon = won;
 		}
 
 		public void PostMessage(string p_func, string p_message)

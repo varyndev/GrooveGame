@@ -49,6 +49,7 @@ namespace BoogieDownGames {
 		private float nextNoteSpawnTime;
 		private bool runWasStartedSoDontDoItAgain = false;
 		private AudioSource m_audioSource;
+		private GameMaster gameMaster;
 
 		public int MissNotes
 		{
@@ -68,6 +69,16 @@ namespace BoogieDownGames {
 			set { m_totalNotes = value;}
 		}
 
+		public int FinalScore
+		{
+			get { return m_score; }
+		}
+
+		public int CoinsEarned
+		{
+			get { return m_coins; }
+		}
+		
 		//Initiate the phase
 		public void Init()
 		{
@@ -76,6 +87,7 @@ namespace BoogieDownGames {
 
 		void Start()
 		{
+			gameMaster = (GameMaster)GameMaster.Instance;
 			m_audioSource = GetComponent<AudioSource> ();
 			runWasStartedSoDontDoItAgain = false;
 			noteSpawnTime = 0.0f;
@@ -98,7 +110,7 @@ namespace BoogieDownGames {
 			NotificationCenter.DefaultCenter.AddObserver(this, "OnStateTutorialUpdate");
 			NotificationCenter.DefaultCenter.AddObserver(this, "OnStateTutorialFixedUpdate");
 
-			GameMaster.Instance.GameFsm.ChangeState(GameStateInit.Instance);
+			gameMaster.GameFsm.ChangeState(GameStateInit.Instance);
 		}
 
 		public void OnStateTutorialEnter()
@@ -137,9 +149,10 @@ namespace BoogieDownGames {
 		{
 			Time.timeScale = 1.0f;
 			noteSpawnTime = 2.0f; // TODO: note spawn time should vary based on difficulty and how well the player is doing
-			AudioController.Instance.playAtIndex(GameMaster.Instance.CurrentSong);
+			AudioController.Instance.playAtIndex(gameMaster.CurrentSong);
+			gameMaster.SongStarted ();
 			NotificationCenter.DefaultCenter.PostNotification (this, "PlayStart");
-			BeginSceneDancers ("Good", 0);
+			TriggerSceneDancers ("Good", 0);
 		}
 
 		public void OnStateRunUpdate()
@@ -162,18 +175,13 @@ namespace BoogieDownGames {
 			m_timer.run ();
 			// Check to see if the song is finished
 			if (AudioController.Instance.DetectEndOfSong () && ! AudioController.Instance.IsPaused) {
-				NotificationCenter.DefaultCenter.PostNotification (this, "PlayIdle ");
-				Player.Instance.SetLastPlayCompleted (m_score, m_coins, GameMaster.Instance.CurrentScene, GameMaster.Instance.CurrentModel, GameMaster.Instance.CurrentSong);
+				StopDancing ();
 
-				// Check for the number of number of notes to determine win or lose
-				float missedPercentage = (m_hitNotes / m_totalNotes) * 100.0f;
-				Debug.LogError ("Missed percentage ==> " + missedPercentage.ToString ());
-				if (missedPercentage < 50.0f) {
-					GameMaster.Instance.GameFsm.ChangeState (GameStateLostSong.Instance);
-				} else {
-					GameMaster.Instance.GameFsm.ChangeState (GameStateWonSong.Instance);
-				}
-			} else {
+				// Check for the number of number of notes to determine win or lose, then change state to game over
+				float hitPercentage = (m_hitNotes * 1.0f) / (m_totalNotes * 1.0f);
+				gameMaster.SongCompleted (hitPercentage >= 0.5f);
+				gameMaster.GameFsm.ChangeState (GameStateSongOver.Instance);
+			} else if ( ! gameMaster.SongComplete) {
 				// Check energy feedback slider
 				if (m_bonusNoteSlider != null && m_bonusNoteSlider.value >= 1.0f) {
 					EnergyMeterFilled();
@@ -188,7 +196,14 @@ namespace BoogieDownGames {
 			}
 		}
 
-		public void BeginSceneDancers (string danceLevel, int danceMove)
+		private void StopDancing ()
+		{
+			NotificationCenter.DefaultCenter.PostNotification (this, "destroyAllPrefab");
+			NotificationCenter.DefaultCenter.PostNotification (this, "PlayIdle");
+			TriggerSceneDancers ("StandIdle", 0);
+		}
+
+		public void TriggerSceneDancers (string danceLevel, int danceMove)
 		{
 			string trigger;
 			// Begin animating all the other dancer models in the scene
@@ -196,7 +211,9 @@ namespace BoogieDownGames {
 				foreach (Transform dancer in m_otherDancersParent.transform) {
 					Animator dancerAC = dancer.gameObject.GetComponentInChildren<Animator>();
 					if (dancerAC != null) {
-						if (danceMove == -1) {
+						if (danceLevel == "StandIdle") {
+							trigger = danceLevel;
+						} else if (danceMove == -1) {
 							trigger = danceLevel + UnityEngine.Random.Range (0, 4).ToString ();
 						} else {
 							trigger = danceLevel + danceMove.ToString ();
@@ -324,60 +341,25 @@ namespace BoogieDownGames {
 			NotificationCenter.DefaultCenter.PostNotification (this, animationLevel);
 		}
 		
-		public void InitLostSongSequence()
-		{
-			Debug.Log("entering Game state lost song");
-			UIManager.Instance.SetDeadAllBut(3);
-		}
-
-		public void RunLostSongSequence()
-		{
-			Debug.Log("Game state lost song");
-		}
-
-		public void InitLostSequence()
-		{
-		}
-
-		public void RunLostSequence()
-		{
-		}
-
-		public void InitWonSequence()
-		{
-		}
-
-		public void RunWonSequence()
-		{
-		}
-
-		public void InitWonSongSequence()
-		{
-		}
-
-		public void RunWonSongSequence()
-		{
-		}
-
 		public void Pause()
 		{
-			GameMaster.Instance.Pause();
+			gameMaster.Pause();
 		}
 
 		public void UnPause()
 		{
-			GameMaster.Instance.UnPause();
+			gameMaster.UnPause();
 		}
 
 		public void RestartLevel()
 		{
-			GameMaster.Instance.GoToScene(m_menuSceneNumber);
+			gameMaster.GoToScene(m_menuSceneNumber);
 		}
 
 		public void QuitToMenu()
 		{
-			GameMaster.Instance.GameFsm.ChangeState(GameStateIdle.Instance);
-			GameMaster.Instance.SceneFsm.ChangeState(CtrlStateMenu.Instance);
+			gameMaster.GameFsm.ChangeState(GameStateIdle.Instance);
+			gameMaster.SceneFsm.ChangeState(CtrlStateMenu.Instance);
 		}
 		
 		public void PostMessage(string p_func, string p_message)
