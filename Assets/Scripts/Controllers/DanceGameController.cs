@@ -174,24 +174,26 @@ namespace BoogieDownGames {
 		{
 			m_timer.run ();
 			// Check to see if the song is finished
-			if (AudioController.Instance.DetectEndOfSong () && ! AudioController.Instance.IsPaused) {
-				StopDancing ();
+			if (! gameMaster.SongComplete) {
+				if (AudioController.Instance.DetectEndOfSong () && ! AudioController.Instance.IsPaused) {
+					StopDancing ();
 
-				// Check for the number of number of notes to determine win or lose, then change state to game over
-				float hitPercentage = (m_hitNotes * 1.0f) / (m_totalNotes * 1.0f);
-				gameMaster.SongCompleted (hitPercentage >= 0.5f);
-				gameMaster.GameFsm.ChangeState (GameStateSongOver.Instance);
-			} else if ( ! gameMaster.SongComplete) {
-				// Check energy feedback slider
-				if (m_bonusNoteSlider != null && m_bonusNoteSlider.value >= 1.0f) {
-					EnergyMeterFilled();
-				}
-				if (Input.GetKeyDown (KeyCode.P)) {
-					// AudioController.Instance.PauseSong();
-				}
-				nextNoteSpawnTime += Time.deltaTime;
-				if (nextNoteSpawnTime >= noteSpawnTime) {
-					SpawnNote ();
+					// Check for the number of number of notes to determine win or lose, then change state to game over
+					float hitPercentage = (m_hitNotes * 1.0f) / (m_totalNotes * 1.0f);
+					gameMaster.SongCompleted (hitPercentage >= 0.5f);
+					gameMaster.GameFsm.ChangeState (GameStateSongOver.Instance);
+				} else {
+					// Check energy feedback slider
+					if (m_bonusNoteSlider != null && m_bonusNoteSlider.value >= 1.0f) {
+						EnergyMeterFilled ();
+					}
+					if (Input.GetKeyDown (KeyCode.P)) {
+						// AudioController.Instance.PauseSong();
+					}
+					nextNoteSpawnTime += Time.deltaTime;
+					if (nextNoteSpawnTime >= noteSpawnTime) {
+						SpawnNote ();
+					}
 				}
 			}
 		}

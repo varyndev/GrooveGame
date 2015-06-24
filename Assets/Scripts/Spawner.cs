@@ -46,6 +46,7 @@ namespace BoogieDownGames{
 		/// </summary>
 		public void destroyAllPrefab()
 		{
+			Debug.Log ("Destroy all notes");
 		}
 	}
 }
