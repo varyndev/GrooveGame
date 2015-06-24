@@ -93,10 +93,6 @@ namespace BoogieDownGames {
 			NotificationCenter.DefaultCenter.AddObserver(this, "OnStateRunUpdate");
 			NotificationCenter.DefaultCenter.AddObserver(this, "OnStateRunFixedUpdate");
 			NotificationCenter.DefaultCenter.AddObserver(this, "OnStateRunExit");
-			NotificationCenter.DefaultCenter.AddObserver(this, "OnStateCutSceneEnter");
-			NotificationCenter.DefaultCenter.AddObserver(this, "OnStateCutSceneUpdate");
-			NotificationCenter.DefaultCenter.AddObserver(this, "OnStateCutSceneFixedUpdate");
-			NotificationCenter.DefaultCenter.AddObserver(this, "OnStateCutSceneExit");
 			NotificationCenter.DefaultCenter.AddObserver(this, "OnStateTutorialEnter");
 			NotificationCenter.DefaultCenter.AddObserver(this, "OnStateTutorialExit");
 			NotificationCenter.DefaultCenter.AddObserver(this, "OnStateTutorialUpdate");
@@ -211,35 +207,6 @@ namespace BoogieDownGames {
 			}
 		}
 
-		public void OnStateCutSceneUpdate()
-		{
-		}
-
-		public void OnStateCutSceneEnter()
-		{
-			m_cut.SetActive(true);
-			AudioController.Instance.playAtIndex(7); // What is this???
-			//AudioController.Instance.PauseSong();
-			StartCoroutine(CutSceneDelay(2.05f));
-		}
-
-		public void OnStateCutSceneExit()
-		{
-			//NotificationCenter.DefaultCenter.PostNotification(this,"PlayCurrentSong");
-			m_cut.SetActive(false);
-		}
-
-		public void OnStateCutSceneFixedUpdate()
-		{
-		}
-
-		IEnumerator CutSceneDelay(float p_sec)
-		{
-			yield return new WaitForSeconds(p_sec);
-			m_cut.SetActive(false);
-			GameMaster.Instance.GameFsm.ChangeState(GameStateRun.Instance);
-		}
-
 		public void EnergyMeterFilled ()
 		{
 			// do fun stuff when the energy meter is filled: fireworks, lights, dance moves, then reset the meter
@@ -249,7 +216,6 @@ namespace BoogieDownGames {
 				m_bonusNoteSlider.value = 0.0f;
 			}
 			NotificationCenter.DefaultCenter.PostNotification (this, "spawnPrefab");
-			// GameMaster.Instance.GameFsm.ChangeState (GameStateCutScene.Instance);
 		}
 		
 		public void SpawnNote ()
