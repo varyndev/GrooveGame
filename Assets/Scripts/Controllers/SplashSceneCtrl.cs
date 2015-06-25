@@ -50,7 +50,11 @@ namespace BoogieDownGames {
 		{
 			yield return new WaitForSeconds(p_sec);
 			if (Player.Instance.IsFirstPlay ()) {
+#if UNITY_IOS || UNITY_ANDROID
+				GameMaster.Instance.SceneFsm.ChangeState (CtrlStateMenu.Instance);
+#else
 				GameMaster.Instance.SceneFsm.ChangeState (CtrlStateIntro.Instance);
+#endif
 			} else {
 				GameMaster.Instance.SceneFsm.ChangeState (CtrlStateMenu.Instance);
 			}

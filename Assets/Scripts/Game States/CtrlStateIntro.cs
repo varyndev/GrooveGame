@@ -8,7 +8,7 @@ namespace BoogieDownGames {
 		static readonly CtrlStateIntro instance = new CtrlStateIntro();
 
 		private int movieScene = 5;
-		private float movieLength = 12.0f;
+		private float movieLength = 11.0f;
 		private IntroMovieVideoPlayer introMovie = null;
 		private float movieTimer;
 
@@ -21,7 +21,11 @@ namespace BoogieDownGames {
 		private CtrlStateIntro() { }
 		
 		public override void Enter (BaseGameController p_game) {
+#if UNITY_IOS || UNITY_ANDROID
+			GameMaster.Instance.SceneFsm.ChangeState (CtrlStateMenu.Instance);
+#else
 			Application.LoadLevel(movieScene);
+#endif
 		}
 		
 		public override void ExecuteOnUpdate (BaseGameController p_game) {
