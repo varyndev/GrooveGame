@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 namespace BoogieDownGames{
 
@@ -14,8 +15,12 @@ namespace BoogieDownGames{
 		/// </summary>
 		public float spawnDistance = 5f;
 
+		private List<GameObject> m_notes;
+
 		void Start()
 		{
+			m_notes = new List<GameObject> ();
+
 			// Spawner's prefab should be invisible
 
 			NotificationCenter.DefaultCenter.AddObserver(this, "spawnPrefab");
@@ -39,6 +44,8 @@ namespace BoogieDownGames{
 		{
 			GameObject obj = MemoryPool.Instance.findAndGetObjs(m_prefab.name, false);
 			obj.transform.position = transform.position;
+			if(!m_notes.Contains(obj))
+				m_notes.Add (obj);
 		}
 
 		/// <summary>
@@ -46,6 +53,8 @@ namespace BoogieDownGames{
 		/// </summary>
 		public void destroyAllPrefab()
 		{
+			foreach (var obj in m_notes) 
+				obj.SetActive(false);
 		}
 	}
 }
