@@ -22,7 +22,8 @@ namespace BoogieDownGames {
 		
 		public override void Enter (BaseGameController p_game) {
 #if UNITY_IOS || UNITY_ANDROID
-			GameMaster.Instance.SceneFsm.ChangeState (CtrlStateMenu.Instance);
+			Application.LoadLevel(movieScene);
+//			GameMaster.Instance.SceneFsm.ChangeState (CtrlStateMenu.Instance);
 #else
 			Application.LoadLevel(movieScene);
 #endif

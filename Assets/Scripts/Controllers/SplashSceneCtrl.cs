@@ -49,9 +49,10 @@ namespace BoogieDownGames {
 		IEnumerator ChangeState(float p_sec)
 		{
 			yield return new WaitForSeconds(p_sec);
-			if (Player.Instance.IsFirstPlay ()) {
+			if (true || Player.Instance.IsFirstPlay ()) {
 #if UNITY_IOS || UNITY_ANDROID
-				GameMaster.Instance.SceneFsm.ChangeState (CtrlStateMenu.Instance);
+				GameMaster.Instance.SceneFsm.ChangeState (CtrlStateIntro.Instance);
+//				GameMaster.Instance.SceneFsm.ChangeState (CtrlStateMenu.Instance);
 #else
 				GameMaster.Instance.SceneFsm.ChangeState (CtrlStateIntro.Instance);
 #endif
