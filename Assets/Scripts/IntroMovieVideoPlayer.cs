@@ -26,12 +26,13 @@ public class IntroMovieVideoPlayer : MonoBehaviour {
 	public void StartMovie () {
 #if ! (UNITY_IOS || UNITY_ANDROID)
 		if (movie != null) {
+			Debug.Log("playing movie");
 			GetComponent<AudioSource>().clip = movie.audioClip;
 			GetComponent<AudioSource>().Play ();
 			movie.Play();
 		}
 #else
-		Handheld.PlayFullScreenMovie ("GrooveGameIntro.mov", Color.black, FullScreenMovieControlMode.CancelOnInput);
+		Handheld.PlayFullScreenMovie ("groove_game.mp4", Color.black, FullScreenMovieControlMode.CancelOnInput);
 #endif
 	}
 

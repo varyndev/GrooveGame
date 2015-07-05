@@ -31,6 +31,7 @@ namespace BoogieDownGames {
 		
 		public override void ExecuteOnUpdate (BaseGameController p_game) {
 			if (introMovie == null) {
+				Debug.Log("Intro Movie Initiated!");
 				introMovie = (IntroMovieVideoPlayer)GameObject.FindObjectOfType (typeof(IntroMovieVideoPlayer));
 				PlayIntroVideo();
 			} else {
