@@ -18,7 +18,7 @@ namespace BoogieDownGames
 		private bool m_loadOnLevel;
 		public Dictionary<string,int> m_keyBank = new Dictionary<string,int>();//Keep a bank of keys
 		public Builder[] m_builder;
-		
+		bool m_bHasLoadedBefore = false;
 		// Use this for initialization
 		void Awake()
 		{
@@ -125,6 +125,7 @@ namespace BoogieDownGames
 		//Starts off building the bank
 		public void createBuilderBanks()
 		{
+			m_bHasLoadedBefore = true;
 			for(int index =0; index < m_builder.Length; ++index) {
 				m_builder[index].build();
 				if(!m_keyBank.ContainsKey(m_builder[index].Name) && !m_keyBank.ContainsKey(m_builder[index].PreFab.name)) {
@@ -139,7 +140,7 @@ namespace BoogieDownGames
 		
 		void OnLevelWasLoaded(int level)
 		{
-			if(m_loadOnLevel == true) {
+			if(m_loadOnLevel == true && m_bHasLoadedBefore == false) {
 				createBuilderBanks();
 			}
 		}
