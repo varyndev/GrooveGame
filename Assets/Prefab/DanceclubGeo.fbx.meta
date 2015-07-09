@@ -1,0 +1,152 @@
+fileFormatVersion: 2
+guid: 1eed9f2465ff84d5da70d4a53825e036
+timeCreated: 1434990880
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: ClubBar
+    100002: ClubBarBack
+    100004: ClubBarDeco
+    100006: ClubBenchStoolTable
+    100008: ClubGrooveGame
+    100010: ClubPillars
+    100012: ClubSpeakers
+    100014: ClubStage
+    100016: ClubWalls
+    100018: CurtiansLamp
+    100020: //RootNode
+    100022: DanceFloor
+    100024: DoorScaffoldingRope
+    100026: FloorStepDown
+    100028: FloorStepUp
+    100030: LowerCeiling
+    100032: UpperCeiling
+    400000: ClubBar
+    400002: ClubBarBack
+    400004: ClubBarDeco
+    400006: ClubBenchStoolTable
+    400008: ClubGrooveGame
+    400010: ClubPillars
+    400012: ClubSpeakers
+    400014: ClubStage
+    400016: ClubWalls
+    400018: CurtiansLamp
+    400020: //RootNode
+    400022: DanceFloor
+    400024: DoorScaffoldingRope
+    400026: FloorStepDown
+    400028: FloorStepUp
+    400030: LowerCeiling
+    400032: UpperCeiling
+    2300000: ClubBar
+    2300002: ClubBarBack
+    2300004: ClubBarDeco
+    2300006: ClubBenchStoolTable
+    2300008: ClubGrooveGame
+    2300010: ClubPillars
+    2300012: ClubSpeakers
+    2300014: ClubStage
+    2300016: ClubWalls
+    2300018: CurtiansLamp
+    2300020: DanceFloor
+    2300022: DoorScaffoldingRope
+    2300024: FloorStepDown
+    2300026: FloorStepUp
+    2300028: LowerCeiling
+    2300030: UpperCeiling
+    3300000: ClubBar
+    3300002: ClubBarBack
+    3300004: ClubBarDeco
+    3300006: ClubBenchStoolTable
+    3300008: ClubGrooveGame
+    3300010: ClubPillars
+    3300012: ClubSpeakers
+    3300014: ClubStage
+    3300016: ClubWalls
+    3300018: CurtiansLamp
+    3300020: DanceFloor
+    3300022: DoorScaffoldingRope
+    3300024: FloorStepDown
+    3300026: FloorStepUp
+    3300028: LowerCeiling
+    3300030: UpperCeiling
+    4300000: FloorStepUp
+    4300002: FloorStepDown
+    4300004: LowerCeiling
+    4300006: ClubStage
+    4300008: ClubBarBack
+    4300010: DanceFloor
+    4300012: DoorScaffoldingRope
+    4300014: CurtiansLamp
+    4300016: ClubSpeakers
+    4300018: ClubBar
+    4300020: ClubGrooveGame
+    4300022: ClubPillars
+    4300024: ClubBenchStoolTable
+    4300026: ClubBarDeco
+    4300028: UpperCeiling
+    4300030: ClubWalls
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
