@@ -160,21 +160,22 @@ namespace BoogieDownGames {
 			if (m_currentIndex >= m_models.Length) {
 				m_currentIndex = 0;
 			}
-			m_models[m_currentIndex].SetActive(true);
-			m_anime = m_models[m_currentIndex].GetComponent<Animator>();
-			m_triggerFired = false;
-			GameMaster.Instance.CurrentModel = m_currentIndex;
-			characterLockedIcon.enabled = IsCharacterLocked ();
+			ActivateCurrentModel ();
 		}
 		
 		public void PrevModel()
 		{
 			//Turn off the current model
 			m_models[m_currentIndex].SetActive(false);
-			m_currentIndex--;
+			m_currentIndex --;
 			if (m_currentIndex < 0) {
-				m_currentIndex = m_models.Length-1;
+				m_currentIndex = m_models.Length - 1;
 			}
+			ActivateCurrentModel ();
+		}
+
+		private void ActivateCurrentModel()
+		{
 			m_models[m_currentIndex].SetActive(true);
 			m_anime = m_models[m_currentIndex].GetComponent<Animator>();
 			m_triggerFired = false;
