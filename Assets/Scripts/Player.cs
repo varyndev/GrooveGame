@@ -23,7 +23,7 @@ namespace BoogieDownGames {
 		public List<int> unlockedScenes;
 
 		private static string saveFileName = "playerInfo.dat";
-		private static string saveFilePath = Application.persistentDataPath + "/" + saveFileName;
+		private static string saveFilePath;
 
 		[Serializable]
 		class PlayerData
@@ -42,6 +42,7 @@ namespace BoogieDownGames {
 		
 		void Start ()
 		{
+			saveFilePath = Application.persistentDataPath + "/" + saveFileName;
 			bestScore = 0;
 			coinsTotal = 0;
 			missCount = 0;
