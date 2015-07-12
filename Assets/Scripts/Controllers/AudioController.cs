@@ -18,6 +18,24 @@ namespace BoogieDownGames {
 		[SerializeField]
 		private bool m_isPaused;
 
+		private AudioSource m_audioSourceReference; // Holds reference to the audio source component on this GameObject
+
+		// TODO: Alter this list if order changes
+		private List<string> m_defaultSongOrder = new List<string>
+		{
+			"SheSaid",
+			"FryAndSizzle",
+			"AloneTonight",
+			"ItsFilth",
+			"IGotYou",
+			"ImSexyNow",
+			"ShutUpDance",
+			"InFashion",
+			"SheSmiles",
+			"LayWithMe",
+			"YouHaveIt",
+		};
+
 		#region PROPERTIES
 
 		public List<AudioClip> AudioClips
@@ -31,17 +49,23 @@ namespace BoogieDownGames {
 			set { m_isPaused = true; }
 		}
 
+		public List<string> DefaultSongOrder
+		{
+			get { return m_defaultSongOrder; }
+		}
+
 		#endregion
 
 		void Awake()
 		{
 			// Make sure we are properly initialized and the list has something in it before we start
 			if (m_soundClips.Count > 0) {
-				if (m_initialSound < 0) {
-					m_initialSound = 0;
-				} else if (m_initialSound > m_soundClips.Count - 1) {
-					m_initialSound = m_soundClips.Count;
-				}
+				m_initialSound = Mathf.Clamp(m_initialSound,0,m_soundClips.Count-1);
+//				if (m_initialSound < 0) {
+//					m_initialSound = 0;
+//				} else if (m_initialSound > m_soundClips.Count - 1) {
+//					m_initialSound = m_soundClips.Count;
+
 				m_currentIndex = m_initialSound;
 				GetComponent<AudioSource>().clip = m_soundClips[m_currentIndex];
 			}
@@ -67,12 +91,14 @@ namespace BoogieDownGames {
 		
 		public void playAtIndex(int p_index)
 		{
-			if (p_index > m_soundClips.Count - 1) {
-				p_index = m_soundClips.Count -1;
-			}
-			if (p_index < 0) {
-				p_index = 0;
-			}
+//			if (p_index > m_soundClips.Count - 1) {
+//				p_index = m_soundClips.Count -1;
+//			}
+//			if (p_index < 0) {
+//				p_index = 0;
+//			}
+			// Make sure index is not past the index range
+			p_index = Mathf.Clamp(p_index,0,m_soundClips.Count-1);
 			if (m_soundClips.Count > 0) {
 				m_currentIndex = p_index;
 				GetComponent<AudioSource> ().clip = m_soundClips [p_index];
@@ -151,6 +177,19 @@ namespace BoogieDownGames {
 			messageData.Add("songid", songId);
 			messageData.Add("length", duration);
 			NotificationCenter.DefaultCenter.PostNotification(this, messageFunction, messageData);
+		}
+
+		[ContextMenu("Sort Songs")]
+		private void SortSongs()
+		{
+			m_soundClips.Sort (CompareSongsByCustomOrder);
+		}
+
+	 	private int CompareSongsByCustomOrder(AudioClip x, AudioClip y)
+		{
+			int xIndex = m_defaultSongOrder.FindIndex (p => p == x.name);
+			int yIndex = m_defaultSongOrder.FindIndex (p => p == y.name);
+			return Mathf.Clamp(xIndex-yIndex,-1,1);
 		}
 	}
 }
