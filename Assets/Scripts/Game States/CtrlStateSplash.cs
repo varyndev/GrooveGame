@@ -16,24 +16,20 @@ namespace BoogieDownGames {
 		
 		public override void Enter (BaseGameController p_game)
 		{
-			Debug.Log("Entering Ctrlstate splash");
 			SplashSceneCtrl.Instance.Init();
 		}
 		
 		public override void ExecuteOnUpdate (BaseGameController p_game) 
 		{
-
 			SplashSceneCtrl.Instance.Run();
 		}
 		
 		public override void ExecuteOnFixedUpdate (BaseGameController p_game)
 		{
-
 		}
 		
 		public override void Exit(BaseGameController p_game) 
 		{
-			Debug.Log("Leaving ctrlstate");
 		}
 	}
 }

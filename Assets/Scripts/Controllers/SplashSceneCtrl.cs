@@ -49,7 +49,10 @@ namespace BoogieDownGames {
 		IEnumerator ChangeState(float p_sec)
 		{
 			yield return new WaitForSeconds(p_sec);
-			if (true || Player.Instance.IsFirstPlay ()) {
+
+			// Disabling the intro video for now as we cannot get it to work on mobile devices.
+
+			if (false && Player.Instance.IsFirstPlay ()) {
 #if UNITY_IOS || UNITY_ANDROID
 				GameMaster.Instance.SceneFsm.ChangeState (CtrlStateIntro.Instance);
 //				GameMaster.Instance.SceneFsm.ChangeState (CtrlStateMenu.Instance);

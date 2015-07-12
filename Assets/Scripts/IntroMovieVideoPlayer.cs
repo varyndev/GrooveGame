@@ -16,7 +16,8 @@ public class IntroMovieVideoPlayer : MonoBehaviour {
 	void Start () {
 #if ! (UNITY_IOS || UNITY_ANDROID)
 		if (GetComponent<Renderer>() != null) {
-			movie = (MovieTexture) GetComponent<Renderer>().material.mainTexture;
+			// Disabling the intro video for now as we cannot get it to work on mobile devices.
+			movie = null; // (MovieTexture) GetComponent<Renderer>().material.mainTexture;
 		}
 #else
 		movie = null;
