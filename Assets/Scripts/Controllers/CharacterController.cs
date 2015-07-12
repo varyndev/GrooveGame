@@ -389,5 +389,21 @@ namespace BoogieDownGames {
 				m_fNextAnimLength = m_models[m_currentIndex].GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length;
 			}
 		}
+
+		[ContextMenu("Sort Animations By Song")]
+		void SortControllers()
+		{
+			System.Array.Sort (m_animationControllers, CompareSongsByCustomOrder);
+		}
+
+		private int CompareSongsByCustomOrder(RuntimeAnimatorController x, RuntimeAnimatorController y)
+		{
+			List<string> defaultOrder = AudioController.Instance.DefaultSongOrder;
+			Debug.Log (x.name);
+			Debug.Log (x.name + "AC");
+			int xIndex = defaultOrder.FindIndex (p => p == x.name + "AC");
+			int yIndex = defaultOrder.FindIndex (p => p == y.name + "AC");
+			return Mathf.Clamp(xIndex-yIndex,-1,1);
+		}
 	}
 }
