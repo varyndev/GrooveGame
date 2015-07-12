@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 2060a789208f2ca4eb3360b450bd4425
-timeCreated: 1431720016
+guid: 20e413981d2e6ed44b01ea0440e911ee
+timeCreated: 1436724039
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
@@ -218,7 +218,7 @@ ModelImporter:
     400208: M_Blue_Rig:RightForeArm_IK_BakingLOC
     400210: M_Blue_Rig:RightLeg_IK_BakingLOC
     4300000: M_Blue_Rig:Mesh_blueMesh
-    7400000: Lame_1
+    7400000: Take 001
     9500000: //RootNode
     13700000: M_Blue_Rig:Mesh_blueMesh
   materials:
@@ -230,251 +230,17 @@ ModelImporter:
     bakeSimulation: 0
     optimizeGameObjects: 0
     motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
     animationCompression: 3
     animationRotationError: .5
     animationPositionError: .5
     animationScaleError: .5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations:
-    - serializedVersion: 16
-      name: Lame_1
-      takeName: Take 001
-      firstFrame: 1
-      lastFrame: 91
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask:
-      - path: 
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Hips
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Hips/M_Blue_Rig:Bind_LeftUpLeg
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Hips/M_Blue_Rig:Bind_LeftUpLeg/M_Blue_Rig:Bind_LeftLeg
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Hips/M_Blue_Rig:Bind_LeftUpLeg/M_Blue_Rig:Bind_LeftLeg/M_Blue_Rig:Bind_LeftFoot
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Hips/M_Blue_Rig:Bind_LeftUpLeg/M_Blue_Rig:Bind_LeftLeg/M_Blue_Rig:Bind_LeftFoot/M_Blue_Rig:Bind_LeftToeBase
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Hips/M_Blue_Rig:Bind_LeftUpLeg/M_Blue_Rig:Bind_LeftLeg/M_Blue_Rig:Bind_LeftFoot/M_Blue_Rig:Bind_LeftToeBase/M_Blue_Rig:Bind_LeftToe_End
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Hips/M_Blue_Rig:Bind_LeftUpLeg/M_Blue_Rig:Bind_LeftLeg/M_Blue_Rig:Bind_LeftFoot/M_Blue_Rig:LeftFoot_IK_BakingLOC
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Hips/M_Blue_Rig:Bind_LeftUpLeg/M_Blue_Rig:Bind_LeftLeg/M_Blue_Rig:LeftLeg_IK_BakingLOC
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Hips/M_Blue_Rig:Bind_RightUpLeg
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Hips/M_Blue_Rig:Bind_RightUpLeg/M_Blue_Rig:Bind_RightLeg
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Hips/M_Blue_Rig:Bind_RightUpLeg/M_Blue_Rig:Bind_RightLeg/M_Blue_Rig:Bind_RightFoot
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Hips/M_Blue_Rig:Bind_RightUpLeg/M_Blue_Rig:Bind_RightLeg/M_Blue_Rig:Bind_RightFoot/M_Blue_Rig:Bind_RightToeBase
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Hips/M_Blue_Rig:Bind_RightUpLeg/M_Blue_Rig:Bind_RightLeg/M_Blue_Rig:Bind_RightFoot/M_Blue_Rig:Bind_RightToeBase/M_Blue_Rig:Bind_RightToe_End
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Hips/M_Blue_Rig:Bind_RightUpLeg/M_Blue_Rig:Bind_RightLeg/M_Blue_Rig:Bind_RightFoot/M_Blue_Rig:RightFoot_IK_BakingLOC
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Hips/M_Blue_Rig:Bind_RightUpLeg/M_Blue_Rig:Bind_RightLeg/M_Blue_Rig:RightLeg_IK_BakingLOC
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Hips/M_Blue_Rig:FK_LeftUpLeg
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Hips/M_Blue_Rig:FK_LeftUpLeg/M_Blue_Rig:FK_LeftLeg
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Hips/M_Blue_Rig:FK_LeftUpLeg/M_Blue_Rig:FK_LeftLeg/M_Blue_Rig:FK_LeftFoot
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Hips/M_Blue_Rig:FK_LeftUpLeg/M_Blue_Rig:FK_LeftLeg/M_Blue_Rig:FK_LeftFoot/M_Blue_Rig:FK_LeftToeBase
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Hips/M_Blue_Rig:FK_LeftUpLeg/M_Blue_Rig:FK_LeftLeg/M_Blue_Rig:FK_LeftFoot/M_Blue_Rig:FK_LeftToeBase/M_Blue_Rig:FK_LeftToe_End
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Hips/M_Blue_Rig:FK_RightUpLeg
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Hips/M_Blue_Rig:FK_RightUpLeg/M_Blue_Rig:FK_RightLeg
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Hips/M_Blue_Rig:FK_RightUpLeg/M_Blue_Rig:FK_RightLeg/M_Blue_Rig:FK_RightFoot
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Hips/M_Blue_Rig:FK_RightUpLeg/M_Blue_Rig:FK_RightLeg/M_Blue_Rig:FK_RightFoot/M_Blue_Rig:FK_RightToeBase
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Hips/M_Blue_Rig:FK_RightUpLeg/M_Blue_Rig:FK_RightLeg/M_Blue_Rig:FK_RightFoot/M_Blue_Rig:FK_RightToeBase/M_Blue_Rig:FK_RightToe_End
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Hips/M_Blue_Rig:IK_LeftUpLeg
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Hips/M_Blue_Rig:IK_LeftUpLeg/M_Blue_Rig:IK_LeftLeg
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Hips/M_Blue_Rig:IK_LeftUpLeg/M_Blue_Rig:IK_LeftLeg/M_Blue_Rig:IK_LeftFoot
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Hips/M_Blue_Rig:IK_LeftUpLeg/M_Blue_Rig:IK_LeftLeg/M_Blue_Rig:IK_LeftFoot/M_Blue_Rig:IK_LeftToeBase
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Hips/M_Blue_Rig:IK_LeftUpLeg/M_Blue_Rig:IK_LeftLeg/M_Blue_Rig:IK_LeftFoot/M_Blue_Rig:IK_LeftToeBase/M_Blue_Rig:IK_LeftToe_End
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Hips/M_Blue_Rig:IK_RightUpLeg
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Hips/M_Blue_Rig:IK_RightUpLeg/M_Blue_Rig:IK_RightLeg
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Hips/M_Blue_Rig:IK_RightUpLeg/M_Blue_Rig:IK_RightLeg/M_Blue_Rig:IK_RightFoot
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Hips/M_Blue_Rig:IK_RightUpLeg/M_Blue_Rig:IK_RightLeg/M_Blue_Rig:IK_RightFoot/M_Blue_Rig:IK_RightToeBase
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Hips/M_Blue_Rig:IK_RightUpLeg/M_Blue_Rig:IK_RightLeg/M_Blue_Rig:IK_RightFoot/M_Blue_Rig:IK_RightToeBase/M_Blue_Rig:IK_RightToe_End
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Spine
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Spine/M_Blue_Rig:Bind_Spine1
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Spine/M_Blue_Rig:Bind_Spine1/M_Blue_Rig:Bind_Spine2
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Spine/M_Blue_Rig:Bind_Spine1/M_Blue_Rig:Bind_Spine2/M_Blue_Rig:Bind_LeftShoulder
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Spine/M_Blue_Rig:Bind_Spine1/M_Blue_Rig:Bind_Spine2/M_Blue_Rig:Bind_LeftShoulder/M_Blue_Rig:Bind_LeftArm
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Spine/M_Blue_Rig:Bind_Spine1/M_Blue_Rig:Bind_Spine2/M_Blue_Rig:Bind_LeftShoulder/M_Blue_Rig:Bind_LeftArm/M_Blue_Rig:Bind_LeftForeArm
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Spine/M_Blue_Rig:Bind_Spine1/M_Blue_Rig:Bind_Spine2/M_Blue_Rig:Bind_LeftShoulder/M_Blue_Rig:Bind_LeftArm/M_Blue_Rig:Bind_LeftForeArm/M_Blue_Rig:Bind_LeftHand
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Spine/M_Blue_Rig:Bind_Spine1/M_Blue_Rig:Bind_Spine2/M_Blue_Rig:Bind_LeftShoulder/M_Blue_Rig:Bind_LeftArm/M_Blue_Rig:Bind_LeftForeArm/M_Blue_Rig:Bind_LeftHand/M_Blue_Rig:Bind_LeftHandIndex1
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Spine/M_Blue_Rig:Bind_Spine1/M_Blue_Rig:Bind_Spine2/M_Blue_Rig:Bind_LeftShoulder/M_Blue_Rig:Bind_LeftArm/M_Blue_Rig:Bind_LeftForeArm/M_Blue_Rig:Bind_LeftHand/M_Blue_Rig:Bind_LeftHandIndex1/M_Blue_Rig:Bind_LeftHandIndex2
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Spine/M_Blue_Rig:Bind_Spine1/M_Blue_Rig:Bind_Spine2/M_Blue_Rig:Bind_LeftShoulder/M_Blue_Rig:Bind_LeftArm/M_Blue_Rig:Bind_LeftForeArm/M_Blue_Rig:Bind_LeftHand/M_Blue_Rig:Bind_LeftHandIndex1/M_Blue_Rig:Bind_LeftHandIndex2/M_Blue_Rig:Bind_LeftHandIndex3
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Spine/M_Blue_Rig:Bind_Spine1/M_Blue_Rig:Bind_Spine2/M_Blue_Rig:Bind_LeftShoulder/M_Blue_Rig:Bind_LeftArm/M_Blue_Rig:Bind_LeftForeArm/M_Blue_Rig:Bind_LeftHand/M_Blue_Rig:Bind_LeftHandIndex1/M_Blue_Rig:Bind_LeftHandIndex2/M_Blue_Rig:Bind_LeftHandIndex3/M_Blue_Rig:Bind_LeftHandIndex4
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Spine/M_Blue_Rig:Bind_Spine1/M_Blue_Rig:Bind_Spine2/M_Blue_Rig:Bind_LeftShoulder/M_Blue_Rig:Bind_LeftArm/M_Blue_Rig:Bind_LeftForeArm/M_Blue_Rig:Bind_LeftHand/M_Blue_Rig:Bind_LeftHandMiddle1
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Spine/M_Blue_Rig:Bind_Spine1/M_Blue_Rig:Bind_Spine2/M_Blue_Rig:Bind_LeftShoulder/M_Blue_Rig:Bind_LeftArm/M_Blue_Rig:Bind_LeftForeArm/M_Blue_Rig:Bind_LeftHand/M_Blue_Rig:Bind_LeftHandMiddle1/M_Blue_Rig:Bind_LeftHandMiddle2
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Spine/M_Blue_Rig:Bind_Spine1/M_Blue_Rig:Bind_Spine2/M_Blue_Rig:Bind_LeftShoulder/M_Blue_Rig:Bind_LeftArm/M_Blue_Rig:Bind_LeftForeArm/M_Blue_Rig:Bind_LeftHand/M_Blue_Rig:Bind_LeftHandMiddle1/M_Blue_Rig:Bind_LeftHandMiddle2/M_Blue_Rig:Bind_LeftHandMiddle3
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Spine/M_Blue_Rig:Bind_Spine1/M_Blue_Rig:Bind_Spine2/M_Blue_Rig:Bind_LeftShoulder/M_Blue_Rig:Bind_LeftArm/M_Blue_Rig:Bind_LeftForeArm/M_Blue_Rig:Bind_LeftHand/M_Blue_Rig:Bind_LeftHandMiddle1/M_Blue_Rig:Bind_LeftHandMiddle2/M_Blue_Rig:Bind_LeftHandMiddle3/M_Blue_Rig:Bind_LeftHandMiddle4
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Spine/M_Blue_Rig:Bind_Spine1/M_Blue_Rig:Bind_Spine2/M_Blue_Rig:Bind_LeftShoulder/M_Blue_Rig:Bind_LeftArm/M_Blue_Rig:Bind_LeftForeArm/M_Blue_Rig:Bind_LeftHand/M_Blue_Rig:Bind_LeftHandPinky1
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Spine/M_Blue_Rig:Bind_Spine1/M_Blue_Rig:Bind_Spine2/M_Blue_Rig:Bind_LeftShoulder/M_Blue_Rig:Bind_LeftArm/M_Blue_Rig:Bind_LeftForeArm/M_Blue_Rig:Bind_LeftHand/M_Blue_Rig:Bind_LeftHandPinky1/M_Blue_Rig:Bind_LeftHandPinky2
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Spine/M_Blue_Rig:Bind_Spine1/M_Blue_Rig:Bind_Spine2/M_Blue_Rig:Bind_LeftShoulder/M_Blue_Rig:Bind_LeftArm/M_Blue_Rig:Bind_LeftForeArm/M_Blue_Rig:Bind_LeftHand/M_Blue_Rig:Bind_LeftHandPinky1/M_Blue_Rig:Bind_LeftHandPinky2/M_Blue_Rig:Bind_LeftHandPinky3
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Spine/M_Blue_Rig:Bind_Spine1/M_Blue_Rig:Bind_Spine2/M_Blue_Rig:Bind_LeftShoulder/M_Blue_Rig:Bind_LeftArm/M_Blue_Rig:Bind_LeftForeArm/M_Blue_Rig:Bind_LeftHand/M_Blue_Rig:Bind_LeftHandPinky1/M_Blue_Rig:Bind_LeftHandPinky2/M_Blue_Rig:Bind_LeftHandPinky3/M_Blue_Rig:Bind_LeftHandPinky4
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Spine/M_Blue_Rig:Bind_Spine1/M_Blue_Rig:Bind_Spine2/M_Blue_Rig:Bind_LeftShoulder/M_Blue_Rig:Bind_LeftArm/M_Blue_Rig:Bind_LeftForeArm/M_Blue_Rig:Bind_LeftHand/M_Blue_Rig:Bind_LeftHandRing1
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Spine/M_Blue_Rig:Bind_Spine1/M_Blue_Rig:Bind_Spine2/M_Blue_Rig:Bind_LeftShoulder/M_Blue_Rig:Bind_LeftArm/M_Blue_Rig:Bind_LeftForeArm/M_Blue_Rig:Bind_LeftHand/M_Blue_Rig:Bind_LeftHandRing1/M_Blue_Rig:Bind_LeftHandRing2
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Spine/M_Blue_Rig:Bind_Spine1/M_Blue_Rig:Bind_Spine2/M_Blue_Rig:Bind_LeftShoulder/M_Blue_Rig:Bind_LeftArm/M_Blue_Rig:Bind_LeftForeArm/M_Blue_Rig:Bind_LeftHand/M_Blue_Rig:Bind_LeftHandRing1/M_Blue_Rig:Bind_LeftHandRing2/M_Blue_Rig:Bind_LeftHandRing3
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Spine/M_Blue_Rig:Bind_Spine1/M_Blue_Rig:Bind_Spine2/M_Blue_Rig:Bind_LeftShoulder/M_Blue_Rig:Bind_LeftArm/M_Blue_Rig:Bind_LeftForeArm/M_Blue_Rig:Bind_LeftHand/M_Blue_Rig:Bind_LeftHandRing1/M_Blue_Rig:Bind_LeftHandRing2/M_Blue_Rig:Bind_LeftHandRing3/M_Blue_Rig:Bind_LeftHandRing4
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Spine/M_Blue_Rig:Bind_Spine1/M_Blue_Rig:Bind_Spine2/M_Blue_Rig:Bind_LeftShoulder/M_Blue_Rig:Bind_LeftArm/M_Blue_Rig:Bind_LeftForeArm/M_Blue_Rig:Bind_LeftHand/M_Blue_Rig:Bind_LeftHandThumb1
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Spine/M_Blue_Rig:Bind_Spine1/M_Blue_Rig:Bind_Spine2/M_Blue_Rig:Bind_LeftShoulder/M_Blue_Rig:Bind_LeftArm/M_Blue_Rig:Bind_LeftForeArm/M_Blue_Rig:Bind_LeftHand/M_Blue_Rig:Bind_LeftHandThumb1/M_Blue_Rig:Bind_LeftHandThumb2
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Spine/M_Blue_Rig:Bind_Spine1/M_Blue_Rig:Bind_Spine2/M_Blue_Rig:Bind_LeftShoulder/M_Blue_Rig:Bind_LeftArm/M_Blue_Rig:Bind_LeftForeArm/M_Blue_Rig:Bind_LeftHand/M_Blue_Rig:Bind_LeftHandThumb1/M_Blue_Rig:Bind_LeftHandThumb2/M_Blue_Rig:Bind_LeftHandThumb3
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Spine/M_Blue_Rig:Bind_Spine1/M_Blue_Rig:Bind_Spine2/M_Blue_Rig:Bind_LeftShoulder/M_Blue_Rig:Bind_LeftArm/M_Blue_Rig:Bind_LeftForeArm/M_Blue_Rig:Bind_LeftHand/M_Blue_Rig:Bind_LeftHandThumb1/M_Blue_Rig:Bind_LeftHandThumb2/M_Blue_Rig:Bind_LeftHandThumb3/M_Blue_Rig:Bind_LeftHandThumb4
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Spine/M_Blue_Rig:Bind_Spine1/M_Blue_Rig:Bind_Spine2/M_Blue_Rig:Bind_LeftShoulder/M_Blue_Rig:Bind_LeftArm/M_Blue_Rig:Bind_LeftForeArm/M_Blue_Rig:LeftForeArm_IK_BakingLOC
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Spine/M_Blue_Rig:Bind_Spine1/M_Blue_Rig:Bind_Spine2/M_Blue_Rig:Bind_LeftShoulder/M_Blue_Rig:FK_LeftArm
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Spine/M_Blue_Rig:Bind_Spine1/M_Blue_Rig:Bind_Spine2/M_Blue_Rig:Bind_LeftShoulder/M_Blue_Rig:FK_LeftArm/M_Blue_Rig:FK_LeftForeArm
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Spine/M_Blue_Rig:Bind_Spine1/M_Blue_Rig:Bind_Spine2/M_Blue_Rig:Bind_LeftShoulder/M_Blue_Rig:FK_LeftArm/M_Blue_Rig:FK_LeftForeArm/M_Blue_Rig:FK_LeftHand
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Spine/M_Blue_Rig:Bind_Spine1/M_Blue_Rig:Bind_Spine2/M_Blue_Rig:Bind_LeftShoulder/M_Blue_Rig:IK_LeftArm
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Spine/M_Blue_Rig:Bind_Spine1/M_Blue_Rig:Bind_Spine2/M_Blue_Rig:Bind_LeftShoulder/M_Blue_Rig:IK_LeftArm/M_Blue_Rig:IK_LeftForeArm
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Spine/M_Blue_Rig:Bind_Spine1/M_Blue_Rig:Bind_Spine2/M_Blue_Rig:Bind_LeftShoulder/M_Blue_Rig:IK_LeftArm/M_Blue_Rig:IK_LeftForeArm/M_Blue_Rig:IK_LeftHand
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Spine/M_Blue_Rig:Bind_Spine1/M_Blue_Rig:Bind_Spine2/M_Blue_Rig:Bind_Neck
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Spine/M_Blue_Rig:Bind_Spine1/M_Blue_Rig:Bind_Spine2/M_Blue_Rig:Bind_Neck/M_Blue_Rig:Bind_Head
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Spine/M_Blue_Rig:Bind_Spine1/M_Blue_Rig:Bind_Spine2/M_Blue_Rig:Bind_Neck/M_Blue_Rig:Bind_Head/M_Blue_Rig:Bind_HeadTop_End
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Spine/M_Blue_Rig:Bind_Spine1/M_Blue_Rig:Bind_Spine2/M_Blue_Rig:Bind_RightShoulder
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Spine/M_Blue_Rig:Bind_Spine1/M_Blue_Rig:Bind_Spine2/M_Blue_Rig:Bind_RightShoulder/M_Blue_Rig:Bind_RightArm
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Spine/M_Blue_Rig:Bind_Spine1/M_Blue_Rig:Bind_Spine2/M_Blue_Rig:Bind_RightShoulder/M_Blue_Rig:Bind_RightArm/M_Blue_Rig:Bind_RightForeArm
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Spine/M_Blue_Rig:Bind_Spine1/M_Blue_Rig:Bind_Spine2/M_Blue_Rig:Bind_RightShoulder/M_Blue_Rig:Bind_RightArm/M_Blue_Rig:Bind_RightForeArm/M_Blue_Rig:Bind_RightHand
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Spine/M_Blue_Rig:Bind_Spine1/M_Blue_Rig:Bind_Spine2/M_Blue_Rig:Bind_RightShoulder/M_Blue_Rig:Bind_RightArm/M_Blue_Rig:Bind_RightForeArm/M_Blue_Rig:Bind_RightHand/M_Blue_Rig:Bind_RightHandIndex1
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Spine/M_Blue_Rig:Bind_Spine1/M_Blue_Rig:Bind_Spine2/M_Blue_Rig:Bind_RightShoulder/M_Blue_Rig:Bind_RightArm/M_Blue_Rig:Bind_RightForeArm/M_Blue_Rig:Bind_RightHand/M_Blue_Rig:Bind_RightHandIndex1/M_Blue_Rig:Bind_RightHandIndex2
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Spine/M_Blue_Rig:Bind_Spine1/M_Blue_Rig:Bind_Spine2/M_Blue_Rig:Bind_RightShoulder/M_Blue_Rig:Bind_RightArm/M_Blue_Rig:Bind_RightForeArm/M_Blue_Rig:Bind_RightHand/M_Blue_Rig:Bind_RightHandIndex1/M_Blue_Rig:Bind_RightHandIndex2/M_Blue_Rig:Bind_RightHandIndex3
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Spine/M_Blue_Rig:Bind_Spine1/M_Blue_Rig:Bind_Spine2/M_Blue_Rig:Bind_RightShoulder/M_Blue_Rig:Bind_RightArm/M_Blue_Rig:Bind_RightForeArm/M_Blue_Rig:Bind_RightHand/M_Blue_Rig:Bind_RightHandIndex1/M_Blue_Rig:Bind_RightHandIndex2/M_Blue_Rig:Bind_RightHandIndex3/M_Blue_Rig:Bind_RightHandIndex4
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Spine/M_Blue_Rig:Bind_Spine1/M_Blue_Rig:Bind_Spine2/M_Blue_Rig:Bind_RightShoulder/M_Blue_Rig:Bind_RightArm/M_Blue_Rig:Bind_RightForeArm/M_Blue_Rig:Bind_RightHand/M_Blue_Rig:Bind_RightHandMiddle1
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Spine/M_Blue_Rig:Bind_Spine1/M_Blue_Rig:Bind_Spine2/M_Blue_Rig:Bind_RightShoulder/M_Blue_Rig:Bind_RightArm/M_Blue_Rig:Bind_RightForeArm/M_Blue_Rig:Bind_RightHand/M_Blue_Rig:Bind_RightHandMiddle1/M_Blue_Rig:Bind_RightHandMiddle2
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Spine/M_Blue_Rig:Bind_Spine1/M_Blue_Rig:Bind_Spine2/M_Blue_Rig:Bind_RightShoulder/M_Blue_Rig:Bind_RightArm/M_Blue_Rig:Bind_RightForeArm/M_Blue_Rig:Bind_RightHand/M_Blue_Rig:Bind_RightHandMiddle1/M_Blue_Rig:Bind_RightHandMiddle2/M_Blue_Rig:Bind_RightHandMiddle3
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Spine/M_Blue_Rig:Bind_Spine1/M_Blue_Rig:Bind_Spine2/M_Blue_Rig:Bind_RightShoulder/M_Blue_Rig:Bind_RightArm/M_Blue_Rig:Bind_RightForeArm/M_Blue_Rig:Bind_RightHand/M_Blue_Rig:Bind_RightHandMiddle1/M_Blue_Rig:Bind_RightHandMiddle2/M_Blue_Rig:Bind_RightHandMiddle3/M_Blue_Rig:Bind_RightHandMiddle4
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Spine/M_Blue_Rig:Bind_Spine1/M_Blue_Rig:Bind_Spine2/M_Blue_Rig:Bind_RightShoulder/M_Blue_Rig:Bind_RightArm/M_Blue_Rig:Bind_RightForeArm/M_Blue_Rig:Bind_RightHand/M_Blue_Rig:Bind_RightHandPinky1
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Spine/M_Blue_Rig:Bind_Spine1/M_Blue_Rig:Bind_Spine2/M_Blue_Rig:Bind_RightShoulder/M_Blue_Rig:Bind_RightArm/M_Blue_Rig:Bind_RightForeArm/M_Blue_Rig:Bind_RightHand/M_Blue_Rig:Bind_RightHandPinky1/M_Blue_Rig:Bind_RightHandPinky2
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Spine/M_Blue_Rig:Bind_Spine1/M_Blue_Rig:Bind_Spine2/M_Blue_Rig:Bind_RightShoulder/M_Blue_Rig:Bind_RightArm/M_Blue_Rig:Bind_RightForeArm/M_Blue_Rig:Bind_RightHand/M_Blue_Rig:Bind_RightHandPinky1/M_Blue_Rig:Bind_RightHandPinky2/M_Blue_Rig:Bind_RightHandPinky3
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Spine/M_Blue_Rig:Bind_Spine1/M_Blue_Rig:Bind_Spine2/M_Blue_Rig:Bind_RightShoulder/M_Blue_Rig:Bind_RightArm/M_Blue_Rig:Bind_RightForeArm/M_Blue_Rig:Bind_RightHand/M_Blue_Rig:Bind_RightHandPinky1/M_Blue_Rig:Bind_RightHandPinky2/M_Blue_Rig:Bind_RightHandPinky3/M_Blue_Rig:Bind_RightHandPinky4
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Spine/M_Blue_Rig:Bind_Spine1/M_Blue_Rig:Bind_Spine2/M_Blue_Rig:Bind_RightShoulder/M_Blue_Rig:Bind_RightArm/M_Blue_Rig:Bind_RightForeArm/M_Blue_Rig:Bind_RightHand/M_Blue_Rig:Bind_RightHandRing1
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Spine/M_Blue_Rig:Bind_Spine1/M_Blue_Rig:Bind_Spine2/M_Blue_Rig:Bind_RightShoulder/M_Blue_Rig:Bind_RightArm/M_Blue_Rig:Bind_RightForeArm/M_Blue_Rig:Bind_RightHand/M_Blue_Rig:Bind_RightHandRing1/M_Blue_Rig:Bind_RightHandRing2
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Spine/M_Blue_Rig:Bind_Spine1/M_Blue_Rig:Bind_Spine2/M_Blue_Rig:Bind_RightShoulder/M_Blue_Rig:Bind_RightArm/M_Blue_Rig:Bind_RightForeArm/M_Blue_Rig:Bind_RightHand/M_Blue_Rig:Bind_RightHandRing1/M_Blue_Rig:Bind_RightHandRing2/M_Blue_Rig:Bind_RightHandRing3
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Spine/M_Blue_Rig:Bind_Spine1/M_Blue_Rig:Bind_Spine2/M_Blue_Rig:Bind_RightShoulder/M_Blue_Rig:Bind_RightArm/M_Blue_Rig:Bind_RightForeArm/M_Blue_Rig:Bind_RightHand/M_Blue_Rig:Bind_RightHandRing1/M_Blue_Rig:Bind_RightHandRing2/M_Blue_Rig:Bind_RightHandRing3/M_Blue_Rig:Bind_RightHandRing4
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Spine/M_Blue_Rig:Bind_Spine1/M_Blue_Rig:Bind_Spine2/M_Blue_Rig:Bind_RightShoulder/M_Blue_Rig:Bind_RightArm/M_Blue_Rig:Bind_RightForeArm/M_Blue_Rig:Bind_RightHand/M_Blue_Rig:Bind_RightHandThumb1
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Spine/M_Blue_Rig:Bind_Spine1/M_Blue_Rig:Bind_Spine2/M_Blue_Rig:Bind_RightShoulder/M_Blue_Rig:Bind_RightArm/M_Blue_Rig:Bind_RightForeArm/M_Blue_Rig:Bind_RightHand/M_Blue_Rig:Bind_RightHandThumb1/M_Blue_Rig:Bind_RightHandThumb2
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Spine/M_Blue_Rig:Bind_Spine1/M_Blue_Rig:Bind_Spine2/M_Blue_Rig:Bind_RightShoulder/M_Blue_Rig:Bind_RightArm/M_Blue_Rig:Bind_RightForeArm/M_Blue_Rig:Bind_RightHand/M_Blue_Rig:Bind_RightHandThumb1/M_Blue_Rig:Bind_RightHandThumb2/M_Blue_Rig:Bind_RightHandThumb3
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Spine/M_Blue_Rig:Bind_Spine1/M_Blue_Rig:Bind_Spine2/M_Blue_Rig:Bind_RightShoulder/M_Blue_Rig:Bind_RightArm/M_Blue_Rig:Bind_RightForeArm/M_Blue_Rig:Bind_RightHand/M_Blue_Rig:Bind_RightHandThumb1/M_Blue_Rig:Bind_RightHandThumb2/M_Blue_Rig:Bind_RightHandThumb3/M_Blue_Rig:Bind_RightHandThumb4
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Spine/M_Blue_Rig:Bind_Spine1/M_Blue_Rig:Bind_Spine2/M_Blue_Rig:Bind_RightShoulder/M_Blue_Rig:Bind_RightArm/M_Blue_Rig:Bind_RightForeArm/M_Blue_Rig:RightForeArm_IK_BakingLOC
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Spine/M_Blue_Rig:Bind_Spine1/M_Blue_Rig:Bind_Spine2/M_Blue_Rig:Bind_RightShoulder/M_Blue_Rig:FK_RightArm
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Spine/M_Blue_Rig:Bind_Spine1/M_Blue_Rig:Bind_Spine2/M_Blue_Rig:Bind_RightShoulder/M_Blue_Rig:FK_RightArm/M_Blue_Rig:FK_RightForeArm
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Spine/M_Blue_Rig:Bind_Spine1/M_Blue_Rig:Bind_Spine2/M_Blue_Rig:Bind_RightShoulder/M_Blue_Rig:FK_RightArm/M_Blue_Rig:FK_RightForeArm/M_Blue_Rig:FK_RightHand
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Spine/M_Blue_Rig:Bind_Spine1/M_Blue_Rig:Bind_Spine2/M_Blue_Rig:Bind_RightShoulder/M_Blue_Rig:IK_RightArm
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Spine/M_Blue_Rig:Bind_Spine1/M_Blue_Rig:Bind_Spine2/M_Blue_Rig:Bind_RightShoulder/M_Blue_Rig:IK_RightArm/M_Blue_Rig:IK_RightForeArm
-        weight: 1
-      - path: M_Blue_Rig:Bind_Root/M_Blue_Rig:Bind_Spine/M_Blue_Rig:Bind_Spine1/M_Blue_Rig:Bind_Spine2/M_Blue_Rig:Bind_RightShoulder/M_Blue_Rig:IK_RightArm/M_Blue_Rig:IK_RightForeArm/M_Blue_Rig:IK_RightHand
-        weight: 1
-      - path: M_Blue_Rig:Mesh_blueMesh
-        weight: 1
-      maskType: 0
-      maskSource: {instanceID: 0}
+    clipAnimations: []
     isReadable: 1
   meshes:
     lODScreenPercentages: []
