@@ -11,7 +11,7 @@ public class StaticButtonControl : MonoBehaviour {
 		}
 
 		if (isCoinButton) {
-			Application.OpenURL("http://groovegame.com");
+			Application.OpenURL("http://groovegame.com/ggcoin");
 		}
 
 		if (isMainMenuButton) {
