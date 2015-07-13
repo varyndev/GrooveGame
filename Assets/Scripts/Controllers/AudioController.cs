@@ -21,6 +21,10 @@ namespace BoogieDownGames {
 		[SerializeField]
 		private bool m_isMenu;
 
+		//Stores song demo info for menu
+		private float m_currentDemoOffset;
+		private float m_currentDemoDuration;
+
 		private AudioSource m_audioSourceReference; // Holds reference to the audio source component on this GameObject
 
 		// TODO: Alter this list if order changes
@@ -79,10 +83,14 @@ namespace BoogieDownGames {
 			NotificationCenter.DefaultCenter.AddObserver(this, "PlayCurrentSong");
 			NotificationCenter.DefaultCenter.AddObserver(this, "PauseSong");
 			PostSongChange(m_soundClips[m_currentIndex].name, m_soundClips[m_currentIndex].length);
-			if (m_isMenu)
+
+			NotificationCenter.DefaultCenter.AddObserver (this, "SetDemoInfo");
+			if (m_isMenu) {
+				UpdateDemoInfo(m_soundClips[m_currentIndex].name);
 				menuLoop ();
-			else
-				PlayCurrentSong();
+			} else {
+				PlayCurrentSong ();
+			}
 
 		}
 		
@@ -138,6 +146,7 @@ namespace BoogieDownGames {
 				m_currentIndex = 0;
 			}
 			GetComponent<AudioSource>().clip = m_soundClips[m_currentIndex];
+			UpdateDemoInfo(m_soundClips[m_currentIndex].name);
 			menuLoop ();
 			PostSongChange(m_soundClips[m_currentIndex].name, m_soundClips[m_currentIndex].length);
 			GameMaster.Instance.CurrentSong = m_currentIndex;
@@ -150,6 +159,7 @@ namespace BoogieDownGames {
 				m_currentIndex = m_soundClips.Count - 1;
 			}
 			GetComponent<AudioSource>().clip = m_soundClips[m_currentIndex];
+			UpdateDemoInfo(m_soundClips[m_currentIndex].name);
 			menuLoop ();
 			PostSongChange(m_soundClips[m_currentIndex].name, m_soundClips[m_currentIndex].length);
 			GameMaster.Instance.CurrentSong = m_currentIndex;
@@ -158,11 +168,11 @@ namespace BoogieDownGames {
 		// TODO: Find a way to store and recall the appropriate info for each song
 		//Default numbers in for testing
 		public void menuLoop(){
-			GetComponent<AudioSource> ().time = /* sample start */ 15.0f;
+			GetComponent<AudioSource> ().time = m_currentDemoOffset;
 			CancelInvoke ();
 			GetComponent<AudioSource> ().Play ();
-			Invoke ("StopSong", /* sample length */ 10.0f);
-			Invoke ("menuLoop", /* sample length */ 10.0f + 1);
+			Invoke ("StopSong", m_currentDemoDuration);
+			Invoke ("menuLoop", m_currentDemoDuration + 1);
 		}
 		
 		public void StopSong()
@@ -194,6 +204,20 @@ namespace BoogieDownGames {
 			messageData.Add("songid", songId);
 			messageData.Add("length", duration);
 			NotificationCenter.DefaultCenter.PostNotification(this, messageFunction, messageData);
+		}
+
+		//Used for recieving song demo info from TextMachine
+		public void SetDemoInfo(NotificationCenter.Notification notification){
+			m_currentDemoOffset = (float) notification.data ["demoOffset"];
+			//print("Demo offset: " + m_currentDemoOffset); //print for reference
+			m_currentDemoDuration = (float) notification.data ["demoDuration"];
+			//print("Demo duration: " + m_currentDemoDuration); //print for refrence
+		}
+
+		private void UpdateDemoInfo(string songId){
+			Hashtable messageData = new Hashtable();
+			messageData.Add("songId", songId);
+			NotificationCenter.DefaultCenter.PostNotification(this, "GetDemoInfo", messageData);
 		}
 
 		[ContextMenu("Sort Songs")]

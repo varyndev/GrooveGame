@@ -52,21 +52,25 @@ namespace BoogieDownGames {
 		private List<SongItem> m_songList;
 
 
+		//TODO: May need to adjust the demoOffset and demoDuration if the song is altered for any reason
+		// 		Demo times are listed in seconds
 		void Awake () {
 			m_songList = new List<SongItem>();
-			m_songList.Add (new SongItem ("SheSaid", "She Said", "Dani Feat. Sky Silver", "1:53", "", false, 0.0f, 20.0f));
-			m_songList.Add (new SongItem ("FryAndSizzle", "Fry & Sizzle", "Delsa & Sky Silver", "1:46", "", false, 0.0f, 20.0f));
-			m_songList.Add (new SongItem ("AloneTonight", "Alone Tonight", "Dani", "1:30", "", false, 0.0f, 20.0f));
-			m_songList.Add (new SongItem ("ItsFilth", "It's Filth", "Sky Silver", "1:44", "", false, 0.0f, 20.0f));
-			m_songList.Add (new SongItem ("IGotYou", "I Got You", "Sky Girl Jo", "2:07", "", false, 0.0f, 20.0f));
-			m_songList.Add (new SongItem ("ImSexyNow", "I'm Sexy Now", "Sky Silver & the Sky Girls", "2:00", "", true, 0.0f, 20.0f));
-			m_songList.Add (new SongItem ("ShutUpDance", "Shut Up, Dance", "Delsa Feat. Ai Man", "1:31", "", true, 0.0f, 20.0f));
-			m_songList.Add (new SongItem ("InFashion", "In Fashion", "Sky Silver", "1:33", "", true, 0.0f, 20.0f));
-			m_songList.Add (new SongItem ("SheSmiles", "She Smiles", "Sky Silver", "2:00", "", true, 0.0f, 20.0f));
-			m_songList.Add (new SongItem ("LayWithMe", "Lay With Me", "Sky Girl Jo", "1:17", "", true, 0.0f, 20.0f));
-			m_songList.Add (new SongItem ("YouHaveIt", "You Have It", "Tori Martin", "1:29", "", true, 0.0f, 20.0f));
+			m_songList.Add (new SongItem ("SheSaid", "She Said", "Dani Feat. Sky Silver", "1:52", "", false, 14.14f, 26.26f));
+			m_songList.Add (new SongItem ("FryAndSizzle", "Fry & Sizzle", "Delsa & Sky Silver", "1:47", "", false, 7.332f, 22.319f));
+			m_songList.Add (new SongItem ("AloneTonight", "Alone Tonight", "Dani", "2:00", "", false, 4.488f, 22.117f));
+			m_songList.Add (new SongItem ("ItsFilth", "It's Filth", "Sky Silver", "1:50", "", false, 12.706f, 35.225f));
+			m_songList.Add (new SongItem ("IGotYou", "I Got You", "Sky Girl Jo", "2:06", "", false, 7.50f, 29.142f));
+			m_songList.Add (new SongItem ("ImSexyNow", "I'm Sexy Now", "Sky Silver & the Sky Girls", "2:04", "", true, 32.239f, 22.919f));
+			m_songList.Add (new SongItem ("ShutUpDance", "Shut Up, Dance", "Delsa Feat. Ai Man", "1:43", "", true, 0.0f, 24.50f));
+			m_songList.Add (new SongItem ("InFashion", "In Fashion", "Sky Silver", "1:25", "", true, 7.238f, 14.165f));
+			m_songList.Add (new SongItem ("SheSmiles", "She Smiles", "Sky Silver", "2:00", "", true, 34.532f, 31.608f));
+			m_songList.Add (new SongItem ("LayWithMe", "Lay With Me", "Sky Girl Jo", "2:51", "", true, 137.2f, 33.5f));
+			m_songList.Add (new SongItem ("YouHaveIt", "You Have It", "Tori Martin", "1:29", "", true, 30.0f, 26.826f));
 
 			NotificationCenter.DefaultCenter.AddObserver(this, "SetSong");
+			NotificationCenter.DefaultCenter.AddObserver (this, "GetDemoInfo");
+			//NotificationCenter.
 		}
 		
 		public void SetSong (NotificationCenter.Notification notification) {
@@ -82,6 +86,20 @@ namespace BoogieDownGames {
 			}
 			return isLocked;
 		}
+
+		//Used for transfering song demo info to AudioController
+		public void GetDemoInfo(NotificationCenter.Notification notification){
+			Hashtable messageData = new Hashtable();
+			foreach (SongItem song in m_songList) {
+				if(song.id == (string)notification.data["songId"]){
+					messageData.Add("demoOffset", song.demoOffset);
+					messageData.Add("demoDuration", song.demoDuration);
+					NotificationCenter.DefaultCenter.PostNotification(this, "SetDemoInfo", messageData);
+					break;
+				}
+			}
+		}
+
 
 		private void SetSongInfo (string songId, float duration) {
 			if (songId != null && m_songTitleText != null) {
@@ -109,5 +127,6 @@ namespace BoogieDownGames {
 			result = string.Format("{0}:{1:00}", minutes, seconds);
 			return result;
 		}
+
 	}
 }
