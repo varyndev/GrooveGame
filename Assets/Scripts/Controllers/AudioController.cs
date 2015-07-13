@@ -18,6 +18,9 @@ namespace BoogieDownGames {
 		[SerializeField]
 		private bool m_isPaused;
 
+		[SerializeField]
+		private bool m_isMenu;
+
 		private AudioSource m_audioSourceReference; // Holds reference to the audio source component on this GameObject
 
 		// TODO: Alter this list if order changes
@@ -76,7 +79,11 @@ namespace BoogieDownGames {
 			NotificationCenter.DefaultCenter.AddObserver(this, "PlayCurrentSong");
 			NotificationCenter.DefaultCenter.AddObserver(this, "PauseSong");
 			PostSongChange(m_soundClips[m_currentIndex].name, m_soundClips[m_currentIndex].length);
-			PlayCurrentSong();
+			if (m_isMenu)
+				menuLoop ();
+			else
+				PlayCurrentSong();
+
 		}
 		
 		public bool DetectEndOfSong()
@@ -131,7 +138,7 @@ namespace BoogieDownGames {
 				m_currentIndex = 0;
 			}
 			GetComponent<AudioSource>().clip = m_soundClips[m_currentIndex];
-			GetComponent<AudioSource>().Play();
+			menuLoop ();
 			PostSongChange(m_soundClips[m_currentIndex].name, m_soundClips[m_currentIndex].length);
 			GameMaster.Instance.CurrentSong = m_currentIndex;
 		}
@@ -143,9 +150,19 @@ namespace BoogieDownGames {
 				m_currentIndex = m_soundClips.Count - 1;
 			}
 			GetComponent<AudioSource>().clip = m_soundClips[m_currentIndex];
-			GetComponent<AudioSource>().Play();
+			menuLoop ();
 			PostSongChange(m_soundClips[m_currentIndex].name, m_soundClips[m_currentIndex].length);
 			GameMaster.Instance.CurrentSong = m_currentIndex;
+		}
+
+		// TODO: Find a way to store and recall the appropriate info for each song
+		//Default numbers in for testing
+		public void menuLoop(){
+			GetComponent<AudioSource> ().time = /* sample start */ 15.0f;
+			CancelInvoke ();
+			GetComponent<AudioSource> ().Play ();
+			Invoke ("StopSong", /* sample length */ 10.0f);
+			Invoke ("menuLoop", /* sample length */ 10.0f + 1);
 		}
 		
 		public void StopSong()
