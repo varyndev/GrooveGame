@@ -5,7 +5,7 @@ namespace BoogieDownGames {
 
 	public class GameMaster : BaseGameController {
 
-		public static string VERSION = "1.1.1";
+		public static string VERSION = "1.1.2";
 		public static string GAME_SKU = "GrooveGame";
 
 		public override void Awake()
