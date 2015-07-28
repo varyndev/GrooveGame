@@ -6,6 +6,8 @@ namespace BoogieDownGames {
 
 	public class AudioController : UnitySingleton<AudioController> {
 
+		private static bool passedLoad = false;
+
 		[SerializeField]
 		private List<AudioClip> m_soundClips;
 		
@@ -85,14 +87,33 @@ namespace BoogieDownGames {
 			PostSongChange(m_soundClips[m_currentIndex].name, m_soundClips[m_currentIndex].length);
 
 			NotificationCenter.DefaultCenter.AddObserver (this, "SetDemoInfo");
-			if (m_isMenu) {
-				UpdateDemoInfo(m_soundClips[m_currentIndex].name);
-				menuLoop ();
-			} else {
-				PlayCurrentSong ();
-			}
+
+				if (m_isMenu) {
+					if (passedLoad == false){
+						passedLoad = true;
+						menuStart();
+					} else {
+						GameObject.Find ("AdsGameObject").GetComponent<ShowAdOnLoad> ().enabled = true;
+					}
+					
+				} else {
+					PlayCurrentSong ();
+				}
 
 		}
+
+		void Update(){
+			if(UnityAdsHelper.lastAdEnded){
+				menuStart();
+				UnityAdsHelper.lastAdEnded = false;
+			}
+		}
+
+		public void menuStart(){
+			UpdateDemoInfo (m_soundClips [m_currentIndex].name);
+			menuLoop ();
+		}
+
 		
 		public bool DetectEndOfSong()
 		{
@@ -146,8 +167,7 @@ namespace BoogieDownGames {
 				m_currentIndex = 0;
 			}
 			GetComponent<AudioSource>().clip = m_soundClips[m_currentIndex];
-			UpdateDemoInfo(m_soundClips[m_currentIndex].name);
-			menuLoop ();
+			menuStart ();
 			PostSongChange(m_soundClips[m_currentIndex].name, m_soundClips[m_currentIndex].length);
 			GameMaster.Instance.CurrentSong = m_currentIndex;
 		}
@@ -159,8 +179,7 @@ namespace BoogieDownGames {
 				m_currentIndex = m_soundClips.Count - 1;
 			}
 			GetComponent<AudioSource>().clip = m_soundClips[m_currentIndex];
-			UpdateDemoInfo(m_soundClips[m_currentIndex].name);
-			menuLoop ();
+			menuStart ();
 			PostSongChange(m_soundClips[m_currentIndex].name, m_soundClips[m_currentIndex].length);
 			GameMaster.Instance.CurrentSong = m_currentIndex;
 		}
