@@ -5,7 +5,7 @@ using System;
 
 public class GooglePlayDownloader
 {
-	private static string GOOGLE_PLAY_PUBLIC_KEY = "REPLACE THIS WITH YOUR GOOGLE PLAY PUBLIC KEY";
+	private static string GOOGLE_PLAY_PUBLIC_KEY = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAssHU1baSh13mivB+/lqs+KdwOPA1CD0sHOTs9T2Hnq7Wye5x+DVropYwNQsWU/8169+neq+1cr2svLURju46r9abLmJWma4/52yb0UPT7FlLSFK4YNe101Sl0uEn/PhgTAJ3Lvy3HNnjh4HitUMWMI2piTC47L08eqEfb/qv7MicIjCHwFoEEsFAjqqTAII4M2ILWv2QGm0KIyP403Qjyhiyt0GGxXc32VnSOPdxEprmiruZOmZLc0akqtVdFPTyNsieH1wBDAzAC+2UGsoacCH7A5yk8S9gPlEJNvP7PxeIM5hPAMApxp2kR2l64JvANLNxVEdJKCn6ZAVR2JEoEwIDAQAB";
 	private static AndroidJavaClass detectAndroidJNI;
 	public static bool RunningOnAndroid()
 	{
