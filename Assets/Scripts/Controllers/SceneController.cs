@@ -27,6 +27,7 @@ namespace BoogieDownGames {
 		public Image sceneIcon;
 		public Text sceneName;
 		public Image sceneLockedIcon;
+		public Image sceneFreeIcon;
 
 		#region PROPERTIES
 		
@@ -89,6 +90,11 @@ namespace BoogieDownGames {
 			}
 			GameMaster.Instance.CurrentScene = m_currentIndex;
 			sceneLockedIcon.enabled = IsSceneLocked ();
+
+			if (m_sceneNames [m_currentIndex].Equals ("Augmented Reality"))
+				sceneFreeIcon.enabled = true;
+			else
+				sceneFreeIcon.enabled = false;
 		}
 
 		public void PostMessage(string method, string message)
