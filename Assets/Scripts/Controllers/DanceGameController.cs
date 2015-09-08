@@ -7,7 +7,10 @@ namespace BoogieDownGames {
 
 	public class DanceGameController : UnitySingleton<DanceGameController> {
 
-		public AudioClip m_goodNote;
+		public AudioClip m_goodNote1;
+		public AudioClip m_goodNote2;
+		public AudioClip m_goodNote3;
+		public AudioClip m_goodNote4;
 		public AudioClip m_badNote;
 		public int m_menuSceneNumber = 2;
 		public int m_energyFillBonus = 250;
@@ -228,11 +231,14 @@ namespace BoogieDownGames {
 
 		public void EnergyMeterFilled ()
 		{
-			// do fun stuff when the energy meter is filled: fireworks, lights, dance moves, then reset the meter
+			// TODO: do fun stuff when the energy meter is filled: fireworks, lights, dance moves, then reset the meter
 			m_coins ++;
 			m_score += m_energyFillBonus;
 			if (m_bonusNoteSlider != null) {
 				m_bonusNoteSlider.value = 0.0f;
+			}
+			if (m_audioSource != null && m_goodNote4 != null) {
+				m_audioSource.PlayOneShot (m_goodNote4);
 			}
 			NotificationCenter.DefaultCenter.PostNotification (this, "spawnPrefab");
 		}
@@ -248,25 +254,31 @@ namespace BoogieDownGames {
 		{
 			float bonusEarned = 0.0f;
 			int scoreEarned = 0;
+			AudioClip goodNote = null;
+
 			m_hitNotes ++;
 			switch (noteState) {
 			case NoteStates.LowScore:
 				scoreEarned = m_lowScoreEarned;
 				bonusEarned = 0.025f;
+				goodNote = m_goodNote1;
 				break;
 			case NoteStates.MidScore:
 				scoreEarned = m_midScoreEarned;
 				bonusEarned = 0.05f;
+				goodNote = m_goodNote2;
 				break;
 			case NoteStates.HighScore:
 				scoreEarned = m_highScoreEarned;
 				bonusEarned = 0.075f;
+				goodNote = m_goodNote3;
 				break;
 			default:
+				goodNote = m_goodNote1;
 				break;
 			}
-			if (m_audioSource != null && m_goodNote != null) {
-				m_audioSource.PlayOneShot (m_goodNote);
+			if (m_audioSource != null && goodNote != null) {
+				m_audioSource.PlayOneShot (goodNote);
 			}
 			if (m_score < 50) {
 				NotificationCenter.DefaultCenter.PostNotification (this, "PlayGood");
