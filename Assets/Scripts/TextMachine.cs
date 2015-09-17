@@ -61,12 +61,12 @@ namespace BoogieDownGames {
 			m_songList.Add (new SongItem ("AloneTonight", "Alone Tonight", "Dani", "2:00", "", false, 4.488f, 22.117f));
 			m_songList.Add (new SongItem ("ItsFilth", "It's Filth", "Sky Silver", "1:50", "", false, 12.706f, 35.225f));
 			m_songList.Add (new SongItem ("IGotYou", "I Got You", "Sky Girl Jo", "2:06", "", false, 7.50f, 29.142f));
-			m_songList.Add (new SongItem ("ImSexyNow", "I'm Sexy Now", "Sky Silver & the Sky Girls", "2:04", "", true, 32.239f, 22.919f));
-			m_songList.Add (new SongItem ("ShutUpDance", "Shut Up, Dance", "Delsa Feat. Ai Man", "1:43", "", true, 0.0f, 24.50f));
-			m_songList.Add (new SongItem ("InFashion", "In Fashion", "Sky Silver", "1:25", "", true, 7.238f, 14.165f));
-			m_songList.Add (new SongItem ("SheSmiles", "She Smiles", "Sky Silver", "2:00", "", true, 34.532f, 31.608f));
-			m_songList.Add (new SongItem ("LayWithMe", "Lay With Me", "Sky Girl Jo", "2:51", "", true, 137.2f, 33.5f));
-			m_songList.Add (new SongItem ("YouHaveIt", "You Have It", "Tori Martin", "1:29", "", true, 30.0f, 26.826f));
+			m_songList.Add (new SongItem ("ImSexyNow", "I'm Sexy Now", "Sky Silver & the Sky Girls", "2:04", "", false, 32.239f, 22.919f));
+			m_songList.Add (new SongItem ("ShutUpDance", "Shut Up, Dance", "Delsa Feat. Ai Man", "1:43", "", false, 0.0f, 24.50f));
+			m_songList.Add (new SongItem ("InFashion", "In Fashion", "Sky Silver", "1:25", "", false, 7.238f, 14.165f));
+			m_songList.Add (new SongItem ("SheSmiles", "She Smiles", "Sky Silver", "2:00", "", false, 34.532f, 31.608f));
+			m_songList.Add (new SongItem ("LayWithMe", "Lay With Me", "Sky Girl Jo", "2:51", "", false, 137.2f, 33.5f));
+			m_songList.Add (new SongItem ("YouHaveIt", "You Have It", "Tori Martin", "1:29", "", false, 30.0f, 26.826f));
 
 			NotificationCenter.DefaultCenter.AddObserver(this, "SetSong");
 			NotificationCenter.DefaultCenter.AddObserver (this, "GetDemoInfo");
