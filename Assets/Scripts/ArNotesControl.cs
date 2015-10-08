@@ -66,7 +66,7 @@ namespace BoogieDownGames {
 			NotificationCenter.DefaultCenter.AddObserver(this,"OnStateRunFixedUpdate");
 			NotificationCenter.DefaultCenter.AddObserver(this,"OnStateRunUpdate");
 			NotificationCenter.DefaultCenter.AddObserver(this,"OnStateLostSongEnter");
-
+            
 			// to provide some variety, flip half the notes
 			if (Random.value > 0.5) {
                 isNormal = false;
@@ -75,7 +75,7 @@ namespace BoogieDownGames {
                 // Send notes off in slightly random directions but toward the camera
                 float x = Random.Range(-0.125f, 0.125f);
                 float y = Random.Range(-0.125f, 0.125f);
-                m_direction = new Vector3(m_direction.x - 10*x, m_direction.y - 10*y, -30*m_direction.z);
+                m_direction = new Vector3(m_direction.x - 60*x, m_direction.y - 10*y, -30*m_direction.z);
             } else {
                 isNormal = true;
                 transform.localRotation = transform.localRotation * Quaternion.Euler(0, 0, 180);
@@ -83,7 +83,7 @@ namespace BoogieDownGames {
                 // Send notes off in slightly random directions but toward the camera
                 float x = Random.Range(-0.125f, 0.125f);
                 float y = Random.Range(-0.125f, 0.125f);
-                m_direction = new Vector3(m_direction.x + 10*x, m_direction.y - 10*y , 30*m_direction.z);
+                m_direction = new Vector3(m_direction.x + 60*x, m_direction.y - 10*y , 30*m_direction.z);
             }
 		}
 
