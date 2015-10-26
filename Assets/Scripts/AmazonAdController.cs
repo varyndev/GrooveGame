@@ -72,6 +72,7 @@ public class AmazonAdController : MonoBehaviour {
             Ad interstialAd = mobileAds.CreateInterstitialAd();
             string adType = interstialAd.AdType.ToString();
             identifier = interstialAd.Identifier;
+            // Debug.Log("id: " + identifier + "  adType: " + adType);
         }
 
         if (playAd == 1)
@@ -92,9 +93,6 @@ public class AmazonAdController : MonoBehaviour {
                 if (adShown)
                 {
                     playAd = 0;
-                    Ad interstialAd = mobileAds.CreateInterstitialAd();
-                    string adType = interstialAd.AdType.ToString();
-                    identifier = interstialAd.Identifier;
                 }
 
                 // Debug.Log("adShown: " + adShown);
@@ -102,10 +100,6 @@ public class AmazonAdController : MonoBehaviour {
             else
             {
                 playAd = 0;
-                Ad interstialAd = mobileAds.CreateInterstitialAd();
-                string adType = interstialAd.AdType.ToString();
-                identifier = interstialAd.Identifier;
-               // Debug.Log("id: " + identifier + "  adType: " + adType);
             }
         }
     }
