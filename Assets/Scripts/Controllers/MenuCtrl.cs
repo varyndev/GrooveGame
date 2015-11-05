@@ -20,6 +20,8 @@ namespace BoogieDownGames {
 			TextMachine textMachine = (TextMachine) GameObject.FindObjectOfType (typeof(TextMachine));
 			SceneController sceneController = (SceneController) GameObject.FindObjectOfType (typeof(SceneController));
 
+            AmazonAdController.playAd += 1;
+
 			if (sceneController.IsSceneLocked () || characterController.IsCharacterLocked () || textMachine.IsSongLocked (gameMaster.CurrentSong)) {
 				GetComponent<AudioSource>().PlayOneShot (m_badNote);
 			} else {

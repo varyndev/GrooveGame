@@ -22,6 +22,7 @@ public class StaticButtonControl : MonoBehaviour {
 		}
 
 		if (isPlayAgainButton) {
+            AmazonAdController.playAd += 1;
 			Application.LoadLevel(Application.loadedLevel);
 			return;
 		}
