@@ -123,7 +123,7 @@ namespace com.amazon.mas.cpt.ads.log {
                 return;
             }
                 
-        	//Debug.Log(string.Format(logMessage,service,message));
+        	Debug.Log(string.Format(logMessage,service,message));
         }
         
         /// <summary>

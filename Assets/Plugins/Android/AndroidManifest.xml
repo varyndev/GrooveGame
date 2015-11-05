@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest
     xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.unity3d.player"
+    package="com.amazon.cpt.testApp.plugins.AmazonMobileAds"
 	android:installLocation="preferExternal"
 	android:theme="@android:style/Theme.NoTitleBar"
     android:versionCode="1"
@@ -42,6 +42,13 @@
                   android:screenOrientation="landscape"
                   android:configChanges="fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen">
         </activity>
+
+      <activity
+        android:name="com.amazon.device.ads.AdActivity"
+        android:configChanges="keyboardHidden|orientation|screenSize"/>
+       <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+       <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+      
         <activity android:name="com.unity3d.plugin.downloader.UnityDownloaderActivity" />
         <service android:name="com.unity3d.plugin.downloader.UnityDownloaderService" />
         <receiver android:name="com.unity3d.plugin.downloader.UnityAlarmReceiver" />
