@@ -21,10 +21,18 @@ public class StaticButtonControl : MonoBehaviour {
 			return;
 		}
 
+        //Play Amazon Ad when button is pressed
 		if (isPlayAgainButton) {
-            AmazonAdController.playAd += 1;
-			Application.LoadLevel(Application.loadedLevel);
-			return;
+
+            if (AmazonAdController.adTime)
+            {
+                AmazonAdController.playAd = true;
+            }
+            else
+            {
+                Application.LoadLevel(Application.loadedLevel);
+                return;
+            }
 		}
 		
 		if (isModelLockButton) {

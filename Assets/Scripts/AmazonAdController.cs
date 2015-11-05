@@ -3,9 +3,20 @@ using System.Collections;
 using com.amazon.mas.cpt.ads;
 using com.amazon.mas.cpt.ads.json;
 
+/// <summary>
+/// Controller for the Amazon Ads. Ads must be created and be loaded before playing.
+/// Loaded ads expire after 10 minutes. Ads are created on start, loaded 3 seconds after creation and played
+/// when "Play" buttons are pressed. AmazonAds Controller prefab must be in each scene with ads.
+/// 
+/// IF REMOVING AMAZON ADS:
+/// Adjust Lines 27-30 of the StaticButtonControl script and
+/// Lines 30-33 in MenuCtrl script
+/// </summary>
+
 public class AmazonAdController : MonoBehaviour {
 
     IAmazonMobileAds mobileAds = AmazonMobileAdsImpl.Instance;
+
     ShouldEnable noEnable = new ShouldEnable();
     ShouldEnable enable = new ShouldEnable();
     Ad createResponse;
@@ -14,20 +25,13 @@ public class AmazonAdController : MonoBehaviour {
     bool adShown;
     long identifier;
 
-    //int for playing ads
-    public static int playAd = 1;
-
-    void Awake()
-    {
-        DontDestroyOnLoad(this);
-
-        Ad interstialAd = mobileAds.CreateInterstitialAd();
-        string adType = interstialAd.AdType.ToString();
-        identifier = interstialAd.Identifier;
-    }
+    public static bool adTime = true;
+    public static bool playAd = false;
+    float loadTimer = 3.0f;
+    bool loadAd = true;
 
     // Use this for initialization
-    void Start ()
+    void Start()
     {
         noEnable.BooleanValue = false;
         enable.BooleanValue = true;
@@ -36,22 +40,30 @@ public class AmazonAdController : MonoBehaviour {
         SetApplicationKey();
         //Set loggig, testing and geo location
         mobileAds.EnableLogging(noEnable);
-        mobileAds.EnableTesting(noEnable);
+        mobileAds.EnableTesting(enable);
         mobileAds.EnableGeoLocation(noEnable);
+
+        CreateAd();
+
+        adTime = true;
+        playAd = false;
+        loadTimer = 3.0f;
+        loadAd = true;
+
     }
 
     //Set App key to track ads
-   void SetApplicationKey()
+    void SetApplicationKey()
     {
         // Use Android app key for Android apps and iOS
         // app key for iOS apps
         string appKey;
 
-        #if UNITY_ANDROID
+#if UNITY_ANDROID
         appKey = "c8eebc7b1bcf40d38a2d364966bf5b63";
-        #elif UNITY_IPHONE
+#elif UNITY_IPHONE
         appKey = "c8eebc7b1bcf40d38a2d364966bf5b63";
-        #endif
+#endif
 
         // Construct object passed to sync operation as input
         ApplicationKey key = new ApplicationKey();
@@ -64,49 +76,54 @@ public class AmazonAdController : MonoBehaviour {
         mobileAds.SetApplicationKey(key);
     }
 
-    // Update is called once per frame
-    void Update ()
+    public void CreateAd()
     {
-        if (playAd == 0)
+        Ad interstialAd = mobileAds.CreateInterstitialAd();
+        // string adType = interstialAd.AdType.ToString();
+        identifier = interstialAd.Identifier;
+
+        // Debug.Log("The ad is being created");
+        // Debug.Log("id: " + identifier + "  adType: " + adType);
+    }
+
+    public void LoadAd()
+    {
+        LoadingStarted response = mobileAds.LoadInterstitialAd();
+        isReady = response.BooleanValue;
+        // Debug.Log("The ad is loading");
+    }
+
+    public void ShowAd()
+    {
+        AdShown shownInterstitialAd = mobileAds.ShowInterstitialAd();
+        adShown = shownInterstitialAd.BooleanValue;
+
+        // Debug.Log("The ad is showing");
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (playAd)
         {
-            Ad interstialAd = mobileAds.CreateInterstitialAd();
-            string adType = interstialAd.AdType.ToString();
-            identifier = interstialAd.Identifier;
+            adTime = false;
+            ShowAd();
+            CreateAd();
+            loadTimer = 30.0f;
+            playAd = false;
+
         }
 
-        if (playAd == 1)
+        if (loadTimer > 0)
         {
-            IsReady responseReady = mobileAds.IsInterstitialAdReady();
-            // Get return value
-            isReady = responseReady.BooleanValue;
-            //Debug.Log(loadingStarted);
+            loadTimer -= 1 * Time.deltaTime;
         }
-
-        if (playAd == 2)
+        if (loadTimer <= 0 && loadAd == true)
         {
-            if (isReady)
-            {
-                AdShown shownInterstitialAd = mobileAds.ShowInterstitialAd();
-                adShown = shownInterstitialAd.BooleanValue;
-
-                if (adShown)
-                {
-                    playAd = 0;
-                    Ad interstialAd = mobileAds.CreateInterstitialAd();
-                    string adType = interstialAd.AdType.ToString();
-                    identifier = interstialAd.Identifier;
-                }
-
-                // Debug.Log("adShown: " + adShown);
-            }
-            else
-            {
-                playAd = 0;
-                Ad interstialAd = mobileAds.CreateInterstitialAd();
-                string adType = interstialAd.AdType.ToString();
-                identifier = interstialAd.Identifier;
-               // Debug.Log("id: " + identifier + "  adType: " + adType);
-            }
+            LoadAd();
+            adTime = true;
+            loadAd = false;
         }
+        // Debug.Log("playAd: " + playAd);
     }
 }

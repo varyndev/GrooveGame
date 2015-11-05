@@ -20,15 +20,24 @@ namespace BoogieDownGames {
 			TextMachine textMachine = (TextMachine) GameObject.FindObjectOfType (typeof(TextMachine));
 			SceneController sceneController = (SceneController) GameObject.FindObjectOfType (typeof(SceneController));
 
-            AmazonAdController.playAd += 1;
-
-			if (sceneController.IsSceneLocked () || characterController.IsCharacterLocked () || textMachine.IsSongLocked (gameMaster.CurrentSong)) {
-				GetComponent<AudioSource>().PlayOneShot (m_badNote);
-			} else {
-				GameEventBeaconController.GameStart ((gameMaster.CurrentScene + 1).ToString (), (gameMaster.CurrentModel + 1).ToString (), (gameMaster.CurrentSong + 1).ToString ());
-				Player.Instance.SetLastPlayed (gameMaster.CurrentScene, gameMaster.CurrentModel, gameMaster.CurrentSong);
-				GameMaster.Instance.SceneFsm.ChangeState (CtrlStateGame.Instance);
-			}
+                if (sceneController.IsSceneLocked() || characterController.IsCharacterLocked() || textMachine.IsSongLocked(gameMaster.CurrentSong))
+                {
+                    GetComponent<AudioSource>().PlayOneShot(m_badNote);
+                }
+                else
+                {
+                //Play Amazon Ad the first time the button is pressed
+                    if (AmazonAdController.adTime)
+                    {
+                        AmazonAdController.playAd = true;
+                    }
+                    else
+                    {
+                        GameEventBeaconController.GameStart((gameMaster.CurrentScene + 1).ToString(), (gameMaster.CurrentModel + 1).ToString(), (gameMaster.CurrentSong + 1).ToString());
+                        Player.Instance.SetLastPlayed(gameMaster.CurrentScene, gameMaster.CurrentModel, gameMaster.CurrentSong);
+                        GameMaster.Instance.SceneFsm.ChangeState(CtrlStateGame.Instance);
+                    }
+                }
 		}
 
 		public void QuitGame()
