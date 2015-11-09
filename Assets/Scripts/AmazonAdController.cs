@@ -40,7 +40,7 @@ public class AmazonAdController : MonoBehaviour {
         SetApplicationKey();
         //Set loggig, testing and geo location
         mobileAds.EnableLogging(noEnable);
-        mobileAds.EnableTesting(enable);
+        mobileAds.EnableTesting(noEnable);
         mobileAds.EnableGeoLocation(noEnable);
 
         CreateAd();
