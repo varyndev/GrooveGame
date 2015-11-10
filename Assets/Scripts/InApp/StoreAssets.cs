@@ -12,7 +12,7 @@ namespace Soomla.Store
 		
 		public int GetVersion ()
 		{
-			return 0;
+			return 1;
 		}
 		
 		public VirtualCurrency[] GetCurrencies ()
@@ -23,7 +23,7 @@ namespace Soomla.Store
 		public VirtualGood[] GetGoods ()
 		{
 			return new VirtualGood[] {FOURPACK_GOOD, SIXPACK_GOOD, DANCER_GOOD, FLOOR_GOOD};
-		}
+        }
 		
 		public VirtualCurrencyPack[] GetCurrencyPacks ()
 		{
@@ -39,25 +39,25 @@ namespace Soomla.Store
 		public const string COIN_CURRENCY_ITEM_ID = "GGCoinPack";
 		
 		public const string FLOOR_PACK_PRODUCT_ID = "ARroomGrooveGame199";
+
+        //public const string DANCER_PACK_PRODUCT_ID = "ARIADANCER099";
 		
-		public const string DANCER_PACK_PRODUCT_ID = "ARIADANCER099";
+		//public const string SONG_4PACK_PRODUCT_ID = "4PackSongs249";
 		
-		public const string SONG_4PACK_PRODUCT_ID = "4PackSongs249";
-		
-		public const string SONG_6PACK_PRODUCT_ID = "6PackSongs299";
-		
-		
-		#if UNITY_ANDROID && !UNITY_EDITOR
-		DANCER_PACK_PRODUCT_ID    = "ariadancer099";
-		
-		SONG_4PACK_PRODUCT_ID = "fourpacksongs249";
-		
-		SONG_6PACK_PRODUCT_ID = "sixpacksongs299";
-		#endif
-		
-		/** Virtual Currencies **/
-		
-		public static VirtualCurrency GGCOIN_CURRENCY = new VirtualCurrency (
+		//public const string SONG_6PACK_PRODUCT_ID = "6PackSongs299";
+
+
+#if UNITY_ANDROID 
+        public const string DANCER_PACK_PRODUCT_ID = "ariadancer099";
+
+        public const string SONG_4PACK_PRODUCT_ID = "fourpacksongs249";
+
+        public const string SONG_6PACK_PRODUCT_ID = "sixpacksongs299";
+#endif
+
+        /** Virtual Currencies **/
+
+        public static VirtualCurrency GGCOIN_CURRENCY = new VirtualCurrency (
 			"GGCoins",                               // Name
 			"GG Coin currency",                      // Description
 			"GGcoin_currency_ID"                    // Item ID

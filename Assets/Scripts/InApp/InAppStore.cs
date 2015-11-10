@@ -32,7 +32,7 @@ namespace Soomla.Store
 			////For debugging in scene
 			//Soomla.Store.StoreEvents.OnSoomlaStoreInitialized += onSoomlaStoreInitialized;
 			//
-			//Soomla.Store.SoomlaStore.Initialize (new Soomla.Store.StoreAssets ());
+			Soomla.Store.SoomlaStore.Initialize (new Soomla.Store.StoreAssets ());
 			//Soomla.Store.SoomlaStore.StartIabServiceInBg ();
 		}
 		

@@ -26,12 +26,13 @@ namespace Soomla.Store {
 	/// </summary>
 	public class SoomlaStoreAndroid : SoomlaStore {
 
-#if UNITY_ANDROID && !UNITY_EDITOR
+#if UNITY_ANDROID 
 		private static AndroidJavaObject jniSoomlaStore = null;
 
 		/// <summary>
 		/// Load the billing service.
 		/// </summary>
+
 		protected override void _loadBillingService() {
 			if (StoreSettings.GPlayBP) {
 				if (string.IsNullOrEmpty(StoreSettings.AndroidPublicKey) ||
@@ -206,5 +207,5 @@ namespace Soomla.Store {
 			AndroidJNI.PopLocalFrame(IntPtr.Zero);
 		}
 #endif
-	}
+    }
 }

@@ -22,7 +22,7 @@ namespace Soomla.Store {
 	/// </summary>
 	public static class AndroidJNIHandler {
 
-#if UNITY_ANDROID && !UNITY_EDITOR
+#if UNITY_ANDROID
 
 		/// <summary>
 		/// Calls android-store function that returns void and receives a string argument. 
