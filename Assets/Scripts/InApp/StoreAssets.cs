@@ -49,6 +49,7 @@ namespace Soomla.Store
 
 #if UNITY_ANDROID 
         public const string DANCER_PACK_PRODUCT_ID = "ariadancer099";
+        //public const string DANCER_PACK_PRODUCT_ID = "ARIADANCER001";
 
         public const string SONG_4PACK_PRODUCT_ID = "fourpacksongs249";
 

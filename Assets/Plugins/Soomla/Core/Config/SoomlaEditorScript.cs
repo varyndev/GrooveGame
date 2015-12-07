@@ -31,6 +31,7 @@ namespace Soomla
 	public class SoomlaEditorScript : ScriptableObject
 	{
         //public static string AND_PUB_KEY_DEFAULT = "YOUR GOOGLE PLAY PUBLIC KEY";
+        //public static string AND_PUB_KEY_DEFAULT = "c8eebc7b1bcf40d38a2d364966bf5b63";
         public static string AND_PUB_KEY_DEFAULT = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAssHU1baSh13mivB+/lqs+KdwOPA1CD0sHOTs9T2Hnq7Wye5x+DVropYwNQsWU/8169+neq+1cr2svLURju46r9abLmJWma4/52yb0UPT7FlLSFK4YNe101Sl0uEn/PhgTAJ3Lvy3HNnjh4HitUMWMI2piTC47L08eqEfb/qv7MicIjCHwFoEEsFAjqqTAII4M2ILWv2QGm0KIyP403Qjyhiyt0GGxXc32VnSOPdxEprmiruZOmZLc0akqtVdFPTyNsieH1wBDAzAC+2UGsoacCH7A5yk8S9gPlEJNvP7PxeIM5hPAMApxp2kR2l64JvANLNxVEdJKCn6ZAVR2JEoEwIDAQAB";
         public static string ONLY_ONCE_DEFAULT = "SET ONLY ONCE";
 

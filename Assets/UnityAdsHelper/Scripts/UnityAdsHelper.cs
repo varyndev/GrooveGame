@@ -28,7 +28,6 @@ public class UnityAdsHelper : MonoBehaviour
 	/// Called when an error occurs while attempting to show an ad.
 	/// </summary>
 	public static Action onFailed;
-
 	public static bool lastAdEnded = false;//++
 
 #pragma warning disable 0414
@@ -81,11 +80,11 @@ public class UnityAdsHelper : MonoBehaviour
 		DontDestroyOnLoad(gameObject);
 	}
 
-	/// <summary>
-	/// Initializes the Unity Ads SDK with <see cref="UnityAdsSettings"/>. 
-	/// To configure settings, go to Edit > Unity Ads Settings in the Unity Editor menu.
-	/// </summary>
-	public static void Initialize () 
+    /// <summary>
+    /// Initializes the Unity Ads SDK with <see cref="UnityAdsSettings"/>. 
+    /// To configure settings, go to Edit > Unity Ads Settings in the Unity Editor menu.
+    /// </summary>
+    public static void Initialize () 
 	{ 
 	#if UNITY_ADS_SDK
 		if (_isInitializing)
@@ -225,12 +224,14 @@ public class UnityAdsHelper : MonoBehaviour
 	/// Shows an ad using the default ad placement zone.
 	/// </summary>
 	public static void ShowAd () { ShowAd(null); }
-	/// <summary>
-	/// Shows an ad using the specified ad placement zone ID.
-	/// To use the default ad placement zone, pass in a <c>null</c> value for the zone ID.
-	/// </summary>
-	/// <param name="zoneId">Ad placement zone ID.</param>
-	public static void ShowAd (string zoneId)
+    /// <summary>
+    /// Shows an ad using the specified ad placement zone ID.
+    /// To use the default ad placement zone, pass in a <c>null</c> value for the zone ID.
+    /// </summary>
+    /// <param name="zoneId">Ad placement zone ID.</param>
+    /// 
+
+    public static void ShowAd (string zoneId)
 	{
 		zoneId = zoneId.Trim();
 		if (string.IsNullOrEmpty(zoneId)) zoneId = null;
@@ -271,7 +272,7 @@ public class UnityAdsHelper : MonoBehaviour
 		}
 
 		lastAdEnded = true;
-		ClearActions();
+		//ClearActions();
 	}
 
 	private static void ClearActions ()

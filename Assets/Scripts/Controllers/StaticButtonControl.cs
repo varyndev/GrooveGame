@@ -24,9 +24,10 @@ public class StaticButtonControl : MonoBehaviour {
         //Play Amazon Ad when button is pressed
 		if (isPlayAgainButton) {
 
-            if (AmazonAdController.adTime)
+            if (UnityAdsController.UnityAdTime)
             {
-                AmazonAdController.playAd = true;
+               //AmazonAdController.playAd = true;
+               UnityAdsController.UnityPlayAd = true;
             }
             else
             {
