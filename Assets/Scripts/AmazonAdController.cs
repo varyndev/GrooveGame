@@ -104,13 +104,14 @@ public class AmazonAdController : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (playAd)
+        if (playAd || UnityAdsController.playAmazonAd)
         {
             adTime = false;
             ShowAd();
             CreateAd();
             loadTimer = 30.0f;
             playAd = false;
+            UnityAdsController.playAmazonAd = false;
 
         }
 
@@ -122,6 +123,7 @@ public class AmazonAdController : MonoBehaviour {
         {
             LoadAd();
             adTime = true;
+            UnityAdsController.UnityAdTime = true;
             loadAd = false;
         }
         // Debug.Log("playAd: " + playAd);
