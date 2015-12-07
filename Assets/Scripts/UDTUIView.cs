@@ -51,12 +51,12 @@ public class UDTUIView : ISampleAppUIView {
         mAutoFocusSetting = mLayout.AddSlider("Autofocus", false);
         mLayout.AddGap(2);
         mCameraFlashSettings = mLayout.AddSlider("Flash", false);
-        mLayout.AddGap(16);
-        mCameraLabel = mLayout.AddGroupLabel("Camera");
-        string[] options = { "Front", "Rear" };
-        mCameraFacing = mLayout.AddToggleOptions(options, 1);
-        Rect CloseButtonRect = new Rect(0, Screen.height - (100 * Screen.width) / 800.0f, Screen.width, (70.0f * Screen.width) / 800.0f);
-        mCloseButton = mLayout.AddButton("Close", CloseButtonRect);
+        //mLayout.AddGap(16);
+        //mCameraLabel = mLayout.AddGroupLabel("Camera");
+        //string[] options = { "Front", "Rear" };
+        //mCameraFacing = mLayout.AddToggleOptions(options, 1);
+        //Rect CloseButtonRect = new Rect(0, Screen.height - (100 * Screen.width) / 800.0f, Screen.width, (70.0f * Screen.width) / 800.0f);
+        //CloseButton = mLayout.AddButton("Close", CloseButtonRect);
     }
 
     public void UnLoadView()

@@ -199,7 +199,8 @@ public class UserDefinedTargetEventHandler : MonoBehaviour, IUserDefinedTargetEv
 
     private SampleAppUIButton MakeUIButton()
     {
-        Rect rect = new Rect(0.36f * Screen.width, Screen.height - (130 * Screen.width)/800.0f, 0.28f * Screen.width, (100.0f * Screen.width)/800.0f);
+        //Rect rect = new Rect(0.36f * Screen.width, Screen.height - (130 * Screen.width)/800.0f, 0.28f * Screen.width, (100.0f * Screen.width)/800.0f);
+        Rect rect = new Rect(0.41f * Screen.width, Screen.height - (110 * Screen.width)/800.0f, 0.18f * Screen.width, (60.0f * Screen.width)/800.0f);
         GUIStyle style = new GUIStyle();
         style.normal.background = Resources.Load("UserInterface/capture_button_normal_XHigh") as Texture2D;
         style.active.background = Resources.Load("UserInterface/capture_button_normal_XHigh") as Texture2D;
