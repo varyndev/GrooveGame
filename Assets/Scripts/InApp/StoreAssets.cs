@@ -40,16 +40,17 @@ namespace Soomla.Store
 		
 		public const string FLOOR_PACK_PRODUCT_ID = "ARroomGrooveGame199";
 
-        //public const string DANCER_PACK_PRODUCT_ID = "ARIADANCER099";
+        //Activate if build is for AMAZON DEVICES ONLY
+        /*public const string DANCER_PACK_PRODUCT_ID = "ARIADANCER099";
 		
-		//public const string SONG_4PACK_PRODUCT_ID = "4PackSongs249";
+		public const string SONG_4PACK_PRODUCT_ID = "4PackSongs249";
 		
-		//public const string SONG_6PACK_PRODUCT_ID = "6PackSongs299";
+		public const string SONG_6PACK_PRODUCT_ID = "6PackSongs299";*/
 
 
 #if UNITY_ANDROID 
+            //Activate if build is for ANDROID DEVICES ONLY
         public const string DANCER_PACK_PRODUCT_ID = "ariadancer099";
-        //public const string DANCER_PACK_PRODUCT_ID = "ARIADANCER001";
 
         public const string SONG_4PACK_PRODUCT_ID = "fourpacksongs249";
 

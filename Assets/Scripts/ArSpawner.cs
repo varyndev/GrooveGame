@@ -27,9 +27,9 @@ namespace BoogieDownGames{
 			NotificationCenter.DefaultCenter.AddObserver(this, "destroyAllPrefab");
 
 			// Set the position based on the Main Camera's Set Position
-			Transform mainCameraTransform = Camera.main.transform;
-			transform.position = mainCameraTransform.position + (mainCameraTransform.forward*spawnDistance) +
-                Vector3.down*500 + Vector3.left*200;
+			//Transform mainCameraTransform = Camera.main.transform;
+			//transform.position = mainCameraTransform.position + (mainCameraTransform.forward*spawnDistance) +
+               // Vector3.down*500 + Vector3.left*200;
 		}
 
 		/// <summary>
