@@ -46,7 +46,7 @@ public class DownloadObb : MonoBehaviour {
 	IEnumerator Load()
 	{
 #if UNITY_IPHONE
-		Handheld.SetActivityIndicatorStyle(iOS.ActivityIndicatorStyle.Gray);
+		Handheld.SetActivityIndicatorStyle(UnityEngine.iOS.ActivityIndicatorStyle.Gray);
 #elif UNITY_ANDROID
 		Handheld.SetActivityIndicatorStyle(AndroidActivityIndicatorStyle.Small);
 #endif
