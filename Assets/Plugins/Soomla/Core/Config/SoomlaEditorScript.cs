@@ -32,7 +32,7 @@ namespace Soomla
 	{
         //public static string AND_PUB_KEY_DEFAULT = "YOUR GOOGLE PLAY PUBLIC KEY";
         //public static string AND_PUB_KEY_DEFAULT = "c8eebc7b1bcf40d38a2d364966bf5b63";
-        public static string AND_PUB_KEY_DEFAULT = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAssHU1baSh13mivB+/lqs+KdwOPA1CD0sHOTs9T2Hnq7Wye5x+DVropYwNQsWU/8169+neq+1cr2svLURju46r9abLmJWma4/52yb0UPT7FlLSFK4YNe101Sl0uEn/PhgTAJ3Lvy3HNnjh4HitUMWMI2piTC47L08eqEfb/qv7MicIjCHwFoEEsFAjqqTAII4M2ILWv2QGm0KIyP403Qjyhiyt0GGxXc32VnSOPdxEprmiruZOmZLc0akqtVdFPTyNsieH1wBDAzAC+2UGsoacCH7A5yk8S9gPlEJNvP7PxeIM5hPAMApxp2kR2l64JvANLNxVEdJKCn6ZAVR2JEoEwIDAQAB";
+        public static string AND_PUB_KEY_DEFAULT = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAj1C9vWuwzOO9vtrUGCKpJ/cXuCZSax/LiXtiBz2CHzW9JBzpbqzOtIXCS5eI1DXCjvz1jKPWmjLLO0NetrRn39zDEG2gFrzW2+CmITnPQJzSzj4eKv7Hpoc2KmY63L2QxDIZcqgMH/K+e54/CGBe8V+5/1fF18LNajTBJmKggLyHjGX7Kqmuae065GDo7RAk7/RuQCdY35l3rTtsyqQ8nPqkPSn13bUTVJTpUIpYTfsRJh3UTxJRGXAa1pp2LgXqmMqSSHcOgCN1EWBv8I3Bbjngmr4zigEjWDcbws6esqaKmxbC+jjm+wDEEzyTjVfb+DUz/YvM+b2snW9cwOdJYwIDAQAB";
         public static string ONLY_ONCE_DEFAULT = "SET ONLY ONCE";
 
 		const string soomSettingsAssetName = "SoomlaEditorScript";
