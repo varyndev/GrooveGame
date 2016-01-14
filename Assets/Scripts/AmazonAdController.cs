@@ -60,9 +60,20 @@ public class AmazonAdController : MonoBehaviour {
         string appKey;
 
 #if UNITY_ANDROID
+
+		//appKey for Android Groove Game
         appKey = "c8eebc7b1bcf40d38a2d364966bf5b63";
+
+		//appKey for Android Japan Japan
+	  //appKey = "babe92bc9a5d4ec2ae29f959acedc3f7";
+
 #elif UNITY_IOS
-        appKey = "4JV7BQFQQ2";
+
+		//appKey for iOS Japan Japan
+		appKey = "0417dcf9314e4577ab9c8e6423b80571";
+
+		//appKey for iOS Groove Game
+	  //appKey = "522ce6e0e5ce47b18595a28362d5c633";
 #endif
 
         // Construct object passed to sync operation as input
