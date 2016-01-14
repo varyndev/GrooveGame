@@ -33,16 +33,17 @@ namespace BoogieDownGames {
 		private List<string> m_defaultSongOrder = new List<string>
 		{
 			"SheSaid",
-			"FryAndSizzle",
+			"FryandSizzle",
 			"AloneTonight",
+            "I_Got_You",
 			"ItsFilth",
-			"IGotYou",
 			"ImSexyNow",
 			"ShutUpDance",
 			"InFashion",
 			"SheSmiles",
 			"LayWithMe",
 			"YouHaveIt",
+            "JapanJapan",
 		};
 
 		#region PROPERTIES
