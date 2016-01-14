@@ -255,6 +255,7 @@ public class UnityAdsHelper : MonoBehaviour
 	
 	private static void HandleShowResult (ShowResult result)
 	{
+
 		switch (result)
 		{
 		case ShowResult.Finished:

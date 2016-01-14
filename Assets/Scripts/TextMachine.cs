@@ -56,11 +56,11 @@ namespace BoogieDownGames {
 		// 		Demo times are listed in seconds
 		void Awake () {
 			m_songList = new List<SongItem>();
-			m_songList.Add (new SongItem ("SheSaid", "She Said", "Dani Feat. Sky Silver", "1:52", "", false, 14.14f, 26.26f));
-			m_songList.Add (new SongItem ("FryAndSizzle", "Fry & Sizzle", "Delsa & Sky Silver", "1:47", "", false, 7.332f, 22.319f));
-			m_songList.Add (new SongItem ("AloneTonight", "Alone Tonight", "Dani", "2:00", "", false, 4.488f, 22.117f));
-			m_songList.Add (new SongItem ("ItsFilth", "It's Filth", "Sky Silver", "1:50", "", false, 12.706f, 35.225f));
-			m_songList.Add (new SongItem ("IGotYou", "I Got You", "Sky Girl Jo", "2:06", "", false, 7.50f, 29.142f));
+			m_songList.Add (new SongItem ("SheSaid", "She Said", "Dani Feat. Sky Silver", "1:01", "", false, 14.14f, 26.26f));
+			m_songList.Add (new SongItem ("FryandSizzle", "Fry & Sizzle", "Delsa & Sky Silver", "1:07", "", false, 7.332f, 22.319f));
+			m_songList.Add (new SongItem ("AloneTonight", "Alone Tonight", "Dani", "1:01", "", false, 4.488f, 22.117f));
+			m_songList.Add (new SongItem ("ItsFilth", "It's Filth", "Sky Silver", "0:57", "", false, 12.706f, 35.225f));
+			m_songList.Add (new SongItem ("I_Got_You", "I Got You", "Sky Girl Jo", "0:57", "", false, 7.50f, 29.142f));
 			m_songList.Add (new SongItem ("ImSexyNow", "I'm Sexy Now", "Sky Silver & the Sky Girls", "2:04", "", true, 32.239f, 22.919f));
 			m_songList.Add (new SongItem ("ShutUpDance", "Shut Up, Dance", "Delsa Feat. Ai Man", "1:43", "", true, 0.0f, 24.50f));
 			m_songList.Add (new SongItem ("InFashion", "In Fashion", "Sky Silver", "1:25", "", true, 7.238f, 14.165f));
