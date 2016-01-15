@@ -77,7 +77,7 @@ namespace BoogieDownGames {
 
 			// The CharacterModel contains the tag "CharacterController"
 			m_dancer = GameObject.FindGameObjectWithTag ("CharacterController");
-			m_zDancerDistanceThreshold = -0.35f;
+			m_zDancerDistanceThreshold = -0.25f;
 
 			// to provide some variety, flip half the notes
 			if (Random.value > 0.5) {
@@ -87,10 +87,8 @@ namespace BoogieDownGames {
 				m_direction = Vector3.forward * -1.0f;
 			}
 			// Send notes off in slightly random directions but toward the camera
-			//float x = Random.Range(-0.125f, 0.125f);
-			//float y = Random.Range(-0.125f, 0.125f);
-			float x = Random.Range(-0.25f, 0.25f);
-			float y = Random.Range(-0.25f, 0.25f);
+			float x = Random.Range(-0.125f, 0.125f);
+			float y = Random.Range(-0.125f, 0.125f);
 			m_direction = new Vector3(m_direction.x + x, m_direction.y + y, m_direction.z);
 		}
 

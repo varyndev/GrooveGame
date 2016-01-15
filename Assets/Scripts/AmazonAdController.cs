@@ -61,8 +61,8 @@ public class AmazonAdController : MonoBehaviour {
 
 #if UNITY_ANDROID
         appKey = "c8eebc7b1bcf40d38a2d364966bf5b63";
-#elif UNITY_IOS
-        appKey = "4JV7BQFQQ2";
+#elif UNITY_IPHONE
+        appKey = "c8eebc7b1bcf40d38a2d364966bf5b63";
 #endif
 
         // Construct object passed to sync operation as input

@@ -24,7 +24,7 @@ namespace Soomla.Store {
 	/// This is the only class you need to initialize in order to use the SOOMLA SDK.
 	/// </summary>
 	public class SoomlaStoreIOS : SoomlaStore {
-#if UNITY_IOS
+#if UNITY_IOS && !UNITY_EDITOR
 
 		/// Functions that call iOS-store functions.
 		[DllImport ("__Internal")]

@@ -91,10 +91,10 @@ namespace BoogieDownGames {
 			GameMaster.Instance.CurrentScene = m_currentIndex;
 			sceneLockedIcon.enabled = IsSceneLocked ();
 
-			/*if (m_sceneNames [m_currentIndex].Equals ("Augmented Reality"))
+			if (m_sceneNames [m_currentIndex].Equals ("Augmented Reality"))
 				sceneFreeIcon.enabled = true;
 			else
-				sceneFreeIcon.enabled = false;*/
+				sceneFreeIcon.enabled = false;
 		}
 
 		public void PostMessage(string method, string message)
