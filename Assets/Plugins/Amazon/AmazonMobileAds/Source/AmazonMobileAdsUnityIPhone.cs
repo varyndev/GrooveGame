@@ -26,52 +26,51 @@ namespace com.amazon.mas.cpt.ads
     public abstract partial class AmazonMobileAdsImpl
     {
 #if UNITY_IPHONE
-       private class AmazonMobileAdsUnityIPhone : AmazonMobileAdsUnityBase
+        private class AmazonMobileAdsUnityIPhone : AmazonMobileAdsUnityBase
         {
-                        [DllImport ("AmazonMobileAdsBridge")]
+            [DllImport ("__Internal")]
             private static extern string nativeRegisterCallbackGameObject(string name);
 
+            [DllImport ("__Internal")]
+            private static extern string nativeRegisterCrossPlatformTool(string crossPlatformTool);
 
-            [DllImport ("AmazonMobileAdsBridge")]
-            private static extern string nativeInit();
-
-            [DllImport ("AmazonMobileAdsBridge")]
+            [DllImport ("__Internal")]
             private static extern string nativeSetApplicationKeyJson(string jsonMessage);
 
-            [DllImport ("AmazonMobileAdsBridge")]
+            [DllImport ("__Internal")]
             private static extern string nativeRegisterApplicationJson(string jsonMessage);
 
-            [DllImport ("AmazonMobileAdsBridge")]
+            [DllImport ("__Internal")]
             private static extern string nativeEnableLoggingJson(string jsonMessage);
 
-            [DllImport ("AmazonMobileAdsBridge")]
+            [DllImport ("__Internal")]
             private static extern string nativeEnableTestingJson(string jsonMessage);
 
-            [DllImport ("AmazonMobileAdsBridge")]
+            [DllImport ("__Internal")]
             private static extern string nativeEnableGeoLocationJson(string jsonMessage);
 
-            [DllImport ("AmazonMobileAdsBridge")]
+            [DllImport ("__Internal")]
             private static extern string nativeCreateFloatingBannerAdJson(string jsonMessage);
 
-            [DllImport ("AmazonMobileAdsBridge")]
+            [DllImport ("__Internal")]
             private static extern string nativeCreateInterstitialAdJson(string jsonMessage);
 
-            [DllImport ("AmazonMobileAdsBridge")]
+            [DllImport ("__Internal")]
             private static extern string nativeLoadAndShowFloatingBannerAdJson(string jsonMessage);
 
-            [DllImport ("AmazonMobileAdsBridge")]
+            [DllImport ("__Internal")]
             private static extern string nativeLoadInterstitialAdJson(string jsonMessage);
 
-            [DllImport ("AmazonMobileAdsBridge")]
+            [DllImport ("__Internal")]
             private static extern string nativeShowInterstitialAdJson(string jsonMessage);
 
-            [DllImport ("AmazonMobileAdsBridge")]
+            [DllImport ("__Internal")]
             private static extern string nativeCloseFloatingBannerAdJson(string jsonMessage);
 
-            [DllImport ("AmazonMobileAdsBridge")]
+            [DllImport ("__Internal")]
             private static extern string nativeIsInterstitialAdReadyJson(string jsonMessage);
 
-            [DllImport ("AmazonMobileAdsBridge")]
+            [DllImport ("__Internal")]
             private static extern string nativeAreAdsEqualJson(string jsonMessage);
 
             public static new AmazonMobileAdsUnityIPhone Instance
@@ -99,7 +98,7 @@ namespace com.amazon.mas.cpt.ads
 
             protected override void NativeRegisterCrossPlatformTool(string crossPlatformTool)
             {
-                //AmazonMobileAdsUnityIPhone.nativeRegisterCrossPlatformTool(crossPlatformTool);
+                AmazonMobileAdsUnityIPhone.nativeRegisterCrossPlatformTool(crossPlatformTool);
             }
 
             protected override string NativeSetApplicationKeyJson(string jsonMessage)
