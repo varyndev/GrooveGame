@@ -52,6 +52,7 @@ namespace BoogieDownGames {
 		public void onSoomlaStoreInitialized()
 		{
 			Debug.Log("STORE INITIALIZED");
+
 			if (Soomla.Store.StoreInventory.GetItemBalance(Soomla.Store.StoreAssets.DANCER_PACK_PRODUCT_ID) >= 1) 
 			{
 				Soomla.Store.InAppStore.UnlockDancer();
