@@ -90,7 +90,7 @@ namespace BoogieDownGames {
 			//float x = Random.Range(-0.125f, 0.125f);
 			//float y = Random.Range(-0.125f, 0.125f);
 			float x = Random.Range(-0.25f, 0.25f);
-			float y = Random.Range(-0.25f, 0.25f);
+			float y = Random.Range(-0.15f, 0.15f);
 			m_direction = new Vector3(m_direction.x + x, m_direction.y + y, m_direction.z);
 		}
 

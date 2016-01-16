@@ -151,7 +151,7 @@ namespace BoogieDownGames {
 		public void OnStateRunEnter()
 		{
 			Time.timeScale = 1.0f;
-			noteSpawnTime = 1f; // TODO: note spawn time should vary based on difficulty and how well the player is doing
+			noteSpawnTime = 1.25f; // TODO: note spawn time should vary based on difficulty and how well the player is doing
 			AudioController.Instance.playAtIndex(gameMaster.CurrentSong);
 			gameMaster.SongStarted ();
 			NotificationCenter.DefaultCenter.PostNotification (this, "PlayStart");
