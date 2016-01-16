@@ -43,6 +43,7 @@ namespace BoogieDownGames {
 			"SheSmiles",
 			"LayWithMe",
 			"YouHaveIt",
+            "JapanJapan",
 		};
 
 		#region PROPERTIES
