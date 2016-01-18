@@ -32,6 +32,7 @@ namespace BoogieDownGames {
 		// TODO: Alter this list if order changes
 		private List<string> m_defaultSongOrder = new List<string>
 		{
+			"JapanJapan",
 			"SheSaid",
 			"FryAndSizzle",
 			"AloneTonight",
@@ -43,7 +44,6 @@ namespace BoogieDownGames {
 			"SheSmiles",
 			"LayWithMe",
 			"YouHaveIt",
-            "JapanJapan",
 		};
 
 		#region PROPERTIES
@@ -93,9 +93,9 @@ namespace BoogieDownGames {
 					if (passedLoad == false){
 						passedLoad = true;
 						menuStart();
-					} else {
-						GameObject.Find ("AdsGameObject").GetComponent<ShowAdOnLoad> ().enabled = true;
-					}
+					} //else {
+						//GameObject.Find ("AdsGameObject").GetComponent<ShowAdOnLoad> ().enabled = true;
+					//}
 					
 				} else {
 					PlayCurrentSong ();

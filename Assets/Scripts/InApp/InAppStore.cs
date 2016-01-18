@@ -11,8 +11,10 @@ namespace Soomla.Store
 		
 		public static int LockedDancerID = 2;
 		public static int ARRoomID;
-		public static int[] FourPackID = {5, 6, 7, 8};
-		public static int[] SixPackID = {5, 6, 7, 8, 9, 10};
+		//public static int[] FourPackID = {5, 6, 7, 8};
+		//public static int[] SixPackID = {5, 6, 7, 8, 9, 10};
+		public static int[] FourPackID = {6, 7, 8, 9};
+		public static int[] SixPackID = {6, 7, 8, 9, 10, 11};
 		public static int CoinPackID;
 		
 		public GameObject	DancerButton;

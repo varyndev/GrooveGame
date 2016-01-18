@@ -20,6 +20,7 @@ namespace BoogieDownGames {
 			Soomla.Store.SoomlaStore.Initialize (new Soomla.Store.StoreAssets());
 			Soomla.Store.SoomlaStore.StartIabServiceInBg ();
 		}
+
 		public override void Update () 
 		{
 			GameFsm.runOnUpdate();
