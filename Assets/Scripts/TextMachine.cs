@@ -56,6 +56,7 @@ namespace BoogieDownGames {
 		// 		Demo times are listed in seconds
 		void Awake () {
 			m_songList = new List<SongItem>();
+			m_songList.Add (new SongItem ("JapanJapan", "Japan, Japan", "Sky Girlz", "1:21", "", false, 4.5f, 20.0f));
 			m_songList.Add (new SongItem ("SheSaid", "She Said", "Dani Feat. Sky Silver", "1:52", "", false, 14.14f, 26.26f));
 			m_songList.Add (new SongItem ("FryAndSizzle", "Fry & Sizzle", "Delsa & Sky Silver", "1:47", "", false, 7.332f, 22.319f));
 			m_songList.Add (new SongItem ("AloneTonight", "Alone Tonight", "Dani", "2:00", "", false, 4.488f, 22.117f));
@@ -67,7 +68,6 @@ namespace BoogieDownGames {
 			m_songList.Add (new SongItem ("SheSmiles", "She Smiles", "Sky Silver", "2:00", "", true, 34.532f, 31.608f));
 			m_songList.Add (new SongItem ("LayWithMe", "Lay With Me", "Sky Girl Jo", "2:51", "", true, 137.2f, 33.5f));
 			m_songList.Add (new SongItem ("YouHaveIt", "You Have It", "Tori Martin", "1:29", "", true, 30.0f, 26.826f));
-			m_songList.Add (new SongItem ("JapanJapan", "Japan, Japan", "Sky Girlz", "1:21", "", false, 4.5f, 20.0f));
 
 			NotificationCenter.DefaultCenter.AddObserver(this, "SetSong");
 			NotificationCenter.DefaultCenter.AddObserver (this, "GetDemoInfo");
