@@ -52,7 +52,7 @@ namespace BoogieDownGames {
 		private float nextNoteSpawnTime;
 		private bool runWasStartedSoDontDoItAgain = false;
 		private AudioSource m_audioSource;
-		private GameMaster gameMaster;
+		private BaseGameController gameMaster = GameMaster.Instance;
 
 		public int MissNotes
 		{
@@ -90,7 +90,6 @@ namespace BoogieDownGames {
 
 		void Start()
 		{
-			gameMaster = (GameMaster)GameMaster.Instance;
 			m_audioSource = GetComponent<AudioSource> ();
 			runWasStartedSoDontDoItAgain = false;
 			noteSpawnTime = 0.0f;
