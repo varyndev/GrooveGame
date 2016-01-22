@@ -44,7 +44,7 @@ namespace BoogieDownGames {
 		{
 			if (m_timeToNextScene > 0.0f)
 			{
-				m_timeToNextScene -= 0.1f;
+				m_timeToNextScene -= 0.095f;
 			}
 
 			if (m_timeToNextScene <= 0.0f)
