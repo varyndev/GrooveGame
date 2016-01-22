@@ -1,0 +1,1419 @@
+fileFormatVersion: 2
+guid: 8276236edda1d94408187032caa05833
+timeCreated: 1453486427
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Bind_Root
+    100002: JapanDanceBasic001_v1_0004:Bind_Head
+    100004: JapanDanceBasic001_v1_0004:Bind_HeadTop_End
+    100006: JapanDanceBasic001_v1_0004:Bind_Hips
+    100008: JapanDanceBasic001_v1_0004:Bind_LeftArm
+    100010: JapanDanceBasic001_v1_0004:Bind_LeftFoot
+    100012: JapanDanceBasic001_v1_0004:Bind_LeftForeArm
+    100014: JapanDanceBasic001_v1_0004:Bind_LeftHand
+    100016: JapanDanceBasic001_v1_0004:Bind_LeftHandIndex1
+    100018: JapanDanceBasic001_v1_0004:Bind_LeftHandIndex2
+    100020: JapanDanceBasic001_v1_0004:Bind_LeftHandIndex3
+    100022: JapanDanceBasic001_v1_0004:Bind_LeftHandIndex4
+    100024: JapanDanceBasic001_v1_0004:Bind_LeftHandMiddle1
+    100026: JapanDanceBasic001_v1_0004:Bind_LeftHandMiddle2
+    100028: JapanDanceBasic001_v1_0004:Bind_LeftHandMiddle3
+    100030: JapanDanceBasic001_v1_0004:Bind_LeftHandMiddle4
+    100032: JapanDanceBasic001_v1_0004:Bind_LeftHandPinky1
+    100034: JapanDanceBasic001_v1_0004:Bind_LeftHandPinky2
+    100036: JapanDanceBasic001_v1_0004:Bind_LeftHandPinky3
+    100038: JapanDanceBasic001_v1_0004:Bind_LeftHandPinky4
+    100040: JapanDanceBasic001_v1_0004:Bind_LeftHandRing1
+    100042: JapanDanceBasic001_v1_0004:Bind_LeftHandRing2
+    100044: JapanDanceBasic001_v1_0004:Bind_LeftHandRing3
+    100046: JapanDanceBasic001_v1_0004:Bind_LeftHandRing4
+    100048: JapanDanceBasic001_v1_0004:Bind_LeftHandThumb1
+    100050: JapanDanceBasic001_v1_0004:Bind_LeftHandThumb2
+    100052: JapanDanceBasic001_v1_0004:Bind_LeftHandThumb3
+    100054: JapanDanceBasic001_v1_0004:Bind_LeftHandThumb4
+    100056: JapanDanceBasic001_v1_0004:Bind_LeftLeg
+    100058: JapanDanceBasic001_v1_0004:Bind_LeftShoulder
+    100060: JapanDanceBasic001_v1_0004:Bind_LeftToe_End
+    100062: JapanDanceBasic001_v1_0004:Bind_LeftToeBase
+    100064: JapanDanceBasic001_v1_0004:Bind_LeftUpLeg
+    100066: JapanDanceBasic001_v1_0004:Bind_Neck
+    100068: JapanDanceBasic001_v1_0004:Bind_RightArm
+    100070: JapanDanceBasic001_v1_0004:Bind_RightFoot
+    100072: JapanDanceBasic001_v1_0004:Bind_RightForeArm
+    100074: JapanDanceBasic001_v1_0004:Bind_RightHand
+    100076: JapanDanceBasic001_v1_0004:Bind_RightHandIndex1
+    100078: JapanDanceBasic001_v1_0004:Bind_RightHandIndex2
+    100080: JapanDanceBasic001_v1_0004:Bind_RightHandIndex3
+    100082: JapanDanceBasic001_v1_0004:Bind_RightHandIndex4
+    100084: JapanDanceBasic001_v1_0004:Bind_RightHandMiddle1
+    100086: JapanDanceBasic001_v1_0004:Bind_RightHandMiddle2
+    100088: JapanDanceBasic001_v1_0004:Bind_RightHandMiddle3
+    100090: JapanDanceBasic001_v1_0004:Bind_RightHandMiddle4
+    100092: JapanDanceBasic001_v1_0004:Bind_RightHandPinky1
+    100094: JapanDanceBasic001_v1_0004:Bind_RightHandPinky2
+    100096: JapanDanceBasic001_v1_0004:Bind_RightHandPinky3
+    100098: JapanDanceBasic001_v1_0004:Bind_RightHandPinky4
+    100100: JapanDanceBasic001_v1_0004:Bind_RightHandRing1
+    100102: JapanDanceBasic001_v1_0004:Bind_RightHandRing2
+    100104: JapanDanceBasic001_v1_0004:Bind_RightHandRing3
+    100106: JapanDanceBasic001_v1_0004:Bind_RightHandRing4
+    100108: JapanDanceBasic001_v1_0004:Bind_RightHandThumb1
+    100110: JapanDanceBasic001_v1_0004:Bind_RightHandThumb2
+    100112: JapanDanceBasic001_v1_0004:Bind_RightHandThumb3
+    100114: JapanDanceBasic001_v1_0004:Bind_RightHandThumb4
+    100116: JapanDanceBasic001_v1_0004:Bind_RightLeg
+    100118: JapanDanceBasic001_v1_0004:Bind_RightShoulder
+    100120: JapanDanceBasic001_v1_0004:Bind_RightToe_End
+    100122: JapanDanceBasic001_v1_0004:Bind_RightToeBase
+    100124: JapanDanceBasic001_v1_0004:Bind_RightUpLeg
+    100126: JapanDanceBasic001_v1_0004:Bind_Spine
+    100128: JapanDanceBasic001_v1_0004:Bind_Spine1
+    100130: JapanDanceBasic001_v1_0004:Bind_Spine2
+    100132: JapanDanceBasic001_v1_0004:FK_LeftArm
+    100134: JapanDanceBasic001_v1_0004:FK_LeftFoot
+    100136: JapanDanceBasic001_v1_0004:FK_LeftForeArm
+    100138: JapanDanceBasic001_v1_0004:FK_LeftHand
+    100140: JapanDanceBasic001_v1_0004:FK_LeftLeg
+    100142: JapanDanceBasic001_v1_0004:FK_LeftToe_End
+    100144: JapanDanceBasic001_v1_0004:FK_LeftToeBase
+    100146: JapanDanceBasic001_v1_0004:FK_LeftUpLeg
+    100148: JapanDanceBasic001_v1_0004:FK_RightArm
+    100150: JapanDanceBasic001_v1_0004:FK_RightFoot
+    100152: JapanDanceBasic001_v1_0004:FK_RightForeArm
+    100154: JapanDanceBasic001_v1_0004:FK_RightHand
+    100156: JapanDanceBasic001_v1_0004:FK_RightLeg
+    100158: JapanDanceBasic001_v1_0004:FK_RightToe_End
+    100160: JapanDanceBasic001_v1_0004:FK_RightToeBase
+    100162: JapanDanceBasic001_v1_0004:FK_RightUpLeg
+    100164: JapanDanceBasic001_v1_0004:IK_LeftArm
+    100166: JapanDanceBasic001_v1_0004:IK_LeftFoot
+    100168: JapanDanceBasic001_v1_0004:IK_LeftForeArm
+    100170: JapanDanceBasic001_v1_0004:IK_LeftHand
+    100172: JapanDanceBasic001_v1_0004:IK_LeftLeg
+    100174: JapanDanceBasic001_v1_0004:IK_LeftToe_End
+    100176: JapanDanceBasic001_v1_0004:IK_LeftToeBase
+    100178: JapanDanceBasic001_v1_0004:IK_LeftUpLeg
+    100180: JapanDanceBasic001_v1_0004:IK_RightArm
+    100182: JapanDanceBasic001_v1_0004:IK_RightFoot
+    100184: JapanDanceBasic001_v1_0004:IK_RightForeArm
+    100186: JapanDanceBasic001_v1_0004:IK_RightHand
+    100188: JapanDanceBasic001_v1_0004:IK_RightLeg
+    100190: JapanDanceBasic001_v1_0004:IK_RightToe_End
+    100192: JapanDanceBasic001_v1_0004:IK_RightToeBase
+    100194: JapanDanceBasic001_v1_0004:IK_RightUpLeg
+    100196: JapanDanceBasic001_v1_0004:LeftFoot_IK_BakingLOC
+    100198: JapanDanceBasic001_v1_0004:LeftForeArm_IK_BakingLOC
+    100200: JapanDanceBasic001_v1_0004:LeftLeg_IK_BakingLOC
+    100202: JapanDanceBasic001_v1_0004:RightFoot_IK_BakingLOC
+    100204: JapanDanceBasic001_v1_0004:RightForeArm_IK_BakingLOC
+    100206: JapanDanceBasic001_v1_0004:RightLeg_IK_BakingLOC
+    100208: //RootNode
+    100210: Mesh_blueMesh
+    400000: Bind_Root
+    400002: JapanDanceBasic001_v1_0004:Bind_Head
+    400004: JapanDanceBasic001_v1_0004:Bind_HeadTop_End
+    400006: JapanDanceBasic001_v1_0004:Bind_Hips
+    400008: JapanDanceBasic001_v1_0004:Bind_LeftArm
+    400010: JapanDanceBasic001_v1_0004:Bind_LeftFoot
+    400012: JapanDanceBasic001_v1_0004:Bind_LeftForeArm
+    400014: JapanDanceBasic001_v1_0004:Bind_LeftHand
+    400016: JapanDanceBasic001_v1_0004:Bind_LeftHandIndex1
+    400018: JapanDanceBasic001_v1_0004:Bind_LeftHandIndex2
+    400020: JapanDanceBasic001_v1_0004:Bind_LeftHandIndex3
+    400022: JapanDanceBasic001_v1_0004:Bind_LeftHandIndex4
+    400024: JapanDanceBasic001_v1_0004:Bind_LeftHandMiddle1
+    400026: JapanDanceBasic001_v1_0004:Bind_LeftHandMiddle2
+    400028: JapanDanceBasic001_v1_0004:Bind_LeftHandMiddle3
+    400030: JapanDanceBasic001_v1_0004:Bind_LeftHandMiddle4
+    400032: JapanDanceBasic001_v1_0004:Bind_LeftHandPinky1
+    400034: JapanDanceBasic001_v1_0004:Bind_LeftHandPinky2
+    400036: JapanDanceBasic001_v1_0004:Bind_LeftHandPinky3
+    400038: JapanDanceBasic001_v1_0004:Bind_LeftHandPinky4
+    400040: JapanDanceBasic001_v1_0004:Bind_LeftHandRing1
+    400042: JapanDanceBasic001_v1_0004:Bind_LeftHandRing2
+    400044: JapanDanceBasic001_v1_0004:Bind_LeftHandRing3
+    400046: JapanDanceBasic001_v1_0004:Bind_LeftHandRing4
+    400048: JapanDanceBasic001_v1_0004:Bind_LeftHandThumb1
+    400050: JapanDanceBasic001_v1_0004:Bind_LeftHandThumb2
+    400052: JapanDanceBasic001_v1_0004:Bind_LeftHandThumb3
+    400054: JapanDanceBasic001_v1_0004:Bind_LeftHandThumb4
+    400056: JapanDanceBasic001_v1_0004:Bind_LeftLeg
+    400058: JapanDanceBasic001_v1_0004:Bind_LeftShoulder
+    400060: JapanDanceBasic001_v1_0004:Bind_LeftToe_End
+    400062: JapanDanceBasic001_v1_0004:Bind_LeftToeBase
+    400064: JapanDanceBasic001_v1_0004:Bind_LeftUpLeg
+    400066: JapanDanceBasic001_v1_0004:Bind_Neck
+    400068: JapanDanceBasic001_v1_0004:Bind_RightArm
+    400070: JapanDanceBasic001_v1_0004:Bind_RightFoot
+    400072: JapanDanceBasic001_v1_0004:Bind_RightForeArm
+    400074: JapanDanceBasic001_v1_0004:Bind_RightHand
+    400076: JapanDanceBasic001_v1_0004:Bind_RightHandIndex1
+    400078: JapanDanceBasic001_v1_0004:Bind_RightHandIndex2
+    400080: JapanDanceBasic001_v1_0004:Bind_RightHandIndex3
+    400082: JapanDanceBasic001_v1_0004:Bind_RightHandIndex4
+    400084: JapanDanceBasic001_v1_0004:Bind_RightHandMiddle1
+    400086: JapanDanceBasic001_v1_0004:Bind_RightHandMiddle2
+    400088: JapanDanceBasic001_v1_0004:Bind_RightHandMiddle3
+    400090: JapanDanceBasic001_v1_0004:Bind_RightHandMiddle4
+    400092: JapanDanceBasic001_v1_0004:Bind_RightHandPinky1
+    400094: JapanDanceBasic001_v1_0004:Bind_RightHandPinky2
+    400096: JapanDanceBasic001_v1_0004:Bind_RightHandPinky3
+    400098: JapanDanceBasic001_v1_0004:Bind_RightHandPinky4
+    400100: JapanDanceBasic001_v1_0004:Bind_RightHandRing1
+    400102: JapanDanceBasic001_v1_0004:Bind_RightHandRing2
+    400104: JapanDanceBasic001_v1_0004:Bind_RightHandRing3
+    400106: JapanDanceBasic001_v1_0004:Bind_RightHandRing4
+    400108: JapanDanceBasic001_v1_0004:Bind_RightHandThumb1
+    400110: JapanDanceBasic001_v1_0004:Bind_RightHandThumb2
+    400112: JapanDanceBasic001_v1_0004:Bind_RightHandThumb3
+    400114: JapanDanceBasic001_v1_0004:Bind_RightHandThumb4
+    400116: JapanDanceBasic001_v1_0004:Bind_RightLeg
+    400118: JapanDanceBasic001_v1_0004:Bind_RightShoulder
+    400120: JapanDanceBasic001_v1_0004:Bind_RightToe_End
+    400122: JapanDanceBasic001_v1_0004:Bind_RightToeBase
+    400124: JapanDanceBasic001_v1_0004:Bind_RightUpLeg
+    400126: JapanDanceBasic001_v1_0004:Bind_Spine
+    400128: JapanDanceBasic001_v1_0004:Bind_Spine1
+    400130: JapanDanceBasic001_v1_0004:Bind_Spine2
+    400132: JapanDanceBasic001_v1_0004:FK_LeftArm
+    400134: JapanDanceBasic001_v1_0004:FK_LeftFoot
+    400136: JapanDanceBasic001_v1_0004:FK_LeftForeArm
+    400138: JapanDanceBasic001_v1_0004:FK_LeftHand
+    400140: JapanDanceBasic001_v1_0004:FK_LeftLeg
+    400142: JapanDanceBasic001_v1_0004:FK_LeftToe_End
+    400144: JapanDanceBasic001_v1_0004:FK_LeftToeBase
+    400146: JapanDanceBasic001_v1_0004:FK_LeftUpLeg
+    400148: JapanDanceBasic001_v1_0004:FK_RightArm
+    400150: JapanDanceBasic001_v1_0004:FK_RightFoot
+    400152: JapanDanceBasic001_v1_0004:FK_RightForeArm
+    400154: JapanDanceBasic001_v1_0004:FK_RightHand
+    400156: JapanDanceBasic001_v1_0004:FK_RightLeg
+    400158: JapanDanceBasic001_v1_0004:FK_RightToe_End
+    400160: JapanDanceBasic001_v1_0004:FK_RightToeBase
+    400162: JapanDanceBasic001_v1_0004:FK_RightUpLeg
+    400164: JapanDanceBasic001_v1_0004:IK_LeftArm
+    400166: JapanDanceBasic001_v1_0004:IK_LeftFoot
+    400168: JapanDanceBasic001_v1_0004:IK_LeftForeArm
+    400170: JapanDanceBasic001_v1_0004:IK_LeftHand
+    400172: JapanDanceBasic001_v1_0004:IK_LeftLeg
+    400174: JapanDanceBasic001_v1_0004:IK_LeftToe_End
+    400176: JapanDanceBasic001_v1_0004:IK_LeftToeBase
+    400178: JapanDanceBasic001_v1_0004:IK_LeftUpLeg
+    400180: JapanDanceBasic001_v1_0004:IK_RightArm
+    400182: JapanDanceBasic001_v1_0004:IK_RightFoot
+    400184: JapanDanceBasic001_v1_0004:IK_RightForeArm
+    400186: JapanDanceBasic001_v1_0004:IK_RightHand
+    400188: JapanDanceBasic001_v1_0004:IK_RightLeg
+    400190: JapanDanceBasic001_v1_0004:IK_RightToe_End
+    400192: JapanDanceBasic001_v1_0004:IK_RightToeBase
+    400194: JapanDanceBasic001_v1_0004:IK_RightUpLeg
+    400196: JapanDanceBasic001_v1_0004:LeftFoot_IK_BakingLOC
+    400198: JapanDanceBasic001_v1_0004:LeftForeArm_IK_BakingLOC
+    400200: JapanDanceBasic001_v1_0004:LeftLeg_IK_BakingLOC
+    400202: JapanDanceBasic001_v1_0004:RightFoot_IK_BakingLOC
+    400204: JapanDanceBasic001_v1_0004:RightForeArm_IK_BakingLOC
+    400206: JapanDanceBasic001_v1_0004:RightLeg_IK_BakingLOC
+    400208: //RootNode
+    400210: Mesh_blueMesh
+    4300000: Mesh_blueMesh
+    7400000: JapanJapan_Basic_1
+    9500000: //RootNode
+    13700000: Mesh_blueMesh
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: "\nClip 'Take 001' has import animation warnings that
+      might lower retargeting quality:\nNote: Activate translation DOF on avatar to
+      improve retargeting quality.\n\t'JapanDanceBasic001_v1_0004:Bind_Hips' is inbetween
+      humanoid transforms and has rotation animation that will be discarded.\n\t'JapanDanceBasic001_v1_0004:Bind_Spine2'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n"
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 3
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: JapanJapan_Basic_1
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 67
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Bind_Root
+        weight: 1
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Hips
+        weight: 1
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Hips/JapanDanceBasic001_v1_0004:Bind_LeftUpLeg
+        weight: 1
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Hips/JapanDanceBasic001_v1_0004:Bind_LeftUpLeg/JapanDanceBasic001_v1_0004:Bind_LeftLeg
+        weight: 1
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Hips/JapanDanceBasic001_v1_0004:Bind_LeftUpLeg/JapanDanceBasic001_v1_0004:Bind_LeftLeg/JapanDanceBasic001_v1_0004:Bind_LeftFoot
+        weight: 1
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Hips/JapanDanceBasic001_v1_0004:Bind_LeftUpLeg/JapanDanceBasic001_v1_0004:Bind_LeftLeg/JapanDanceBasic001_v1_0004:Bind_LeftFoot/JapanDanceBasic001_v1_0004:Bind_LeftToeBase
+        weight: 1
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Hips/JapanDanceBasic001_v1_0004:Bind_LeftUpLeg/JapanDanceBasic001_v1_0004:Bind_LeftLeg/JapanDanceBasic001_v1_0004:Bind_LeftFoot/JapanDanceBasic001_v1_0004:Bind_LeftToeBase/JapanDanceBasic001_v1_0004:Bind_LeftToe_End
+        weight: 0
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Hips/JapanDanceBasic001_v1_0004:Bind_LeftUpLeg/JapanDanceBasic001_v1_0004:Bind_LeftLeg/JapanDanceBasic001_v1_0004:Bind_LeftFoot/JapanDanceBasic001_v1_0004:LeftFoot_IK_BakingLOC
+        weight: 0
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Hips/JapanDanceBasic001_v1_0004:Bind_LeftUpLeg/JapanDanceBasic001_v1_0004:Bind_LeftLeg/JapanDanceBasic001_v1_0004:LeftLeg_IK_BakingLOC
+        weight: 0
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Hips/JapanDanceBasic001_v1_0004:Bind_RightUpLeg
+        weight: 1
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Hips/JapanDanceBasic001_v1_0004:Bind_RightUpLeg/JapanDanceBasic001_v1_0004:Bind_RightLeg
+        weight: 1
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Hips/JapanDanceBasic001_v1_0004:Bind_RightUpLeg/JapanDanceBasic001_v1_0004:Bind_RightLeg/JapanDanceBasic001_v1_0004:Bind_RightFoot
+        weight: 1
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Hips/JapanDanceBasic001_v1_0004:Bind_RightUpLeg/JapanDanceBasic001_v1_0004:Bind_RightLeg/JapanDanceBasic001_v1_0004:Bind_RightFoot/JapanDanceBasic001_v1_0004:Bind_RightToeBase
+        weight: 1
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Hips/JapanDanceBasic001_v1_0004:Bind_RightUpLeg/JapanDanceBasic001_v1_0004:Bind_RightLeg/JapanDanceBasic001_v1_0004:Bind_RightFoot/JapanDanceBasic001_v1_0004:Bind_RightToeBase/JapanDanceBasic001_v1_0004:Bind_RightToe_End
+        weight: 0
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Hips/JapanDanceBasic001_v1_0004:Bind_RightUpLeg/JapanDanceBasic001_v1_0004:Bind_RightLeg/JapanDanceBasic001_v1_0004:Bind_RightFoot/JapanDanceBasic001_v1_0004:RightFoot_IK_BakingLOC
+        weight: 0
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Hips/JapanDanceBasic001_v1_0004:Bind_RightUpLeg/JapanDanceBasic001_v1_0004:Bind_RightLeg/JapanDanceBasic001_v1_0004:RightLeg_IK_BakingLOC
+        weight: 0
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Hips/JapanDanceBasic001_v1_0004:FK_LeftUpLeg
+        weight: 0
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Hips/JapanDanceBasic001_v1_0004:FK_LeftUpLeg/JapanDanceBasic001_v1_0004:FK_LeftLeg
+        weight: 0
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Hips/JapanDanceBasic001_v1_0004:FK_LeftUpLeg/JapanDanceBasic001_v1_0004:FK_LeftLeg/JapanDanceBasic001_v1_0004:FK_LeftFoot
+        weight: 0
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Hips/JapanDanceBasic001_v1_0004:FK_LeftUpLeg/JapanDanceBasic001_v1_0004:FK_LeftLeg/JapanDanceBasic001_v1_0004:FK_LeftFoot/JapanDanceBasic001_v1_0004:FK_LeftToeBase
+        weight: 0
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Hips/JapanDanceBasic001_v1_0004:FK_LeftUpLeg/JapanDanceBasic001_v1_0004:FK_LeftLeg/JapanDanceBasic001_v1_0004:FK_LeftFoot/JapanDanceBasic001_v1_0004:FK_LeftToeBase/JapanDanceBasic001_v1_0004:FK_LeftToe_End
+        weight: 0
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Hips/JapanDanceBasic001_v1_0004:FK_RightUpLeg
+        weight: 0
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Hips/JapanDanceBasic001_v1_0004:FK_RightUpLeg/JapanDanceBasic001_v1_0004:FK_RightLeg
+        weight: 0
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Hips/JapanDanceBasic001_v1_0004:FK_RightUpLeg/JapanDanceBasic001_v1_0004:FK_RightLeg/JapanDanceBasic001_v1_0004:FK_RightFoot
+        weight: 0
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Hips/JapanDanceBasic001_v1_0004:FK_RightUpLeg/JapanDanceBasic001_v1_0004:FK_RightLeg/JapanDanceBasic001_v1_0004:FK_RightFoot/JapanDanceBasic001_v1_0004:FK_RightToeBase
+        weight: 0
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Hips/JapanDanceBasic001_v1_0004:FK_RightUpLeg/JapanDanceBasic001_v1_0004:FK_RightLeg/JapanDanceBasic001_v1_0004:FK_RightFoot/JapanDanceBasic001_v1_0004:FK_RightToeBase/JapanDanceBasic001_v1_0004:FK_RightToe_End
+        weight: 0
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Hips/JapanDanceBasic001_v1_0004:IK_LeftUpLeg
+        weight: 0
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Hips/JapanDanceBasic001_v1_0004:IK_LeftUpLeg/JapanDanceBasic001_v1_0004:IK_LeftLeg
+        weight: 0
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Hips/JapanDanceBasic001_v1_0004:IK_LeftUpLeg/JapanDanceBasic001_v1_0004:IK_LeftLeg/JapanDanceBasic001_v1_0004:IK_LeftFoot
+        weight: 0
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Hips/JapanDanceBasic001_v1_0004:IK_LeftUpLeg/JapanDanceBasic001_v1_0004:IK_LeftLeg/JapanDanceBasic001_v1_0004:IK_LeftFoot/JapanDanceBasic001_v1_0004:IK_LeftToeBase
+        weight: 0
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Hips/JapanDanceBasic001_v1_0004:IK_LeftUpLeg/JapanDanceBasic001_v1_0004:IK_LeftLeg/JapanDanceBasic001_v1_0004:IK_LeftFoot/JapanDanceBasic001_v1_0004:IK_LeftToeBase/JapanDanceBasic001_v1_0004:IK_LeftToe_End
+        weight: 0
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Hips/JapanDanceBasic001_v1_0004:IK_RightUpLeg
+        weight: 0
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Hips/JapanDanceBasic001_v1_0004:IK_RightUpLeg/JapanDanceBasic001_v1_0004:IK_RightLeg
+        weight: 0
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Hips/JapanDanceBasic001_v1_0004:IK_RightUpLeg/JapanDanceBasic001_v1_0004:IK_RightLeg/JapanDanceBasic001_v1_0004:IK_RightFoot
+        weight: 0
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Hips/JapanDanceBasic001_v1_0004:IK_RightUpLeg/JapanDanceBasic001_v1_0004:IK_RightLeg/JapanDanceBasic001_v1_0004:IK_RightFoot/JapanDanceBasic001_v1_0004:IK_RightToeBase
+        weight: 0
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Hips/JapanDanceBasic001_v1_0004:IK_RightUpLeg/JapanDanceBasic001_v1_0004:IK_RightLeg/JapanDanceBasic001_v1_0004:IK_RightFoot/JapanDanceBasic001_v1_0004:IK_RightToeBase/JapanDanceBasic001_v1_0004:IK_RightToe_End
+        weight: 0
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Spine
+        weight: 1
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Spine/JapanDanceBasic001_v1_0004:Bind_Spine1
+        weight: 1
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Spine/JapanDanceBasic001_v1_0004:Bind_Spine1/JapanDanceBasic001_v1_0004:Bind_Spine2
+        weight: 1
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Spine/JapanDanceBasic001_v1_0004:Bind_Spine1/JapanDanceBasic001_v1_0004:Bind_Spine2/JapanDanceBasic001_v1_0004:Bind_LeftShoulder
+        weight: 1
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Spine/JapanDanceBasic001_v1_0004:Bind_Spine1/JapanDanceBasic001_v1_0004:Bind_Spine2/JapanDanceBasic001_v1_0004:Bind_LeftShoulder/JapanDanceBasic001_v1_0004:Bind_LeftArm
+        weight: 1
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Spine/JapanDanceBasic001_v1_0004:Bind_Spine1/JapanDanceBasic001_v1_0004:Bind_Spine2/JapanDanceBasic001_v1_0004:Bind_LeftShoulder/JapanDanceBasic001_v1_0004:Bind_LeftArm/JapanDanceBasic001_v1_0004:Bind_LeftForeArm
+        weight: 1
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Spine/JapanDanceBasic001_v1_0004:Bind_Spine1/JapanDanceBasic001_v1_0004:Bind_Spine2/JapanDanceBasic001_v1_0004:Bind_LeftShoulder/JapanDanceBasic001_v1_0004:Bind_LeftArm/JapanDanceBasic001_v1_0004:Bind_LeftForeArm/JapanDanceBasic001_v1_0004:Bind_LeftHand
+        weight: 1
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Spine/JapanDanceBasic001_v1_0004:Bind_Spine1/JapanDanceBasic001_v1_0004:Bind_Spine2/JapanDanceBasic001_v1_0004:Bind_LeftShoulder/JapanDanceBasic001_v1_0004:Bind_LeftArm/JapanDanceBasic001_v1_0004:Bind_LeftForeArm/JapanDanceBasic001_v1_0004:Bind_LeftHand/JapanDanceBasic001_v1_0004:Bind_LeftHandIndex1
+        weight: 0
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Spine/JapanDanceBasic001_v1_0004:Bind_Spine1/JapanDanceBasic001_v1_0004:Bind_Spine2/JapanDanceBasic001_v1_0004:Bind_LeftShoulder/JapanDanceBasic001_v1_0004:Bind_LeftArm/JapanDanceBasic001_v1_0004:Bind_LeftForeArm/JapanDanceBasic001_v1_0004:Bind_LeftHand/JapanDanceBasic001_v1_0004:Bind_LeftHandIndex1/JapanDanceBasic001_v1_0004:Bind_LeftHandIndex2
+        weight: 0
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Spine/JapanDanceBasic001_v1_0004:Bind_Spine1/JapanDanceBasic001_v1_0004:Bind_Spine2/JapanDanceBasic001_v1_0004:Bind_LeftShoulder/JapanDanceBasic001_v1_0004:Bind_LeftArm/JapanDanceBasic001_v1_0004:Bind_LeftForeArm/JapanDanceBasic001_v1_0004:Bind_LeftHand/JapanDanceBasic001_v1_0004:Bind_LeftHandIndex1/JapanDanceBasic001_v1_0004:Bind_LeftHandIndex2/JapanDanceBasic001_v1_0004:Bind_LeftHandIndex3
+        weight: 0
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Spine/JapanDanceBasic001_v1_0004:Bind_Spine1/JapanDanceBasic001_v1_0004:Bind_Spine2/JapanDanceBasic001_v1_0004:Bind_LeftShoulder/JapanDanceBasic001_v1_0004:Bind_LeftArm/JapanDanceBasic001_v1_0004:Bind_LeftForeArm/JapanDanceBasic001_v1_0004:Bind_LeftHand/JapanDanceBasic001_v1_0004:Bind_LeftHandIndex1/JapanDanceBasic001_v1_0004:Bind_LeftHandIndex2/JapanDanceBasic001_v1_0004:Bind_LeftHandIndex3/JapanDanceBasic001_v1_0004:Bind_LeftHandIndex4
+        weight: 0
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Spine/JapanDanceBasic001_v1_0004:Bind_Spine1/JapanDanceBasic001_v1_0004:Bind_Spine2/JapanDanceBasic001_v1_0004:Bind_LeftShoulder/JapanDanceBasic001_v1_0004:Bind_LeftArm/JapanDanceBasic001_v1_0004:Bind_LeftForeArm/JapanDanceBasic001_v1_0004:Bind_LeftHand/JapanDanceBasic001_v1_0004:Bind_LeftHandMiddle1
+        weight: 1
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Spine/JapanDanceBasic001_v1_0004:Bind_Spine1/JapanDanceBasic001_v1_0004:Bind_Spine2/JapanDanceBasic001_v1_0004:Bind_LeftShoulder/JapanDanceBasic001_v1_0004:Bind_LeftArm/JapanDanceBasic001_v1_0004:Bind_LeftForeArm/JapanDanceBasic001_v1_0004:Bind_LeftHand/JapanDanceBasic001_v1_0004:Bind_LeftHandMiddle1/JapanDanceBasic001_v1_0004:Bind_LeftHandMiddle2
+        weight: 1
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Spine/JapanDanceBasic001_v1_0004:Bind_Spine1/JapanDanceBasic001_v1_0004:Bind_Spine2/JapanDanceBasic001_v1_0004:Bind_LeftShoulder/JapanDanceBasic001_v1_0004:Bind_LeftArm/JapanDanceBasic001_v1_0004:Bind_LeftForeArm/JapanDanceBasic001_v1_0004:Bind_LeftHand/JapanDanceBasic001_v1_0004:Bind_LeftHandMiddle1/JapanDanceBasic001_v1_0004:Bind_LeftHandMiddle2/JapanDanceBasic001_v1_0004:Bind_LeftHandMiddle3
+        weight: 1
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Spine/JapanDanceBasic001_v1_0004:Bind_Spine1/JapanDanceBasic001_v1_0004:Bind_Spine2/JapanDanceBasic001_v1_0004:Bind_LeftShoulder/JapanDanceBasic001_v1_0004:Bind_LeftArm/JapanDanceBasic001_v1_0004:Bind_LeftForeArm/JapanDanceBasic001_v1_0004:Bind_LeftHand/JapanDanceBasic001_v1_0004:Bind_LeftHandMiddle1/JapanDanceBasic001_v1_0004:Bind_LeftHandMiddle2/JapanDanceBasic001_v1_0004:Bind_LeftHandMiddle3/JapanDanceBasic001_v1_0004:Bind_LeftHandMiddle4
+        weight: 0
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Spine/JapanDanceBasic001_v1_0004:Bind_Spine1/JapanDanceBasic001_v1_0004:Bind_Spine2/JapanDanceBasic001_v1_0004:Bind_LeftShoulder/JapanDanceBasic001_v1_0004:Bind_LeftArm/JapanDanceBasic001_v1_0004:Bind_LeftForeArm/JapanDanceBasic001_v1_0004:Bind_LeftHand/JapanDanceBasic001_v1_0004:Bind_LeftHandPinky1
+        weight: 1
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Spine/JapanDanceBasic001_v1_0004:Bind_Spine1/JapanDanceBasic001_v1_0004:Bind_Spine2/JapanDanceBasic001_v1_0004:Bind_LeftShoulder/JapanDanceBasic001_v1_0004:Bind_LeftArm/JapanDanceBasic001_v1_0004:Bind_LeftForeArm/JapanDanceBasic001_v1_0004:Bind_LeftHand/JapanDanceBasic001_v1_0004:Bind_LeftHandPinky1/JapanDanceBasic001_v1_0004:Bind_LeftHandPinky2
+        weight: 1
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Spine/JapanDanceBasic001_v1_0004:Bind_Spine1/JapanDanceBasic001_v1_0004:Bind_Spine2/JapanDanceBasic001_v1_0004:Bind_LeftShoulder/JapanDanceBasic001_v1_0004:Bind_LeftArm/JapanDanceBasic001_v1_0004:Bind_LeftForeArm/JapanDanceBasic001_v1_0004:Bind_LeftHand/JapanDanceBasic001_v1_0004:Bind_LeftHandPinky1/JapanDanceBasic001_v1_0004:Bind_LeftHandPinky2/JapanDanceBasic001_v1_0004:Bind_LeftHandPinky3
+        weight: 1
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Spine/JapanDanceBasic001_v1_0004:Bind_Spine1/JapanDanceBasic001_v1_0004:Bind_Spine2/JapanDanceBasic001_v1_0004:Bind_LeftShoulder/JapanDanceBasic001_v1_0004:Bind_LeftArm/JapanDanceBasic001_v1_0004:Bind_LeftForeArm/JapanDanceBasic001_v1_0004:Bind_LeftHand/JapanDanceBasic001_v1_0004:Bind_LeftHandPinky1/JapanDanceBasic001_v1_0004:Bind_LeftHandPinky2/JapanDanceBasic001_v1_0004:Bind_LeftHandPinky3/JapanDanceBasic001_v1_0004:Bind_LeftHandPinky4
+        weight: 0
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Spine/JapanDanceBasic001_v1_0004:Bind_Spine1/JapanDanceBasic001_v1_0004:Bind_Spine2/JapanDanceBasic001_v1_0004:Bind_LeftShoulder/JapanDanceBasic001_v1_0004:Bind_LeftArm/JapanDanceBasic001_v1_0004:Bind_LeftForeArm/JapanDanceBasic001_v1_0004:Bind_LeftHand/JapanDanceBasic001_v1_0004:Bind_LeftHandRing1
+        weight: 1
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Spine/JapanDanceBasic001_v1_0004:Bind_Spine1/JapanDanceBasic001_v1_0004:Bind_Spine2/JapanDanceBasic001_v1_0004:Bind_LeftShoulder/JapanDanceBasic001_v1_0004:Bind_LeftArm/JapanDanceBasic001_v1_0004:Bind_LeftForeArm/JapanDanceBasic001_v1_0004:Bind_LeftHand/JapanDanceBasic001_v1_0004:Bind_LeftHandRing1/JapanDanceBasic001_v1_0004:Bind_LeftHandRing2
+        weight: 1
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Spine/JapanDanceBasic001_v1_0004:Bind_Spine1/JapanDanceBasic001_v1_0004:Bind_Spine2/JapanDanceBasic001_v1_0004:Bind_LeftShoulder/JapanDanceBasic001_v1_0004:Bind_LeftArm/JapanDanceBasic001_v1_0004:Bind_LeftForeArm/JapanDanceBasic001_v1_0004:Bind_LeftHand/JapanDanceBasic001_v1_0004:Bind_LeftHandRing1/JapanDanceBasic001_v1_0004:Bind_LeftHandRing2/JapanDanceBasic001_v1_0004:Bind_LeftHandRing3
+        weight: 1
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Spine/JapanDanceBasic001_v1_0004:Bind_Spine1/JapanDanceBasic001_v1_0004:Bind_Spine2/JapanDanceBasic001_v1_0004:Bind_LeftShoulder/JapanDanceBasic001_v1_0004:Bind_LeftArm/JapanDanceBasic001_v1_0004:Bind_LeftForeArm/JapanDanceBasic001_v1_0004:Bind_LeftHand/JapanDanceBasic001_v1_0004:Bind_LeftHandRing1/JapanDanceBasic001_v1_0004:Bind_LeftHandRing2/JapanDanceBasic001_v1_0004:Bind_LeftHandRing3/JapanDanceBasic001_v1_0004:Bind_LeftHandRing4
+        weight: 0
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Spine/JapanDanceBasic001_v1_0004:Bind_Spine1/JapanDanceBasic001_v1_0004:Bind_Spine2/JapanDanceBasic001_v1_0004:Bind_LeftShoulder/JapanDanceBasic001_v1_0004:Bind_LeftArm/JapanDanceBasic001_v1_0004:Bind_LeftForeArm/JapanDanceBasic001_v1_0004:Bind_LeftHand/JapanDanceBasic001_v1_0004:Bind_LeftHandThumb1
+        weight: 1
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Spine/JapanDanceBasic001_v1_0004:Bind_Spine1/JapanDanceBasic001_v1_0004:Bind_Spine2/JapanDanceBasic001_v1_0004:Bind_LeftShoulder/JapanDanceBasic001_v1_0004:Bind_LeftArm/JapanDanceBasic001_v1_0004:Bind_LeftForeArm/JapanDanceBasic001_v1_0004:Bind_LeftHand/JapanDanceBasic001_v1_0004:Bind_LeftHandThumb1/JapanDanceBasic001_v1_0004:Bind_LeftHandThumb2
+        weight: 1
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Spine/JapanDanceBasic001_v1_0004:Bind_Spine1/JapanDanceBasic001_v1_0004:Bind_Spine2/JapanDanceBasic001_v1_0004:Bind_LeftShoulder/JapanDanceBasic001_v1_0004:Bind_LeftArm/JapanDanceBasic001_v1_0004:Bind_LeftForeArm/JapanDanceBasic001_v1_0004:Bind_LeftHand/JapanDanceBasic001_v1_0004:Bind_LeftHandThumb1/JapanDanceBasic001_v1_0004:Bind_LeftHandThumb2/JapanDanceBasic001_v1_0004:Bind_LeftHandThumb3
+        weight: 1
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Spine/JapanDanceBasic001_v1_0004:Bind_Spine1/JapanDanceBasic001_v1_0004:Bind_Spine2/JapanDanceBasic001_v1_0004:Bind_LeftShoulder/JapanDanceBasic001_v1_0004:Bind_LeftArm/JapanDanceBasic001_v1_0004:Bind_LeftForeArm/JapanDanceBasic001_v1_0004:Bind_LeftHand/JapanDanceBasic001_v1_0004:Bind_LeftHandThumb1/JapanDanceBasic001_v1_0004:Bind_LeftHandThumb2/JapanDanceBasic001_v1_0004:Bind_LeftHandThumb3/JapanDanceBasic001_v1_0004:Bind_LeftHandThumb4
+        weight: 0
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Spine/JapanDanceBasic001_v1_0004:Bind_Spine1/JapanDanceBasic001_v1_0004:Bind_Spine2/JapanDanceBasic001_v1_0004:Bind_LeftShoulder/JapanDanceBasic001_v1_0004:Bind_LeftArm/JapanDanceBasic001_v1_0004:Bind_LeftForeArm/JapanDanceBasic001_v1_0004:LeftForeArm_IK_BakingLOC
+        weight: 0
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Spine/JapanDanceBasic001_v1_0004:Bind_Spine1/JapanDanceBasic001_v1_0004:Bind_Spine2/JapanDanceBasic001_v1_0004:Bind_LeftShoulder/JapanDanceBasic001_v1_0004:FK_LeftArm
+        weight: 0
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Spine/JapanDanceBasic001_v1_0004:Bind_Spine1/JapanDanceBasic001_v1_0004:Bind_Spine2/JapanDanceBasic001_v1_0004:Bind_LeftShoulder/JapanDanceBasic001_v1_0004:FK_LeftArm/JapanDanceBasic001_v1_0004:FK_LeftForeArm
+        weight: 0
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Spine/JapanDanceBasic001_v1_0004:Bind_Spine1/JapanDanceBasic001_v1_0004:Bind_Spine2/JapanDanceBasic001_v1_0004:Bind_LeftShoulder/JapanDanceBasic001_v1_0004:FK_LeftArm/JapanDanceBasic001_v1_0004:FK_LeftForeArm/JapanDanceBasic001_v1_0004:FK_LeftHand
+        weight: 0
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Spine/JapanDanceBasic001_v1_0004:Bind_Spine1/JapanDanceBasic001_v1_0004:Bind_Spine2/JapanDanceBasic001_v1_0004:Bind_LeftShoulder/JapanDanceBasic001_v1_0004:IK_LeftArm
+        weight: 0
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Spine/JapanDanceBasic001_v1_0004:Bind_Spine1/JapanDanceBasic001_v1_0004:Bind_Spine2/JapanDanceBasic001_v1_0004:Bind_LeftShoulder/JapanDanceBasic001_v1_0004:IK_LeftArm/JapanDanceBasic001_v1_0004:IK_LeftForeArm
+        weight: 0
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Spine/JapanDanceBasic001_v1_0004:Bind_Spine1/JapanDanceBasic001_v1_0004:Bind_Spine2/JapanDanceBasic001_v1_0004:Bind_LeftShoulder/JapanDanceBasic001_v1_0004:IK_LeftArm/JapanDanceBasic001_v1_0004:IK_LeftForeArm/JapanDanceBasic001_v1_0004:IK_LeftHand
+        weight: 0
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Spine/JapanDanceBasic001_v1_0004:Bind_Spine1/JapanDanceBasic001_v1_0004:Bind_Spine2/JapanDanceBasic001_v1_0004:Bind_Neck
+        weight: 1
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Spine/JapanDanceBasic001_v1_0004:Bind_Spine1/JapanDanceBasic001_v1_0004:Bind_Spine2/JapanDanceBasic001_v1_0004:Bind_Neck/JapanDanceBasic001_v1_0004:Bind_Head
+        weight: 1
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Spine/JapanDanceBasic001_v1_0004:Bind_Spine1/JapanDanceBasic001_v1_0004:Bind_Spine2/JapanDanceBasic001_v1_0004:Bind_Neck/JapanDanceBasic001_v1_0004:Bind_Head/JapanDanceBasic001_v1_0004:Bind_HeadTop_End
+        weight: 0
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Spine/JapanDanceBasic001_v1_0004:Bind_Spine1/JapanDanceBasic001_v1_0004:Bind_Spine2/JapanDanceBasic001_v1_0004:Bind_RightShoulder
+        weight: 1
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Spine/JapanDanceBasic001_v1_0004:Bind_Spine1/JapanDanceBasic001_v1_0004:Bind_Spine2/JapanDanceBasic001_v1_0004:Bind_RightShoulder/JapanDanceBasic001_v1_0004:Bind_RightArm
+        weight: 1
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Spine/JapanDanceBasic001_v1_0004:Bind_Spine1/JapanDanceBasic001_v1_0004:Bind_Spine2/JapanDanceBasic001_v1_0004:Bind_RightShoulder/JapanDanceBasic001_v1_0004:Bind_RightArm/JapanDanceBasic001_v1_0004:Bind_RightForeArm
+        weight: 1
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Spine/JapanDanceBasic001_v1_0004:Bind_Spine1/JapanDanceBasic001_v1_0004:Bind_Spine2/JapanDanceBasic001_v1_0004:Bind_RightShoulder/JapanDanceBasic001_v1_0004:Bind_RightArm/JapanDanceBasic001_v1_0004:Bind_RightForeArm/JapanDanceBasic001_v1_0004:Bind_RightHand
+        weight: 1
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Spine/JapanDanceBasic001_v1_0004:Bind_Spine1/JapanDanceBasic001_v1_0004:Bind_Spine2/JapanDanceBasic001_v1_0004:Bind_RightShoulder/JapanDanceBasic001_v1_0004:Bind_RightArm/JapanDanceBasic001_v1_0004:Bind_RightForeArm/JapanDanceBasic001_v1_0004:Bind_RightHand/JapanDanceBasic001_v1_0004:Bind_RightHandIndex1
+        weight: 0
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Spine/JapanDanceBasic001_v1_0004:Bind_Spine1/JapanDanceBasic001_v1_0004:Bind_Spine2/JapanDanceBasic001_v1_0004:Bind_RightShoulder/JapanDanceBasic001_v1_0004:Bind_RightArm/JapanDanceBasic001_v1_0004:Bind_RightForeArm/JapanDanceBasic001_v1_0004:Bind_RightHand/JapanDanceBasic001_v1_0004:Bind_RightHandIndex1/JapanDanceBasic001_v1_0004:Bind_RightHandIndex2
+        weight: 0
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Spine/JapanDanceBasic001_v1_0004:Bind_Spine1/JapanDanceBasic001_v1_0004:Bind_Spine2/JapanDanceBasic001_v1_0004:Bind_RightShoulder/JapanDanceBasic001_v1_0004:Bind_RightArm/JapanDanceBasic001_v1_0004:Bind_RightForeArm/JapanDanceBasic001_v1_0004:Bind_RightHand/JapanDanceBasic001_v1_0004:Bind_RightHandIndex1/JapanDanceBasic001_v1_0004:Bind_RightHandIndex2/JapanDanceBasic001_v1_0004:Bind_RightHandIndex3
+        weight: 0
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Spine/JapanDanceBasic001_v1_0004:Bind_Spine1/JapanDanceBasic001_v1_0004:Bind_Spine2/JapanDanceBasic001_v1_0004:Bind_RightShoulder/JapanDanceBasic001_v1_0004:Bind_RightArm/JapanDanceBasic001_v1_0004:Bind_RightForeArm/JapanDanceBasic001_v1_0004:Bind_RightHand/JapanDanceBasic001_v1_0004:Bind_RightHandIndex1/JapanDanceBasic001_v1_0004:Bind_RightHandIndex2/JapanDanceBasic001_v1_0004:Bind_RightHandIndex3/JapanDanceBasic001_v1_0004:Bind_RightHandIndex4
+        weight: 0
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Spine/JapanDanceBasic001_v1_0004:Bind_Spine1/JapanDanceBasic001_v1_0004:Bind_Spine2/JapanDanceBasic001_v1_0004:Bind_RightShoulder/JapanDanceBasic001_v1_0004:Bind_RightArm/JapanDanceBasic001_v1_0004:Bind_RightForeArm/JapanDanceBasic001_v1_0004:Bind_RightHand/JapanDanceBasic001_v1_0004:Bind_RightHandMiddle1
+        weight: 1
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Spine/JapanDanceBasic001_v1_0004:Bind_Spine1/JapanDanceBasic001_v1_0004:Bind_Spine2/JapanDanceBasic001_v1_0004:Bind_RightShoulder/JapanDanceBasic001_v1_0004:Bind_RightArm/JapanDanceBasic001_v1_0004:Bind_RightForeArm/JapanDanceBasic001_v1_0004:Bind_RightHand/JapanDanceBasic001_v1_0004:Bind_RightHandMiddle1/JapanDanceBasic001_v1_0004:Bind_RightHandMiddle2
+        weight: 1
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Spine/JapanDanceBasic001_v1_0004:Bind_Spine1/JapanDanceBasic001_v1_0004:Bind_Spine2/JapanDanceBasic001_v1_0004:Bind_RightShoulder/JapanDanceBasic001_v1_0004:Bind_RightArm/JapanDanceBasic001_v1_0004:Bind_RightForeArm/JapanDanceBasic001_v1_0004:Bind_RightHand/JapanDanceBasic001_v1_0004:Bind_RightHandMiddle1/JapanDanceBasic001_v1_0004:Bind_RightHandMiddle2/JapanDanceBasic001_v1_0004:Bind_RightHandMiddle3
+        weight: 1
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Spine/JapanDanceBasic001_v1_0004:Bind_Spine1/JapanDanceBasic001_v1_0004:Bind_Spine2/JapanDanceBasic001_v1_0004:Bind_RightShoulder/JapanDanceBasic001_v1_0004:Bind_RightArm/JapanDanceBasic001_v1_0004:Bind_RightForeArm/JapanDanceBasic001_v1_0004:Bind_RightHand/JapanDanceBasic001_v1_0004:Bind_RightHandMiddle1/JapanDanceBasic001_v1_0004:Bind_RightHandMiddle2/JapanDanceBasic001_v1_0004:Bind_RightHandMiddle3/JapanDanceBasic001_v1_0004:Bind_RightHandMiddle4
+        weight: 0
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Spine/JapanDanceBasic001_v1_0004:Bind_Spine1/JapanDanceBasic001_v1_0004:Bind_Spine2/JapanDanceBasic001_v1_0004:Bind_RightShoulder/JapanDanceBasic001_v1_0004:Bind_RightArm/JapanDanceBasic001_v1_0004:Bind_RightForeArm/JapanDanceBasic001_v1_0004:Bind_RightHand/JapanDanceBasic001_v1_0004:Bind_RightHandPinky1
+        weight: 1
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Spine/JapanDanceBasic001_v1_0004:Bind_Spine1/JapanDanceBasic001_v1_0004:Bind_Spine2/JapanDanceBasic001_v1_0004:Bind_RightShoulder/JapanDanceBasic001_v1_0004:Bind_RightArm/JapanDanceBasic001_v1_0004:Bind_RightForeArm/JapanDanceBasic001_v1_0004:Bind_RightHand/JapanDanceBasic001_v1_0004:Bind_RightHandPinky1/JapanDanceBasic001_v1_0004:Bind_RightHandPinky2
+        weight: 1
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Spine/JapanDanceBasic001_v1_0004:Bind_Spine1/JapanDanceBasic001_v1_0004:Bind_Spine2/JapanDanceBasic001_v1_0004:Bind_RightShoulder/JapanDanceBasic001_v1_0004:Bind_RightArm/JapanDanceBasic001_v1_0004:Bind_RightForeArm/JapanDanceBasic001_v1_0004:Bind_RightHand/JapanDanceBasic001_v1_0004:Bind_RightHandPinky1/JapanDanceBasic001_v1_0004:Bind_RightHandPinky2/JapanDanceBasic001_v1_0004:Bind_RightHandPinky3
+        weight: 1
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Spine/JapanDanceBasic001_v1_0004:Bind_Spine1/JapanDanceBasic001_v1_0004:Bind_Spine2/JapanDanceBasic001_v1_0004:Bind_RightShoulder/JapanDanceBasic001_v1_0004:Bind_RightArm/JapanDanceBasic001_v1_0004:Bind_RightForeArm/JapanDanceBasic001_v1_0004:Bind_RightHand/JapanDanceBasic001_v1_0004:Bind_RightHandPinky1/JapanDanceBasic001_v1_0004:Bind_RightHandPinky2/JapanDanceBasic001_v1_0004:Bind_RightHandPinky3/JapanDanceBasic001_v1_0004:Bind_RightHandPinky4
+        weight: 0
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Spine/JapanDanceBasic001_v1_0004:Bind_Spine1/JapanDanceBasic001_v1_0004:Bind_Spine2/JapanDanceBasic001_v1_0004:Bind_RightShoulder/JapanDanceBasic001_v1_0004:Bind_RightArm/JapanDanceBasic001_v1_0004:Bind_RightForeArm/JapanDanceBasic001_v1_0004:Bind_RightHand/JapanDanceBasic001_v1_0004:Bind_RightHandRing1
+        weight: 1
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Spine/JapanDanceBasic001_v1_0004:Bind_Spine1/JapanDanceBasic001_v1_0004:Bind_Spine2/JapanDanceBasic001_v1_0004:Bind_RightShoulder/JapanDanceBasic001_v1_0004:Bind_RightArm/JapanDanceBasic001_v1_0004:Bind_RightForeArm/JapanDanceBasic001_v1_0004:Bind_RightHand/JapanDanceBasic001_v1_0004:Bind_RightHandRing1/JapanDanceBasic001_v1_0004:Bind_RightHandRing2
+        weight: 1
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Spine/JapanDanceBasic001_v1_0004:Bind_Spine1/JapanDanceBasic001_v1_0004:Bind_Spine2/JapanDanceBasic001_v1_0004:Bind_RightShoulder/JapanDanceBasic001_v1_0004:Bind_RightArm/JapanDanceBasic001_v1_0004:Bind_RightForeArm/JapanDanceBasic001_v1_0004:Bind_RightHand/JapanDanceBasic001_v1_0004:Bind_RightHandRing1/JapanDanceBasic001_v1_0004:Bind_RightHandRing2/JapanDanceBasic001_v1_0004:Bind_RightHandRing3
+        weight: 1
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Spine/JapanDanceBasic001_v1_0004:Bind_Spine1/JapanDanceBasic001_v1_0004:Bind_Spine2/JapanDanceBasic001_v1_0004:Bind_RightShoulder/JapanDanceBasic001_v1_0004:Bind_RightArm/JapanDanceBasic001_v1_0004:Bind_RightForeArm/JapanDanceBasic001_v1_0004:Bind_RightHand/JapanDanceBasic001_v1_0004:Bind_RightHandRing1/JapanDanceBasic001_v1_0004:Bind_RightHandRing2/JapanDanceBasic001_v1_0004:Bind_RightHandRing3/JapanDanceBasic001_v1_0004:Bind_RightHandRing4
+        weight: 0
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Spine/JapanDanceBasic001_v1_0004:Bind_Spine1/JapanDanceBasic001_v1_0004:Bind_Spine2/JapanDanceBasic001_v1_0004:Bind_RightShoulder/JapanDanceBasic001_v1_0004:Bind_RightArm/JapanDanceBasic001_v1_0004:Bind_RightForeArm/JapanDanceBasic001_v1_0004:Bind_RightHand/JapanDanceBasic001_v1_0004:Bind_RightHandThumb1
+        weight: 1
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Spine/JapanDanceBasic001_v1_0004:Bind_Spine1/JapanDanceBasic001_v1_0004:Bind_Spine2/JapanDanceBasic001_v1_0004:Bind_RightShoulder/JapanDanceBasic001_v1_0004:Bind_RightArm/JapanDanceBasic001_v1_0004:Bind_RightForeArm/JapanDanceBasic001_v1_0004:Bind_RightHand/JapanDanceBasic001_v1_0004:Bind_RightHandThumb1/JapanDanceBasic001_v1_0004:Bind_RightHandThumb2
+        weight: 1
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Spine/JapanDanceBasic001_v1_0004:Bind_Spine1/JapanDanceBasic001_v1_0004:Bind_Spine2/JapanDanceBasic001_v1_0004:Bind_RightShoulder/JapanDanceBasic001_v1_0004:Bind_RightArm/JapanDanceBasic001_v1_0004:Bind_RightForeArm/JapanDanceBasic001_v1_0004:Bind_RightHand/JapanDanceBasic001_v1_0004:Bind_RightHandThumb1/JapanDanceBasic001_v1_0004:Bind_RightHandThumb2/JapanDanceBasic001_v1_0004:Bind_RightHandThumb3
+        weight: 1
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Spine/JapanDanceBasic001_v1_0004:Bind_Spine1/JapanDanceBasic001_v1_0004:Bind_Spine2/JapanDanceBasic001_v1_0004:Bind_RightShoulder/JapanDanceBasic001_v1_0004:Bind_RightArm/JapanDanceBasic001_v1_0004:Bind_RightForeArm/JapanDanceBasic001_v1_0004:Bind_RightHand/JapanDanceBasic001_v1_0004:Bind_RightHandThumb1/JapanDanceBasic001_v1_0004:Bind_RightHandThumb2/JapanDanceBasic001_v1_0004:Bind_RightHandThumb3/JapanDanceBasic001_v1_0004:Bind_RightHandThumb4
+        weight: 0
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Spine/JapanDanceBasic001_v1_0004:Bind_Spine1/JapanDanceBasic001_v1_0004:Bind_Spine2/JapanDanceBasic001_v1_0004:Bind_RightShoulder/JapanDanceBasic001_v1_0004:Bind_RightArm/JapanDanceBasic001_v1_0004:Bind_RightForeArm/JapanDanceBasic001_v1_0004:RightForeArm_IK_BakingLOC
+        weight: 0
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Spine/JapanDanceBasic001_v1_0004:Bind_Spine1/JapanDanceBasic001_v1_0004:Bind_Spine2/JapanDanceBasic001_v1_0004:Bind_RightShoulder/JapanDanceBasic001_v1_0004:FK_RightArm
+        weight: 0
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Spine/JapanDanceBasic001_v1_0004:Bind_Spine1/JapanDanceBasic001_v1_0004:Bind_Spine2/JapanDanceBasic001_v1_0004:Bind_RightShoulder/JapanDanceBasic001_v1_0004:FK_RightArm/JapanDanceBasic001_v1_0004:FK_RightForeArm
+        weight: 0
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Spine/JapanDanceBasic001_v1_0004:Bind_Spine1/JapanDanceBasic001_v1_0004:Bind_Spine2/JapanDanceBasic001_v1_0004:Bind_RightShoulder/JapanDanceBasic001_v1_0004:FK_RightArm/JapanDanceBasic001_v1_0004:FK_RightForeArm/JapanDanceBasic001_v1_0004:FK_RightHand
+        weight: 0
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Spine/JapanDanceBasic001_v1_0004:Bind_Spine1/JapanDanceBasic001_v1_0004:Bind_Spine2/JapanDanceBasic001_v1_0004:Bind_RightShoulder/JapanDanceBasic001_v1_0004:IK_RightArm
+        weight: 0
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Spine/JapanDanceBasic001_v1_0004:Bind_Spine1/JapanDanceBasic001_v1_0004:Bind_Spine2/JapanDanceBasic001_v1_0004:Bind_RightShoulder/JapanDanceBasic001_v1_0004:IK_RightArm/JapanDanceBasic001_v1_0004:IK_RightForeArm
+        weight: 0
+      - path: Bind_Root/JapanDanceBasic001_v1_0004:Bind_Spine/JapanDanceBasic001_v1_0004:Bind_Spine1/JapanDanceBasic001_v1_0004:Bind_Spine2/JapanDanceBasic001_v1_0004:Bind_RightShoulder/JapanDanceBasic001_v1_0004:IK_RightArm/JapanDanceBasic001_v1_0004:IK_RightForeArm/JapanDanceBasic001_v1_0004:IK_RightHand
+        weight: 0
+      - path: Mesh_blueMesh
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human:
+    - boneName: Bind_Root
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: JapanDanceBasic001_v1_0004:Bind_LeftUpLeg
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: JapanDanceBasic001_v1_0004:Bind_RightUpLeg
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: JapanDanceBasic001_v1_0004:Bind_LeftLeg
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: JapanDanceBasic001_v1_0004:Bind_RightLeg
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: JapanDanceBasic001_v1_0004:Bind_LeftFoot
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: JapanDanceBasic001_v1_0004:Bind_RightFoot
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: JapanDanceBasic001_v1_0004:Bind_Spine
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: JapanDanceBasic001_v1_0004:Bind_Spine1
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: JapanDanceBasic001_v1_0004:Bind_Neck
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: JapanDanceBasic001_v1_0004:Bind_Head
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: JapanDanceBasic001_v1_0004:Bind_LeftShoulder
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: JapanDanceBasic001_v1_0004:Bind_RightShoulder
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: JapanDanceBasic001_v1_0004:Bind_LeftArm
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: JapanDanceBasic001_v1_0004:Bind_RightArm
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: JapanDanceBasic001_v1_0004:Bind_LeftForeArm
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: JapanDanceBasic001_v1_0004:Bind_RightForeArm
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: JapanDanceBasic001_v1_0004:Bind_LeftHand
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: JapanDanceBasic001_v1_0004:Bind_RightHand
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: JapanDanceBasic001_v1_0004:Bind_LeftToeBase
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: JapanDanceBasic001_v1_0004:Bind_RightToeBase
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: JapanDanceBasic001_v1_0004:Bind_LeftHandThumb1
+      humanName: Left Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: JapanDanceBasic001_v1_0004:Bind_LeftHandThumb2
+      humanName: Left Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: JapanDanceBasic001_v1_0004:Bind_LeftHandThumb3
+      humanName: Left Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: JapanDanceBasic001_v1_0004:Bind_LeftHandMiddle1
+      humanName: Left Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: JapanDanceBasic001_v1_0004:Bind_LeftHandMiddle2
+      humanName: Left Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: JapanDanceBasic001_v1_0004:Bind_LeftHandMiddle3
+      humanName: Left Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: JapanDanceBasic001_v1_0004:Bind_LeftHandRing1
+      humanName: Left Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: JapanDanceBasic001_v1_0004:Bind_LeftHandRing2
+      humanName: Left Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: JapanDanceBasic001_v1_0004:Bind_LeftHandRing3
+      humanName: Left Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: JapanDanceBasic001_v1_0004:Bind_LeftHandPinky1
+      humanName: Left Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: JapanDanceBasic001_v1_0004:Bind_LeftHandPinky2
+      humanName: Left Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: JapanDanceBasic001_v1_0004:Bind_LeftHandPinky3
+      humanName: Left Little Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: JapanDanceBasic001_v1_0004:Bind_RightHandThumb1
+      humanName: Right Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: JapanDanceBasic001_v1_0004:Bind_RightHandThumb2
+      humanName: Right Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: JapanDanceBasic001_v1_0004:Bind_RightHandThumb3
+      humanName: Right Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: JapanDanceBasic001_v1_0004:Bind_RightHandMiddle1
+      humanName: Right Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: JapanDanceBasic001_v1_0004:Bind_RightHandMiddle2
+      humanName: Right Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: JapanDanceBasic001_v1_0004:Bind_RightHandMiddle3
+      humanName: Right Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: JapanDanceBasic001_v1_0004:Bind_RightHandRing1
+      humanName: Right Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: JapanDanceBasic001_v1_0004:Bind_RightHandRing2
+      humanName: Right Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: JapanDanceBasic001_v1_0004:Bind_RightHandRing3
+      humanName: Right Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: JapanDanceBasic001_v1_0004:Bind_RightHandPinky1
+      humanName: Right Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: JapanDanceBasic001_v1_0004:Bind_RightHandPinky2
+      humanName: Right Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: JapanDanceBasic001_v1_0004:Bind_RightHandPinky3
+      humanName: Right Little Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: JapanJapan_Basic_001(Clone)
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Bind_Root
+      position: {x: 9.88678948e-06, y: 1.08040297, z: -.0209494308}
+      rotation: {x: -1.26552404e-08, y: 1.56436798e-07, z: -4.9802311e-06, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:Bind_Spine
+      position: {x: -1.21972699e-21, y: .0864702612, z: -.00447557401}
+      rotation: {x: -.025853388, y: -2.8514043e-07, z: 4.9745222e-06, w: .999665737}
+      scale: {x: 1, y: 1, z: .99999994}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:Bind_Spine1
+      position: {x: -0, y: .101016998, z: 7.45331748e-12}
+      rotation: {x: 9.87201929e-08, y: 1.86002625e-14, z: -3.21016271e-13, w: 1}
+      scale: {x: 1, y: 1, z: 1.00000012}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:Bind_Spine2
+      position: {x: -0, y: .115447901, z: -1.20959395e-10}
+      rotation: {x: 1.15096539e-27, y: -2.19704998e-14, z: 1.48382215e-13, w: 1}
+      scale: {x: 1, y: 1, z: .99999994}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:Bind_LeftShoulder
+      position: {x: -.0543088801, y: .116726398, z: -.000895749952}
+      rotation: {x: .551407814, y: -.440461844, z: .560605884, w: .433201939}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:FK_LeftArm
+      position: {x: -8.16400419e-11, y: .111380994, z: 1.52452195e-09}
+      rotation: {x: .520824671, y: -.159601524, z: -.0241303276, w: .838264108}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:FK_LeftForeArm
+      position: {x: 2.50148707e-10, y: .271404594, z: -5.04990993e-10}
+      rotation: {x: -.022734819, y: -.00536881527, z: -.287501723, w: .957495213}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:FK_LeftHand
+      position: {x: -1.37392799e-12, y: .278690875, z: -3.07967096e-10}
+      rotation: {x: .0292466953, y: -.0227731187, z: .066286765, w: .997111857}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:IK_LeftArm
+      position: {x: -8.16400419e-11, y: .111380994, z: 1.52452195e-09}
+      rotation: {x: .602044463, y: .282360375, z: .0398109481, w: .745808423}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:IK_LeftForeArm
+      position: {x: 2.50148707e-10, y: .271404594, z: -5.04990993e-10}
+      rotation: {x: -.0182414241, y: -.013660023, z: -.799119651, w: .600739956}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:IK_LeftHand
+      position: {x: -1.37392799e-12, y: .278690875, z: -3.07967096e-10}
+      rotation: {x: -.0478496775, y: -.0143889999, z: .010718653, w: .998693407}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:Bind_LeftArm
+      position: {x: -8.16400419e-11, y: .111380994, z: 1.52452195e-09}
+      rotation: {x: -.10352236, y: -.00102734554, z: .00987155642, w: .994577587}
+      scale: {x: .99999994, y: .999999881, z: 1}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:Bind_LeftForeArm
+      position: {x: 2.50148707e-10, y: .271404594, z: -5.04990716e-10}
+      rotation: {x: -.0233499724, y: .000698238669, z: -.0298873056, w: .999280274}
+      scale: {x: .99999994, y: 1, z: .99999994}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:LeftForeArm_IK_BakingLOC
+      position: {x: -.135702327, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:Bind_LeftHand
+      position: {x: -1.37395e-12, y: .278690875, z: -3.07967402e-10}
+      rotation: {x: -.0175925512, y: .0679289177, z: .0227412451, w: .99727577}
+      scale: {x: .999999881, y: 1, z: 1}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:Bind_LeftHandThumb1
+      position: {x: .0231598802, y: .0277881287, z: .0134194503}
+      rotation: {x: .117800869, y: -.0187570043, z: -.326046467, w: .937797904}
+      scale: {x: 1, y: 1.00000024, z: 1.00000024}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:Bind_LeftHandThumb2
+      position: {x: .0034718439, y: .0306704696, z: -5.05976094e-10}
+      rotation: {x: .034706682, y: .00101800263, z: -.00778199732, w: .99936676}
+      scale: {x: 1, y: .999999464, z: .999999464}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:Bind_LeftHandThumb3
+      position: {x: .00168812089, y: .0316129215, z: -1.75711501e-10}
+      rotation: {x: -.0184865519, y: .00313733402, z: -.0853157714, w: .996177554}
+      scale: {x: 1.00000012, y: 1.00000024, z: 1}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:Bind_LeftHandThumb4
+      position: {x: -.00515996804, y: .0281102192, z: 8.28882171e-11}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:Bind_LeftHandRing1
+      position: {x: -.0100235604, y: .114426002, z: -.00234059501}
+      rotation: {x: .0527560376, y: .000763252552, z: -.0237583276, w: .998324513}
+      scale: {x: 1.00000012, y: 1.00000024, z: 1.00000024}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:Bind_LeftHandRing2
+      position: {x: -1.43037096e-05, y: .0227047484, z: -3.75073306e-10}
+      rotation: {x: -.0190856326, y: 2.98023259e-08, z: -2.98023259e-08, w: .999817848}
+      scale: {x: .999999881, y: 1, z: .999999881}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:Bind_LeftHandRing3
+      position: {x: 5.78126901e-06, y: .0218940396, z: 2.30636801e-10}
+      rotation: {x: -.00335210562, y: -3.87430191e-07, z: -1.34110451e-07, w: .999994397}
+      scale: {x: .99999994, y: 1.00000012, z: 1}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:Bind_LeftHandRing4
+      position: {x: 8.52240373e-06, y: .0195541494, z: 3.335629e-11}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:Bind_LeftHandMiddle1
+      position: {x: .01140041, y: .104951493, z: -.004783154}
+      rotation: {x: .0442197956, y: .00300090038, z: -.00739702629, w: .99898994}
+      scale: {x: .999999881, y: 1, z: 1}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:Bind_LeftHandMiddle2
+      position: {x: 4.61652999e-05, y: .0282923281, z: -1.31423997e-10}
+      rotation: {x: -.00962734129, y: -1.7881392e-07, z: 2.98023188e-08, w: .999953628}
+      scale: {x: 1.00000036, y: 1.00000036, z: .99999994}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:Bind_LeftHandMiddle3
+      position: {x: 5.79798907e-05, y: .0270118192, z: -1.60757699e-10}
+      rotation: {x: .0391961969, y: -5.20944668e-05, z: -.00178058469, w: .999229968}
+      scale: {x: .999999821, y: .999999702, z: .99999994}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:Bind_LeftHandMiddle4
+      position: {x: -.000104144892, y: .0243559908, z: -6.32866199e-12}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:Bind_LeftHandPinky1
+      position: {x: -.0267475192, y: .115515493, z: -.000363057683}
+      rotation: {x: .0556205735, y: -.000164121404, z: -.0323849954, w: .997926652}
+      scale: {x: .999999762, y: .999999821, z: .99999994}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:Bind_LeftHandPinky2
+      position: {x: -3.49022707e-06, y: .0192510895, z: 1.46278295e-10}
+      rotation: {x: -.0358689837, y: 0, z: -8.94069601e-08, w: .999356508}
+      scale: {x: 1.00000036, y: 1.0000006, z: 1.00000024}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:Bind_LeftHandPinky3
+      position: {x: 2.33147675e-05, y: .0155821294, z: 2.36212785e-12}
+      rotation: {x: .0399721228, y: 1.57952286e-06, z: -.000653371157, w: .999200583}
+      scale: {x: .999999821, y: .999999642, z: .999999821}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:Bind_LeftHandPinky4
+      position: {x: -1.98244088e-05, y: .01417665, z: -3.61012574e-11}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:Bind_LeftHandIndex1
+      position: {x: .0253706686, y: .104227103, z: .00126687007}
+      rotation: {x: .0494820066, y: -.00123630476, z: -.0249460507, w: .998462677}
+      scale: {x: .99999994, y: 1, z: 1.00000012}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:Bind_LeftHandIndex2
+      position: {x: -7.79729362e-06, y: .0261748284, z: 2.07228384e-11}
+      rotation: {x: -.00308810174, y: 0, z: -7.4505806e-08, w: .999995232}
+      scale: {x: 1, y: .99999994, z: 1}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:Bind_LeftHandIndex3
+      position: {x: -7.23386438e-06, y: .0244364496, z: -8.89400619e-12}
+      rotation: {x: -.0237693787, y: 3.57627869e-07, z: 4.47034836e-08, w: .999717474}
+      scale: {x: .999999881, y: 1, z: 1.00000012}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:Bind_LeftHandIndex4
+      position: {x: 1.50312799e-05, y: .0233154092, z: -2.37085386e-11}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:Bind_Neck
+      position: {x: -0, y: .129878998, z: -1.28594895e-08}
+      rotation: {x: .0258533023, y: 1.03992412e-14, z: -3.098884e-13, w: .999665737}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:Bind_Head
+      position: {x: -0, y: .0752561986, z: .0151895294}
+      rotation: {x: -3.83270082e-10, y: 3.03305151e-14, z: 4.54807307e-13, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:Bind_HeadTop_End
+      position: {x: -0, y: .224612296, z: .0453351997}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:Bind_RightShoulder
+      position: {x: .0543088801, y: .116704196, z: -.000466941594}
+      rotation: {x: -.553710282, y: -.438624501, z: .558510244, w: -.43483299}
+      scale: {x: 1.00000012, y: 1.00000012, z: 1}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:FK_RightArm
+      position: {x: 6.13758905e-11, y: .111380994, z: 1.52558299e-09}
+      rotation: {x: .521497965, y: .156697765, z: .0193983838, w: .838516176}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:FK_RightForeArm
+      position: {x: 1.92381597e-10, y: .271434098, z: -2.6301511e-10}
+      rotation: {x: -.0227498226, y: .00533746881, z: .28889212, w: .95707643}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:FK_RightHand
+      position: {x: -3.97183397e-10, y: .278690875, z: -2.89309382e-10}
+      rotation: {x: .0240718126, y: .0213101488, z: -.0590814091, w: .997735381}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:IK_RightArm
+      position: {x: 6.13758905e-11, y: .111380994, z: 1.52558299e-09}
+      rotation: {x: .553727865, y: -.155618593, z: -.00385110662, w: .818018019}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:IK_RightForeArm
+      position: {x: 1.92381597e-10, y: .271434098, z: -2.6301511e-10}
+      rotation: {x: -.0184274111, y: .0110121556, z: .851931334, w: .523213327}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:IK_RightHand
+      position: {x: -3.97183397e-10, y: .278690875, z: -2.89309382e-10}
+      rotation: {x: -.0785091668, y: .112612143, z: .0349918902, w: .989914358}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:Bind_RightArm
+      position: {x: 6.13758905e-11, y: .111380994, z: 1.52558299e-09}
+      rotation: {x: -.103765815, y: .00161036849, z: -.0154331625, w: .994480729}
+      scale: {x: 1.00000024, y: 1.00000024, z: 1.00000048}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:Bind_RightForeArm
+      position: {x: 1.92381597e-10, y: .271434098, z: -2.63014804e-10}
+      rotation: {x: .0233557224, y: .000732600689, z: -.0313387066, w: -.99923569}
+      scale: {x: .99999994, y: .999999702, z: .99999994}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:RightForeArm_IK_BakingLOC
+      position: {x: .135717049, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:Bind_RightHand
+      position: {x: -3.97183397e-10, y: .278690875, z: -2.89309993e-10}
+      rotation: {x: -.0155033171, y: -.0726048797, z: -.0246329457, w: .996936083}
+      scale: {x: .99999994, y: .99999994, z: 1.00000012}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:Bind_RightHandMiddle1
+      position: {x: -.0098444717, y: .104389995, z: -.00361439493}
+      rotation: {x: .0555217937, y: .000695288123, z: .0124959778, w: .998379052}
+      scale: {x: .999999881, y: .999999881, z: .999999464}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:Bind_RightHandMiddle2
+      position: {x: -2.34488089e-05, y: .0286860298, z: -1.31694794e-11}
+      rotation: {x: .00711652637, y: -4.17232513e-07, z: 1.1920929e-07, w: .999974668}
+      scale: {x: .999999821, y: .999999821, z: 1.00000012}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:Bind_RightHandMiddle3
+      position: {x: -9.5699861e-06, y: .0272646304, z: 3.62015799e-11}
+      rotation: {x: .0255255364, y: -8.94069601e-08, z: 2.98023188e-08, w: .999674201}
+      scale: {x: 1.00000036, y: 1.00000048, z: 1.00000048}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:Bind_RightHandMiddle4
+      position: {x: 3.30188413e-05, y: .0256270785, z: 1.14999893e-11}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:Bind_RightHandThumb1
+      position: {x: -.0222820211, y: .0267529096, z: .013094849}
+      rotation: {x: .124722645, y: .0211272221, z: .315551788, w: .940438747}
+      scale: {x: 1.00000012, y: 1.00000012, z: 1}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:Bind_RightHandThumb2
+      position: {x: -.00361853, y: .0295375288, z: -1.38096298e-10}
+      rotation: {x: .0355186127, y: -.000887378643, z: .0055320831, w: .99935329}
+      scale: {x: 1, y: .999999881, z: 1}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:Bind_RightHandThumb3
+      position: {x: -.00218624785, y: .031689629, z: 2.00468489e-10}
+      rotation: {x: .00211352133, y: .000335365563, z: .0941793099, w: .995552957}
+      scale: {x: .999999881, y: .999999762, z: .999999881}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:Bind_RightHandThumb4
+      position: {x: .00580477761, y: .029593898, z: -2.38613879e-10}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:Bind_RightHandRing1
+      position: {x: .00979953539, y: .120251194, z: -.00233508088}
+      rotation: {x: .0590768307, y: -.000687897031, z: .0199646149, w: .99805361}
+      scale: {x: 1.00000012, y: .99999994, z: .999999702}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:Bind_RightHandRing2
+      position: {x: 6.15013923e-05, y: .0216744803, z: -1.6838779e-10}
+      rotation: {x: -.0383189544, y: -1.49011584e-07, z: -5.96046306e-08, w: .999265611}
+      scale: {x: 1.00000012, y: 1, z: 1}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:Bind_RightHandRing3
+      position: {x: 5.54656344e-06, y: .0195518602, z: -7.31046196e-11}
+      rotation: {x: -.0406093597, y: 3.29166542e-05, z: -.000642418629, w: .999174893}
+      scale: {x: .999999762, y: .999999821, z: .999999583}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:Bind_RightHandRing4
+      position: {x: -6.70479203e-05, y: .0179750007, z: 2.44125397e-11}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:Bind_RightHandPinky1
+      position: {x: .0258263201, y: .1200113, z: -.000251582504}
+      rotation: {x: .0592652559, y: -.000356480392, z: .0181447379, w: .998077273}
+      scale: {x: .99999994, y: .999999821, z: 1}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:Bind_RightHandPinky2
+      position: {x: 7.93179788e-06, y: .0176686384, z: -5.91972998e-11}
+      rotation: {x: -.0311822407, y: -1.49011598e-07, z: 4.470348e-08, w: .999513745}
+      scale: {x: 1, y: .999999881, z: .999999702}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:Bind_RightHandPinky3
+      position: {x: -2.52573609e-05, y: .0143998293, z: 5.11022268e-13}
+      rotation: {x: .041230619, y: -1.04308094e-06, z: .000200569557, w: .99914968}
+      scale: {x: 1.00000024, y: 1.0000006, z: 1.00000048}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:Bind_RightHandPinky4
+      position: {x: 1.73255394e-05, y: .0127563197, z: 1.40590803e-10}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:Bind_RightHandIndex1
+      position: {x: -.02578138, y: .103881992, z: .000735335867}
+      rotation: {x: .0507249534, y: .00115585327, z: .0227536112, w: .998452842}
+      scale: {x: 1.00000012, y: 1, z: .999999881}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:Bind_RightHandIndex2
+      position: {x: 2.57624797e-05, y: .0262801498, z: -5.54450713e-12}
+      rotation: {x: -.00722905807, y: 8.94069458e-08, z: 5.96046306e-08, w: .999973893}
+      scale: {x: .999999881, y: .999999821, z: 1.00000012}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:Bind_RightHandIndex3
+      position: {x: 1.48350191e-05, y: .0242828988, z: 1.2514309e-10}
+      rotation: {x: -.0402497612, y: 1.04308114e-07, z: 1.49011594e-08, w: .999189734}
+      scale: {x: 1.00000024, y: 1.00000024, z: 1}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:Bind_RightHandIndex4
+      position: {x: -4.0597406e-05, y: .0230683703, z: -6.66059916e-11}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:Bind_Hips
+      position: {x: -1.35525306e-22, y: -1.42108491e-16, z: -1.110223e-18}
+      rotation: {x: 1.26552404e-08, y: -1.56436798e-07, z: 4.9802311e-06, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:FK_LeftUpLeg
+      position: {x: -.08525379, y: -.048012618, z: .00568044698}
+      rotation: {x: -.000512245053, y: .0155833913, z: .999863863, w: .00539804809}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:FK_LeftLeg
+      position: {x: 5.42874669e-11, y: .447621286, z: 1.03002502e-10}
+      rotation: {x: -.0603192747, y: -.000426118582, z: .0103791011, w: .998125076}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:FK_LeftFoot
+      position: {x: -2.989573e-12, y: .469376773, z: 9.26082655e-10}
+      rotation: {x: .493698359, y: .0241463836, z: -.0195157733, w: .869078875}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:FK_LeftToeBase
+      position: {x: -1.02432594e-11, y: .147366688, z: 1.05263398e-09}
+      rotation: {x: .283427715, y: .0314837098, z: -.00931037311, w: .958431482}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:FK_LeftToe_End
+      position: {x: 1.75138497e-11, y: .0549907386, z: -3.41209283e-11}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:FK_RightUpLeg
+      position: {x: .08525379, y: -.048012618, z: .00540121086}
+      rotation: {x: .000543484173, y: .0171765685, z: .999838531, w: -.00525864214}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:FK_RightLeg
+      position: {x: -1.06226299e-10, y: .447663188, z: 8.7100871e-10}
+      rotation: {x: -.0631242841, y: .00042641352, z: -.0103731966, w: .997951686}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:FK_RightFoot
+      position: {x: 5.22374505e-11, y: .469483703, z: 1.81849102e-09}
+      rotation: {x: .499156266, y: -.0233050641, z: .0195066165, w: .865978837}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:FK_RightToeBase
+      position: {x: 3.53946698e-11, y: .149462491, z: -2.53653409e-09}
+      rotation: {x: .278588802, y: -.0333096124, z: .00966851506, w: .959783971}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:FK_RightToe_End
+      position: {x: 1.93376686e-11, y: .0549760461, z: -1.44946402e-10}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:IK_LeftUpLeg
+      position: {x: -.08525379, y: -.048012618, z: .00568044698}
+      rotation: {x: -.00238382164, y: .0927747339, z: .995684087, w: .000624521635}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:IK_LeftLeg
+      position: {x: 5.42874669e-11, y: .447621286, z: 1.03002502e-10}
+      rotation: {x: -.193974659, y: -.0046125357, z: .00149031577, w: .980994582}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:IK_LeftFoot
+      position: {x: -2.989573e-12, y: .469376773, z: 9.26082655e-10}
+      rotation: {x: .542712569, y: .0290845893, z: -.0154451272, w: .839272678}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:IK_LeftToeBase
+      position: {x: -1.02432594e-11, y: .147366688, z: 1.05263398e-09}
+      rotation: {x: .283433825, y: .0314837508, z: -.00931020547, w: .958429635}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:IK_LeftToe_End
+      position: {x: 1.75138497e-11, y: .0549907386, z: -3.41209283e-11}
+      rotation: {x: -2.24179697e-08, y: 0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:IK_RightUpLeg
+      position: {x: .08525379, y: -.048012618, z: .00540121086}
+      rotation: {x: .00276459847, y: .0933692977, z: .995627403, w: .000767198682}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:IK_RightLeg
+      position: {x: -1.06226299e-10, y: .447663188, z: 8.7100871e-10}
+      rotation: {x: -.194815785, y: .0108980611, z: -.000234193314, w: .98077929}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:IK_RightFoot
+      position: {x: 5.22374505e-11, y: .469483703, z: 1.81849102e-09}
+      rotation: {x: .547057688, y: -.0338645428, z: .0178283099, w: .836219609}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:IK_RightToeBase
+      position: {x: 3.53946698e-11, y: .149462491, z: -2.53653409e-09}
+      rotation: {x: .278594822, y: -.0333096609, z: .00966834463, w: .959782243}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:IK_RightToe_End
+      position: {x: 1.93376686e-11, y: .0549760461, z: -1.44946402e-10}
+      rotation: {x: -1.96692422e-08, y: 0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:Bind_LeftUpLeg
+      position: {x: -.08525379, y: -.048012618, z: .00568044698}
+      rotation: {x: -.000229715093, y: .019918384, z: .999735117, w: .0115297772}
+      scale: {x: 1, y: 1, z: .99999994}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:Bind_LeftLeg
+      position: {x: 5.42874669e-11, y: .447621286, z: 1.03002502e-10}
+      rotation: {x: -.0470815785, y: -.000490300183, z: .010401722, w: .998836815}
+      scale: {x: 1.00000024, y: .99999994, z: 1}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:LeftLeg_IK_BakingLOC
+      position: {x: -0, y: 0, z: .223810673}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:Bind_LeftFoot
+      position: {x: -2.989555e-12, y: .469376773, z: 9.26082655e-10}
+      rotation: {x: .478179455, y: .0268129278, z: -.0146074137, w: .877731323}
+      scale: {x: .999999762, y: 1.00000012, z: 1.00000024}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:LeftFoot_IK_BakingLOC
+      position: {x: -1.68254317e-08, y: 6.04861654e-08, z: -3.41295873e-07}
+      rotation: {x: .000503501738, y: .438416958, z: .898767352, w: .00275399606}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:Bind_LeftToeBase
+      position: {x: -1.02432394e-11, y: .147366688, z: 1.05263398e-09}
+      rotation: {x: .283427566, y: .0314836949, z: -.00931038428, w: .958431482}
+      scale: {x: 1.00000012, y: .999999821, z: .999999821}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:Bind_LeftToe_End
+      position: {x: 1.75138307e-11, y: .0549907386, z: -3.41209387e-11}
+      rotation: {x: -2.24179697e-08, y: 0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:Bind_RightUpLeg
+      position: {x: .08525379, y: -.048012618, z: .00540121086}
+      rotation: {x: .000242848997, y: .0210592207, z: .999711752, w: -.0115284128}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:Bind_RightLeg
+      position: {x: -1.06226299e-10, y: .447663188, z: 8.7100871e-10}
+      rotation: {x: -.0502365865, y: .000523078837, z: -.0103985928, w: .998683155}
+      scale: {x: .99999994, y: .99999994, z: 1}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:RightLeg_IK_BakingLOC
+      position: {x: -0, y: 0, z: .223831594}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:Bind_RightFoot
+      position: {x: 5.22374886e-11, y: .469483703, z: 1.81849102e-09}
+      rotation: {x: .484392554, y: -.0260946918, z: .0144566447, w: .874342024}
+      scale: {x: 1, y: 1, z: .999999762}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:RightFoot_IK_BakingLOC
+      position: {x: -1.01679205e-07, y: 3.63153447e-07, z: 1.244945e-06}
+      rotation: {x: -.000412168738, y: .443676323, z: .896182418, w: -.00287080277}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:Bind_RightToeBase
+      position: {x: 3.53946594e-11, y: .149462491, z: -2.53653409e-09}
+      rotation: {x: .278588772, y: -.0333095752, z: .00966856256, w: .959784031}
+      scale: {x: 1.00000012, y: 1, z: .99999994}
+      transformModified: 1
+    - name: JapanDanceBasic001_v1_0004:Bind_RightToe_End
+      position: {x: 1.93376894e-11, y: .0549760461, z: -1.44946402e-10}
+      rotation: {x: -1.96692422e-08, y: 0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Mesh_blueMesh
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 3
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

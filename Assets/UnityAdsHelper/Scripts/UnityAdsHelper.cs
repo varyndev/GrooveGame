@@ -271,6 +271,7 @@ public class UnityAdsHelper : MonoBehaviour
 			break;
 		}
 
+
 		lastAdEnded = true;
 		//ClearActions();
 	}

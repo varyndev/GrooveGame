@@ -718,7 +718,7 @@ namespace Soomla.Store {
 
 			bool success = eventJSON["success"].b;
 			StoreEvents.OnRestoreTransactionsFinished(success);
-		}
+        }
 
 		/// <summary>
 		/// Handles the <c>onRestoreTransactionsStarted</c> event, which is fired when the restore transactions
@@ -729,7 +729,7 @@ namespace Soomla.Store {
 		public void onRestoreTransactionsStarted(string message) {
 			SoomlaUtils.LogDebug(TAG, "SOOMLA/UNITY onRestoreTransactionsStarted");
 
-			StoreEvents.OnRestoreTransactionsStarted();
+            StoreEvents.OnRestoreTransactionsStarted();
 		}
 
 		/// <summary>
