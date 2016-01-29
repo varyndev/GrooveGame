@@ -20,7 +20,8 @@ namespace BoogieDownGames {
 		public DateTime lastDatePlayed;
 		public List<int> unlockedCharacters;
 		public List<int> unlockedSongs;
-		public List<int> unlockedScenes;
+        public List<int> unlockedDownloads;
+        public List<int> unlockedScenes;
 
 		private static string saveFileName = "playerInfo.dat";
 		private static string saveFilePath;
@@ -37,7 +38,8 @@ namespace BoogieDownGames {
 			public string lastDatePlayed;
 			public List<int> unlockedCharacters;
 			public List<int> unlockedSongs;
-			public List<int> unlockedScenes;
+            public List<int> unlockedDownloads;
+            public List<int> unlockedScenes;
 		}
 		
 		void Start ()
@@ -52,6 +54,7 @@ namespace BoogieDownGames {
 			lastDatePlayed = DateTime.MinValue;
 			unlockedCharacters = new List<int>();
 			unlockedSongs = new List<int>();
+            unlockedDownloads = new List<int>();
 			unlockedScenes = new List<int>();
 			Load ();
 		}
@@ -110,8 +113,33 @@ namespace BoogieDownGames {
 			}
 			return isUnlocked;
 		}
-		
-		public bool UnlockScene (int sceneIndex)
+
+        public bool UnlockDownload(int downloadIndex)
+        {
+            bool downloadUnlocked = false;
+            if (unlockedDownloads == null)
+            {
+                unlockedDownloads = new List<int>();
+            }
+            if (!unlockedDownloads.Contains(downloadIndex))
+            {
+                unlockedDownloads.Add(downloadIndex);
+                downloadUnlocked = true;
+            }
+            return downloadUnlocked;
+        }
+
+        public bool IsDownloadUnlocked(int downloadIndex)
+        {
+            bool isDownloadUnlocked = false;
+            if (unlockedDownloads != null)
+            {
+                isDownloadUnlocked = unlockedDownloads.Contains(downloadIndex);
+            }
+            return isDownloadUnlocked;
+        }
+
+        public bool UnlockScene (int sceneIndex)
 		{
 			bool unlocked = false;
 			if (unlockedScenes == null) {
@@ -177,6 +205,7 @@ namespace BoogieDownGames {
 					lastDatePlayed = Convert.ToDateTime(playerData.lastDatePlayed);
 					unlockedCharacters = playerData.unlockedCharacters;
 					unlockedSongs = playerData.unlockedSongs;
+                    unlockedDownloads = playerData.unlockedDownloads;
 					unlockedScenes = playerData.unlockedScenes;
 				}
 			}
@@ -197,6 +226,7 @@ namespace BoogieDownGames {
 				playerData.lastDatePlayed = lastDatePlayed.ToString();
 				playerData.unlockedCharacters = unlockedCharacters;
 				playerData.unlockedSongs = unlockedSongs;
+                playerData.unlockedDownloads = unlockedDownloads;
 				playerData.unlockedScenes = unlockedScenes;
 				bf.Serialize (file, playerData);
 				file.Close ();

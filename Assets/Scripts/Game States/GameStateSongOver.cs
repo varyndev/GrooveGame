@@ -14,8 +14,9 @@ namespace BoogieDownGames {
 
 		public GameObject gameOverCanvas;
 		private bool playerWins;
+        private BaseGameController gameMaster = GameMaster.Instance;
 
-		public static GameStateSongOver Instance 
+        public static GameStateSongOver Instance 
 		{
 			get { return instance; }
 		}
@@ -29,9 +30,10 @@ namespace BoogieDownGames {
 		public override void Enter (BaseGameController p_game)
 		{
 			DanceGameController danceGameContoller = DanceGameController.Instance;
-			GameMaster gameMaster = (GameMaster) GameMaster.Instance;
-			Player.Instance.SetLastPlayCompleted (danceGameContoller.FinalScore, danceGameContoller.CoinsEarned, gameMaster.CurrentScene, gameMaster.CurrentModel, gameMaster.CurrentSong);
-			playerWins = gameMaster.SongWon;
+            //GameMaster gameMaster = (GameMaster) GameMaster.Instance;
+            playerWins = gameMaster.SongWon;
+            Player.Instance.SetLastPlayCompleted (danceGameContoller.FinalScore, danceGameContoller.CoinsEarned, gameMaster.CurrentScene, gameMaster.CurrentModel, gameMaster.CurrentSong);
+			//playerWins = gameMaster.SongWon;
 			PlayWinLoseAnimation (p_game);
 
 			// Show Game Over UI
