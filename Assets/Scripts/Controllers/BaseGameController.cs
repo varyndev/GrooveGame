@@ -12,7 +12,10 @@ namespace BoogieDownGames {
 		[SerializeField]
 		private int m_currentSong;
 
-		[SerializeField]
+        [SerializeField]
+        private int m_currentDownload;
+
+        [SerializeField]
 		private int m_currentModel;
 
 		[SerializeField]
@@ -37,7 +40,13 @@ namespace BoogieDownGames {
 			set { m_currentSong = value; }
 		}
 
-		public int CurrentModel
+        public int CurrentDownload
+        {
+            get { return m_currentDownload; }
+            set { m_currentDownload = value; }
+        }
+
+        public int CurrentModel
 		{
 			get { return m_currentModel; }
 			set { m_currentModel = value; }
