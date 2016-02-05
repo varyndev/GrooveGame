@@ -270,7 +270,6 @@ public class UnityAdsHelper : MonoBehaviour
 			if (onFailed != null) onFailed();
 			break;
 		}
-
 		lastAdEnded = true;
 		//ClearActions();
 	}

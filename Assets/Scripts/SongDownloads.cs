@@ -5,26 +5,6 @@ using System.Collections.Generic;
 
 namespace BoogieDownGames{
 
-    public class DownloadItem
-    {
-        public string downloadId;        // unique id that refers to the AudioClip of the sound file
-        public string downloadTitle;     // Full title of the song
-        public string downloadArtist;    // Song artist attribution
-        public int pointCost;           //Points it costs to open up download
-        public bool unlocked;        // true indicates this is a locked song can be unlocked by paying for it. false for free songs.
-        public string downloadLink;     //Link to open up the download
-
-        public DownloadItem(string _downloadId, string _downloadTitle, string _downloadArtist, int _pointCost, bool _unlocked, string _downloadLink)
-        {
-            downloadId = _downloadId;
-            downloadTitle = _downloadTitle;
-            downloadArtist = _downloadArtist;
-            pointCost = _pointCost;
-            unlocked = _unlocked;
-            downloadLink = _downloadLink;
-        }
-    }
-
     public class SongDownloads : MonoBehaviour {
 
         [SerializeField]
@@ -34,69 +14,89 @@ namespace BoogieDownGames{
         Text m_downloadArtistText;
 
         [SerializeField]
+        Text m_pointsText;
+
+        [SerializeField]
         Image m_downloadLockedIcon;
 
         [SerializeField]
-        int m_pointCost = 0;
+        int m_pointCost;
 
         [SerializeField]
-        string m_downloadLink = "";
+        string m_downloadLink;
 
-        private List<DownloadItem> m_downloadList;
+        void YouHaveIt()
+        {
+            m_downloadTitleText.text = "You Have It";
+            m_downloadArtistText.text = "Tori Martin";
+            m_pointsText.text = "5000 points";
+            m_pointCost = 5000;
+            m_downloadLink = "www.japanjapan.net/freesong";
+        }
 
-        //TODO: May need to adjust the demoOffset and demoDuration if the song is altered for any reason
-        // 		Demo times are listed in seconds
-        void Awake()
+        void LayWithMe()
+        {
+            m_downloadTitleText.text = "Lay With Me";
+            m_downloadArtistText.text = "Sky Girl Jo";
+            m_pointsText.text = "10000 points";
+            m_pointCost = 10000;
+            m_downloadLink = "www.japanjapan.net/freesongs";
+        }
+
+        void MoreThanLove()
+        {
+            m_downloadTitleText.text = "More Than Love";
+            m_downloadArtistText.text = "";
+            m_pointsText.text = "15000 points";
+            m_pointCost = 15000;
+            m_downloadLink = "www.japanjapan.net/freesongz";
+        }
+
+        public bool IsDownloadLocked(int downloadIndex)
          {
-             m_downloadList = new List<DownloadItem>();
-             m_downloadList.Add(new DownloadItem("YouHaveIt", "You Have It", "Tori Martin", 5000,  true, "www.japanjapan.net/freesong"));
-             m_downloadList.Add(new DownloadItem("LayWithMe", "Lay With Me", "Sky Girl Jo", 10000, true, "www.japanjapan.net/freesongs"));
-             m_downloadList.Add(new DownloadItem("MoreThanLove", "More Than Love", "", 15000, true, "www.japanjapan.net/freesongz"));
-         }
-
-         public bool IsDownloadLocked(int downloadIndex)
-         {
-             bool isdownloadLocked = m_downloadList[downloadIndex].unlocked;
+            bool isdownloadLocked = true;
              if (isdownloadLocked)
              {
-                // TODO: determine if the player has unlocked this item
                 isdownloadLocked = !Player.Instance.IsDownloadUnlocked(downloadIndex);
              }
              return isdownloadLocked;
          }
 
-         private void SetDownloadInfo(string downloadId)
-         {
-             if (downloadId != null && m_downloadTitleText != null)
-             {
-                 int downloadIndex = 0;
-                 foreach (DownloadItem download in m_downloadList)
-                 {
-                     if (download.downloadId == downloadId)
-                     {
-                         m_downloadTitleText.text = download.downloadTitle;
-                         m_downloadArtistText.text = download.downloadArtist;
-                         m_downloadLockedIcon.enabled = IsDownloadLocked(downloadIndex);
-                         break;
-                     }
-                     downloadIndex++;
-                 }
-             }
-         }
-
-        void OpenDownload()
+        public void OpenDownload()
         {
-            DownloadItem downLoad = null;
-            m_pointCost = downLoad.pointCost;
-            m_downloadLink = downLoad.downloadLink;
-
             if (Player.Instance.coinsTotal >= m_pointCost)
             {
                 Application.OpenURL(m_downloadLink);
+                Debug.Log("The download is opened!");
             }
             else
             {
                 Debug.Log("The player does not have enough points");
+            }
+        }
+
+        void Update()
+        {
+            if (GameMaster.Instance.CurrentDownload == 0)
+            {
+                YouHaveIt();
+            }
+            if (GameMaster.Instance.CurrentDownload == 1)
+            {
+                LayWithMe();
+            }
+            if (GameMaster.Instance.CurrentDownload == 2)
+            {
+                MoreThanLove();
+            }
+
+            if (Player.Instance.coinsTotal >= m_pointCost)
+            {
+                m_downloadLockedIcon.enabled = true;
+            }
+            else
+            {
+                m_downloadLockedIcon.enabled = false;
             }
         }
     }
