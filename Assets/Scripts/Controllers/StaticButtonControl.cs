@@ -3,7 +3,8 @@ using System.Collections;
 
 public class StaticButtonControl : MonoBehaviour {
 	
-	public bool isHomepageButton, isCoinButton, isMainMenuButton, isPlayAgainButton, isModelLockButton, isSceneLockButton, isSongLockButton;
+	public bool isHomepageButton, isCoinButton, isMainMenuButton, isPlayAgainButton, isModelLockButton, isSceneLockButton, isSongLockButton, 
+                YouHaveIt, LayWithMe, MoreThanLove;
 
 	public void activateButton(){
 		if (isHomepageButton) {
@@ -22,7 +23,7 @@ public class StaticButtonControl : MonoBehaviour {
 		}
 
         //Play Amazon Ad when button is pressed
-		if (isPlayAgainButton) {
+        if (isPlayAgainButton) {
 
             if (UnityAdsController.UnityAdTime)
             {

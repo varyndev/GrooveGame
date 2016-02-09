@@ -12,6 +12,7 @@ namespace BoogieDownGames {
 
 		private float timeToNextCharacterDemo;
 
+
 		public override void GoToScene (int p_scene)
 		{
 			// Make sure all items are unlocked
@@ -26,18 +27,10 @@ namespace BoogieDownGames {
                 }
                 else
                 {
-                /*//Play Amazon Ad the first time the button is pressed
-                    if (AmazonAdController.adTime || UnityAdsController.UnityAdTime)
-                    {
-                    //AmazonAdController.playAd = true;
-                     UnityAdsController.UnityPlayAd = true;
-                    }
-                    else
-                    {*/
-                        GameEventBeaconController.GameStart((gameMaster.CurrentScene + 1).ToString(), (gameMaster.CurrentModel + 1).ToString(), (gameMaster.CurrentSong + 1).ToString());
-                        Player.Instance.SetLastPlayed(gameMaster.CurrentScene, gameMaster.CurrentModel, gameMaster.CurrentSong);
-                        GameMaster.Instance.SceneFsm.ChangeState(CtrlStateGame.Instance);
-                   // }
+					Player.Instance.SetLastPlayed(gameMaster.CurrentScene, gameMaster.CurrentModel, gameMaster.CurrentSong);
+
+					GameMaster.Instance.GameFsm.ChangeState(GameStateInit.Instance);
+                    GameMaster.Instance.SceneFsm.ChangeState(CtrlStateGame.Instance);
                 }
 		}
 

@@ -12,13 +12,13 @@ namespace BoogieDownGames {
 		public AudioClip m_goodNote3;
 		public AudioClip m_goodNote4;
 		public AudioClip m_badNote;
-		public int m_menuSceneNumber = 2;
-		public int m_energyFillBonus = 250;
+		public int m_menuSceneNumber = 1;
+        public int m_energyFillBonus = 500;
 		public int m_lowScoreEarned = 10;
 		public int m_midScoreEarned = 25;
 		public int m_highScoreEarned = 50;
 
-		[SerializeField]
+        [SerializeField]
 		private TimeKeeper m_timer;
 
 		[SerializeField]
@@ -52,7 +52,7 @@ namespace BoogieDownGames {
 		private float nextNoteSpawnTime;
 		private bool runWasStartedSoDontDoItAgain = false;
 		private AudioSource m_audioSource;
-		private GameMaster gameMaster;
+		private BaseGameController gameMaster = GameMaster.Instance;
 
 		public int MissNotes
 		{
@@ -90,7 +90,6 @@ namespace BoogieDownGames {
 
 		void Start()
 		{
-			gameMaster = (GameMaster)GameMaster.Instance;
 			m_audioSource = GetComponent<AudioSource> ();
 			runWasStartedSoDontDoItAgain = false;
 			noteSpawnTime = 0.0f;
@@ -151,7 +150,7 @@ namespace BoogieDownGames {
 		public void OnStateRunEnter()
 		{
 			Time.timeScale = 1.0f;
-			noteSpawnTime = 1f; // TODO: note spawn time should vary based on difficulty and how well the player is doing
+			noteSpawnTime = 1.0f; // TODO: note spawn time should vary based on difficulty and how well the player is doing
 			AudioController.Instance.playAtIndex(gameMaster.CurrentSong);
 			gameMaster.SongStarted ();
 			NotificationCenter.DefaultCenter.PostNotification (this, "PlayStart");
@@ -232,7 +231,7 @@ namespace BoogieDownGames {
 		public void EnergyMeterFilled ()
 		{
 			// TODO: do fun stuff when the energy meter is filled: fireworks, lights, dance moves, then reset the meter
-			m_coins ++;
+			m_coins += 3;
 			m_score += m_energyFillBonus;
 			if (m_bonusNoteSlider != null) {
 				m_bonusNoteSlider.value = 0.0f;
@@ -240,7 +239,7 @@ namespace BoogieDownGames {
 			if (m_audioSource != null && m_goodNote4 != null) {
 				m_audioSource.PlayOneShot (m_goodNote4);
 			}
-			NotificationCenter.DefaultCenter.PostNotification (this, "spawnPrefab");
+			//NotificationCenter.DefaultCenter.PostNotification (this, "spawnPrefab");
 		}
 		
 		public void SpawnNote ()
@@ -260,18 +259,18 @@ namespace BoogieDownGames {
 			switch (noteState) {
 			case NoteStates.LowScore:
 				scoreEarned = m_lowScoreEarned;
-				bonusEarned = 0.025f;
-				goodNote = m_goodNote1;
+                bonusEarned = 0.025f * 300.0f;
+                goodNote = m_goodNote1;
 				break;
 			case NoteStates.MidScore:
 				scoreEarned = m_midScoreEarned;
-				bonusEarned = 0.05f;
-				goodNote = m_goodNote2;
+				bonusEarned = 0.05f * 300.0f;
+                goodNote = m_goodNote2;
 				break;
 			case NoteStates.HighScore:
 				scoreEarned = m_highScoreEarned;
-				bonusEarned = 0.075f;
-				goodNote = m_goodNote3;
+				bonusEarned = 0.075f * 300.0f;
+                goodNote = m_goodNote3;
 				break;
 			default:
 				goodNote = m_goodNote1;
@@ -292,7 +291,7 @@ namespace BoogieDownGames {
 		public void NoteWasMissed ()
 		{
 			string animationLevel;
-			if (m_score < 30) {
+			if (m_score < 3000) {
 				NotificationCenter.DefaultCenter.PostNotification (this, "PlayLame");
 			}
 			m_missNotes ++;
@@ -338,7 +337,7 @@ namespace BoogieDownGames {
 		{
 			// TODO: Add logic to change animation trigger based on how well the player is scoring
 			string animationLevel = "";
-			float energyLevel = m_bonusNoteSlider.value;
+            float energyLevel = m_bonusNoteSlider.value;
 			if (energyLevel < 0.1f) {
 				if (m_missNotes < 5) {
 					animationLevel = "PlayGood";

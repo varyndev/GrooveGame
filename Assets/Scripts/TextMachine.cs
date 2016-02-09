@@ -56,6 +56,7 @@ namespace BoogieDownGames {
 		// 		Demo times are listed in seconds
 		void Awake () {
 			m_songList = new List<SongItem>();
+			m_songList.Add (new SongItem ("JapanJapan", "Japan, Japan", "Sky Girlz", "1:21", "", false, 4.5f, 20.0f));
 			m_songList.Add (new SongItem ("SheSaid", "She Said", "Dani Feat. Sky Silver", "1:52", "", false, 14.14f, 26.26f));
 			m_songList.Add (new SongItem ("FryAndSizzle", "Fry & Sizzle", "Delsa & Sky Silver", "1:47", "", false, 7.332f, 22.319f));
 			m_songList.Add (new SongItem ("AloneTonight", "Alone Tonight", "Dani", "2:00", "", false, 4.488f, 22.117f));

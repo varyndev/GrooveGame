@@ -34,9 +34,22 @@ namespace BoogieDownGames {
 		{
 			if(m_isControllable == true) {
 				if(Input.anyKeyDown) {
-					Debug.LogError("Im pressing the dam key");
+					//Debug.LogError("Im pressing the dam key");
 					GameMaster.Instance.SceneFsm.ChangeState(CtrlStateMenu.Instance);
 				}
+			}
+		}
+
+		public void Update()
+		{
+			if (m_timeToNextScene > 0.0f)
+			{
+				m_timeToNextScene -= 0.095f;
+			}
+
+			if (m_timeToNextScene <= 0.0f)
+			{
+				Application.LoadLevel("Menu");
 			}
 		}
 

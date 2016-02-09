@@ -270,7 +270,6 @@ public class UnityAdsHelper : MonoBehaviour
 			if (onFailed != null) onFailed();
 			break;
 		}
-
 		lastAdEnded = true;
 		//ClearActions();
 	}
@@ -281,6 +280,7 @@ public class UnityAdsHelper : MonoBehaviour
 		onSkipped = null;
 		onFailed = null;
 	}
+
 
 #else
 
