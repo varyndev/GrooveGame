@@ -17,6 +17,9 @@ namespace BoogieDownGames{
         Text m_pointsText;
 
         [SerializeField]
+        Text m_pointsText2;
+
+        [SerializeField]
         Image m_downloadLockedIcon;
 
         [SerializeField]
@@ -28,55 +31,38 @@ namespace BoogieDownGames{
         void YouHaveIt()
         {
             m_downloadTitleText.text = "You Have It";
-            m_downloadArtistText.text = "Tori Martin";
-            m_pointsText.text = "5000 points";
+            m_downloadArtistText.text = "by Tori Martin";
             m_pointCost = 5000;
-            m_downloadLink = "www.japanjapan.net/freesong";
+            m_downloadLink = "www.groovegame.com/freesong";
         }
 
         void LayWithMe()
         {
             m_downloadTitleText.text = "Lay With Me";
-            m_downloadArtistText.text = "Sky Girl Jo";
-            m_pointsText.text = "10000 points";
+            m_downloadArtistText.text = " by Sky Girl Jo";
             m_pointCost = 10000;
-            m_downloadLink = "www.japanjapan.net/freesongs";
+            m_downloadLink = "www.groovegame.com/freesongs";
         }
 
         void MoreThanLove()
         {
             m_downloadTitleText.text = "More Than Love";
             m_downloadArtistText.text = "";
-            m_pointsText.text = "15000 points";
             m_pointCost = 15000;
-            m_downloadLink = "www.japanjapan.net/freesongz";
+            m_downloadLink = "www.groovegame.com/freesongz";
         }
-
-        public bool IsDownloadLocked(int downloadIndex)
-         {
-            bool isdownloadLocked = true;
-             if (isdownloadLocked)
-             {
-                isdownloadLocked = !Player.Instance.IsDownloadUnlocked(downloadIndex);
-             }
-             return isdownloadLocked;
-         }
 
         public void OpenDownload()
         {
             if (Player.Instance.coinsTotal >= m_pointCost)
             {
                 Application.OpenURL(m_downloadLink);
-                Debug.Log("The download is opened!");
-            }
-            else
-            {
-                Debug.Log("The player does not have enough points");
             }
         }
 
         void Update()
         {
+            //Update Download button info
             if (GameMaster.Instance.CurrentDownload == 0)
             {
                 YouHaveIt();
@@ -90,13 +76,18 @@ namespace BoogieDownGames{
                 MoreThanLove();
             }
 
+            //Update download button points text
             if (Player.Instance.coinsTotal >= m_pointCost)
             {
-                m_downloadLockedIcon.enabled = true;
+                m_pointsText.text = "Click to Download!";
+                m_downloadLockedIcon.enabled = false;
+                m_pointsText2.text = "";
             }
             else
             {
-                m_downloadLockedIcon.enabled = false;
+                m_pointsText.text = "Earn " +  m_pointCost +  " points";
+                m_pointsText2.text = "to unlock download!";
+                m_downloadLockedIcon.enabled = true;
             }
         }
     }

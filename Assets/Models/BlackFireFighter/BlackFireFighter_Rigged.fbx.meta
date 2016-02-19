@@ -1,0 +1,640 @@
+fileFormatVersion: 2
+guid: 0dc44025283e43947a2dae8e805f009d
+timeCreated: 1455047355
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Hispanic:Head
+    100004: Hispanic:HeadTop_End
+    100006: Hispanic:Hips
+    100008: Hispanic:LeftArm
+    100010: Hispanic:LeftFoot
+    100012: Hispanic:LeftForeArm
+    100014: Hispanic:LeftHand
+    100016: Hispanic:LeftHandIndex1
+    100018: Hispanic:LeftHandIndex2
+    100020: Hispanic:LeftHandIndex3
+    100022: Hispanic:LeftHandIndex4
+    100024: Hispanic:LeftHandThumb1
+    100026: Hispanic:LeftHandThumb2
+    100028: Hispanic:LeftHandThumb3
+    100030: Hispanic:LeftHandThumb4
+    100032: Hispanic:LeftLeg
+    100034: Hispanic:LeftShoulder
+    100036: Hispanic:LeftToe_End
+    100038: Hispanic:LeftToeBase
+    100040: Hispanic:LeftUpLeg
+    100042: Hispanic:Mesh
+    100044: Hispanic:Neck
+    100046: Hispanic:RightArm
+    100048: Hispanic:RightFoot
+    100050: Hispanic:RightForeArm
+    100052: Hispanic:RightHand
+    100054: Hispanic:RightHandIndex1
+    100056: Hispanic:RightHandIndex2
+    100058: Hispanic:RightHandIndex3
+    100060: Hispanic:RightHandIndex4
+    100062: Hispanic:RightHandThumb1
+    100064: Hispanic:RightHandThumb2
+    100066: Hispanic:RightHandThumb3
+    100068: Hispanic:RightHandThumb4
+    100070: Hispanic:RightLeg
+    100072: Hispanic:RightShoulder
+    100074: Hispanic:RightToe_End
+    100076: Hispanic:RightToeBase
+    100078: Hispanic:RightUpLeg
+    100080: Hispanic:Spine
+    100082: Hispanic:Spine1
+    100084: Hispanic:Spine2
+    400000: //RootNode
+    400002: Hispanic:Head
+    400004: Hispanic:HeadTop_End
+    400006: Hispanic:Hips
+    400008: Hispanic:LeftArm
+    400010: Hispanic:LeftFoot
+    400012: Hispanic:LeftForeArm
+    400014: Hispanic:LeftHand
+    400016: Hispanic:LeftHandIndex1
+    400018: Hispanic:LeftHandIndex2
+    400020: Hispanic:LeftHandIndex3
+    400022: Hispanic:LeftHandIndex4
+    400024: Hispanic:LeftHandThumb1
+    400026: Hispanic:LeftHandThumb2
+    400028: Hispanic:LeftHandThumb3
+    400030: Hispanic:LeftHandThumb4
+    400032: Hispanic:LeftLeg
+    400034: Hispanic:LeftShoulder
+    400036: Hispanic:LeftToe_End
+    400038: Hispanic:LeftToeBase
+    400040: Hispanic:LeftUpLeg
+    400042: Hispanic:Mesh
+    400044: Hispanic:Neck
+    400046: Hispanic:RightArm
+    400048: Hispanic:RightFoot
+    400050: Hispanic:RightForeArm
+    400052: Hispanic:RightHand
+    400054: Hispanic:RightHandIndex1
+    400056: Hispanic:RightHandIndex2
+    400058: Hispanic:RightHandIndex3
+    400060: Hispanic:RightHandIndex4
+    400062: Hispanic:RightHandThumb1
+    400064: Hispanic:RightHandThumb2
+    400066: Hispanic:RightHandThumb3
+    400068: Hispanic:RightHandThumb4
+    400070: Hispanic:RightLeg
+    400072: Hispanic:RightShoulder
+    400074: Hispanic:RightToe_End
+    400076: Hispanic:RightToeBase
+    400078: Hispanic:RightUpLeg
+    400080: Hispanic:Spine
+    400082: Hispanic:Spine1
+    400084: Hispanic:Spine2
+    4300000: Hispanic:Mesh
+    7400000: mixamo.com
+    9500000: //RootNode
+    13700000: Hispanic:Mesh
+  materials:
+    importMaterials: 1
+    materialName: 1
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human:
+    - boneName: Hispanic:Hips
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Hispanic:LeftUpLeg
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Hispanic:RightUpLeg
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Hispanic:LeftLeg
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Hispanic:RightLeg
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Hispanic:LeftFoot
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Hispanic:RightFoot
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Hispanic:Spine
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Hispanic:Spine1
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Hispanic:Neck
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Hispanic:Head
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Hispanic:LeftShoulder
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Hispanic:RightShoulder
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Hispanic:LeftArm
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Hispanic:RightArm
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Hispanic:LeftForeArm
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Hispanic:RightForeArm
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Hispanic:LeftHand
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Hispanic:RightHand
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Hispanic:LeftToeBase
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Hispanic:RightToeBase
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Hispanic:LeftHandThumb1
+      humanName: Left Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Hispanic:LeftHandThumb2
+      humanName: Left Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Hispanic:LeftHandThumb3
+      humanName: Left Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Hispanic:LeftHandIndex1
+      humanName: Left Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Hispanic:LeftHandIndex2
+      humanName: Left Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Hispanic:LeftHandIndex3
+      humanName: Left Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Hispanic:RightHandThumb1
+      humanName: Right Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Hispanic:RightHandThumb2
+      humanName: Right Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Hispanic:RightHandThumb3
+      humanName: Right Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Hispanic:RightHandIndex1
+      humanName: Right Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Hispanic:RightHandIndex2
+      humanName: Right Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Hispanic:RightHandIndex3
+      humanName: Right Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: BlackFireFighter_Rigged(Clone)
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Hispanic:Mesh
+      position: {x: -0.9828007, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Hispanic:Hips
+      position: {x: 0.000003178493, y: 1.0064403, z: -0.007907802}
+      rotation: {x: 1.248986e-25, y: -8.881784e-14, z: -4.6874435e-13, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Hispanic:LeftUpLeg
+      position: {x: -0.09187157, y: -0.057611693, z: 0.006460846}
+      rotation: {x: 0.000058793736, y: -0.009850316, z: 0.99993366, w: 0.0059683225}
+      scale: {x: 1, y: 1, z: 1.0000001}
+      transformModified: 1
+    - name: Hispanic:LeftLeg
+      position: {x: -0, y: 0.42112792, z: 0}
+      rotation: {x: -0.017440531, y: -0.00044387387, z: 0.025438583, w: 0.9995242}
+      scale: {x: 0.99999994, y: 0.9999999, z: 0.99999994}
+      transformModified: 1
+    - name: Hispanic:LeftFoot
+      position: {x: -0, y: 0.42297745, z: -8.881784e-18}
+      rotation: {x: 0.47875372, y: 0.01839286, z: -0.010032653, w: 0.8776992}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1.0000004}
+      transformModified: 1
+    - name: Hispanic:LeftToeBase
+      position: {x: -0, y: 0.17450841, z: 0}
+      rotation: {x: 0.307538, y: -0.030968966, z: 0.010015081, w: 0.950979}
+      scale: {x: 0.99999946, y: 0.9999996, z: 0.99999994}
+      transformModified: 1
+    - name: Hispanic:LeftToe_End
+      position: {x: -0, y: 0.069015354, z: 2.220446e-18}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Hispanic:RightUpLeg
+      position: {x: 0.09187157, y: -0.057611693, z: 0.008273835}
+      rotation: {x: -0.00005489229, y: -0.0091964295, z: 0.9999399, w: -0.0059685074}
+      scale: {x: 1, y: 1, z: 0.9999999}
+      transformModified: 1
+    - name: Hispanic:RightLeg
+      position: {x: -0, y: 0.42111742, z: 2.220446e-18}
+      rotation: {x: -0.018653423, y: 0.00047475475, z: -0.025438681, w: 0.9995023}
+      scale: {x: 0.9999999, y: 1, z: 1.0000001}
+      transformModified: 1
+    - name: Hispanic:RightFoot
+      position: {x: 1.4210854e-16, y: 0.4230036, z: 0}
+      rotation: {x: 0.47974238, y: -0.018347535, z: 0.010034758, w: 0.8771602}
+      scale: {x: 1.0000004, y: 1, z: 1}
+      transformModified: 1
+    - name: Hispanic:RightToeBase
+      position: {x: 1.4210854e-16, y: 0.1747821, z: 4.440892e-18}
+      rotation: {x: 0.3069909, y: 0.03089384, z: -0.0099711325, w: 0.95115864}
+      scale: {x: 0.9999997, y: 1.0000002, z: 0.99999976}
+      transformModified: 1
+    - name: Hispanic:RightToe_End
+      position: {x: -0, y: 0.06856967, z: 2.220446e-18}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Hispanic:Spine
+      position: {x: -0, y: 0.1038221, z: -0.006790892}
+      rotation: {x: -0.032652143, y: 7.346362e-14, z: 4.7139435e-13, w: 0.9994668}
+      scale: {x: 1, y: 0.9999999, z: 0.9999999}
+      transformModified: 1
+    - name: Hispanic:Spine1
+      position: {x: -0, y: 0.12138454, z: 0}
+      rotation: {x: -0.000000014901161, y: 2.7063267e-18, z: 1.524345e-19, w: 1}
+      scale: {x: 1, y: 0.99999994, z: 0.99999994}
+      transformModified: 1
+    - name: Hispanic:Spine2
+      position: {x: -0, y: 0.13872522, z: 8.881784e-18}
+      rotation: {x: -6e-45, y: -2.019484e-28, z: 3.2311743e-27, w: 1}
+      scale: {x: 1, y: 0.9999999, z: 0.9999999}
+      transformModified: 1
+    - name: Hispanic:Neck
+      position: {x: -0, y: 0.1560658, z: 0.0000000034025542}
+      rotation: {x: 0.03265216, y: -1.3613427e-18, z: 2.0486255e-19, w: 0.9994668}
+      scale: {x: 1, y: 1.0000002, z: 1.0000002}
+      transformModified: 1
+    - name: Hispanic:Head
+      position: {x: -0, y: 0.045867156, z: 0.013931698}
+      rotation: {x: -1.2489797e-25, y: 6.7762636e-21, z: 2.6210381e-20, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Hispanic:HeadTop_End
+      position: {x: -0, y: 0.2715616, z: 0.08248415}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Hispanic:LeftShoulder
+      position: {x: -0.07042725, y: 0.13482852, z: -0.001748903}
+      rotation: {x: 0.55933046, y: -0.42847636, z: 0.5732465, w: 0.41826537}
+      scale: {x: 1, y: 0.9999999, z: 1.0000004}
+      transformModified: 1
+    - name: Hispanic:LeftArm
+      position: {x: -0, y: 0.1486072, z: -2.842171e-16}
+      rotation: {x: -0.12788677, y: -0.007148922, z: 0.030725406, w: 0.99128693}
+      scale: {x: 1.0000004, y: 1.0000004, z: 1.0000001}
+      transformModified: 1
+    - name: Hispanic:LeftForeArm
+      position: {x: -0, y: 0.23774862, z: 0}
+      rotation: {x: -0.021574365, y: 0.0017805549, z: -0.07870304, w: 0.99666303}
+      scale: {x: 0.9999998, y: 0.9999998, z: 0.9999998}
+      transformModified: 1
+    - name: Hispanic:LeftHand
+      position: {x: -0, y: 0.29728153, z: 0}
+      rotation: {x: 0.012256533, y: 0.088159844, z: 0.05386153, w: 0.9945736}
+      scale: {x: 1.0000002, y: 0.9999999, z: 0.9999999}
+      transformModified: 1
+    - name: Hispanic:LeftHandIndex1
+      position: {x: 1.4210854e-16, y: 0.1290617, z: 0.00035438148}
+      rotation: {x: -0.0011821687, y: 0.000019848347, z: -0.016692042, w: 0.99986005}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000002}
+      transformModified: 1
+    - name: Hispanic:LeftHandIndex2
+      position: {x: 0.00040148775, y: 0.03489618, z: 0}
+      rotation: {x: 0.0024043766, y: -0.000000029802319, z: 0.000000014901159, w: 0.9999972}
+      scale: {x: 0.9999998, y: 0.99999994, z: 1}
+      transformModified: 1
+    - name: Hispanic:LeftHandIndex3
+      position: {x: 0.0003440435, y: 0.03145381, z: 0}
+      rotation: {x: 0.038004503, y: -0.00035637605, z: -0.01006211, w: 0.99922687}
+      scale: {x: 0.99999994, y: 0.9999999, z: 0.9999999}
+      transformModified: 1
+    - name: Hispanic:LeftHandIndex4
+      position: {x: -0.0007455313, y: 0.021646935, z: -2.842171e-16}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Hispanic:LeftHandThumb1
+      position: {x: 0.031736396, y: 0.03811894, z: 0.021458149}
+      rotation: {x: 0.14665683, y: -0.03217965, z: -0.3034002, w: 0.9409594}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Hispanic:LeftHandThumb2
+      position: {x: 0.0046408116, y: 0.042985, z: 2.842171e-16}
+      rotation: {x: 0.0052184393, y: 0.00015240909, z: -0.03394865, w: 0.99941}
+      scale: {x: 1, y: 0.99999994, z: 0.9999999}
+      transformModified: 1
+    - name: Hispanic:LeftHandThumb3
+      position: {x: -0.0016160671, y: 0.040856566, z: 0}
+      rotation: {x: -0.03772671, y: 0.002169877, z: -0.012011608, w: 0.99921364}
+      scale: {x: 0.99999994, y: 1, z: 0.9999999}
+      transformModified: 1
+    - name: Hispanic:LeftHandThumb4
+      position: {x: -0.0030247446, y: 0.033294797, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Hispanic:RightShoulder
+      position: {x: 0.07042725, y: 0.13478166, z: -0.0010323792}
+      rotation: {x: -0.56235886, y: -0.42619243, z: 0.5705525, w: -0.42021707}
+      scale: {x: 1, y: 0.99999994, z: 1}
+      transformModified: 1
+    - name: Hispanic:RightArm
+      position: {x: -8.881784e-18, y: 0.1486072, z: 0}
+      rotation: {x: -0.13062468, y: 0.009719997, z: -0.029176619, w: 0.9909548}
+      scale: {x: 1.0000001, y: 1, z: 1.0000001}
+      transformModified: 1
+    - name: Hispanic:RightForeArm
+      position: {x: -0, y: 0.23793638, z: -2.842171e-16}
+      rotation: {x: 0.021503164, y: 0.0018344668, z: -0.07867097, w: -0.996667}
+      scale: {x: 1, y: 1.0000001, z: 1.0000002}
+      transformModified: 1
+    - name: Hispanic:RightHand
+      position: {x: -0, y: 0.29721722, z: 0}
+      rotation: {x: 0.023675244, y: -0.07696032, z: -0.050016604, w: 0.99549735}
+      scale: {x: 1.0000002, y: 0.99999994, z: 0.99999976}
+      transformModified: 1
+    - name: Hispanic:RightHandIndex1
+      position: {x: -0, y: 0.124260366, z: 0.00010209129}
+      rotation: {x: -0.039955046, y: -0.0010706781, z: 0.026765492, w: 0.99884236}
+      scale: {x: 0.99999964, y: 1, z: 1}
+      transformModified: 1
+    - name: Hispanic:RightHandIndex2
+      position: {x: -0.00003528298, y: 0.03521465, z: 0}
+      rotation: {x: 0.03188695, y: -0.000000074505806, z: -0.000000044703484, w: 0.9994915}
+      scale: {x: 1, y: 1, z: 0.99999994}
+      transformModified: 1
+    - name: Hispanic:RightHandIndex3
+      position: {x: 0.00012446273, y: 0.03165365, z: -2.842171e-16}
+      rotation: {x: 0.023439566, y: 0.00000014901158, z: 0.000000089406946, w: 0.99972534}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Hispanic:RightHandIndex4
+      position: {x: -0.00008917975, y: 0.022502908, z: -2.842171e-16}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Hispanic:RightHandThumb1
+      position: {x: -0.03276644, y: 0.03664381, z: 0.019781329}
+      rotation: {x: 0.13608192, y: 0.027245488, z: 0.28960177, w: 0.9470324}
+      scale: {x: 0.9999998, y: 0.9999997, z: 0.99999994}
+      transformModified: 1
+    - name: Hispanic:RightHandThumb2
+      position: {x: -0.0065126535, y: 0.04188698, z: 1.4210854e-16}
+      rotation: {x: 0.0066528544, y: -0.0005366504, z: 0.044356123, w: 0.9989936}
+      scale: {x: 1, y: 0.9999999, z: 0.9999997}
+      transformModified: 1
+    - name: Hispanic:RightHandThumb3
+      position: {x: 0.0004960369, y: 0.040636998, z: 0}
+      rotation: {x: -0.019902999, y: -0.0028170042, z: 0.050202716, w: 0.9985368}
+      scale: {x: 1.0000002, y: 1.0000005, z: 1.0000004}
+      transformModified: 1
+    - name: Hispanic:RightHandThumb4
+      position: {x: 0.0060166167, y: 0.033124547, z: -2.842171e-16}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 3
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
