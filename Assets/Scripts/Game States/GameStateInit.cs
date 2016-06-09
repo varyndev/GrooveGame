@@ -16,7 +16,7 @@ namespace BoogieDownGames {
 		
 		public override void Enter (BaseGameController p_game)
 		{
-			Debug.Log("I am in Game state init");
+			//Debug.Log("I am in Game state init");
 		
 			/*
 			 * OnStateInitEnter
@@ -47,7 +47,7 @@ namespace BoogieDownGames {
 			 * OnStateInitExit
 			 */
 			p_game.PostMessage("OnStateInitExit");
-			Debug.Log("Leaving Game state init");
+			//Debug.Log("Leaving Game state init");
 		}
 	}
 }

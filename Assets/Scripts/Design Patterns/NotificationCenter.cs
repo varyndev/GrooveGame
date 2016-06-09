@@ -74,13 +74,13 @@ public class NotificationCenter : MonoBehaviour
 		// First make sure that the name of the notification is valid.
 		//Debug.Log("sender: " + aNotification.name);
 		if (string.IsNullOrEmpty (aNotification.name)) {
-			Debug.Log ("Null name sent to PostNotification.");
+			//Debug.Log ("Null name sent to PostNotification.");
 			return;
 		}
 		// Obtain the notification list, and make sure that it is valid as well
 		List<Component> notifyList = (List<Component>) notifications [aNotification.name];
 		if (notifyList == null) {
-			Debug.Log ("PostNotification: notification posted but no one is listening for " + aNotification.name);
+			//Debug.Log ("PostNotification: notification posted but no one is listening for " + aNotification.name);
 			return;
 		}
  

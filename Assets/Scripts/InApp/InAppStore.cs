@@ -9,7 +9,7 @@ namespace Soomla.Store
 	public class InAppStore : MonoBehaviour
 	{
 		
-		public static int LockedDancerID = 2;
+		public static int LockedDancerID = 3;
 		public static int ARRoomID;
 		//public static int[] FourPackID = {5, 6, 7, 8};
 		//public static int[] SixPackID = {5, 6, 7, 8, 9, 10};
