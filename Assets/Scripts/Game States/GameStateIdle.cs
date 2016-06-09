@@ -16,7 +16,7 @@ namespace BoogieDownGames {
 		
 		public override void Enter (BaseGameController p_game)
 		{
-			Debug.Log("I am in Game State idle");
+			//Debug.Log("I am in Game State idle");
 		}
 		
 		public override void ExecuteOnUpdate (BaseGameController p_game) 
@@ -32,7 +32,7 @@ namespace BoogieDownGames {
 		public override void Exit(BaseGameController p_game) 
 		{
 		
-			Debug.Log("Leaving Game State idle");
+			//Debug.Log("Leaving Game State idle");
 		}
 	}
 }

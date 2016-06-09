@@ -10,7 +10,7 @@ namespace BoogieDownGames {
 		
 		public override void Awake()
 		{
-			Debug.Log ("Starting " + GAME_SKU + " Version " + VERSION);
+			//Debug.Log ("Starting " + GAME_SKU + " Version " + VERSION);
 			base.Awake();
 		}
 		public  void Start()
