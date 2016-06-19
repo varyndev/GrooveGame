@@ -29,6 +29,7 @@ namespace BoogieDownGames {
 		public Image sceneLockedIcon;
 		public Image sceneFreeIcon;
         public GameObject augReality;
+        public GameObject screenScene;
 
 		#region PROPERTIES
 		
@@ -110,9 +111,14 @@ namespace BoogieDownGames {
                 sceneFreeIcon.enabled = false;
                 augReality.SetActive(true);
             }
-            else{
+            else augReality.SetActive(false);
+            if (m_currentIndex == 1){
+                sceneFreeIcon.enabled = false;
+                screenScene.SetActive(true);
+            }
+            else screenScene.SetActive(false);
+            if (m_currentIndex > 1){
                 sceneFreeIcon.enabled = true;
-                augReality.SetActive(false);
             }
         }
 	}

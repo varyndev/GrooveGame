@@ -9,9 +9,6 @@ public class ClothesScript : MonoBehaviour {
     [SerializeField] GameObject theShoes;
     [SerializeField] GameObject theScreenShots;
 
-    //bools to decide which menu is opened
-    public static bool shirtsOpen, pantsOpen, shoesOpen;
-
     void Awake(){
         OpenShirts();
     }
@@ -23,9 +20,6 @@ public class ClothesScript : MonoBehaviour {
         thePants.SetActive(false);
         theShoes.SetActive(false);
         theScreenShots.SetActive(false);
-        shirtsOpen = false;
-        pantsOpen = false;
-        shoesOpen = false;
     }
 
     public void OpenShirts()
@@ -35,9 +29,6 @@ public class ClothesScript : MonoBehaviour {
         thePants.SetActive(false);
         theShoes.SetActive(false);
         theScreenShots.SetActive(false);
-        shirtsOpen = true;
-        pantsOpen = false;
-        shoesOpen = false;
     }
 
     public void OpenPants()
@@ -47,9 +38,6 @@ public class ClothesScript : MonoBehaviour {
         thePants.SetActive(true);
         theShoes.SetActive(false);
         theScreenShots.SetActive(false);
-        shirtsOpen = false;
-        pantsOpen = true;
-        shoesOpen = false;
     }
 
     public void OpenShoes()
@@ -59,9 +47,6 @@ public class ClothesScript : MonoBehaviour {
         thePants.SetActive(false);
         theShoes.SetActive(true);
         theScreenShots.SetActive(false);
-        shirtsOpen = false;
-        pantsOpen = false;
-        shoesOpen = true;
     }
 
     public void OpenScreenShots(){
