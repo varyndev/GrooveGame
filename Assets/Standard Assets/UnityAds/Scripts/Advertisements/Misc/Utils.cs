@@ -9,7 +9,7 @@ namespace UnityEngine.Advertisements {
   internal static class Utils {
     private static void Log(DebugLevel debugLevel, string message) {
       if((Advertisement.debugLevel & debugLevel) != DebugLevel.None) {
-        Debug.Log(message);
+       // Debug.Log(message);
       }
     }
 

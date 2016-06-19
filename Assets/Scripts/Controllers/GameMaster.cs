@@ -10,15 +10,15 @@ namespace BoogieDownGames {
 		
 		public override void Awake()
 		{
-			Debug.Log ("Starting " + GAME_SKU + " Version " + VERSION);
+			//Debug.Log ("Starting " + GAME_SKU + " Version " + VERSION);
 			base.Awake();
 		}
-		public  void Start()
-		{
-			Soomla.Store.StoreEvents.OnSoomlaStoreInitialized += onSoomlaStoreInitialized;
-			
-			Soomla.Store.SoomlaStore.Initialize (new Soomla.Store.StoreAssets());
-			Soomla.Store.SoomlaStore.StartIabServiceInBg ();
+		public  void Start(){
+            if (!Soomla.Store.SoomlaStore.Initialized){
+                Soomla.Store.StoreEvents.OnSoomlaStoreInitialized += onSoomlaStoreInitialized;
+                Soomla.Store.SoomlaStore.Initialize(new Soomla.Store.StoreAssets());
+			    Soomla.Store.SoomlaStore.StartIabServiceInBg ();
+            }
 		}
 
 		public override void Update () 

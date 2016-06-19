@@ -11,6 +11,7 @@ namespace BoogieDownGames {
 		public Image characterLockedIcon;
 
 		// TODO: consider organizing this into an array of objects {characterModel, locked, characterName}
+        [SerializeField] GameObject clothesMenu;
 
 		[SerializeField]
 		private GameObject [] m_models = null;
@@ -44,7 +45,9 @@ namespace BoogieDownGames {
 		
 		void Start()
 		{
-			int i;
+            Screen.sleepTimeout = SleepTimeout.NeverSleep;
+
+            int i;
 			for (i = 0; i < m_models.Length; i ++) {
 				m_models[i].SetActive(false);
 			}
@@ -128,6 +131,13 @@ namespace BoogieDownGames {
 					}
 				}
 			}
+
+            if (Application.loadedLevelName == "Menu"){
+                if (m_currentIndex == 0)
+                    clothesMenu.SetActive(true);
+                else
+                    clothesMenu.SetActive(false);
+            }
 		}
 		
 		public void OnStateRunExit()
@@ -326,7 +336,7 @@ namespace BoogieDownGames {
 				} else if (currentSongId > m_animationControllers.Length) {
 					currentSongId = m_animationControllers.Length;
 				}
-				Debug.Log (">>>> Setting animation controller for song " + currentSongId.ToString () + " to " + m_animationControllers[currentSongId].ToString());
+				//Debug.Log (">>>> Setting animation controller for song " + currentSongId.ToString () + " to " + m_animationControllers[currentSongId].ToString());
 				m_anime.runtimeAnimatorController = m_animationControllers[currentSongId];
 			}
 		}
@@ -337,7 +347,7 @@ namespace BoogieDownGames {
 				if (animationTrigger == "") {
 					animationTrigger = "StandIdle";
 				}
-				Debug.Log (">>>> Setting animation to " + animationTrigger);
+				//Debug.Log (">>>> Setting animation to " + animationTrigger);
 				m_anime.SetTrigger (animationTrigger);
 				m_triggerFired = true;
 				m_fCurrentAnimTimer = 0.0f;

@@ -28,6 +28,8 @@ namespace BoogieDownGames {
 		public Text sceneName;
 		public Image sceneLockedIcon;
 		public Image sceneFreeIcon;
+        public GameObject augReality;
+        public GameObject screenScene;
 
 		#region PROPERTIES
 		
@@ -103,5 +105,21 @@ namespace BoogieDownGames {
 			messageData.Add("msg", message);
 			NotificationCenter.DefaultCenter.PostNotification(this, method, messageData);
 		}
+
+        void Update(){
+            if (m_currentIndex == 0){
+                sceneFreeIcon.enabled = false;
+                augReality.SetActive(true);
+            }
+            else augReality.SetActive(false);
+            if (m_currentIndex == 1){
+                sceneFreeIcon.enabled = false;
+                screenScene.SetActive(true);
+            }
+            else screenScene.SetActive(false);
+            if (m_currentIndex > 1){
+                sceneFreeIcon.enabled = true;
+            }
+        }
 	}
 }
