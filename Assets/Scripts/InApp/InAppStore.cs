@@ -9,7 +9,7 @@ namespace Soomla.Store
 	public class InAppStore : MonoBehaviour
 	{
 		
-		public static int LockedDancerID = 2;
+		public static int LockedDancerID = 3;
 		public static int ARRoomID;
 		//public static int[] FourPackID = {5, 6, 7, 8};
 		//public static int[] SixPackID = {5, 6, 7, 8, 9, 10};
@@ -34,7 +34,8 @@ namespace Soomla.Store
 			////For debugging in scene
 			//Soomla.Store.StoreEvents.OnSoomlaStoreInitialized += onSoomlaStoreInitialized;
 			//
-			Soomla.Store.SoomlaStore.Initialize (new Soomla.Store.StoreAssets ());
+            if (!Soomla.Store.SoomlaStore.Initialized)
+                Soomla.Store.SoomlaStore.Initialize (new Soomla.Store.StoreAssets ());
 			//Soomla.Store.SoomlaStore.StartIabServiceInBg ();
 		}
 		

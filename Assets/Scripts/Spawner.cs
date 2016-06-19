@@ -17,7 +17,7 @@ namespace BoogieDownGames{
 
 		private List<GameObject> m_notes;
 
-		void Start()
+        void Start()
 		{
 			m_notes = new List<GameObject> ();
 

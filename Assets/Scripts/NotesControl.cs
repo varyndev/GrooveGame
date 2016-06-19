@@ -48,6 +48,8 @@ namespace BoogieDownGames {
 
 		[SerializeField]
 		private Color m_highScoreColor;
+        [SerializeField] float ranX;
+        [SerializeField] float ranY;
 
 		private float m_rotation;
 		private Vector3 m_direction;
@@ -86,12 +88,14 @@ namespace BoogieDownGames {
 			} else {
 				m_direction = Vector3.forward * -1.0f;
 			}
-			// Send notes off in slightly random directions but toward the camera
-			//float x = Random.Range(-0.125f, 0.125f);
-			//float y = Random.Range(-0.125f, 0.125f);
-			float x = Random.Range(-0.25f, 0.25f);
-			float y = Random.Range(-0.15f, 0.15f);
-			m_direction = new Vector3(m_direction.x + x, m_direction.y + y, m_direction.z);
+            // Send notes off in slightly random directions but toward the camera
+            //float x = Random.Range(-0.125f, 0.125f);
+            //float y = Random.Range(-0.125f, 0.125f);
+            /*float x = Random.Range(-0.25f, 0.25f);
+			float y = Random.Range(-0.15f, 0.15f);*/
+            float x = Random.Range(-ranX, ranX);
+            float y = Random.Range(-ranY, ranY);
+            m_direction = new Vector3(m_direction.x + x, m_direction.y + y, m_direction.z);
 		}
 
 		public void OnStateRunFixedUpdate()
@@ -129,8 +133,9 @@ namespace BoogieDownGames {
 				m_myState = NoteStates.UnReady;
 				m_mat.enabled = false;
 			} else if (zDistanceFromCamera > m_firstBounds) {
-				m_myState = NoteStates.UnReady;
-				m_mat.enabled = true;
+                //m_myState = NoteStates.UnReady;
+                m_myState = NoteStates.MidScore;
+                m_mat.enabled = true;
 				m_mat.material.SetColor("_Color", m_unReadyColor);
 				m_mat.material.SetColor("_Emission", m_unReadyColor);
 				m_mat.material.SetColor("_SpecColor", m_unReadyColor);

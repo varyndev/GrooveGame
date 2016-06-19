@@ -13,12 +13,12 @@ namespace BoogieDownGames {
 	
 		public virtual void Init()
 		{
-			Debug.LogWarning("Init needs to be declared");
+			//Debug.LogWarning("Init needs to be declared");
 		}
 
 		public virtual void Run()
 		{
-			Debug.LogWarning("Run needs to be declared");
+			//Debug.LogWarning("Run needs to be declared");
 		}
 
 		public virtual void GoToScene(string p_scene)

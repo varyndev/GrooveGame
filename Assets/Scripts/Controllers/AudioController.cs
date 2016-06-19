@@ -83,13 +83,14 @@ namespace BoogieDownGames {
 
 		void Start()
 		{
-			NotificationCenter.DefaultCenter.AddObserver(this, "PlayCurrentSong");
+            m_currentIndex = m_initialSound;
+            NotificationCenter.DefaultCenter.AddObserver(this, "PlayCurrentSong");
 			NotificationCenter.DefaultCenter.AddObserver(this, "PauseSong");
 			PostSongChange(m_soundClips[m_currentIndex].name, m_soundClips[m_currentIndex].length);
 
 			NotificationCenter.DefaultCenter.AddObserver (this, "SetDemoInfo");
 
-				if (m_isMenu) {
+            if (m_isMenu) {
 					if (passedLoad == false){
 						passedLoad = true;
 						menuStart();
@@ -100,8 +101,9 @@ namespace BoogieDownGames {
 				} else {
 					PlayCurrentSong ();
 				}
+            PlayCurrentSong();
 
-		}
+        }
 
 		void Update(){
 			if(UnityAdsHelper.lastAdEnded){
