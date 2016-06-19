@@ -27,12 +27,12 @@ public class ScreenshotController : MonoBehaviour {
         if (!PlayerPrefs.HasKey(loadScreenNum))
             PlayerPrefs.SetInt(loadScreenNum, -1);
         //We then set the variables equal to the saved values and save the values to Unity
-        //screenShot = PlayerPrefs.GetInt(screenShotNum);
-        //loadNum = PlayerPrefs.GetInt(loadScreenNum);
-        screenShot = 0;
+        screenShot = PlayerPrefs.GetInt(screenShotNum);
+        loadNum = PlayerPrefs.GetInt(loadScreenNum);
+        /*screenShot = 0;
         loadNum = -1;
         PlayerPrefs.SetInt(screenShotNum, screenShot);
-        PlayerPrefs.SetInt(loadScreenNum, loadNum);
+        PlayerPrefs.SetInt(loadScreenNum, loadNum);*/
         PlayerPrefs.Save();
     }
 
