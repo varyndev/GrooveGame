@@ -6,6 +6,12 @@ namespace BoogieDownGames {
 
 	public class MenuCtrl : BaseSceneController {
 
+        //Setup to hide main menu and show clothes changing menu
+        [SerializeField] GameObject buttonGroups;
+        [SerializeField] GameObject inAppMenu;
+        [SerializeField] GameObject toChanger;
+        [SerializeField] GameObject clothesMenu;
+
 		public float characterDemoInterval = 5.0f;
 		public Text coinsText;
 		public AudioClip m_badNote;
@@ -33,6 +39,22 @@ namespace BoogieDownGames {
                     GameMaster.Instance.SceneFsm.ChangeState(CtrlStateGame.Instance);
                 }
 		}
+
+        public void LoadChanger()
+        {
+            buttonGroups.SetActive(false);
+            inAppMenu.SetActive(false);
+            clothesMenu.SetActive(true);
+            toChanger.SetActive(false);
+        }
+
+        public void LoadMainMenu()
+        {
+            buttonGroups.SetActive(true);
+            inAppMenu.SetActive(true);
+            toChanger.SetActive(true);
+            clothesMenu.SetActive(false);
+        }
 
 		public void QuitGame()
 		{

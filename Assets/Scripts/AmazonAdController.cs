@@ -74,6 +74,15 @@ public class AmazonAdController : MonoBehaviour {
 
 		//appKey for iOS Groove Game
 	  //appKey = "522ce6e0e5ce47b18595a28362d5c633";
+
+#elif UNITY_WINRT_8_1
+
+        //Amazon Ads does not support Windows devices
+        appKey = "";
+
+	    //appKey for iOS Groove Game
+	  //appKey = "";
+
 #endif
 
 

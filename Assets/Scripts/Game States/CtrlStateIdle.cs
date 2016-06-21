@@ -16,7 +16,7 @@ namespace BoogieDownGames {
 		
 		public override void Enter (BaseGameController p_game)
 		{
-			Debug.Log("I am in idle state");
+			//Debug.Log("I am in idle state");
 
 		}
 		
