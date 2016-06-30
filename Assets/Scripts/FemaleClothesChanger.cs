@@ -95,16 +95,20 @@ public class FemaleClothesChanger : MonoBehaviour {
         
         if (screenTexture <= 9){
             //Based on the int, set material to that screen shot and tile it
-                shirts[theFShirt].GetComponent<SkinnedMeshRenderer>().material.mainTexture = sCon.screenShotTextures[screenTexture];
-                shirts[theFShirt].GetComponent<SkinnedMeshRenderer>().material.mainTextureScale = new Vector2(1, 1);
-                shirtsMaterial = screenTexture;
-                PlayerPrefs.SetInt(theShirtsMat, screenTexture);
+            shirts[theFShirt].GetComponent<SkinnedMeshRenderer>().material.mainTexture = sCon.screenShotTextures[screenTexture];
+            shirts[theFShirt].GetComponent<SkinnedMeshRenderer>().material.shader = Shader.Find("Mobile/Diffuse");
+            //shirts[theFShirt].GetComponent<SkinnedMeshRenderer>().material.mainTextureScale = new Vector2(2, 2);
+            //shirts[theFShirt].GetComponent<SkinnedMeshRenderer>().material.mainTextureOffset = new Vector2(0, 0.25f);
+            shirts[theFShirt].GetComponent<SkinnedMeshRenderer>().material.mainTextureScale = new Vector2(4, 2);
+            shirts[theFShirt].GetComponent<SkinnedMeshRenderer>().material.mainTextureOffset = new Vector2(0.7f, 0.25f);
+            shirtsMaterial = screenTexture;
+            PlayerPrefs.SetInt(theShirtsMat, screenTexture);
         }
         if (screenTexture > 9){
-            //Sets the material back to the original material
-                shirts[theFShirt].GetComponent<SkinnedMeshRenderer>().material.mainTexture = null;
-                shirtsMaterial = screenTexture;
-                PlayerPrefs.SetInt(theShirtsMat, screenTexture);
+          //Sets the material back to the original material
+          shirts[theFShirt].GetComponent<SkinnedMeshRenderer>().material.mainTexture = null;
+          shirtsMaterial = screenTexture;
+          PlayerPrefs.SetInt(theShirtsMat, screenTexture);
         } PlayerPrefs.Save();
     }
 }

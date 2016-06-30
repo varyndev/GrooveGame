@@ -7,9 +7,7 @@ namespace Soomla.Store
 	
 	
 	public class StoreAssets : IStoreAssets
-	{
-		
-		
+	{		
 		public int GetVersion ()
 		{
 			return 1;
@@ -37,24 +35,19 @@ namespace Soomla.Store
 		
 		/** Static Final Members **/
 		public const string COIN_CURRENCY_ITEM_ID = "GGCoinPack";
-		
 		public const string FLOOR_PACK_PRODUCT_ID = "ARroomGrooveGame199";
 
-        //Activate if build is for AMAZON DEVICES ONLY
-        /*public const string DANCER_PACK_PRODUCT_ID = "ARIADANCER099";
-		
-		public const string SONG_4PACK_PRODUCT_ID = "4PackSongs249";
-		
-		public const string SONG_6PACK_PRODUCT_ID = "6PackSongs299";*/
 
-
-#if UNITY_ANDROID || UNITY_IOS || UNITY_WINRT_8_1
+#if UNITY_ANDROID || UNITY_WINRT_8_1
         //Activate if build is for ANDROID DEVICES ONLY
         public const string DANCER_PACK_PRODUCT_ID = "ariadancer099";
-
         public const string SONG_4PACK_PRODUCT_ID = "fourpacksongs249";
-
         public const string SONG_6PACK_PRODUCT_ID = "sixpacksongs299";
+#endif
+#if UNITY_IOS
+        public const string DANCER_PACK_PRODUCT_ID = "Ariadancer099";
+        public const string SONG_4PACK_PRODUCT_ID = "Fourpacksongs249";
+        public const string SONG_6PACK_PRODUCT_ID = "Sixpacksongs299";
 #endif
 
         /** Virtual Currencies **/
