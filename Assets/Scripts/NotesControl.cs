@@ -66,9 +66,7 @@ namespace BoogieDownGames {
 		private float zDistanceFromPlayer;
 		// KB
 		
-		void Start () 
-		{
-
+		void Start () {
 			m_myState = NoteStates.UnReady;
 			// Note must move from transform.position to camera position
 			m_mainCamera = GameObject.FindGameObjectWithTag ("MainCamera");
@@ -93,13 +91,12 @@ namespace BoogieDownGames {
             //float y = Random.Range(-0.125f, 0.125f);
             /*float x = Random.Range(-0.25f, 0.25f);
 			float y = Random.Range(-0.15f, 0.15f);*/
-            float x = Random.Range(-ranX, ranX);
-            float y = Random.Range(-ranY, ranY);
-            m_direction = new Vector3(m_direction.x + x, m_direction.y + y, m_direction.z);
+            //float x = Random.Range(-ranX, ranX);
+            //float y = Random.Range(-ranY, ranY);
+           // m_direction = new Vector3(m_direction.x + x, m_direction.y + y, m_direction.z);
 		}
 
-		public void OnStateRunFixedUpdate()
-		{
+		public void OnStateRunFixedUpdate(){
 			transform.Translate(m_direction * m_speed);
 		}
 
