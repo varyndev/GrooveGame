@@ -33,7 +33,7 @@ namespace BoogieDownGames{
             m_downloadTitleText.text = "You Have It";
             m_downloadArtistText.text = "by Tori Martin";
             m_pointCost = 5000;
-            m_downloadLink = "www.groovegame.com/freesong";
+            m_downloadLink = "http://www.groovegame.com/music/YouHaveIt.mp3";
         }
 
         void LayWithMe()
@@ -41,7 +41,7 @@ namespace BoogieDownGames{
             m_downloadTitleText.text = "Lay With Me";
             m_downloadArtistText.text = " by Sky Girl Jo";
             m_pointCost = 10000;
-            m_downloadLink = "www.groovegame.com/freesongs";
+            m_downloadLink = "http://www.groovegame.com/music/LayWithMe.mp3";
         }
 
         void MoreThanLove()
