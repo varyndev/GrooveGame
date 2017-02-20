@@ -57,17 +57,17 @@ namespace BoogieDownGames {
 		void Awake () {
 			m_songList = new List<SongItem>();
 			m_songList.Add (new SongItem ("JapanJapan", "Japan, Japan", "Sky Girlz", "1:21", "", false, 4.5f, 20.0f));
-			m_songList.Add (new SongItem ("SheSaid", "She Said", "Dani Feat. Sky Silver", "1:52", "", false, 14.14f, 26.26f));
-			m_songList.Add (new SongItem ("FryAndSizzle", "Fry & Sizzle", "Delsa & Sky Silver", "1:47", "", false, 7.332f, 22.319f));
-			m_songList.Add (new SongItem ("AloneTonight", "Alone Tonight", "Dani", "2:00", "", false, 4.488f, 22.117f));
-			m_songList.Add (new SongItem ("ItsFilth", "It's Filth", "Sky Silver", "1:50", "", false, 12.706f, 35.225f));
-			m_songList.Add (new SongItem ("IGotYou", "I Got You", "Sky Girl Jo", "2:06", "", false, 7.50f, 29.142f));
-			m_songList.Add (new SongItem ("ImSexyNow", "I'm Sexy Now", "Sky Silver & the Sky Girls", "2:04", "", true, 32.239f, 22.919f));
-			m_songList.Add (new SongItem ("ShutUpDance", "Shut Up, Dance", "Delsa Feat. Ai Man", "1:43", "", true, 0.0f, 24.50f));
-			m_songList.Add (new SongItem ("InFashion", "In Fashion", "Sky Silver", "1:25", "", true, 7.238f, 14.165f));
-			m_songList.Add (new SongItem ("SheSmiles", "She Smiles", "Sky Silver", "2:00", "", true, 34.532f, 31.608f));
-			m_songList.Add (new SongItem ("LayWithMe", "Lay With Me", "Sky Girl Jo", "2:51", "", true, 137.2f, 33.5f));
-			m_songList.Add (new SongItem ("YouHaveIt", "You Have It", "Tori Martin", "1:29", "", true, 30.0f, 26.826f));
+			m_songList.Add (new SongItem ("SheSaid", "She Said", "Sky Girlz", "1:52", "", false, 14.14f, 26.26f));
+			m_songList.Add (new SongItem ("FryAndSizzle", "Fry & Sizzle", "Sky Girlz", "1:47", "", false, 7.332f, 22.319f));
+			m_songList.Add (new SongItem ("AloneTonight", "Alone Tonight", "Sky Girlz", "2:00", "", false, 4.488f, 22.117f));
+			m_songList.Add (new SongItem ("ItsFilth", "It's Filth", "Sky Girlz", "1:50", "", false, 12.706f, 35.225f));
+			m_songList.Add (new SongItem ("IGotYou", "I Got You", "Sky Girlz", "2:06", "", false, 7.50f, 29.142f));
+			m_songList.Add (new SongItem ("ImSexyNow", "I'm Sexy Now", "Sky Girlz", "2:04", "", true, 32.239f, 22.919f));
+			m_songList.Add (new SongItem ("ShutUpDance", "Shut Up, Dance", "Sky Girlz", "1:43", "", true, 0.0f, 24.50f));
+			m_songList.Add (new SongItem ("InFashion", "In Fashion", "Sky Girlz", "1:25", "", true, 7.238f, 14.165f));
+			m_songList.Add (new SongItem ("SheSmiles", "She Smiles", "Sky Girlz", "2:00", "", true, 34.532f, 31.608f));
+			m_songList.Add (new SongItem ("LayWithMe", "Lay With Me", "Sky Girlz", "2:51", "", true, 137.2f, 33.5f));
+			m_songList.Add (new SongItem ("YouHaveIt", "You Have It", "Sky Girlz", "1:29", "", true, 30.0f, 26.826f));
 
 			NotificationCenter.DefaultCenter.AddObserver(this, "SetSong");
 			NotificationCenter.DefaultCenter.AddObserver (this, "GetDemoInfo");
